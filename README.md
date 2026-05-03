@@ -498,6 +498,8 @@ In-depth:
 
 - [Solution Architecture Decisions - By Gareth Morgan](https://www.linkedin.com/pulse/solution-architecture-decisions-gareth-morgan-0r5xe/)
 
+- [What is an ADR? Why They're Critical for AI Development (outcomeops.ai)](https://www.outcomeops.ai/blogs/what-is-an-adr-and-why-theyre-critical-for-ai-powered-development)
+
 Tools:
 
 - [Command-line tools for working with Architecture Decision Records](https://github.com/npryce/adr-tools)
