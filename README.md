@@ -151,7 +151,7 @@ For example:
 
 - If you like using Google Drive and online editing, then you can create a Google Doc, or Google Sheet.
 
-- If you like use source code version control, such as git, then you can create a file for each ADR.
+- If you like using source code version control, such as git, then you can create a file for each ADR.
 
 - If you like using project planning tools, such as Atlassian Jira, then you can use the tool's planning tracker.
 
@@ -297,7 +297,7 @@ Example answer: We want to create an ADR when we want future developers to under
 
 ### What justifies not raising an ADR?
 
-Consider areas such as decisions that are not about architecture, or are tiny such as minimal-risk or self-contained or single-developer, or are already fully covered elsewhere such as by standards or policies or documentation, or are temporary such as workarounds or proofs of concepts or orexperiments.
+Consider areas such as decisions that are not about architecture, or are tiny such as minimal-risk or self-contained or single-developer, or are already fully covered elsewhere such as by standards or policies or documentation, or are temporary such as workarounds or proofs of concepts or or experiments.
 
 Example answer: We want to skip an ADR when a decision is limited in scope and time and risk and cost, or is already covered elsewhere.
 
@@ -435,7 +435,7 @@ This is a fitness function to evaluate if our work is
 using all our decisions, and is correct and accurate.
 
 - Our decisions are here: {url}
-- Our wor to evaluate is here: {url}
+- Our work to evaluate is here: {url}
 
 Explain any errors, problems, gaps, weaknesses. Be direct. Be decisive.
 ```
@@ -500,6 +500,8 @@ In-depth:
 - [Software Architecture Monday with Mark Richards](https://developertoarchitect.com/lessons/) - free monthly software architecture lesson
 
 - [Solution Architecture Decisions - By Gareth Morgan](https://www.linkedin.com/pulse/solution-architecture-decisions-gareth-morgan-0r5xe/)
+
+- [What is an ADR? Why They're Critical for AI Development (outcomeops.ai)](https://www.outcomeops.ai/blogs/what-is-an-adr-and-why-theyre-critical-for-ai-powered-development)
 
 Tools:
 
