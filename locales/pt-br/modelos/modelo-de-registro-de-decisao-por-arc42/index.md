@@ -1,426 +1,426 @@
-# Modelo de registro de decisÃ£o por arc42
+# Modelo de registro de decisão por arc42
 
 <https://arc42.org/overview>
 
-## 1. IntroduÃ§Ã£o e objetivos
+## 1. Introdução e objetivos
 
-Breve descriÃ§Ã£o dos requisitos, forÃ§as direcionadoras, extrato (ou resumo) dos
-requisitos. Os trÃªs principais (no mÃ¡ximo cinco) objetivos de qualidade da
-arquitetura que tÃªm maior prioridade para as principais partes interessadas.
-Uma tabela de partes interessadas importantes com suas expectativas em relaÃ§Ã£o
-Ã  arquitetura.
+Breve descrição dos requisitos, forças direcionadoras, extrato (ou resumo) dos
+requisitos. Os três principais (no máximo cinco) objetivos de qualidade da
+arquitetura que têm maior prioridade para as principais partes interessadas.
+Uma tabela de partes interessadas importantes com suas expectativas em relação
+à arquitetura.
 
-## 1.1 VisÃ£o geral dos requisitos
+## 1.1 Visão geral dos requisitos
 
-### ConteÃºdo
+### Conteúdo
 
-Breve descriÃ§Ã£o dos requisitos funcionais, forÃ§as direcionadoras, extrato (ou
+Breve descrição dos requisitos funcionais, forças direcionadoras, extrato (ou
 resumo) dos requisitos. Links para os documentos de requisitos (espera-se que
-existam), com informaÃ§Ãµes sobre onde encontrÃ¡-los.
+existam), com informações sobre onde encontrá-los.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Do ponto de vista dos usuÃ¡rios finais, um sistema Ã© criado ou modificado para
-melhorar o suporte a uma atividade de negÃ³cio e/ou melhorar a qualidade.
+Do ponto de vista dos usuários finais, um sistema é criado ou modificado para
+melhorar o suporte a uma atividade de negócio e/ou melhorar a qualidade.
 
 ### Forma
 
-Breve descriÃ§Ã£o textual, provavelmente em formato tabular de caso de uso. Se
-existirem documentos de requisitos, esta visÃ£o geral deve referenciÃ¡-los.
+Breve descrição textual, provavelmente em formato tabular de caso de uso. Se
+existirem documentos de requisitos, esta visão geral deve referenciá-los.
 
-Mantenha estes extratos tÃ£o curtos quanto possÃ­vel. Equilibre a legibilidade
-deste documento com a possÃ­vel redundÃ¢ncia em relaÃ§Ã£o aos documentos de
+Mantenha estes extratos tão curtos quanto possível. Equilibre a legibilidade
+deste documento com a possível redundância em relação aos documentos de
 requisitos.
 
 ## 1.2 Objetivos de qualidade
 
-### ConteÃºdo
+### Conteúdo
 
-Os trÃªs principais (no mÃ¡ximo cinco) objetivos de qualidade da arquitetura cujo
-cumprimento Ã© de maior importÃ¢ncia para as principais partes interessadas.
-Queremos dizer realmente objetivos de qualidade para a arquitetura. NÃ£o os
-confunda com objetivos do projeto. Eles nÃ£o sÃ£o necessariamente idÃªnticos. A
-norma ISO 25010 fornece uma boa visÃ£o geral de possÃ­veis tÃ³picos de interesse.
+Os três principais (no máximo cinco) objetivos de qualidade da arquitetura cujo
+cumprimento é de maior importância para as principais partes interessadas.
+Queremos dizer realmente objetivos de qualidade para a arquitetura. Não os
+confunda com objetivos do projeto. Eles não são necessariamente idênticos. A
+norma ISO 25010 fornece uma boa visão geral de possíveis tópicos de interesse.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-VocÃª deve conhecer os objetivos de qualidade das suas partes interessadas mais
-importantes, pois eles influenciarÃ£o decisÃµes fundamentais de arquitetura.
+Você deve conhecer os objetivos de qualidade das suas partes interessadas mais
+importantes, pois eles influenciarão decisões fundamentais de arquitetura.
 Certifique-se de ser muito concreto sobre estas qualidades e evite buzzwords.
-Se vocÃª, como arquiteto, nÃ£o sabe como a qualidade do seu trabalho serÃ¡ julgada
+Se você, como arquiteto, não sabe como a qualidade do seu trabalho será julgada
 ...
 
 ### Forma
 
-Uma tabela com os objetivos de qualidade mais importantes e cenÃ¡rios concretos, ordenados por prioridades.
+Uma tabela com os objetivos de qualidade mais importantes e cenários concretos, ordenados por prioridades.
 
 ## 1.3 Parte interessada
 
-### ConteÃºdo
+### Conteúdo
 
-VisÃ£o geral explÃ­cita das partes interessadas do sistema, isto Ã©, todas as
-pessoas, papÃ©is ou organizaÃ§Ãµes que
+Visão geral explícita das partes interessadas do sistema, isto é, todas as
+pessoas, papéis ou organizações que
 
 - devem conhecer a arquitetura
 
 - precisam ser convencidas da arquitetura
 
-- precisam trabalhar com a arquitetura ou com cÃ³digo
+- precisam trabalhar com a arquitetura ou com código
 
-- precisam da documentaÃ§Ã£o da arquitetura para seu trabalho
+- precisam da documentação da arquitetura para seu trabalho
 
-- precisam chegar a decisÃµes sobre o sistema ou seu desenvolvimento
+- precisam chegar a decisões sobre o sistema ou seu desenvolvimento
 
-### MotivaÃ§Ã£o
+### Motivação
 
-VocÃª deve conhecer todas as partes envolvidas no desenvolvimento do sistema ou
-afetadas pelo sistema. Caso contrÃ¡rio, poderÃ¡ ter surpresas desagradÃ¡veis mais
+Você deve conhecer todas as partes envolvidas no desenvolvimento do sistema ou
+afetadas pelo sistema. Caso contrário, poderá ter surpresas desagradáveis mais
 tarde no processo de desenvolvimento. Estas partes interessadas determinam a
-extensÃ£o e o nÃ­vel de detalhe do seu trabalho e de seus resultados.
+extensão e o nível de detalhe do seu trabalho e de seus resultados.
 
 ### Forma
 
-Tabela com nomes de papÃ©is, nomes de pessoas e suas expectativas em relaÃ§Ã£o Ã 
-arquitetura e sua documentaÃ§Ã£o.
+Tabela com nomes de papéis, nomes de pessoas e suas expectativas em relação à
+arquitetura e sua documentação.
 
-## 2. RestriÃ§Ãµes
+## 2. Restrições
 
-Qualquer coisa que restrinja as equipes em decisÃµes de design e implementaÃ§Ã£o
-ou em decisÃµes sobre processos relacionados. Ã€s vezes pode ir alÃ©m de sistemas
-individuais e ser vÃ¡lida para organizaÃ§Ãµes e empresas inteiras.
+Qualquer coisa que restrinja as equipes em decisões de design e implementação
+ou em decisões sobre processos relacionados. Às vezes pode ir além de sistemas
+individuais e ser válida para organizações e empresas inteiras.
 
-### ConteÃºdo
+### Conteúdo
 
 Qualquer requisito que restrinja arquitetos de software em sua liberdade de
-decisÃµes de design e implementaÃ§Ã£o ou decisÃµes sobre o processo de
-desenvolvimento. Estas restriÃ§Ãµes Ã s vezes vÃ£o alÃ©m de sistemas individuais e
-sÃ£o vÃ¡lidas para organizaÃ§Ãµes e empresas inteiras.
+decisões de design e implementação ou decisões sobre o processo de
+desenvolvimento. Estas restrições às vezes vão além de sistemas individuais e
+são válidas para organizações e empresas inteiras.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Arquitetos devem saber exatamente onde sÃ£o livres em suas decisÃµes de design e
-onde precisam aderir a restriÃ§Ãµes. RestriÃ§Ãµes devem sempre ser tratadas; porÃ©m,
-elas podem ser negociÃ¡veis.
+Arquitetos devem saber exatamente onde são livres em suas decisões de design e
+onde precisam aderir a restrições. Restrições devem sempre ser tratadas; porém,
+elas podem ser negociáveis.
 
 ### Forma
 
-Tabelas simples de restriÃ§Ãµes com explicaÃ§Ãµes. Se necessÃ¡rio, vocÃª pode
-subdividi-las em restriÃ§Ãµes tÃ©cnicas, restriÃ§Ãµes organizacionais e polÃ­ticas e
-convenÃ§Ãµes (por exemplo, diretrizes de programaÃ§Ã£o ou versionamento,
-convenÃ§Ãµes de documentaÃ§Ã£o ou nomenclatura)
+Tabelas simples de restrições com explicações. Se necessário, você pode
+subdividi-las em restrições técnicas, restrições organizacionais e políticas e
+convenções (por exemplo, diretrizes de programação ou versionamento,
+convenções de documentação ou nomenclatura)
 
 ## 3. Contexto e escopo
 
-Delimita seu sistema em relaÃ§Ã£o a seus parceiros de comunicaÃ§Ã£o (externos)
-(sistemas vizinhos e usuÃ¡rios). Especifica as interfaces externas. Mostrado a
-partir de uma perspectiva de negÃ³cio/domÃ­nio (sempre) ou de uma perspectiva
-tÃ©cnica (opcional)
+Delimita seu sistema em relação a seus parceiros de comunicação (externos)
+(sistemas vizinhos e usuários). Especifica as interfaces externas. Mostrado a
+partir de uma perspectiva de negócio/domínio (sempre) ou de uma perspectiva
+técnica (opcional)
 
-### ConteÃºdo
+### Conteúdo
 
 Escopo e contexto do sistema - como o nome sugere - delimitam seu sistema (isto
-Ã©, seu escopo) em relaÃ§Ã£o a todos os seus parceiros de comunicaÃ§Ã£o (sistemas
-vizinhos e usuÃ¡rios, isto Ã©, o contexto do seu sistema). Assim, especificam as
+é, seu escopo) em relação a todos os seus parceiros de comunicação (sistemas
+vizinhos e usuários, isto é, o contexto do seu sistema). Assim, especificam as
 interfaces externas.
 
-Se necessÃ¡rio, diferencie o contexto de negÃ³cio (entradas e saÃ­das especÃ­ficas
-do domÃ­nio) do contexto tÃ©cnico (canais, protocolos, hardware).
+Se necessário, diferencie o contexto de negócio (entradas e saídas específicas
+do domínio) do contexto técnico (canais, protocolos, hardware).
 
-### MotivaÃ§Ã£o
+### Motivação
 
-As interfaces de domÃ­nio e interfaces tÃ©cnicas para parceiros de comunicaÃ§Ã£o
-estÃ£o entre os aspectos mais crÃ­ticos do seu sistema. Certifique-se de
-compreendÃª-las completamente.
+As interfaces de domínio e interfaces técnicas para parceiros de comunicação
+estão entre os aspectos mais críticos do seu sistema. Certifique-se de
+compreendê-las completamente.
 
 ### Forma
 
-- VÃ¡rios diagramas de contexto
+- Vários diagramas de contexto
 
-- Listas de parceiros de comunicaÃ§Ã£o e suas interfaces.
+- Listas de parceiros de comunicação e suas interfaces.
 
-## 3.1 Contexto de negÃ³cio
+## 3.1 Contexto de negócio
 
-### ConteÃºdo
+### Conteúdo
 
-EspecificaÃ§Ã£o de todos os parceiros de comunicaÃ§Ã£o (usuÃ¡rios, sistemas de TI,
-...) com explicaÃ§Ãµes de entradas e saÃ­das ou interfaces especÃ­ficas do domÃ­nio.
-Opcionalmente, vocÃª pode adicionar formatos especÃ­ficos do domÃ­nio ou
-protocolos de comunicaÃ§Ã£o.
+Especificação de todos os parceiros de comunicação (usuários, sistemas de TI,
+...) com explicações de entradas e saídas ou interfaces específicas do domínio.
+Opcionalmente, você pode adicionar formatos específicos do domínio ou
+protocolos de comunicação.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Todas as partes interessadas devem entender quais dados sÃ£o trocados com o
+Todas as partes interessadas devem entender quais dados são trocados com o
 ambiente do sistema.
 
 ### Forma
 
 Todos os tipos de diagramas que mostram o sistema como uma caixa preta e
-especificam as interfaces de domÃ­nio para parceiros de comunicaÃ§Ã£o.
+especificam as interfaces de domínio para parceiros de comunicação.
 
-Alternativamente (ou adicionalmente), vocÃª pode usar uma tabela. O tÃ­tulo da
-tabela Ã© o nome do seu sistema; as trÃªs colunas contÃªm o nome do parceiro de
-comunicaÃ§Ã£o, as entradas e as saÃ­das.
+Alternativamente (ou adicionalmente), você pode usar uma tabela. O título da
+tabela é o nome do seu sistema; as três colunas contêm o nome do parceiro de
+comunicação, as entradas e as saídas.
 
-## 3.2 Contexto tÃ©cnico
+## 3.2 Contexto técnico
 
-### ConteÃºdo
+### Conteúdo
 
-Interfaces tÃ©cnicas (canais e meios de transmissÃ£o) que conectam seu sistema ao
-seu ambiente. AlÃ©m disso, um mapeamento de entrada/saÃ­da especÃ­fica do domÃ­nio
-para os canais, isto Ã©, uma explicaÃ§Ã£o de qual I/O usa qual canal.
+Interfaces técnicas (canais e meios de transmissão) que conectam seu sistema ao
+seu ambiente. Além disso, um mapeamento de entrada/saída específica do domínio
+para os canais, isto é, uma explicação de qual I/O usa qual canal.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Muitas partes interessadas tomam decisÃµes de arquitetura com base nas
-interfaces tÃ©cnicas entre o sistema e seu contexto. Especialmente designers de
-infraestrutura ou hardware decidem estas interfaces tÃ©cnicas.
+Muitas partes interessadas tomam decisões de arquitetura com base nas
+interfaces técnicas entre o sistema e seu contexto. Especialmente designers de
+infraestrutura ou hardware decidem estas interfaces técnicas.
 
 ### Forma
 
-Por exemplo, diagrama de implantaÃ§Ã£o UML descrevendo canais para sistemas
+Por exemplo, diagrama de implantação UML descrevendo canais para sistemas
 vizinhos, junto com uma tabela de mapeamento que mostra os relacionamentos
-entre canais e entrada/saÃ­da.
+entre canais e entrada/saída.
 
-## 4. EstratÃ©gia de soluÃ§Ã£o
+## 4. Estratégia de solução
 
-Resumo das decisÃµes fundamentais e estratÃ©gias de soluÃ§Ã£o que moldam a
-arquitetura. Pode incluir tecnologia, decomposiÃ§Ã£o de alto nÃ­vel, abordagens
-para alcanÃ§ar os principais objetivos de qualidade e decisÃµes organizacionais
+Resumo das decisões fundamentais e estratégias de solução que moldam a
+arquitetura. Pode incluir tecnologia, decomposição de alto nível, abordagens
+para alcançar os principais objetivos de qualidade e decisões organizacionais
 relevantes.
 
-### ConteÃºdo
+### Conteúdo
 
-Um breve resumo e explicaÃ§Ã£o das decisÃµes fundamentais e estratÃ©gias de soluÃ§Ã£o que moldam a arquitetura do sistema. Elas incluem
+Um breve resumo e explicação das decisões fundamentais e estratégias de solução que moldam a arquitetura do sistema. Elas incluem
 
-- decisÃµes de tecnologia
+- decisões de tecnologia
 
-- decisÃµes sobre a decomposiÃ§Ã£o de alto nÃ­vel do sistema, por exemplo, uso de um padrÃ£o de arquitetura ou padrÃ£o de design
+- decisões sobre a decomposição de alto nível do sistema, por exemplo, uso de um padrão de arquitetura ou padrão de design
 
-- decisÃµes sobre como alcanÃ§ar objetivos de qualidade principais
+- decisões sobre como alcançar objetivos de qualidade principais
 
-- decisÃµes organizacionais relevantes, por exemplo, selecionar um processo de desenvolvimento ou delegar certas tarefas a terceiros.
+- decisões organizacionais relevantes, por exemplo, selecionar um processo de desenvolvimento ou delegar certas tarefas a terceiros.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Estas decisÃµes formam os pilares da sua arquitetura. Elas sÃ£o a base para
-muitas outras decisÃµes detalhadas ou regras de implementaÃ§Ã£o.
+Estas decisões formam os pilares da sua arquitetura. Elas são a base para
+muitas outras decisões detalhadas ou regras de implementação.
 
 ### Forma
 
-Mantenha curta a explicaÃ§Ã£o destas decisÃµes-chave.
+Mantenha curta a explicação destas decisões-chave.
 
-Motive o que vocÃª decidiu e por que decidiu dessa forma, com base na sua
-declaraÃ§Ã£o do problema, nos objetivos de qualidade e nas principais restriÃ§Ãµes.
-Consulte detalhes nas seÃ§Ãµes seguintes (seÃ§Ã£o 5 para detalhes estruturais,
-seÃ§Ã£o 8 para conceitos transversais).
+Motive o que você decidiu e por que decidiu dessa forma, com base na sua
+declaração do problema, nos objetivos de qualidade e nas principais restrições.
+Consulte detalhes nas seções seguintes (seção 5 para detalhes estruturais,
+seção 8 para conceitos transversais).
 
-VocÃª pode usar uma lista de abordagens de soluÃ§Ã£o ou uma tabela.
+Você pode usar uma lista de abordagens de solução ou uma tabela.
 
-## 5. VisÃ£o de blocos de construÃ§Ã£o
+## 5. Visão de blocos de construção
 
-DecomposiÃ§Ã£o estÃ¡tica do sistema, abstraÃ§Ãµes de cÃ³digo-fonte, mostradas como
-hierarquia de caixas brancas (contendo caixas pretas), atÃ© o nÃ­vel de detalhe
+Decomposição estática do sistema, abstrações de código-fonte, mostradas como
+hierarquia de caixas brancas (contendo caixas pretas), até o nível de detalhe
 apropriado.
 
-### ConteÃºdo
+### Conteúdo
 
-A visÃ£o de blocos de construÃ§Ã£o mostra a decomposiÃ§Ã£o estÃ¡tica do sistema em
-blocos de construÃ§Ã£o (mÃ³dulos, componentes, subsistemas, classes, interfaces,
-pacotes, bibliotecas, frameworks, camadas, partiÃ§Ãµes, tiers, funÃ§Ãµes, macros,
-operaÃ§Ãµes, estruturas de dados, ...) bem como suas dependÃªncias
-(relacionamentos, associaÃ§Ãµes, ...)
+A visão de blocos de construção mostra a decomposição estática do sistema em
+blocos de construção (módulos, componentes, subsistemas, classes, interfaces,
+pacotes, bibliotecas, frameworks, camadas, partições, tiers, funções, macros,
+operações, estruturas de dados, ...) bem como suas dependências
+(relacionamentos, associações, ...)
 
-Esta visÃ£o Ã© obrigatÃ³ria para toda documentaÃ§Ã£o de arquitetura. Em analogia a
-uma casa, este Ã© o plano de planta.
+Esta visão é obrigatória para toda documentação de arquitetura. Em analogia a
+uma casa, este é o plano de planta.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Mantenha uma visÃ£o geral do seu cÃ³digo-fonte tornando sua estrutura
-compreensÃ­vel por meio de abstraÃ§Ã£o.
+Mantenha uma visão geral do seu código-fonte tornando sua estrutura
+compreensível por meio de abstração.
 
-Isso permite que vocÃª se comunique com suas partes interessadas em um nÃ­vel
-abstrato sem revelar detalhes de implementaÃ§Ã£o.
+Isso permite que você se comunique com suas partes interessadas em um nível
+abstrato sem revelar detalhes de implementação.
 
 ### Forma
 
-A visÃ£o de blocos de construÃ§Ã£o Ã© uma coleÃ§Ã£o hierÃ¡rquica de caixas pretas e
-caixas brancas (veja a figura abaixo) e suas descriÃ§Ãµes.
+A visão de blocos de construção é uma coleção hierárquica de caixas pretas e
+caixas brancas (veja a figura abaixo) e suas descrições.
 
 ## 5.1 Caixa branca do sistema geral
 
-Aqui vocÃª descreve a decomposiÃ§Ã£o do sistema geral usando o seguinte modelo de caixa branca. Ele contÃ©m
+Aqui você descreve a decomposição do sistema geral usando o seguinte modelo de caixa branca. Ele contém
 
-- um diagrama de visÃ£o geral
+- um diagrama de visão geral
 
-- uma motivaÃ§Ã£o para a decomposiÃ§Ã£o
+- uma motivação para a decomposição
 
-- descriÃ§Ãµes de caixa preta dos blocos de construÃ§Ã£o contidos. Para elas, oferecemos alternativas:
+- descrições de caixa preta dos blocos de construção contidos. Para elas, oferecemos alternativas:
 
-  - use uma tabela para uma visÃ£o geral curta e pragmÃ¡tica de todos os blocos de construÃ§Ã£o contidos e suas interfaces
+  - use uma tabela para uma visão geral curta e pragmática de todos os blocos de construção contidos e suas interfaces
 
-  - use uma lista de descriÃ§Ãµes de caixa preta dos blocos de construÃ§Ã£o de acordo com o modelo de caixa preta (veja abaixo). Dependendo da sua escolha de ferramenta, esta lista poderia ser subcapÃ­tulos (em arquivos de texto), subpÃ¡ginas (em uma Wiki) ou elementos aninhados (em uma ferramenta de modelagem).
+  - use uma lista de descrições de caixa preta dos blocos de construção de acordo com o modelo de caixa preta (veja abaixo). Dependendo da sua escolha de ferramenta, esta lista poderia ser subcapítulos (em arquivos de texto), subpáginas (em uma Wiki) ou elementos aninhados (em uma ferramenta de modelagem).
 
-  - (opcional:) interfaces importantes que nÃ£o sÃ£o explicadas nos modelos de caixa preta de um bloco de construÃ§Ã£o, mas sÃ£o muito importantes para entender a caixa branca.
+  - (opcional:) interfaces importantes que não são explicadas nos modelos de caixa preta de um bloco de construção, mas são muito importantes para entender a caixa branca.
 
-Como hÃ¡ tantas formas de especificar interfaces, por que nÃ£o fornecer um modelo especÃ­fico para elas.
+Como há tantas formas de especificar interfaces, por que não fornecer um modelo específico para elas.
 
-No melhor caso, vocÃª conseguirÃ¡ se virar com exemplos ou assinaturas simples.
+No melhor caso, você conseguirá se virar com exemplos ou assinaturas simples.
 
-## 5.2 NÃ­vel 2
+## 5.2 Nível 2
 
-Aqui vocÃª pode especificar a estrutura interna de (alguns) blocos de construÃ§Ã£o
-do nÃ­vel 1 como caixas brancas.
+Aqui você pode especificar a estrutura interna de (alguns) blocos de construção
+do nível 1 como caixas brancas.
 
-VocÃª precisa decidir quais blocos de construÃ§Ã£o do seu sistema sÃ£o importantes
-o suficiente para justificar uma descriÃ§Ã£o tÃ£o detalhada. Prefira relevÃ¢ncia em
-vez de completude. Especifique blocos de construÃ§Ã£o importantes,
-surpreendentes, arriscados, complexos ou volÃ¡teis. Deixe de fora partes
+Você precisa decidir quais blocos de construção do seu sistema são importantes
+o suficiente para justificar uma descrição tão detalhada. Prefira relevância em
+vez de completude. Especifique blocos de construção importantes,
+surpreendentes, arriscados, complexos ou voláteis. Deixe de fora partes
 normais, simples, entediantes ou padronizadas do seu sistema
 
-### 5.2.1 Caixa branca para o bloco de construÃ§Ã£o 1
+### 5.2.1 Caixa branca para o bloco de construção 1
 
-Especifica a estrutura interna do bloco de construÃ§Ã£o 1.
+Especifica a estrutura interna do bloco de construção 1.
 
 Use o modelo de caixa branca (veja acima).
 
-## 6. VisÃ£o de tempo de execuÃ§Ã£o
+## 6. Visão de tempo de execução
 
-Comportamento de blocos de construÃ§Ã£o como cenÃ¡rios, cobrindo casos de uso ou
-funcionalidades importantes, interaÃ§Ãµes em interfaces externas crÃ­ticas,
-operaÃ§Ã£o e administraÃ§Ã£o, alÃ©m de comportamento de erros e exceÃ§Ãµes.
+Comportamento de blocos de construção como cenários, cobrindo casos de uso ou
+funcionalidades importantes, interações em interfaces externas críticas,
+operação e administração, além de comportamento de erros e exceções.
 
-### ConteÃºdo
+### Conteúdo
 
-A visÃ£o de tempo de execuÃ§Ã£o descreve comportamento e interaÃ§Ãµes concretos dos blocos de construÃ§Ã£o do sistema na forma de cenÃ¡rios das seguintes Ã¡reas:
+A visão de tempo de execução descreve comportamento e interações concretos dos blocos de construção do sistema na forma de cenários das seguintes áreas:
 
-- casos de uso ou funcionalidades importantes: como os blocos de construÃ§Ã£o os executam?
+- casos de uso ou funcionalidades importantes: como os blocos de construção os executam?
 
-- interaÃ§Ãµes em interfaces externas crÃ­ticas: como os blocos de construÃ§Ã£o cooperam com usuÃ¡rios e sistemas vizinhos?
+- interações em interfaces externas críticas: como os blocos de construção cooperam com usuários e sistemas vizinhos?
 
-- operaÃ§Ã£o e administraÃ§Ã£o: lanÃ§amento, inicializaÃ§Ã£o, parada
+- operação e administração: lançamento, inicialização, parada
 
-- cenÃ¡rios de erro e exceÃ§Ã£o
+- cenários de erro e exceção
 
-ObservaÃ§Ã£o: O principal critÃ©rio para escolher cenÃ¡rios possÃ­veis (sequÃªncias, workflows) Ã© sua relevÃ¢ncia arquitetural. NÃ£o Ã© importante descrever um grande nÃºmero de cenÃ¡rios. Em vez disso, vocÃª deve documentar uma seleÃ§Ã£o representativa.
+Observação: O principal critério para escolher cenários possíveis (sequências, workflows) é sua relevância arquitetural. Não é importante descrever um grande número de cenários. Em vez disso, você deve documentar uma seleção representativa.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-VocÃª deve entender como (instÃ¢ncias de) blocos de construÃ§Ã£o do seu sistema realizam seu trabalho e se comunicam em tempo de execuÃ§Ã£o. VocÃª capturarÃ¡ cenÃ¡rios principalmente na sua documentaÃ§Ã£o para comunicar sua arquitetura a partes interessadas que estÃ£o menos dispostas ou aptas a ler e entender os modelos estÃ¡ticos (visÃ£o de blocos de construÃ§Ã£o, visÃ£o de implantaÃ§Ã£o).
+Você deve entender como (instâncias de) blocos de construção do seu sistema realizam seu trabalho e se comunicam em tempo de execução. Você capturará cenários principalmente na sua documentação para comunicar sua arquitetura a partes interessadas que estão menos dispostas ou aptas a ler e entender os modelos estáticos (visão de blocos de construção, visão de implantação).
 
 ### Forma
 
-HÃ¡ muitas notaÃ§Ãµes para descrever cenÃ¡rios, por exemplo:
+Há muitas notações para descrever cenários, por exemplo:
 
 
 - lista numerada de passos (em linguagem natural)
 
 - diagramas de atividade ou fluxogramas
 
-- diagramas de sequÃªncia
+- diagramas de sequência
 
 - BPMN ou EPCs (event process chains)
 
-- mÃ¡quinas de estado
+- máquinas de estado
 
 - etc.
 
-## 6.n CenÃ¡rio de tempo de execuÃ§Ã£o n (1, 2, 3 etc.)
+## 6.n Cenário de tempo de execução n (1, 2, 3 etc.)
 
-Insira o diagrama de tempo de execuÃ§Ã£o ou a descriÃ§Ã£o textual do cenÃ¡rio.
+Insira o diagrama de tempo de execução ou a descrição textual do cenário.
 
-Insira a descriÃ§Ã£o dos aspectos notÃ¡veis das interaÃ§Ãµes entre as instÃ¢ncias de blocos de construÃ§Ã£o representadas neste diagrama.
+Insira a descrição dos aspectos notáveis das interações entre as instâncias de blocos de construção representadas neste diagrama.
 
-## 7. VisÃ£o de implantaÃ§Ã£o
+## 7. Visão de implantação
 
-Infraestrutura tÃ©cnica com ambientes, computadores, processadores, topologias.
-Mapeamento de blocos de construÃ§Ã£o (de software) para elementos de
+Infraestrutura técnica com ambientes, computadores, processadores, topologias.
+Mapeamento de blocos de construção (de software) para elementos de
 infraestrutura.
 
-### ConteÃºdo
+### Conteúdo
 
-A visÃ£o de implantaÃ§Ã£o descreve:
+A visão de implantação descreve:
 
-- a infraestrutura tÃ©cnica usada para executar seu sistema, com elementos de
-  infraestrutura como localizaÃ§Ãµes geogrÃ¡ficas, ambientes, computadores,
+- a infraestrutura técnica usada para executar seu sistema, com elementos de
+  infraestrutura como localizações geográficas, ambientes, computadores,
   processadores, canais e topologias de rede, bem como outros elementos de
   infraestrutura e
 
-- o mapeamento de blocos de construÃ§Ã£o (de software) para esses elementos de infraestrutura.
+- o mapeamento de blocos de construção (de software) para esses elementos de infraestrutura.
 
-Frequentemente, sistemas sÃ£o executados em diferentes ambientes, por exemplo,
-ambiente de desenvolvimento, ambiente de teste, ambiente de produÃ§Ã£o. Nesses
-casos, vocÃª deve documentar todos os ambientes relevantes.
+Frequentemente, sistemas são executados em diferentes ambientes, por exemplo,
+ambiente de desenvolvimento, ambiente de teste, ambiente de produção. Nesses
+casos, você deve documentar todos os ambientes relevantes.
 
-Documente especialmente a visÃ£o de implantaÃ§Ã£o quando seu software for
-executado como sistema distribuÃ­do com mais de um computador, processador,
-servidor ou container, ou quando vocÃª projetar e construir seus prÃ³prios
+Documente especialmente a visão de implantação quando seu software for
+executado como sistema distribuído com mais de um computador, processador,
+servidor ou container, ou quando você projetar e construir seus próprios
 processadores e chips de hardware.
 
-Da perspectiva de software, Ã© suficiente capturar os elementos da infraestrutura
-necessÃ¡rios para mostrar a implantaÃ§Ã£o dos seus blocos de construÃ§Ã£o. Arquitetos
-de hardware podem ir alÃ©m disso e descrever a infraestrutura em qualquer nÃ­vel
-de detalhe de que precisem para capturÃ¡-la.
+Da perspectiva de software, é suficiente capturar os elementos da infraestrutura
+necessários para mostrar a implantação dos seus blocos de construção. Arquitetos
+de hardware podem ir além disso e descrever a infraestrutura em qualquer nível
+de detalhe de que precisem para capturá-la.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Software nÃ£o roda sem hardware. Esta infraestrutura subjacente pode influenciar
-e influenciarÃ¡ seu sistema e/ou alguns conceitos transversais. Portanto, vocÃª
+Software não roda sem hardware. Esta infraestrutura subjacente pode influenciar
+e influenciará seu sistema e/ou alguns conceitos transversais. Portanto, você
 precisa conhecer a infraestrutura.
 
 ### Forma
 
-Talvez o diagrama de implantaÃ§Ã£o de nÃ­vel mais alto jÃ¡ esteja contido na seÃ§Ã£o 3.2. como contexto tÃ©cnico, com sua prÃ³pria infraestrutura como UMA caixa preta. Nesta seÃ§Ã£o, vocÃª darÃ¡ zoom nesta caixa preta usando diagramas de implantaÃ§Ã£o adicionais.
+Talvez o diagrama de implantação de nível mais alto já esteja contido na seção 3.2. como contexto técnico, com sua própria infraestrutura como UMA caixa preta. Nesta seção, você dará zoom nesta caixa preta usando diagramas de implantação adicionais.
 
-- UML oferece diagramas de implantaÃ§Ã£o para expressar essa visÃ£o. Use-os, provavelmente com diagramas aninhados, quando sua infraestrutura for mais complexa.
+- UML oferece diagramas de implantação para expressar essa visão. Use-os, provavelmente com diagramas aninhados, quando sua infraestrutura for mais complexa.
 
 - Quando suas partes interessadas (de hardware) preferirem outros tipos de diagramas em vez de
-  diagrama de implantaÃ§Ã£o UML, deixe-as usar qualquer tipo capaz de mostrar nÃ³s e
+  diagrama de implantação UML, deixe-as usar qualquer tipo capaz de mostrar nós e
   canais da infraestrutura.
 
-## 7.1 Infraestrutura nÃ­vel 1
+## 7.1 Infraestrutura nível 1
 
-Descreva (normalmente em uma combinaÃ§Ã£o de diagramas, tabelas e texto):
+Descreva (normalmente em uma combinação de diagramas, tabelas e texto):
 
-- a distribuiÃ§Ã£o do seu sistema para mÃºltiplas localizaÃ§Ãµes, ambientes, computadores, processadores, .. bem como as conexÃµes fÃ­sicas entre eles
+- a distribuição do seu sistema para múltiplas localizações, ambientes, computadores, processadores, .. bem como as conexões físicas entre eles
 
-- justificativa ou motivaÃ§Ã£o importante para esta estrutura de implantaÃ§Ã£o
+- justificativa ou motivação importante para esta estrutura de implantação
 
-- caracterÃ­sticas de qualidade e/ou desempenho da infraestrutura
+- características de qualidade e/ou desempenho da infraestrutura
 
-- o mapeamento de artefatos de software (blocos de construÃ§Ã£o) para elementos da infraestrutura
+- o mapeamento de artefatos de software (blocos de construção) para elementos da infraestrutura
 
-Para mÃºltiplos ambientes ou implantaÃ§Ãµes alternativas, copie esta seÃ§Ã£o do arc42 para todos os ambientes relevantes. **
+Para múltiplos ambientes ou implantações alternativas, copie esta seção do arc42 para todos os ambientes relevantes. **
 
-## 7.2 Infraestrutura nÃ­vel 2
+## 7.2 Infraestrutura nível 2
 
-Aqui vocÃª pode incluir a estrutura interna de (alguns) elementos de infraestrutura do nÃ­vel de infraestrutura 1.
+Aqui você pode incluir a estrutura interna de (alguns) elementos de infraestrutura do nível de infraestrutura 1.
 
-Copie a estrutura do nÃ­vel 1 para cada elemento selecionado.
+Copie a estrutura do nível 1 para cada elemento selecionado.
 
 ## 8. Conceitos transversais
 
-Regulamentos principais, gerais, e abordagens de soluÃ§Ã£o relevantes em mÃºltiplas
-partes (â†’ transversais) do sistema. Conceitos frequentemente se relacionam a
-mÃºltiplos blocos de construÃ§Ã£o. Inclua diferentes tÃ³picos como modelos de
-domÃ­nio, padrÃµes e estilos de arquitetura, regras para uso de tecnologia
-especÃ­fica e regras de implementaÃ§Ã£o.
+Regulamentos principais, gerais, e abordagens de solução relevantes em múltiplas
+partes (→ transversais) do sistema. Conceitos frequentemente se relacionam a
+múltiplos blocos de construção. Inclua diferentes tópicos como modelos de
+domínio, padrões e estilos de arquitetura, regras para uso de tecnologia
+específica e regras de implementação.
 
-### ConteÃºdo
+### Conteúdo
 
-Esta seÃ§Ã£o descreve conceitos transversais (prÃ¡ticas, padrÃµes, regulamentos ou
-ideias de soluÃ§Ã£o). Tais conceitos frequentemente se relacionam a mÃºltiplos
-blocos de construÃ§Ã£o. Eles podem incluir muitos tÃ³picos diferentes.
+Esta seção descreve conceitos transversais (práticas, padrões, regulamentos ou
+ideias de solução). Tais conceitos frequentemente se relacionam a múltiplos
+blocos de construção. Eles podem incluir muitos tópicos diferentes.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Conceitos formam a base para a integridade conceitual (consistÃªncia,
-homogeneidade) da arquitetura. Portanto, eles sÃ£o uma contribuiÃ§Ã£o importante
-para alcanÃ§ar qualidades internas do seu sistema.
+Conceitos formam a base para a integridade conceitual (consistência,
+homogeneidade) da arquitetura. Portanto, eles são uma contribuição importante
+para alcançar qualidades internas do seu sistema.
 
-Este Ã© o lugar no modelo que fornecemos para uma especificaÃ§Ã£o coesa desses
+Este é o lugar no modelo que fornecemos para uma especificação coesa desses
 conceitos.
 
-Muitos destes conceitos se relacionam a vÃ¡rios dos seus blocos de construÃ§Ã£o ou
+Muitos destes conceitos se relacionam a vários dos seus blocos de construção ou
 os influenciam.
 
 ### Forma
@@ -429,205 +429,205 @@ A forma pode variar:
 
 - documentos conceituais com qualquer tipo de estrutura
 
-- implementaÃ§Ãµes de exemplo, especialmente para conceitos tÃ©cnicos
+- implementações de exemplo, especialmente para conceitos técnicos
 
-- excertos de modelos transversais ou cenÃ¡rios usando notaÃ§Ãµes das visÃµes de arquitetura
+- excertos de modelos transversais ou cenários usando notações das visões de arquitetura
 
-### Estrutura desta seÃ§Ã£o
+### Estrutura desta seção
 
-Escolha apenas os tÃ³picos mais necessÃ¡rios para seu sistema e atribua a cada um um heading de nÃ­vel 2 nesta seÃ§Ã£o (por exemplo, 8.1, 8.2 etc).
+Escolha apenas os tópicos mais necessários para seu sistema e atribua a cada um um heading de nível 2 nesta seção (por exemplo, 8.1, 8.2 etc).
 
-- NÃƒO TENTE cobrir todos os tÃ³picos do diagrama mencionado acima.
+- NÃO TENTE cobrir todos os tópicos do diagrama mencionado acima.
 
 ### Contexto adicional
 
-Alguns tÃ³picos dentro de sistemas frequentemente dizem respeito a mÃºltiplos
-blocos de construÃ§Ã£o, elementos de hardware ou processos de desenvolvimento.
-Pode ser mais fÃ¡cil comunicar ou documentar esses tÃ³picos transversais em um
-local central, em vez de repeti-los na descriÃ§Ã£o dos blocos de construÃ§Ã£o,
+Alguns tópicos dentro de sistemas frequentemente dizem respeito a múltiplos
+blocos de construção, elementos de hardware ou processos de desenvolvimento.
+Pode ser mais fácil comunicar ou documentar esses tópicos transversais em um
+local central, em vez de repeti-los na descrição dos blocos de construção,
 elementos de hardware ou processos de desenvolvimento envolvidos.
 
 Certos conceitos podem dizer respeito a todos os elementos de um sistema,
 outros podem ser relevantes apenas para alguns.
 
-## 9. DecisÃµes de arquitetura
+## 9. Decisões de arquitetura
 
-DecisÃµes de arquitetura importantes, caras, crÃ­ticas, de grande escala ou
+Decisões de arquitetura importantes, caras, críticas, de grande escala ou
 arriscadas, incluindo justificativas.
 
-### ConteÃºdo
+### Conteúdo
 
-DecisÃµes de arquitetura importantes, caras, de grande escala ou arriscadas,
-incluindo justificativas. Com "decisÃµes", queremos dizer selecionar uma
-alternativa com base em determinados critÃ©rios.
+Decisões de arquitetura importantes, caras, de grande escala ou arriscadas,
+incluindo justificativas. Com "decisões", queremos dizer selecionar uma
+alternativa com base em determinados critérios.
 
-Use seu julgamento para decidir se uma decisÃ£o de arquitetura deve ser
-documentada aqui nesta seÃ§Ã£o central ou se Ã© melhor documentÃ¡-la localmente
-(por exemplo, dentro do modelo de caixa branca de um bloco de construÃ§Ã£o).
-Evite textos redundantes. Consulte a seÃ§Ã£o 4, onde vocÃª jÃ¡ capturou as decisÃµes
+Use seu julgamento para decidir se uma decisão de arquitetura deve ser
+documentada aqui nesta seção central ou se é melhor documentá-la localmente
+(por exemplo, dentro do modelo de caixa branca de um bloco de construção).
+Evite textos redundantes. Consulte a seção 4, onde você já capturou as decisões
 mais importantes da sua arquitetura.
 
-### MotivaÃ§Ã£o
+### Motivação
 
 As partes interessadas do seu sistema devem ser capazes de compreender e
-rastrear suas decisÃµes.
+rastrear suas decisões.
 
 ### Forma
 
-- ADR (architecture decision record) para cada decisÃ£o importante
+- ADR (architecture decision record) para cada decisão importante
 
-- lista ou tabela, ordenada por importÃ¢ncia e consequÃªncias ou
+- lista ou tabela, ordenada por importância e consequências ou
 
-- mais detalhado na forma de seÃ§Ãµes separadas por decisÃ£o
+- mais detalhado na forma de seções separadas por decisão
 
 ### Contexto adicional (sobre ADRs)
 
-Pequenas partes de documentaÃ§Ã£o sÃ£o mais fÃ¡ceis de ler, criar e manter. Quando
-se trata de decisÃµes de arquitetura, equipes de desenvolvimento frequentemente:
+Pequenas partes de documentação são mais fáceis de ler, criar e manter. Quando
+se trata de decisões de arquitetura, equipes de desenvolvimento frequentemente:
 
-- sabem da decisÃ£o, pois ela estÃ¡ visÃ­vel, por exemplo, no cÃ³digo-fonte, mas
+- sabem da decisão, pois ela está visível, por exemplo, no código-fonte, mas
 
-- perdem a motivaÃ§Ã£o por trÃ¡s dessa decisÃ£o (veja Nygard 2011)
+- perdem a motivação por trás dessa decisão (veja Nygard 2011)
 
-Portanto, vocÃª deve documentar algumas decisÃµes importantes junto com sua
-motivaÃ§Ã£o e raciocÃ­nio
+Portanto, você deve documentar algumas decisões importantes junto com sua
+motivação e raciocínio
 
-### Nossa proposta sobre decisÃµes
+### Nossa proposta sobre decisões
 
-Mantenha uma coleÃ§Ã£o de decisÃµes arquiteturalmente significativas, aquelas
-decisÃµes que afetam a estrutura, caracterÃ­sticas de qualidade, dependÃªncias e
-interfaces importantes (especialmente externas), ou tÃ©cnicas de construÃ§Ã£o
+Mantenha uma coleção de decisões arquiteturalmente significativas, aquelas
+decisões que afetam a estrutura, características de qualidade, dependências e
+interfaces importantes (especialmente externas), ou técnicas de construção
 (agradecimentos a Michael Nygard por esta proposta).
 
 ## 10. Requisitos de qualidade
 
-Requisitos de qualidade como cenÃ¡rios, com Ã¡rvore de qualidade para fornecer
-uma visÃ£o geral de alto nÃ­vel. Os objetivos de qualidade mais importantes
-devem ter sido descritos na seÃ§Ã£o 1.2. (objetivos de qualidade).
+Requisitos de qualidade como cenários, com árvore de qualidade para fornecer
+uma visão geral de alto nível. Os objetivos de qualidade mais importantes
+devem ter sido descritos na seção 1.2. (objetivos de qualidade).
 
-### ConteÃºdo
+### Conteúdo
 
-Esta seÃ§Ã£o contÃ©m todos os requisitos de qualidade relevantes.
+Esta seção contém todos os requisitos de qualidade relevantes.
 
-Os mais importantes destes requisitos jÃ¡ foram descritos na seÃ§Ã£o 1.2.
+Os mais importantes destes requisitos já foram descritos na seção 1.2.
 (objetivos de qualidade), portanto eles devem ser apenas referenciados aqui.
-Nesta seÃ§Ã£o 10, vocÃª tambÃ©m deve capturar requisitos de qualidade de menor
-importÃ¢ncia, que nÃ£o criarÃ£o riscos altos se nÃ£o forem plenamente alcanÃ§ados
-(mas podem ser desejÃ¡veis).
+Nesta seção 10, você também deve capturar requisitos de qualidade de menor
+importância, que não criarão riscos altos se não forem plenamente alcançados
+(mas podem ser desejáveis).
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Como requisitos de qualidade terÃ£o muita influÃªncia sobre decisÃµes de
-arquitetura, vocÃª deve saber quais qualidades sÃ£o realmente importantes para
-suas partes interessadas, de uma forma especÃ­fica e mensurÃ¡vel.
+Como requisitos de qualidade terão muita influência sobre decisões de
+arquitetura, você deve saber quais qualidades são realmente importantes para
+suas partes interessadas, de uma forma específica e mensurável.
 
-### InformaÃ§Ãµes adicionais
+### Informações adicionais
 
 Veja o extenso modelo de qualidade Q42 em https://quality.arc42.org.
 
-## 10.1 VisÃ£o geral dos requisitos de qualidade
+## 10.1 Visão geral dos requisitos de qualidade
 
-### ConteÃºdo
+### Conteúdo
 
-Uma visÃ£o geral ou resumo dos requisitos de qualidade.
+Uma visão geral ou resumo dos requisitos de qualidade.
 
-### MotivaÃ§Ã£o
+### Motivação
 
-Frequentemente encontramos dezenas (ou atÃ© centenas) de requisitos de qualidade
-detalhados. Nesta seÃ§Ã£o de visÃ£o geral, vocÃª deve tentar resumir, por exemplo,
-descrevendo categorias ou tÃ³picos (como sugerido pela ISO 25010:2023 ou Q42
+Frequentemente encontramos dezenas (ou até centenas) de requisitos de qualidade
+detalhados. Nesta seção de visão geral, você deve tentar resumir, por exemplo,
+descrevendo categorias ou tópicos (como sugerido pela ISO 25010:2023 ou Q42
 
-Se estas descriÃ§Ãµes resumidas jÃ¡ forem precisas, especÃ­ficas o suficiente e
-mensurÃ¡veis, vocÃª pode pular a seÃ§Ã£o 10.2.
+Se estas descrições resumidas já forem precisas, específicas o suficiente e
+mensuráveis, você pode pular a seção 10.2.
 
 ### Forma
 
-Use uma tabela simples em que cada linha contÃ©m uma categoria ou tÃ³pico e uma
-breve descriÃ§Ã£o do requisito de qualidade. Alternativamente, vocÃª pode usar um
+Use uma tabela simples em que cada linha contém uma categoria ou tópico e uma
+breve descrição do requisito de qualidade. Alternativamente, você pode usar um
 mapa mental para estruturar estes requisitos de qualidade.
 
-Na literatura, a ideia de uma Ã¡rvore de atributos de qualidade tambÃ©m foi
-descrita, colocando o termo genÃ©rico "qualidade" como raiz e usando um
-refinamento em forma de Ã¡rvore do termo "qualidade". [Bass+21] introduziu o
-termo "Quality Attribute Utility Tree" para esse propÃ³sito.
+Na literatura, a ideia de uma árvore de atributos de qualidade também foi
+descrita, colocando o termo genérico "qualidade" como raiz e usando um
+refinamento em forma de árvore do termo "qualidade". [Bass+21] introduziu o
+termo "Quality Attribute Utility Tree" para esse propósito.
 
-## 10.2 CenÃ¡rios de qualidade
+## 10.2 Cenários de qualidade
 
-### ConteÃºdo
+### Conteúdo
 
-CenÃ¡rios de qualidade tornam requisitos de qualidade concretos e permitem
-decidir se eles sÃ£o cumpridos (no sentido de critÃ©rios de aceite). Certifique-se
-de que seus cenÃ¡rios sejam especÃ­ficos e mensurÃ¡veis.
+Cenários de qualidade tornam requisitos de qualidade concretos e permitem
+decidir se eles são cumpridos (no sentido de critérios de aceite). Certifique-se
+de que seus cenários sejam específicos e mensuráveis.
 
-Dois tipos de cenÃ¡rios sÃ£o especialmente Ãºteis:
+Dois tipos de cenários são especialmente úteis:
 
-- CenÃ¡rios de uso (tambÃ©m chamados de cenÃ¡rios de aplicaÃ§Ã£o ou cenÃ¡rios de caso de uso)
-  descrevem a reaÃ§Ã£o do sistema em tempo de execuÃ§Ã£o a um determinado estÃ­mulo. Isso tambÃ©m
-  inclui cenÃ¡rios que descrevem a eficiÃªncia ou desempenho do sistema.
-  Exemplo: O sistema reage Ã  solicitaÃ§Ã£o de um usuÃ¡rio em atÃ© um segundo.
+- Cenários de uso (também chamados de cenários de aplicação ou cenários de caso de uso)
+  descrevem a reação do sistema em tempo de execução a um determinado estímulo. Isso também
+  inclui cenários que descrevem a eficiência ou desempenho do sistema.
+  Exemplo: O sistema reage à solicitação de um usuário em até um segundo.
 
-- CenÃ¡rios de mudanÃ§a descrevem o efeito desejado de uma modificaÃ§Ã£o ou extensÃ£o do
+- Cenários de mudança descrevem o efeito desejado de uma modificação ou extensão do
   sistema ou de seu ambiente imediato. Exemplo: Funcionalidade adicional
-  Ã© implementada ou requisitos de um atributo de qualidade mudam, e o esforÃ§o
-  ou duraÃ§Ã£o da mudanÃ§a Ã© medido.
+  é implementada ou requisitos de um atributo de qualidade mudam, e o esforço
+  ou duração da mudança é medido.
 
 ### Forma
 
-InformaÃ§Ãµes tÃ­picas para cenÃ¡rios detalhados incluem o seguinte:
+Informações típicas para cenários detalhados incluem o seguinte:
 
 Na forma curta (favorecida no modelo Q42):
 
-- Contexto/HistÃ³rico: Que tipo de sistema ou componente, qual Ã© o ambiente ou situaÃ§Ã£o?
+- Contexto/Histórico: Que tipo de sistema ou componente, qual é o ambiente ou situação?
 
-- Fonte/EstÃ­mulo: Quem ou o que inicia ou dispara um comportamento, reaÃ§Ã£o ou aÃ§Ã£o.
+- Fonte/Estímulo: Quem ou o que inicia ou dispara um comportamento, reação ou ação.
 
-- MÃ©trica/CritÃ©rios de aceite: Uma resposta incluindo uma medida ou mÃ©trica
+- Métrica/Critérios de aceite: Uma resposta incluindo uma medida ou métrica
 
-A forma longa de cenÃ¡rios (favorecida pelo SEI e [Bass+21]) Ã© mais detalhada e inclui as seguintes informaÃ§Ãµes:
+A forma longa de cenários (favorecida pelo SEI e [Bass+21]) é mais detalhada e inclui as seguintes informações:
 
-- ID do cenÃ¡rio: Um identificador Ãºnico para o cenÃ¡rio.
+- ID do cenário: Um identificador único para o cenário.
 
-- Nome do cenÃ¡rio: Um nome curto e descritivo para o cenÃ¡rio.
+- Nome do cenário: Um nome curto e descritivo para o cenário.
 
-- Fonte: A entidade (usuÃ¡rio, sistema ou evento) que inicia o cenÃ¡rio.
+- Fonte: A entidade (usuário, sistema ou evento) que inicia o cenário.
 
-- EstÃ­mulo: O evento ou condiÃ§Ã£o disparadora que o sistema deve tratar.
+- Estímulo: O evento ou condição disparadora que o sistema deve tratar.
 
-- Ambiente: O contexto ou condiÃ§Ã£o operacional sob o qual o sistema experimenta o estÃ­mulo.
+- Ambiente: O contexto ou condição operacional sob o qual o sistema experimenta o estímulo.
 
-- Artefato: Os blocos de construÃ§Ã£o ou outros elementos do sistema afetados pelo estÃ­mulo.
+- Artefato: Os blocos de construção ou outros elementos do sistema afetados pelo estímulo.
 
-- Resposta: O resultado ou comportamento que o sistema exibe em reaÃ§Ã£o ao estÃ­mulo.
+- Resposta: O resultado ou comportamento que o sistema exibe em reação ao estímulo.
 
-- Medida de resposta: Os critÃ©rios ou mÃ©trica pelos quais a resposta do sistema Ã© avaliada.
+- Medida de resposta: Os critérios ou métrica pelos quais a resposta do sistema é avaliada.
 
-### Veja tambÃ©m
+### Veja também
 
-Desde janeiro de 2023, arc42 fornece um modelo pragmÃ¡tico de qualidade que
-propÃµe rotular requisitos de qualidade com hashtags ou labels como #flexible,
+Desde janeiro de 2023, arc42 fornece um modelo pragmático de qualidade que
+propõe rotular requisitos de qualidade com hashtags ou labels como #flexible,
 #efficient, #usable, #operable, #testable, #secure, #safe, #reliable.
 
-## 11. Riscos e dÃ­vida tÃ©cnica
+## 11. Riscos e dívida técnica
 
-Riscos tÃ©cnicos conhecidos ou dÃ­vida tÃ©cnica. Que problemas potenciais existem
+Riscos técnicos conhecidos ou dívida técnica. Que problemas potenciais existem
 dentro ou ao redor do sistema? O que faz a equipe de desenvolvimento se sentir
-desconfortÃ¡vel?
+desconfortável?
 
-### ConteÃºdo
+### Conteúdo
 
-Uma lista de riscos tÃ©cnicos ou dÃ­vidas tÃ©cnicas identificados, ordenada por prioridade
+Uma lista de riscos técnicos ou dívidas técnicas identificados, ordenada por prioridade
 
-### MotivaÃ§Ã£o
+### Motivação
 
 "Risk management is project management for grown-ups" (Tim Lister, Atlantic
 Systems Guild.)
 
-Este deve ser seu lema para detecÃ§Ã£o e avaliaÃ§Ã£o sistemÃ¡ticas de riscos e
-dÃ­vidas tÃ©cnicas na arquitetura, que serÃ£o necessÃ¡rias para partes interessadas
-de gestÃ£o (por exemplo, gerentes de projeto, product owners) como parte da
-anÃ¡lise geral de riscos e do planejamento de mediÃ§Ã£o.
+Este deve ser seu lema para detecção e avaliação sistemáticas de riscos e
+dívidas técnicas na arquitetura, que serão necessárias para partes interessadas
+de gestão (por exemplo, gerentes de projeto, product owners) como parte da
+análise geral de riscos e do planejamento de medição.
 
 ### Forma
 
-Lista de riscos e/ou dÃ­vidas tÃ©cnicas, provavelmente incluindo medidas sugeridas
-para minimizar, mitigar ou evitar riscos ou reduzir dÃ­vidas tÃ©cnicas.
+Lista de riscos e/ou dívidas técnicas, provavelmente incluindo medidas sugeridas
+para minimizar, mitigar ou evitar riscos ou reduzir dívidas técnicas.

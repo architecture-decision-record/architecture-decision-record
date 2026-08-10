@@ -1,24 +1,24 @@
-# Modelo de registro de decisÃ£o por Michael Nygard
+# Modelo de registro de decisão por Michael Nygard
 
-Este Ã© o modelo em [Documenting architecture decisions - Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions).
-VocÃª pode usar [adr-tools](https://github.com/npryce/adr-tools) para gerenciar os arquivos de ADR.
+Este é o modelo em [Documenting architecture decisions - Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions).
+Você pode usar [adr-tools](https://github.com/npryce/adr-tools) para gerenciar os arquivos de ADR.
 
-Em cada arquivo de ADR, escreva estas seÃ§Ãµes:
+Em cada arquivo de ADR, escreva estas seções:
 
-# TÃ­tulo
+# Título
 
 ## Status
 
-Qual Ã© o status, como proposto, aceito, rejeitado, obsoleto, substituÃ­do etc.?
+Qual é o status, como proposto, aceito, rejeitado, obsoleto, substituído etc.?
 
 ## Contexto
 
-Qual Ã© a questÃ£o que estamos vendo e que motiva esta decisÃ£o ou mudanÃ§a?
+Qual é a questão que estamos vendo e que motiva esta decisão ou mudança?
 
-## DecisÃ£o
+## Decisão
 
-Qual Ã© a mudanÃ§a que estamos propondo e/ou fazendo?
+Qual é a mudança que estamos propondo e/ou fazendo?
 
-## ConsequÃªncias
+## Consequências
 
-O que se torna mais fÃ¡cil ou mais difÃ­cil de fazer por causa desta mudanÃ§a?
+O que se torna mais fácil ou mais difícil de fazer por causa desta mudança?

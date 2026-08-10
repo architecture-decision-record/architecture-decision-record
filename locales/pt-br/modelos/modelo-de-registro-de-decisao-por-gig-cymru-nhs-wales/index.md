@@ -1,145 +1,145 @@
-# {Seu tÃ­tulo aqui}
+# {Seu título aqui}
 
 !!! info
 
-    **Status**: { Proposto | Em revisÃ£o | Aceito |  Rejeitado | SubstituÃ­do | Obsoleto }
+    **Status**: { Proposto | Em revisão | Aceito |  Rejeitado | Substituído | Obsoleto }
 
     **Atualizado**: {YYYY-MM-DD}
 
 ## Resumo
 
-{Este Ã© o 'resumo executivo' ou 'elevator pitch' da sua ADR. Em poucas frases
+{Este é o 'resumo executivo' ou 'elevator pitch' da sua ADR. Em poucas frases
 concisas (normalmente 2-4), declare claramente o problema, a pergunta ou a
-oportunidade central que esta ADR aborda. Inclua uma breve indicaÃ§Ã£o da decisÃ£o
-tomada ou da Ã¡rea de foco. O objetivo Ã© ajudar leitores a entender rapidamente
-sobre o que Ã© esta ADR e decidir se ela Ã© relevante para eles, sem precisar ler
-o documento inteiro. Pense nele como o resumo de um artigo tÃ©cnico ou uma
-introduÃ§Ã£o muito breve ao tÃ³pico principal.}
+oportunidade central que esta ADR aborda. Inclua uma breve indicação da decisão
+tomada ou da área de foco. O objetivo é ajudar leitores a entender rapidamente
+sobre o que é esta ADR e decidir se ela é relevante para eles, sem precisar ler
+o documento inteiro. Pense nele como o resumo de um artigo técnico ou uma
+introdução muito breve ao tópico principal.}
 
 ## Direcionadores
 
-{Esta seÃ§Ã£o explica **por que** esta decisÃ£o estÃ¡ sendo tomada **agora**. Articule
-claramente as principais motivaÃ§Ãµes, necessidades ou problemas que tornam esta
-decisÃ£o de arquitetura necessÃ¡ria. Pense nas razÃµes e pressÃµes subjacentes.}
+{Esta seção explica **por que** esta decisão está sendo tomada **agora**. Articule
+claramente as principais motivações, necessidades ou problemas que tornam esta
+decisão de arquitetura necessária. Pense nas razões e pressões subjacentes.}
 
 * {ex.: Estamos desenvolvendo uma nova funcionalidade/capacidade que precisa...}
 
-* {ex.: Precisamos melhorar desempenho, acessibilidade, remover dÃ­vida...}
+* {ex.: Precisamos melhorar desempenho, acessibilidade, remover dívida...}
 
-* {ex.: Feedback de usuÃ¡rios sugere...}
+* {ex.: Feedback de usuários sugere...}
 
-* {ex.: A abordagem atual impÃµe estas limitaÃ§Ãµes...}
+* {ex.: A abordagem atual impõe estas limitações...}
 
-## OpÃ§Ãµes
+## Opções
 
-{Ã‰ aqui que vocÃª lista as diferentes opÃ§Ãµes que estÃ¡ considerando. Atenha-se aos
-fatos e evite opiniÃµes; a prÃ³xima seÃ§Ã£o cobre a anÃ¡lise. Inclua uma descriÃ§Ã£o
-concisa, links para documentaÃ§Ã£o ou exemplos relevantes.
+{É aqui que você lista as diferentes opções que está considerando. Atenha-se aos
+fatos e evite opiniões; a próxima seção cobre a análise. Inclua uma descrição
+concisa, links para documentação ou exemplos relevantes.
 
-Inclua todas as alternativas significativas que vocÃª explorou, mesmo que elas
-nÃ£o tenham sido escolhidas no fim. O objetivo Ã© dar aos leitores uma compreensÃ£o
-clara e imparcial de cada alternativa antes de vocÃª entrar na avaliaÃ§Ã£o.}
+Inclua todas as alternativas significativas que você explorou, mesmo que elas
+não tenham sido escolhidas no fim. O objetivo é dar aos leitores uma compreensão
+clara e imparcial de cada alternativa antes de você entrar na avaliação.}
 
-### {TÃ­tulo da opÃ§Ã£o 1}
+### {Título da opção 1}
 
-{Descreva a opÃ§Ã£o, forneÃ§a um resumo, liste os fatos, forneÃ§a links etc.}
+{Descreva a opção, forneça um resumo, liste os fatos, forneça links etc.}
 
-### {TÃ­tulo da opÃ§Ã£o n}
+### {Título da opção n}
 
 ...
 
-## AnÃ¡lise de opÃ§Ãµes
+## Análise de opções
 
-{Ã‰ aqui que vocÃª avalia criticamente cada opÃ§Ã£o apresentada na seÃ§Ã£o *OpÃ§Ãµes*.
-Para cada opÃ§Ã£o, forneÃ§a uma visÃ£o equilibrada de suas vantagens, desvantagens e
-quaisquer outras consideraÃ§Ãµes ou trade-offs relevantes. Seja especÃ­fico e,
-quando possÃ­vel, relacione seus pontos de volta aos *Direcionadores*.
+{É aqui que você avalia criticamente cada opção apresentada na seção *Opções*.
+Para cada opção, forneça uma visão equilibrada de suas vantagens, desvantagens e
+quaisquer outras considerações ou trade-offs relevantes. Seja específico e,
+quando possível, relacione seus pontos de volta aos *Direcionadores*.
 
 Considere aspectos como:
 
-* Custo (desenvolvimento, operaÃ§Ã£o, licenciamento)
+* Custo (desenvolvimento, operação, licenciamento)
 
-* Complexidade (implementaÃ§Ã£o, manutenÃ§Ã£o, curva de aprendizado)
+* Complexidade (implementação, manutenção, curva de aprendizado)
 
-* Riscos (tÃ©cnicos, operacionais, seguranÃ§a)
+* Riscos (técnicos, operacionais, segurança)
 
-* Alinhamento com princÃ­pios de arquitetura ou padrÃµes existentes
+* Alinhamento com princípios de arquitetura ou padrões existentes
 
 * Impacto em desempenho, escalabilidade, usabilidade, manutenibilidade,
-    seguranÃ§a etc.
+    segurança etc.
 
-Inclua quantas declaraÃ§Ãµes de PrÃ³s/Contras/Outros forem necessÃ¡rias.
+Inclua quantas declarações de Prós/Contras/Outros forem necessárias.
 }
 
-### {AvaliaÃ§Ã£o da opÃ§Ã£o 1}
+### {Avaliação da opção 1}
 
-* PrÃ³: {Uma vantagem ou benefÃ­cio especÃ­fico desta opÃ§Ã£o.}
+* Pró: {Uma vantagem ou benefício específico desta opção.}
 
-* Contra: {Uma desvantagem, risco ou custo especÃ­fico associado a esta opÃ§Ã£o.}
+* Contra: {Uma desvantagem, risco ou custo específico associado a esta opção.}
 
-* Outro: {Um ponto relevante que nÃ£o Ã© estritamente um prÃ³ ou contra.}
+* Outro: {Um ponto relevante que não é estritamente um pró ou contra.}
 
-### {AvaliaÃ§Ã£o da opÃ§Ã£o n}
+### {Avaliação da opção n}
 
 ...
 
-## RecomendaÃ§Ã£o
+## Recomendação
 
-{Ã‰ aqui que vocÃª declara claramente a decisÃ£o final e nomeia explicitamente a
-opÃ§Ã£o selecionada. Explique em detalhes **por que** esta opÃ§Ã£o foi escolhida.
-VocÃª deve articular claramente como a opÃ§Ã£o escolhida atende melhor aos
+{É aqui que você declara claramente a decisão final e nomeia explicitamente a
+opção selecionada. Explique em detalhes **por que** esta opção foi escolhida.
+Você deve articular claramente como a opção escolhida atende melhor aos
 *Direcionadores* e cumpre os principais requisitos ou resolve o problema
 declarado.}
 
-### ConsequÃªncias
+### Consequências
 
-{Esta seÃ§Ã£o Ã© **opcional**.}
+{Esta seção é **opcional**.}
 
-{Agora que uma decisÃ£o foi tomada, quais sÃ£o os resultados e impactos esperados,
-tanto positivos quanto negativos? Quais limitaÃ§Ãµes, custos ou riscos conhecidos
-estÃ£o sendo aceitos ao tomar esta decisÃ£o? Como esta decisÃ£o afetarÃ¡ diferentes
-partes interessadas, outros sistemas, prÃ¡ticas de desenvolvimento, procedimentos
-operacionais ou experiÃªncia do usuÃ¡rio?}
+{Agora que uma decisão foi tomada, quais são os resultados e impactos esperados,
+tanto positivos quanto negativos? Quais limitações, custos ou riscos conhecidos
+estão sendo aceitos ao tomar esta decisão? Como esta decisão afetará diferentes
+partes interessadas, outros sistemas, práticas de desenvolvimento, procedimentos
+operacionais ou experiência do usuário?}
 
-* PrÃ³: {Um resultado positivo ou benefÃ­cio especÃ­fico esperado desta decisÃ£o.}
+* Pró: {Um resultado positivo ou benefício específico esperado desta decisão.}
 
-* Contra: {Uma desvantagem, custo ou risco especÃ­fico aceito como resultado
-    desta decisÃ£o. }
+* Contra: {Uma desvantagem, custo ou risco específico aceito como resultado
+    desta decisão. }
 
-* Outro: {Uma consequÃªncia que nÃ£o Ã© estritamente um prÃ³ ou contra.}
+* Outro: {Uma consequência que não é estritamente um pró ou contra.}
 
-### ConfirmaÃ§Ã£o
+### Confirmação
 
-{Esta seÃ§Ã£o Ã© **opcional**.}
+{Esta seção é **opcional**.}
 
-{Descreva como a implementaÃ§Ã£o desta decisÃ£o serÃ¡ verificada e como a
-conformidade contÃ­nua serÃ¡ assegurada. Isso ajuda a demonstrar que a decisÃ£o nÃ£o
-Ã© apenas teÃ³rica, mas serÃ¡ colocada em prÃ¡tica e monitorada ativamente.
+{Descreva como a implementação desta decisão será verificada e como a
+conformidade contínua será assegurada. Isso ajuda a demonstrar que a decisão não
+é apenas teórica, mas será colocada em prática e monitorada ativamente.
 
-Como vocÃª verificarÃ¡ se a decisÃ£o foi implementada corretamente? (ex.: revisÃµes
-de cÃ³digo, testes especÃ­ficos, demonstraÃ§Ãµes, revisÃ£o por pares).
+Como você verificará se a decisão foi implementada corretamente? (ex.: revisões
+de código, testes específicos, demonstrações, revisão por pares).
 
-Como a adesÃ£o a esta decisÃ£o serÃ¡ mantida ao longo do tempo? (ex.: verificaÃ§Ãµes
-automatizadas, auditorias periÃ³dicas, atualizaÃ§Ãµes nas diretrizes da equipe,
+Como a adesão a esta decisão será mantida ao longo do tempo? (ex.: verificações
+automatizadas, auditorias periódicas, atualizações nas diretrizes da equipe,
 treinamento).
 
-HÃ¡ mÃ©tricas ou indicadores especÃ­ficos que mostrarÃ£o que a decisÃ£o estÃ¡
-alcanÃ§ando os resultados positivos pretendidos? (ex.: benchmarks de desempenho,
-taxas de adoÃ§Ã£o, reduÃ§Ã£o de erros especÃ­ficos, pontuaÃ§Ãµes de feedback de
-usuÃ¡rios).
+Há métricas ou indicadores específicos que mostrarão que a decisão está
+alcançando os resultados positivos pretendidos? (ex.: benchmarks de desempenho,
+taxas de adoção, redução de erros específicos, pontuações de feedback de
+usuários).
 
-Quem Ã© responsÃ¡vel por supervisionar isso e o que acontece se a decisÃ£o nÃ£o for
+Quem é responsável por supervisionar isso e o que acontece se a decisão não for
 seguida?}
 
-## Mais informaÃ§Ãµes
+## Mais informações
 
-{Esta seÃ§Ã£o Ã© **opcional**.}
+{Esta seção é **opcional**.}
 
-{Use esta seÃ§Ã£o para fornecer qualquer informaÃ§Ã£o suplementar que apoie a
-decisÃ£o, acrescente contexto ou oriente aÃ§Ãµes futuras. Links para outras
-decisÃµes e recursos tambÃ©m podem aparecer aqui.
+{Use esta seção para fornecer qualquer informação suplementar que apoie a
+decisão, acrescente contexto ou oriente ações futuras. Links para outras
+decisões e recursos também podem aparecer aqui.
 
-VocÃª poderia observar brevemente quem esteve envolvido no processo de tomada de
-decisÃ£o e se/como o consenso foi alcanÃ§ado. Talvez vocÃª tambÃ©m queira sugerir
-um prazo ou eventos especÃ­ficos que possam motivar uma reavaliaÃ§Ã£o desta decisÃ£o
+Você poderia observar brevemente quem esteve envolvido no processo de tomada de
+decisão e se/como o consenso foi alcançado. Talvez você também queira sugerir
+um prazo ou eventos específicos que possam motivar uma reavaliação desta decisão
 no futuro.}

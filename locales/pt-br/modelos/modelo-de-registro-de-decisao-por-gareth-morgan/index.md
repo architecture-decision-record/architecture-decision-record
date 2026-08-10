@@ -1,6 +1,6 @@
-# [000] TÃ­tulo
-*Atribua um nÃºmero a cada ADR para facilitar referÃªncia e catalogaÃ§Ã£o* \
-*NOTA: Todo texto em itÃ¡lico fornece dicas e deve ser removido na produÃ§Ã£o*
+# [000] Título
+*Atribua um número a cada ADR para facilitar referência e catalogação* \
+*NOTA: Todo texto em itálico fornece dicas e deve ser removido na produção*
 
 ## Status - RASCUNHO / ATIVO / OBSOLETO por [000] / SUBSTITUI [000]
 
@@ -8,43 +8,43 @@
 *Descreva brevemente o(s) problema(s) que esta ADR pretende abordar e por que esses problemas existem.*
 
 ## Abordagem decidida
-*Detalhe a decisÃ£o arquiteturalmente significativa que foi / serÃ¡ tomada e descreva como ela aborda os problemas descritos na seÃ§Ã£o Contexto.*
+*Detalhe a decisão arquiteturalmente significativa que foi / será tomada e descreva como ela aborda os problemas descritos na seção Contexto.*
 
-## ConsequÃªncias
-*Qual Ã© o impacto desta decisÃ£o nas caracterÃ­sticas de arquitetura e nos requisitos funcionais do sistema?*
+## Consequências
+*Qual é o impacto desta decisão nas características de arquitetura e nos requisitos funcionais do sistema?*
 
-## GovernanÃ§a
-*Como os resultados desta decisÃ£o serÃ£o monitorados?* \
-*Como a conformidade com esta decisÃ£o serÃ¡ assegurada?*
+## Governança
+*Como os resultados desta decisão serão monitorados?* \
+*Como a conformidade com esta decisão será assegurada?*
 
-## AnÃ¡lise de opÃ§Ãµes
-*Se aplicÃ¡vel, inclua ou vincule qualquer anÃ¡lise de trade-offs realizada para chegar Ã  decisÃ£o tomada neste documento.*
+## Análise de opções
+*Se aplicável, inclua ou vincule qualquer análise de trade-offs realizada para chegar à decisão tomada neste documento.*
 
 ### Chave
-*Opcional: ForneÃ§a auxÃ­lios visuais para as partes interessadas que possam ajudar a identificar rapidamente os trade-offs positivos e negativos - por exemplo, destaques simples de semÃ¡foro com prefixos positivos ou negativos.*
+*Opcional: Forneça auxílios visuais para as partes interessadas que possam ajudar a identificar rapidamente os trade-offs positivos e negativos - por exemplo, destaques simples de semáforo com prefixos positivos ou negativos.*
 
-Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indica um bom encaixe, piorando atÃ© <span style="background-color:#f1c232; color:black;">Ã¢mbar</span>, com <span style="background-color:#e06666; color:black;">vermelho</span> sendo o pior encaixe. \
-\+ indica um comentÃ¡rio de impacto positivo \
-\- indica um comentÃ¡rio de impacto negativo
+Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indica um bom encaixe, piorando até <span style="background-color:#f1c232; color:black;">âmbar</span>, com <span style="background-color:#e06666; color:black;">vermelho</span> sendo o pior encaixe. \
+\+ indica um comentário de impacto positivo \
+\- indica um comentário de impacto negativo
 
-### VisÃ£o geral de alto nÃ­vel
-*Em uma olhada, quÃ£o bem cada opÃ§Ã£o se ajusta ao contexto do problema?*
+### Visão geral de alto nível
+*Em uma olhada, quão bem cada opção se ajusta ao contexto do problema?*
 
 <table>
   <thead>
     <tr>
       <th>Resumo</th>
-      <th>OpÃ§Ã£o 1</th>
-      <th>OpÃ§Ã£o 2</th>
-      <th>OpÃ§Ã£o 3</th>
+      <th>Opção 1</th>
+      <th>Opção 2</th>
+      <th>Opção 3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><i>Facilidade de implementaÃ§Ã£o</i></td>
+      <td><i>Facilidade de implementação</i></td>
       <td>
         <span style="background-color:#4bce97; color:black; padding-right:5px">
-          + Muito fÃ¡cil
+          + Muito fácil
         </span>
       </td>
       <td>
@@ -54,7 +54,7 @@ Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indic
       </td>
       <td>
         <span style="background-color:#e06666; color:black; padding-right:5px">
-            - Grande implementaÃ§Ã£o que exige conhecimento especializado
+            - Grande implementação que exige conhecimento especializado
         </span>
       </td>
     </tr>
@@ -62,7 +62,7 @@ Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indic
       <td><i>Prazos</i></td>
       <td>
         <span style="background-color:#4bce97; color:black; padding-right:5px">
-            + Muito rÃ¡pido
+            + Muito rápido
         </span>
       </td>
        <td>
@@ -77,20 +77,20 @@ Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indic
       </td>
     </tr>
     <tr>
-      <td><i>Valor estratÃ©gico</i></td>
+      <td><i>Valor estratégico</i></td>
       <td>
         <span style="background-color:#e06666; color:black; padding-right:5px">
-            - Sem valor estratÃ©gico, puramente tÃ¡tico
+            - Sem valor estratégico, puramente tático
         </span>
       </td>
        <td>
         <span style="background-color:#f1c232; color:black; padding-right:5px">
-            + Melhora ligeiramente a experiÃªncia de onboarding do cliente
+            + Melhora ligeiramente a experiência de onboarding do cliente
         </span>
       </td>
       <td>
         <span style="background-color:#4bce97; color:black; padding-right:5px">
-            + Ideal para a prÃ³xima fusÃ£o
+            + Ideal para a próxima fusão
         </span>
       </td>
     </tr>
@@ -98,32 +98,32 @@ Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indic
 </table>
 
 ### Requisitos funcionais
-*QuÃ£o bem cada opÃ§Ã£o potencial atende aos requisitos funcionais desejados?*
+*Quão bem cada opção potencial atende aos requisitos funcionais desejados?*
 
 <table>
   <thead>
     <tr>
-      <th>CenÃ¡rio</th>
-      <th><i>OpÃ§Ã£o 1</i></th>
-      <th><i>OpÃ§Ã£o 2</i></th>
-      <th><i>OpÃ§Ã£o 3</i></th>
+      <th>Cenário</th>
+      <th><i>Opção 1</i></th>
+      <th><i>Opção 2</i></th>
+      <th><i>Opção 3</i></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><i>CenÃ¡rio 1</i></td>
+      <td><i>Cenário 1</i></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><i>CenÃ¡rio 2</i></td>
+      <td><i>Cenário 2</i></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><i>CenÃ¡rio 3</i></td>
+      <td><i>Cenário 3</i></td>
       <td></td>
       <td></td>
       <td></td>
@@ -131,19 +131,19 @@ Um fundo <span style="background-color:#4bce97; color:black;">verde</span> indic
   </tbody>
 </table>
 
-*Opcional: Adicione linhas / outra tabela para cobrir cenÃ¡rios futuros conhecidos.*
+*Opcional: Adicione linhas / outra tabela para cobrir cenários futuros conhecidos.*
 
-### Requisitos nÃ£o funcionais
-*QuÃ£o bem cada opÃ§Ã£o potencial atende Ã s caracterÃ­sticas de arquitetura desejadas?
-Nota: 'CaracterÃ­sticas de arquitetura' seria um tÃ­tulo mais apropriado, mas adapte isto Ã  linguagem familiar ao seu domÃ­nio de negÃ³cio.*
+### Requisitos não funcionais
+*Quão bem cada opção potencial atende às características de arquitetura desejadas?
+Nota: 'Características de arquitetura' seria um título mais apropriado, mas adapte isto à linguagem familiar ao seu domínio de negócio.*
 
 <table>
   <thead>
     <tr>
-      <th>CaracterÃ­stica </br> de arquitetura</th>
-      <th><i>OpÃ§Ã£o 1</i></th>
-      <th><i>OpÃ§Ã£o 2</i></th>
-      <th><i>OpÃ§Ã£o 3</i></th>
+      <th>Característica </br> de arquitetura</th>
+      <th><i>Opção 1</i></th>
+      <th><i>Opção 2</i></th>
+      <th><i>Opção 3</i></th>
     </tr>
   </thead>
   <tbody>
@@ -168,4 +168,4 @@ Nota: 'CaracterÃ­sticas de arquitetura' seria um tÃ­tulo mais apropriado, ma
   </tbody>
 </table>
 
-*Opcional: Adicione ou vincule definiÃ§Ãµes das caracterÃ­sticas de arquitetura conforme se aplicam ao seu negÃ³cio / produto.*
+*Opcional: Adicione ou vincule definições das características de arquitetura conforme se aplicam ao seu negócio / produto.*
