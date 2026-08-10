@@ -461,6 +461,12 @@ decisions, and more.
 Works with any CI system (GitLab, Jenkins, CircleCI) and as a pre-commit hook.
 Open source. MIT license.
 
+[ADR Guard](https://github.com/chohan-sarmad-ali/delivery-gates) is a GitHub
+Action that fails a pull request when watched code paths change without an
+architecture decision record being added or updated. Waivers are explicit: an
+`ADR-Exempt:` line with a reason passes the gate and is written into the job
+summary. Template-agnostic, no dependencies. Open source. MIT license.
+
 ## For more information
 
 Introduction:
@@ -516,6 +522,8 @@ Tools:
 - [Mneme HQ - ADR enforcement for AI coding agents](https://github.com/TheoV823/mneme)
 
 - [Keep the Why - a repo-native agent skill that continuously captures, or retrospectively recovers, the reasoning behind a codebase](https://github.com/oliver-zehentleitner/keep-the-why)
+
+- [ADR Guard - GitHub Action that fails a pull request changing watched code without an architecture decision record](https://github.com/chohan-sarmad-ali/delivery-gates)
 
 Company-Specific Guidance:
 
