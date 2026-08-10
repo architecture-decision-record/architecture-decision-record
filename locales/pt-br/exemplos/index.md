@@ -42,44 +42,42 @@ Exemplos em português brasileiro:
 
 * [Microsoft Azure DevOps](microsoft-azure-devops)
 
-Exemplos ainda disponíveis em inglês:
+* [Monorepo vs multirepo](monorepo-vs-multirepo)
 
-* [Monorepo vs multirepo](../../en/examples/monorepo-vs-multirepo/)
+* [Banco de dados MySQL](banco-de-dados-mysql)
 
-* [MySQL database](../../en/examples/mysql-database/)
+* [Banco de dados PostgreSQL](banco-de-dados-postgresql)
 
-* [PostgreSQL database](../../en/examples/postgresql-database/)
+* [Editores de código de programação](editores-de-codigo-de-programacao)
 
-* [Programming code editors](../../en/examples/programming-code-editors/)
+* [Linguagens de programação](linguagens-de-programacao)
 
-* [Programming languages](../../en/examples/programming-languages/)
+* [Framework Python Django](framework-python-django)
 
-* [Python Django framework](../../en/examples/python-django-framework/)
+* [Linguagem de programação Python](linguagem-de-programacao-python)
 
-* [Python programming language](../../en/examples/python-programming-language/)
+* [Biblioteca JavaScript front-end React](biblioteca-front-end-javascript-react)
 
-* [React front end JavaScript library](../../en/examples/react-front-end-javascript-library/)
+* [Framework Ruby on Rails](framework-ruby-on-rails)
 
-* [Ruby on Rails framework](../../en/examples/ruby-on-rails-framework/)
+* [Linguagem de programação Rust](linguagem-de-programacao-rust)
 
-* [Rust programming language](../../en/examples/rust-programming-language/)
+* [Armazenamento de segredos](armazenamento-de-segredos)
 
-* [Secrets storage](../../en/examples/secrets-storage/)
+* [snake_case vs. camelCase para API REST](snake-case-vs-camelcase-para-api-rest)
 
-* [snake_case v. camelCase for a REST API](../../en/examples/snake-case-v-camelcase-for-a-rest-api/)
+* [Componentes Svelte](componentes-svelte)
 
-* [Svelte components](../../en/examples/svelte-components/)
+* [Biblioteca JavaScript front-end Svelte](biblioteca-front-end-javascript-svelte)
 
-* [Svelte front end JavaScript library](../../en/examples/svelte-front-end-javascript-library/)
+* [Framework SvelteKit](framework-sveltekit)
 
-* [SvelteKit framework](../../en/examples/sveltekit-framework/)
+* [Tailwind CSS](tailwind-css)
 
-* [Tailwind CSS](../../en/examples/tailwind-css/)
+* [Formato de timestamp](formato-de-timestamp)
 
-* [Timestamp format](../../en/examples/timestamp-format/)
+* [Biblioteca JavaScript front-end Vue](biblioteca-front-end-javascript-vue)
 
-* [Vue front end JavaScript library](../../en/examples/vue-front-end-javascript-library/)
+* [Framework web full-stack batteries included para produto de startup](framework-web-full-stack-batteries-included-para-produto-de-startup)
 
-* [Web application framework, batteries included, full stack, for a startup product](../../en/examples/web-application-framework-batteries-included-full-stack-for-a-startup-product/)
-
-* [Work from home](../../en/examples/work-from-home/)
+* [Trabalho remoto](trabalho-remoto)
