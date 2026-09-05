@@ -1,0 +1,279 @@
+{
+  "guide": [
+    {
+      "slug": "what-is-an-architecture-decision-record",
+      "title": "What is an architecture decision record?"
+    },
+    {
+      "slug": "how-to-start-using-adrs",
+      "title": "How to start using ADRs"
+    },
+    {
+      "slug": "how-to-start-using-adrs-with-tools",
+      "title": "How to start using ADRs with tools"
+    },
+    {
+      "slug": "how-to-start-using-adrs-with-git",
+      "title": "How to start using ADRs with git"
+    },
+    {
+      "slug": "claude-code-skills-for-adrs",
+      "title": "Claude Code skills for ADRs"
+    },
+    {
+      "slug": "file-name-conventions-for-adrs",
+      "title": "File name conventions for ADRs"
+    },
+    {
+      "slug": "suggestions-for-writing-good-adrs",
+      "title": "Suggestions for writing good ADRs"
+    },
+    {
+      "slug": "adr-example-templates",
+      "title": "ADR example templates"
+    },
+    {
+      "slug": "teamwork-advice-for-adrs",
+      "title": "Teamwork advice for ADRs"
+    },
+    {
+      "slug": "teamwork-questions-for-adrs",
+      "title": "Teamwork questions for ADRs"
+    },
+    {
+      "slug": "next-step-concepts-for-adrs",
+      "title": "Next step concepts for ADRs"
+    },
+    {
+      "slug": "architecture-diagrams-and-views-and-viewpoints",
+      "title": "Architecture diagrams & views & viewpoints"
+    },
+    {
+      "slug": "fitness-functions-for-decisions-as-code",
+      "title": "Fitness functions for decisions as code"
+    },
+    {
+      "slug": "decision-guardrails-for-pull-requests",
+      "title": "Decision guardrails for pull requests"
+    },
+    {
+      "slug": "for-more-information",
+      "title": "For more information"
+    }
+  ],
+  "templates": [
+    {
+      "slug": "decision-record-template-by-jeff-tyree-and-art-akerman",
+      "title": "ADR template by Jeff Tyree and Art Akerman",
+      "description": "more sophisticated"
+    },
+    {
+      "slug": "decision-record-template-by-michael-nygard",
+      "title": "ADR template by Michael Nygard",
+      "description": "simple and popular"
+    },
+    {
+      "slug": "decision-record-template-for-alexandrian-pattern",
+      "title": "ADR template for Alexandrian pattern",
+      "description": "simple with context specifics"
+    },
+    {
+      "slug": "decision-record-template-for-business-case",
+      "title": "ADR template for business case",
+      "description": "more MBA-oriented, with costs, SWOT, and more opinions"
+    },
+    {
+      "slug": "decision-record-template-of-the-madr-project",
+      "title": "ADR template of the Markdown Any Decision Records (MADR) project",
+      "description": "both simple and elaborate version; the latter emphasizes options and their pros and cons"
+    },
+    {
+      "slug": "decision-record-template-using-planguage",
+      "title": "ADR template using Planguage",
+      "description": "more quality assurance oriented"
+    },
+    {
+      "slug": "decision-record-template-by-arc42",
+      "title": "Decision record template by arc42"
+    },
+    {
+      "slug": "decision-record-template-by-edgex",
+      "title": "Decision record template by EdgeX"
+    },
+    {
+      "slug": "decision-record-template-by-gareth-morgan",
+      "title": "Decision record template by Gareth Morgan"
+    },
+    {
+      "slug": "decision-record-template-by-gig-cymru-nhs-wales",
+      "title": "Decision record template by GIG Cymru NHS Wales"
+    },
+    {
+      "slug": "decision-record-template-for-important-technical-decisions",
+      "title": "Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga",
+      "description": "lean and decision-first, optimized for fast executive review"
+    }
+  ],
+  "examples": [
+    {
+      "slug": "svelte-components",
+      "title": "Architecture Decision Record (ADR) for Svelte Components"
+    },
+    {
+      "slug": "amazon-web-services",
+      "title": "Architecture Decision Record for Amazon Web Services"
+    },
+    {
+      "slug": "google-cloud-platform",
+      "title": "Architecture Decision Record for Google Cloud Platform"
+    },
+    {
+      "slug": "python-django-framework",
+      "title": "Architecture Decision Record for Python Django Framework"
+    },
+    {
+      "slug": "api-using-json-v-grpc",
+      "title": "Architecture Decision Record: API using JSON v. gRPC"
+    },
+    {
+      "slug": "authentication-authorization-options",
+      "title": "Architecture Decision Record: authentication authorization options"
+    },
+    {
+      "slug": "chart-library-toolkit-for-data-visualization-using-typescript-and-json",
+      "title": "Architecture Decision Record: chart library toolkit for data visualization using TypeScript and JSON"
+    },
+    {
+      "slug": "choosing-a-database-technology",
+      "title": "Architecture Decision Record: Choosing a Database Technology"
+    },
+    {
+      "slug": "css-framework",
+      "title": "Architecture Decision Record: CSS framework"
+    },
+    {
+      "slug": "docker-swarm-container-orchestration",
+      "title": "Architecture Decision Record: Docker Swarm Container Orchestration"
+    },
+    {
+      "slug": "go-programming-language",
+      "title": "Architecture Decision Record: Go programming language"
+    },
+    {
+      "slug": "java-programming-language",
+      "title": "Architecture Decision Record: Java programming language"
+    },
+    {
+      "slug": "kubernetes-container-orchestration",
+      "title": "Architecture Decision Record: Kubernetes container orchestration"
+    },
+    {
+      "slug": "microsoft-azure-cloud-infrastructure",
+      "title": "Architecture Decision Record: Microsoft Azure cloud infrastructure\""
+    },
+    {
+      "slug": "mysql-database",
+      "title": "Architecture Decision Record: MySQL database"
+    },
+    {
+      "slug": "postgresql-database",
+      "title": "Architecture Decision Record: PostgreSQL database"
+    },
+    {
+      "slug": "programming-code-editors",
+      "title": "Architecture Decision Record: Programming Code Editors"
+    },
+    {
+      "slug": "python-programming-language",
+      "title": "Architecture Decision Record: Python programming language"
+    },
+    {
+      "slug": "react-front-end-javascript-library",
+      "title": "Architecture Decision Record: React Front-End JavaScript Library"
+    },
+    {
+      "slug": "ruby-on-rails-framework",
+      "title": "Architecture Decision Record: Ruby on Rails Framework"
+    },
+    {
+      "slug": "rust-programming-language",
+      "title": "Architecture Decision Record: Rust programming language"
+    },
+    {
+      "slug": "snake-case-v-camelcase-for-a-rest-api",
+      "title": "Architecture Decision Record: snake_case v. camelCase for a REST API?"
+    },
+    {
+      "slug": "svelte-front-end-javascript-library",
+      "title": "Architecture Decision Record: Svelte Front-end JavaScript Library"
+    },
+    {
+      "slug": "sveltekit-framework",
+      "title": "Architecture Decision Record: SvelteKit framework"
+    },
+    {
+      "slug": "tailwind-css",
+      "title": "Architecture Decision Record: Tailwind CSS"
+    },
+    {
+      "slug": "vue-front-end-javascript-library",
+      "title": "Architecture Decision Record: Vue front-end JavaScript library"
+    },
+    {
+      "slug": "web-application-framework-batteries-included-full-stack-for-a-startup-product",
+      "title": "Architecture Decision Record: web application framework, batteries included, full stack, for a startup product"
+    },
+    {
+      "slug": "browser-automation-framework-for-e2e-testing-playwright-vs-selenium",
+      "title": "browser-automation-framework-for-e2e-testing-playwright-vs-selenium"
+    },
+    {
+      "slug": "4-day-work-week",
+      "title": "Decision record for 4-day work-week"
+    },
+    {
+      "slug": "agile-software-development",
+      "title": "Decision record for agile software development"
+    },
+    {
+      "slug": "continuous-integration",
+      "title": "Decision Record for continuous integration"
+    },
+    {
+      "slug": "high-trust-teamwork",
+      "title": "Decision Record for High Trust Teamwork"
+    },
+    {
+      "slug": "work-from-home",
+      "title": "Decision record for work from home"
+    },
+    {
+      "slug": "environment-variable-configuration",
+      "title": "Environment variable configuration"
+    },
+    {
+      "slug": "metrics-monitors-alerts",
+      "title": "Metrics, monitors, alerts"
+    },
+    {
+      "slug": "microsoft-azure-devops",
+      "title": "Microsoft Azure DevOps"
+    },
+    {
+      "slug": "monorepo-vs-multirepo",
+      "title": "Monorepo vs multirepo"
+    },
+    {
+      "slug": "programming-languages",
+      "title": "Programming languages"
+    },
+    {
+      "slug": "secrets-storage",
+      "title": "Secrets storage"
+    },
+    {
+      "slug": "timestamp-format",
+      "title": "Timestamp format"
+    }
+  ]
+}

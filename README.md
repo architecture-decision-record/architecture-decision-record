@@ -16,12 +16,15 @@ An architecture decision record (ADR) is a document that captures an important a
 > [!IMPORTANT]
 > Do your own due dilligence for these resources before using them in any critical systems.
 
+Website: [architecture-decision-record.github.io](https://architecture-decision-record.github.io/) — this README, plus every template and example, as a browsable site.
+
 Contents:
 
 - [What is an architecture decision record?](#what-is-an-architecture-decision-record)
 - [How to start using ADRs](#how-to-start-using-adrs)
 - [How to start using ADRs with tools](#how-to-start-using-adrs-with-tools)
 - [How to start using ADRs with git](#how-to-start-using-adrs-with-git)
+- [Claude Code skills for ADRs](#claude-code-skills-for-adrs)
 - [File name conventions for ADRs](#file-name-conventions-for-adrs)
 - [Suggestions for writing good ADRs](#suggestions-for-writing-good-adrs)
 - [ADR example templates](#adr-example-templates)
@@ -185,6 +188,16 @@ Write anything you want in the ADR. See the templates in this repository for ide
 Commit the ADR to your git repo.
 
 </div>
+
+## Claude Code skills for ADRs
+
+This repository ships two [Claude Code](https://claude.com/claude-code) skills under [`skills/`](skills/), so an AI coding agent can write and maintain ADRs the way this project recommends:
+
+- [`architecture-decision-record-skill`](skills/architecture-decision-record-skill/) — general purpose, for anyone writing an ADR in any project. Helps decide whether a decision needs an ADR, sets up an `adr/` or `decisions/` directory, names the file, picks a template from the eleven bundled skeletons, and writes solid Context/Decision/Consequences sections.
+
+- [`architecture-decision-record-maintainer-skill`](skills/architecture-decision-record-maintainer-skill/) — for maintainers of this repository specifically. Documents the repo's layout, the README/locales mirroring convention, and the exact steps for adding a new template, example, or tool link.
+
+To use a skill, copy its folder into `.claude/skills/` at the root of the repository you're working in (or into `~/.claude/skills/` to make it available in every project), then ask Claude Code to write or review an ADR.
 
 <div class="include" data-path="locales/en/documents/file-name-conventions-for-adrs">
 

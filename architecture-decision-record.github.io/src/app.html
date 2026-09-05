@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- data-theme default kept in sync with DEFAULT_THEME_ID in src/lib/data/themes.ts -->
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" id="lily-theme" data-lily-theme-picker="theme" href="/themes/light.css" />
+		<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%90%3C/text%3E%3C/svg%3E" />
+		<script>
+			// Apply the stored theme and text-size choices before first paint, so
+			// returning visitors never see a flash of the wrong theme or scale.
+			// Mirrors ThemePicker.svelte / TextSizePicker.svelte, which are thin
+			// wrappers around Lily's theme-picker / text-size-picker helpers —
+			// both persist a slug, not a computed value, so this script only
+			// ever sets data-* attributes, never CSS values directly (theme.css
+			// maps data-text-size to --user-font-scale).
+			(function () {
+				try {
+					var theme = localStorage.getItem('adr-theme');
+					if (theme) {
+						document.documentElement.dataset.theme = theme;
+						var link = document.getElementById('lily-theme');
+						if (link) link.href = '/themes/' + theme + '.css';
+					}
+					var textSize = localStorage.getItem('adr-text-size');
+					if (textSize) {
+						document.documentElement.dataset.textSize = textSize;
+					}
+				} catch (e) {
+					// localStorage unavailable (private browsing, disabled storage) — ignore.
+				}
+			})();
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

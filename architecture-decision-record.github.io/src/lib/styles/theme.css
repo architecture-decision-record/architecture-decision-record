@@ -1,0 +1,302 @@
+/* ============================================================================
+ * architecture-decision-record.github.io — site stylesheet
+ *
+ * Deliberately small. The active Lily theme (one of 45, swapped at runtime
+ * by ThemePicker.svelte via <link id="lily-theme">, default set in
+ * app.html) already styles every Lily catalog class hook — colour, border,
+ * radius, shadow, and typography tokens as `--color-*` and `--lily-*`
+ * custom properties. This file only adds:
+ *
+ *   1. Base page chrome the theme intentionally leaves alone (Lily is
+ *      headless about page composition): html/body, page-level layout,
+ *      sticky header, spacing between stacked components.
+ *   2. Prose typography for the rendered Markdown guide/template/example
+ *      pages (`.prose`), which isn't part of Lily's own catalog.
+ *   3. Site-specific hooks that aren't part of the Lily catalog at all
+ *      (.brand, .site-nav, .card-grid, .hero, .skill-card).
+ *   4. The data-text-size → --user-font-scale mapping TextSizePicker.svelte's
+ *      own doc comment describes: the picker only ever sets the data
+ *      attribute, the scale value lives here.
+ * ========================================================================= */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.visually-hidden,
+.share-picker-status {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+html {
+	font-size: calc(100% * var(--user-font-scale, 1));
+	scroll-behavior: smooth;
+}
+
+html[data-text-size='small'] {
+	--user-font-scale: 0.875;
+}
+html[data-text-size='large'] {
+	--user-font-scale: 1.125;
+}
+html[data-text-size='larger'] {
+	--user-font-scale: 1.25;
+}
+html[data-text-size='largest'] {
+	--user-font-scale: 1.375;
+}
+
+body {
+	margin: 0;
+	background: var(--color-base-100);
+	color: var(--color-base-content);
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+	line-height: 1.6;
+}
+
+a {
+	color: var(--color-primary);
+}
+
+.site-header-bar {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 0.75rem 0;
+	flex-wrap: wrap;
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.05rem;
+}
+
+.site-nav {
+	display: flex;
+	gap: 1.25rem;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+}
+
+.site-nav a {
+	text-decoration: none;
+	color: var(--color-base-content);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+	color: var(--color-primary);
+}
+
+.site-header-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-left: auto;
+}
+
+.icon-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: var(--radius-field, 0.5rem);
+	color: inherit;
+	text-decoration: none;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+	background: var(--color-base-200);
+}
+
+main {
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 2rem 1rem 4rem;
+}
+
+.site-footer {
+	border-top: 1px solid var(--lily-border, color-mix(in oklch, var(--color-base-content) 20%, transparent));
+	margin-top: 3rem;
+	padding: 2rem 0;
+	font-size: 0.9rem;
+	color: var(--lily-text-muted, var(--color-base-content));
+}
+
+.site-footer-notice {
+	opacity: 0.75;
+}
+
+.back-link {
+	display: inline-block;
+	margin-bottom: 1.5rem;
+	text-decoration: none;
+}
+
+/* --- Prose: typography for rendered Markdown content --- */
+.prose {
+	max-width: 42rem;
+}
+
+.prose :is(h1, h2, h3, h4) {
+	line-height: 1.25;
+}
+
+.prose h1 {
+	margin-top: 0;
+}
+
+.prose :is(ul, ol) {
+	padding-left: 1.5rem;
+}
+
+.prose pre {
+	background: var(--color-base-200);
+	padding: 1rem;
+	border-radius: var(--radius-box, 0.5rem);
+	overflow-x: auto;
+}
+
+.prose code {
+	background: var(--color-base-200);
+	padding: 0.1em 0.35em;
+	border-radius: 0.25em;
+}
+
+.prose pre code {
+	background: none;
+	padding: 0;
+}
+
+.prose blockquote {
+	border-left: 3px solid var(--color-primary);
+	margin-left: 0;
+	padding-left: 1rem;
+	color: var(--lily-text-muted, var(--color-base-content));
+}
+
+.prose table {
+	border-collapse: collapse;
+	width: 100%;
+	overflow-x: auto;
+	display: block;
+}
+
+.prose :is(th, td) {
+	border: 1px solid var(--lily-border, color-mix(in oklch, var(--color-base-content) 20%, transparent));
+	padding: 0.5rem;
+	text-align: left;
+}
+
+/* --- Card grids: guide / templates / examples indexes --- */
+.card-grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	gap: 1rem;
+}
+
+.card {
+	border: 1px solid var(--lily-border, color-mix(in oklch, var(--color-base-content) 20%, transparent));
+	border-radius: var(--radius-box, 0.5rem);
+	padding: 1rem;
+	background: var(--color-base-200);
+}
+
+.card-title {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.card-description {
+	margin: 0.5rem 0 0;
+	font-size: 0.9rem;
+	color: var(--lily-text-muted, var(--color-base-content));
+}
+
+/* --- Home page hero and skill spotlight cards --- */
+.hero {
+	padding: 2rem 0 1rem;
+}
+
+.hero h1 {
+	font-size: 2.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.hero p {
+	font-size: 1.15rem;
+	max-width: 42rem;
+	color: var(--lily-text-muted, var(--color-base-content));
+}
+
+.button-row {
+	display: flex;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin: 1.5rem 0;
+}
+
+.button {
+	display: inline-block;
+	padding: 0.6rem 1.1rem;
+	border-radius: var(--radius-field, 0.5rem);
+	background: var(--color-primary);
+	color: var(--color-primary-content);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.button.secondary {
+	background: var(--color-base-200);
+	color: var(--color-base-content);
+}
+
+.notice {
+	border: 1px solid var(--color-warning);
+	background: color-mix(in oklch, var(--color-warning) 15%, var(--color-base-100));
+	border-radius: var(--radius-box, 0.5rem);
+	padding: 1rem;
+	margin: 1.5rem 0;
+}
+
+.skill-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1.25rem;
+	margin: 1.5rem 0;
+}
+
+.skill-card {
+	border: 1px solid var(--lily-border, color-mix(in oklch, var(--color-base-content) 20%, transparent));
+	border-radius: var(--radius-box, 0.5rem);
+	padding: 1.25rem;
+	background: var(--color-base-200);
+}
+
+.skill-card h3 {
+	margin-top: 0;
+}
