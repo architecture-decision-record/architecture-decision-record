@@ -4,13 +4,17 @@
 // dynamic [slug] routes. Regenerate after `pnpm run content`, or whenever
 // src/content/ changes:
 //   pnpm run manifest
-import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+//
+// Reads only from src/content/ (never from the parent monorepo, e.g. no
+// "../README.md") because this script also runs as part of `pnpm run build`
+// in the standalone architecture-decision-record.github.io repo this
+// directory is published to via git subtree — there is no "../" there.
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
-const repoRoot = path.resolve(root, '..');
 const contentDir = path.resolve(root, 'src/content');
 const outFile = path.resolve(root, 'src/lib/manifest.json');
 
@@ -75,40 +79,20 @@ const examples = readSection('examples').sort((a, b) => a.title.localeCompare(b.
 
 // Each template's own H1 is a fill-in-the-blank placeholder for the ADRs
 // people will write with it (e.g. "[000] Title", "{Your Title Here}"), not
-// a description of the template itself — so title the template from
-// README.md's own "Templates:" list instead, e.g.
-// "[Decision record template by Michael Nygard](locales/en/templates/decision-record-template-by-michael-nygard/)".
-const readme = readFileSync(path.join(repoRoot, 'README.md'), 'utf-8');
-const templateTitles = new Map();
-const templateLinkRe = /\[([^\]]+)\]\(locales\/en\/templates\/([a-z0-9-]+)\/?\)/g;
-let titleMatch;
-while ((titleMatch = templateLinkRe.exec(readme))) {
-  templateTitles.set(titleMatch[2], titleMatch[1].trim());
-}
-for (const template of templates) {
-  const title = templateTitles.get(template.slug);
-  if (title) template.title = title;
-}
-templates.sort((a, b) => a.title.localeCompare(b.title));
-
-// Pull each template's short parenthetical description out of the guide's
-// own "ADR example templates" section, e.g.
-// "[Decision record template by Michael Nygard](locales/en/templates/decision-record-template-by-michael-nygard/) (simple and popular)"
-const templateDescriptions = new Map();
-const templatesGuideDoc = guide.find((g) => g.slug === 'adr-example-templates');
-if (templatesGuideDoc) {
-  const text = readFileSync(path.join(contentDir, 'guide', `${templatesGuideDoc.slug}.md`), 'utf-8');
-  const linkRe = /\[([^\]]+)\]\(locales\/en\/templates\/([a-z0-9-]+)\/?\)(?:\s*\(([^)]+)\))?/g;
-  let match;
-  while ((match = linkRe.exec(text))) {
-    const [, , slug, description] = match;
-    if (description) templateDescriptions.set(slug, description);
+// a description of the template itself — so override title (and
+// description, where README.md's own "ADR example templates" section gives
+// one) from the sidecar sync-content.mjs generates against README.md. See
+// that script's own comment for why this can't just read README.md here.
+const metaFile = path.join(contentDir, 'templates.meta.json');
+if (existsSync(metaFile)) {
+  const meta = JSON.parse(readFileSync(metaFile, 'utf-8'));
+  for (const template of templates) {
+    const entry = meta[template.slug];
+    if (entry?.title) template.title = entry.title;
+    if (entry?.description) template.description = entry.description;
   }
 }
-for (const template of templates) {
-  const description = templateDescriptions.get(template.slug);
-  if (description) template.description = description;
-}
+templates.sort((a, b) => a.title.localeCompare(b.title));
 
 const manifest = { guide, templates, examples };
 writeFileSync(outFile, JSON.stringify(manifest, null, 2) + '\n');

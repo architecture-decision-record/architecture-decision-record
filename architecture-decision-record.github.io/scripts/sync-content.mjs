@@ -51,10 +51,9 @@ function stripIncludeDivs(markdown) {
 }
 
 // --- Guide: one file per top-level `## Heading` section of README.md ---
-function syncGuide() {
-  const readmePath = path.join(repoRoot, 'README.md');
-  const readme = stripIncludeDivs(readFileSync(readmePath, 'utf8'));
-  const lines = readme.split('\n');
+function syncGuide(readme) {
+  const cleaned = stripIncludeDivs(readme);
+  const lines = cleaned.split('\n');
 
   const sections = [];
   let current = null;
@@ -79,6 +78,31 @@ function syncGuide() {
     writeFileSync(path.join(outDir, `${slug}.md`), `# ${section.title}\n\n${body}\n`);
   }
   console.log(`Synced ${sections.length} guide section(s) into src/content/guide/`);
+}
+
+// --- Template metadata sidecar ---
+// Each template's own H1 is a fill-in-the-blank placeholder for the ADRs
+// people will write with it (e.g. "[000] Title", "{Your Title Here}"), not
+// a description of the template itself — so title it from README.md's own
+// "Templates:" list instead, e.g. "[Decision record template by Michael
+// Nygard](locales/en/templates/decision-record-template-by-michael-nygard/)",
+// optionally overridden by the more polished text some templates also get
+// in the "## ADR example templates" section further down (which sometimes
+// also carries a short parenthetical description). This has to run here,
+// against the monorepo's own README.md, and be committed as a sidecar
+// (rather than read directly by generate-manifest.mjs) because that script
+// also runs standalone in the published architecture-decision-record.github.io
+// repo, which has no README.md of its own.
+function syncTemplateMetadata(readme) {
+  const meta = {};
+  const linkRe = /\[([^\]]+)\]\(locales\/en\/templates\/([a-z0-9-]+)\/?\)(?:\s*\(([^)]+)\))?/g;
+  let match;
+  while ((match = linkRe.exec(readme))) {
+    const [, title, slug, description] = match;
+    meta[slug] = { title: title.trim(), ...(description ? { description } : {}) };
+  }
+  writeFileSync(path.join(contentRoot, 'templates.meta.json'), JSON.stringify(meta, null, 2) + '\n');
+  console.log(`Wrote metadata for ${Object.keys(meta).length} template(s) into src/content/templates.meta.json`);
 }
 
 // --- Templates and examples: copy locales/en/<section>/<slug>/index.md ---
@@ -108,7 +132,9 @@ function syncLocaleSection(section) {
   console.log(`Synced ${count} ${section} file(s) into src/content/${section}/`);
 }
 
-syncGuide();
+const readme = readFileSync(path.join(repoRoot, 'README.md'), 'utf8');
+syncGuide(readme);
+syncTemplateMetadata(readme);
 syncLocaleSection('templates');
 syncLocaleSection('examples');
 
