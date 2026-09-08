@@ -1,5 +1,6 @@
 * [Cymraeg](cy/)
 * [English](en/)
+* [Português brasileiro](pt-br/)
 * [Española](es/)
 * [Français](fr/)
 * [한국인](ko/)
