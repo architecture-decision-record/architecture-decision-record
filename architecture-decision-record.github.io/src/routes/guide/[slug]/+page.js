@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import manifest from '$lib/manifest.json';
+import manifest from '#lib/manifest.json';
 
 export const prerender = true;
 

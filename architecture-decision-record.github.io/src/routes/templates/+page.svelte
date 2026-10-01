@@ -1,6 +1,6 @@
 <script>
-	import manifest from '$lib/manifest.json';
-	import CardLinkList from '$lib/components/CardLinkList.svelte';
+	import manifest from '#lib/manifest.json';
+	import CardLinkList from '#lib/components/CardLinkList.svelte';
 </script>
 
 <svelte:head>

@@ -7,7 +7,7 @@
 	import { ContainerWithFixedWidth, Header } from '@lilydesignsystem/svelte-headless';
 	import PickerBar, { DEFAULT_SIZES } from '@lilydesignsystem/svelte-picker-bar';
 	import type { ShareTarget } from '@lilydesignsystem/svelte-share-picker';
-	import { themes, DEFAULT_THEME_ID } from '$lib/data/themes';
+	import { themes, DEFAULT_THEME_ID } from '#lib/data/themes.js';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
 	const LOCALE_STORAGE_KEY = 'adr-locale';
