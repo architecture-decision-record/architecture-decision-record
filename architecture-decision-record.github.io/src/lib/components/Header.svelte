@@ -25,7 +25,7 @@
 	// zh-cn, zh-tw, zh-001, hi-001, es-001, fr-001). The site itself still renders English content only:
 	// selecting a locale here sets lang/dir on <html> and persists the
 	// choice, but does not yet route to the translated pages.
-	const LOCALES = ['en', 'en_001', 'en_US', 'en_GB', 'cy_001', 'zh_CN', 'zh_TW', 'zh_001', 'hi_001', 'es_001', 'fr_001'];
+	const LOCALES = ['en', 'en_001', 'en_US', 'en_GB', 'cy_001', 'zh_CN', 'zh_TW', 'zh_001', 'hi_001', 'es_001', 'fr_001', 'ar_001'];
 
 	const shareTargets: ShareTarget[] = [
 		{
