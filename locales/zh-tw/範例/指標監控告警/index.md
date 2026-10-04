@@ -632,7 +632,7 @@ Instana 在 slack 中就基礎設施問題或效能下降向我們發出告警,�
 
 我們的監控技術棧:
 
-Site24x7 - APM、外部 URL 監控、SMTP 郵件流監控、ssl 到期監控和程序監控。
+Site24x7 - APM、外部 URL 監控、SMTP 郵件流監控、ssl 到期監控和程式監控。
 
 StatusCake - 用於 URL 監控和確認 - 它是我們的備份,以防 site24x7 漏掉什麼(它不會),但 SC 對於我們的外部埠和服務監控需求更靈活。
 
