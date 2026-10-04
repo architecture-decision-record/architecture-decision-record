@@ -21,11 +21,11 @@
 	// data-text-size values to a --user-font-scale.
 	const TEXT_SIZES = DEFAULT_SIZES;
 
-	// English-only content today; en_US is offered because the picker's
-	// built-in label table already distinguishes it ("English" vs
-	// "English (United States)"). Selecting either only sets lang/dir on
-	// <html> — no translated content exists yet.
-	const LOCALES = ['en', 'en_US'];
+	// Locales translated under ../locales/ (en-001, en-us, en-gb, cy-001,
+	// zh-cn, zh-001). The site itself still renders English content only:
+	// selecting a locale here sets lang/dir on <html> and persists the
+	// choice, but does not yet route to the translated pages.
+	const LOCALES = ['en', 'en_001', 'en_US', 'en_GB', 'cy_001', 'zh_CN', 'zh_001'];
 
 	const shareTargets: ShareTarget[] = [
 		{
