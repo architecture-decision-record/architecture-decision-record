@@ -21,3 +21,4 @@
 * [اردو (دنیا)](ur-001/)
 * [Bahasa Indonesia (Dunia)](id-001/)
 * [日本語 (世界)](ja-001/)
+* [Tiếng Việt (Thế giới)](vi-001/)
