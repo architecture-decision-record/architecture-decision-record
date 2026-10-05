@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"type": "module",
-	"description": "Architecture Decision Record (ADR) guide — published website (SvelteKit + Lily Design System)",
+	"description": "Architecture Decision Record (ADR) guide \u2014 published website (SvelteKit + Lily Design System)",
 	"scripts": {
 		"dev": "node scripts/generate-manifest.mjs && vite dev",
 		"build": "node scripts/generate-manifest.mjs && vite build",
@@ -38,7 +38,10 @@
 		],
 		"onlyBuiltDependencies": [
 			"esbuild"
-		]
+		],
+		"overrides": {
+			"devalue": "5.9.3"
+		}
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",
