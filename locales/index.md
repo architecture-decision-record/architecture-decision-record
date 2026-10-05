@@ -28,3 +28,4 @@
 * [Nederlands (Wereld)](nl-001/)
 * [Dansk (Verden)](da-001/)
 * [Eesti (Maailm)](et-001/)
+* [Italiano (Mondo)](it-001/)
