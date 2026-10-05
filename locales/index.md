@@ -23,3 +23,4 @@
 * [日本語 (世界)](ja-001/)
 * [Tiếng Việt (Thế giới)](vi-001/)
 * [Deutsch (Welt)](de-001/)
+* [Svenska (Världen)](sv-001/)
