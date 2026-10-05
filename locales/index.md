@@ -22,3 +22,4 @@
 * [Bahasa Indonesia (Dunia)](id-001/)
 * [日本語 (世界)](ja-001/)
 * [Tiếng Việt (Thế giới)](vi-001/)
+* [Deutsch (Welt)](de-001/)
