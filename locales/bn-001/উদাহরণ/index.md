@@ -56,6 +56,6 @@ ChatGPT উদাহরণ:
 
 * [SvelteKit ফ্রেমওয়ার্ক](sveltekit-ফ্রেমওয়ার্ক)
   
-* [Tailwind CSS](tailwind-css)
+* [Tailwind CSS](টেইলউইন্ড-সিএসএস)
 
 * [Vue ফ্রন্ট-এন্ড JavaScript লাইব্রেরি](vue-ফ্রন্ট-এন্ড-javascript-লাইব্রেরি)

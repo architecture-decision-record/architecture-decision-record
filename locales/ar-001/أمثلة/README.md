@@ -6,7 +6,7 @@
 
 * [المقاييس والمراقبة والتنبيهات](المقاييس-والمراقبة-والتنبيهات)
 
-* [Microsoft Azure DevOps](microsoft-azure-devops)
+* [Microsoft Azure DevOps](مايكروسوفت-أزور-ديف-أوبس)
 
 * [مستودع واحد مقابل مستودعات متعددة](مستودع-واحد-مقابل-مستودعات-متعددة)
 
@@ -56,6 +56,6 @@
 
 * [إطار SvelteKit](إطار-sveltekit)
   
-* [Tailwind CSS](tailwind-css)
+* [Tailwind CSS](تيلويند-css)
 
 * [مكتبة JavaScript للواجهة الأمامية Vue](مكتبة-javascript-للواجهة-الأمامية-vue)

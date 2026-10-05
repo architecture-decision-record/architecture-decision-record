@@ -6,7 +6,7 @@
 
 * [Метрики, мониторы, оповещения](метрики-мониторы-оповещения)
 
-* [Microsoft Azure DevOps](microsoft-azure-devops)
+* [Microsoft Azure DevOps](майкрософт-азур-девопс)
 
 * [Монорепозиторий или мультирепозиторий](монорепозиторий-или-мультирепозиторий)
 
@@ -56,6 +56,6 @@
 
 * [Фреймворк SvelteKit](фреймворк-sveltekit)
   
-* [Tailwind CSS](tailwind-css)
+* [Tailwind CSS](тейлвинд-css)
 
 * [Frontend-библиотека JavaScript Vue](frontend-библиотека-javascript-vue)

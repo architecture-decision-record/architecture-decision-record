@@ -6,7 +6,7 @@
 
 * [मेट्रिक्स, मॉनिटर, अलर्ट](मेट्रिक्स-मॉनिटर-अलर्ट)
 
-* [Microsoft Azure DevOps](microsoft-azure-devops)
+* [Microsoft Azure DevOps](माइक्रोसॉफ्ट-एज़्योर-देवऑप्स)
 
 * [मोनोरेपो बनाम मल्टीरेपो](मोनोरेपो-बनाम-मल्टीरेपो)
 
@@ -56,6 +56,6 @@ ChatGPT के उदाहरण:
 
 * [SvelteKit फ़्रेमवर्क](sveltekit-फ़्रेमवर्क)
   
-* [Tailwind CSS](tailwind-css)
+* [Tailwind CSS](टेलविंड-सीएसएस)
 
 * [Vue फ्रंट-एंड JavaScript लाइब्रेरी](vue-फ्रंट-एंड-javascript-लाइब्रेरी)

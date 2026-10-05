@@ -1,9 +1,9 @@
-# Decision record templates
+# 意思決定記録テンプレート
 
-* [Decision record template by Jeff Tyree and Art Akerman](decision-record-template-by-jeff-tyree-and-art-akerman)
-* [Decision record template by Michael Nygard](decision-record-template-by-michael-nygard)
-* [Decision record template by EdgeX](decision-record-template-by-edgex)
-* [Decision record template for Alexandrian pattern](decision-record-template-for-alexandrian-pattern)
-* [Decision record template for business case](decision-record-template-for-business-case)
-* [Decision record template of the MADR Project](decision-record-template-of-the-madr-project)
-* [Decision record template using Planguage](decision-record-template-using-planguage)
+* [Jeff TyreeとArt Akermanによる意思決定記録テンプレート](Jeff%20Tyree%E3%81%A8Art%20Akerman%E3%81%AB%E3%82%88%E3%82%8B%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A%E8%A8%98%E9%8C%B2%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)
+* [Michael Nygard による意思決定記録テンプレート](Michael%20Nygard%20%E3%81%AB%E3%82%88%E3%82%8B%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A%E8%A8%98%E9%8C%B2%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)
+* [EdgeX Foundryによる意思決定記録テンプレート](EdgeX%20Foundry%E3%81%AB%E3%82%88%E3%82%8B%E6%84%8F%E6%80%9D%E6%B1%BA%E5%AE%9A%E8%A8%98%E9%8C%B2%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)
+* [アレクサンドリアパターンの意思決定記録テンプレート](アレクサンドリアパターンの意思決定記録テンプレート)
+* [ビジネスケース用意思決定記録テンプレート](ビジネスケース用意思決定記録テンプレート)
+* [madrプロジェクトの意思決定記録テンプレート](madrプロジェクトの意思決定記録テンプレート)
+* [Planguageを使用した意思決定記録テンプレート](Planguageを使用した意思決定記録テンプレート)

@@ -56,6 +56,6 @@ ChatGPT کی مثالیں:
 
 * [SvelteKit فریم ورک](sveltekit-فریم-ورک)
   
-* [Tailwind CSS](tailwind-css)
+* [Tailwind CSS](ٹیل-ونڈ-سی-ایس-ایس)
 
 * [Vue فرنٹ اینڈ JavaScript لائبریری](vue-فرنٹ-اینڈ-javascript-لائبریری)
