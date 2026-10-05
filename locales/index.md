@@ -29,3 +29,4 @@
 * [Dansk (Verden)](da-001/)
 * [Eesti (Maailm)](et-001/)
 * [Italiano (Mondo)](it-001/)
+* [ไทย (โลก)](th-001/)
