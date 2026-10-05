@@ -27,3 +27,4 @@
 * [한국어 (세계)](ko-001/)
 * [Nederlands (Wereld)](nl-001/)
 * [Dansk (Verden)](da-001/)
+* [Eesti (Maailm)](et-001/)
