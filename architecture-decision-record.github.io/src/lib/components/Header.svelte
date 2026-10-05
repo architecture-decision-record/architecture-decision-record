@@ -25,11 +25,12 @@
 	// zh-cn, zh-tw, zh-001, hi-001, es-001, fr-001). The site itself still renders English content only:
 	// selecting a locale here sets lang/dir on <html> and persists the
 	// choice, but does not yet route to the translated pages.
-	const LOCALES = ['ar_001', 'bn_001', 'cy_001', 'en', 'en_001', 'en_GB', 'en_US', 'es_001', 'fr_001', 'hi_001', 'pt_001', 'ru_001', 'ur_001', 'zh_001', 'zh_CN', 'zh_TW'];
+	const LOCALES = ['ar_001', 'bn_001', 'cy_001', 'en', 'en_001', 'en_GB', 'en_US', 'es_001', 'fr_001', 'hi_001', 'id_001', 'pt_001', 'ru_001', 'ur_001', 'zh_001', 'zh_CN', 'zh_TW'];
 
 	// Locale labels: the endonym with any parenthesised region turned into
 	// a dash, e.g. "English (United States)" -> "English - United States".
 	// *_001 (world) locales drop the region: "English (world)" -> "English".
+	// The first letter of each part is capitalised: "español" -> "Español".
 	const LOCALE_LABELS = Object.fromEntries(
 		LOCALES.map((l) => {
 			const tag = l.replace('_', '-');
@@ -37,7 +38,7 @@
 			const label = l.endsWith('_001')
 				? name.replace(/\s*[(（][^)）]*[)）]\s*$/, '')
 				: name.replace(/\s*[(（]([^)）]*)[)）]\s*$/, ' - $1');
-			return [l, label];
+			return [l, label.replace(/(^| - )(\S)/g, (_, sep, c) => sep + c.toLocaleUpperCase(tag))];
 		})
 	);
 

@@ -19,3 +19,4 @@
 * [Русский (мир)](ru-001/)
 * [Português (Mundo)](pt-001/)
 * [اردو (دنیا)](ur-001/)
+* [Bahasa Indonesia (Dunia)](id-001/)
