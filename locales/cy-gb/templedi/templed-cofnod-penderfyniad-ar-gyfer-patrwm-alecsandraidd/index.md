@@ -1,26 +1,26 @@
 # Templed cofnod penderfyniad ar gyfer patrwm Alecsandraidd
 
-## Rhagymadrodd
+## Cyflwyniad
 
-* Prologue (Crynodeb)
+* Prolog (Crynodeb)
 * Trafodaeth (Cyd-destun)
 * Ateb (Penderfyniad)
-* Canlyniadau (Canlyniadau)
+* Canlyniadau (Deilliannau)
 
-## Manylebau ##
+## Manylion ##
 
-* Prologue (Crynodeb)
-   * Datganiad i grynhoi:
-     * Yng nghyd-destun (achos defnydd)<br>
-       wynebu (pryder)<br>
-       penderfynon ni ar gyfer (opsiwn)<br>
-       i gyflawni (ansawdd)<br>
-       derbyn (anfantais).
+* Prolog (Crynodeb)
+  * Datganiad i grynhoi:
+    * Yng nghyd-destun (achos defnydd)<br>
+      gan wynebu (pryder)<br>
+      fe benderfynon ni ar (dewis)<br>
+      i gyflawni (ansawdd)<br>
+      gan dderbyn (anfantais).
 * Trafodaeth (Cyd-destun)
-   * Yn egluro'r grymoedd sydd ar waith (technegol, gwleidyddol, cymdeithasol, prosiect).
-   * Dyma'r stori sy'n esbonio'r broblem yr ydym am ei datrys.
+  * Yn egluro'r grymoedd sydd ar waith (technegol, gwleidyddol, cymdeithasol, prosiect).
+  * Dyma'r stori sy'n egluro'r broblem rydym yn ceisio ei datrys.
 * Ateb
-   * Egluro sut y bydd y penderfyniad yn datrys y broblem.
+  * Yn egluro sut y bydd y penderfyniad yn datrys y broblem.
 * Canlyniadau
-   * Yn egluro canlyniadau'r penderfyniad dros y tymor hir.
-   * A weithiodd, nid gweithio, ei newid, ei uwchraddio, ac ati.
+  * Yn egluro canlyniadau'r penderfyniad dros y tymor hir.
+  * A weithiodd, ni weithiodd, a newidiwyd, a uwchraddiwyd, ac ati.

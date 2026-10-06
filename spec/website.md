@@ -60,7 +60,7 @@ locale**:
   or from another locale's page, the target is `/<slug>/<section>/<dir>/` in
   the chosen locale.
 - Choosing English (`en`) goes to the English-site equivalent, or `/`.
-- If the chosen locale has no equivalent page (e.g. partial `cy-001`), or the
+- If the chosen locale has no equivalent page (a locale that lacks that page), or the
   current page is not a content page (home, skills), it goes to `/<slug>/`,
   the locale's contents page.
 - Only a user selection navigates. The picker's initial call must not, so a

@@ -201,44 +201,136 @@
   <url><loc>https://architecture-decision-record.github.io/bn-001/%E0%A6%89%E0%A6%A6%E0%A6%BE%E0%A6%B9%E0%A6%B0%E0%A6%A3/%E0%A6%AE%E0%A7%87%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%95-%E0%A6%AE%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A6%B0-%E0%A6%93-%E0%A6%B8%E0%A6%A4%E0%A6%B0%E0%A7%8D%E0%A6%95%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/bn-001/%E0%A6%89%E0%A6%A6%E0%A6%BE%E0%A6%B9%E0%A6%B0%E0%A6%A3/%E0%A6%B8%E0%A6%AA%E0%A7%8D%E0%A6%A4%E0%A6%BE%E0%A6%B9%E0%A7%87-%E0%A7%AA-%E0%A6%A6%E0%A6%BF%E0%A6%A8-%E0%A6%95%E0%A6%BE%E0%A6%9C/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/bn-001/%E0%A6%89%E0%A6%A6%E0%A6%BE%E0%A6%B9%E0%A6%B0%E0%A6%A3/%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9F%E0%A6%86%E0%A6%AA-%E0%A6%AA%E0%A6%A3%E0%A7%8D%E0%A6%AF%E0%A7%87%E0%A6%B0-%E0%A6%9C%E0%A6%A8%E0%A7%8D%E0%A6%AF-%E0%A6%AC%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%9F%E0%A6%BE%E0%A6%B0%E0%A6%BF-%E0%A6%B8%E0%A6%B9-%E0%A6%AB%E0%A7%81%E0%A6%B2-%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95-%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%AC-%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AA%E0%A7%8D%E0%A6%B2%E0%A6%BF%E0%A6%95%E0%A7%87%E0%A6%B6%E0%A6%A8-%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%AE%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%95/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/awgrymiadau-ar-gyfer-ysgrifennu-adrs-da/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/beth-yw-cofnod-penderfyniad-pensaern%C3%AFaeth/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/canllawiau-i-gyflawni-penderfyniadau-cynaliadwy/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/confensiynau-enw-ffeil/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/cwestiynau-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/cyngor-gwaith-t%C3%AEm-ar-gyfer-adrs/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/meini-prawf-cynaliadwyedd-penderfynu/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/proses-cofnodion-penderfynol-pensaern%C3%AFol-aws/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/sut-i-ddechrau-defnyddio-adrs/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/sut-i-ddechrau-defnyddio-adrs-gyda-git/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/nogfennau/sut-i-ddechrau-defnyddio-adrs-gydag-offer/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/awgrymiadau-ar-gyfer-ysgrifennu-adrau-da/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/beth-yw-cofnod-penderfyniad-saern%C3%AFaeth/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/canllawiau-i-gyflawni-penderfyniadau-cynaliadwy/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/confensiynau-enwi-ffeiliau-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/cwestiynau-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/cyngor-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/ffwythiannau-ffitrwydd-ar-gyfer-penderfyniadau-ar-ffurf-cod/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/meini-prawf-cynaliadwyedd-penderfyniadau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/proses-adr-aws/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/sut-i-ddechrau-defnyddio-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/sut-i-ddechrau-defnyddio-adrau-gyda-git/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/dogfennau/sut-i-ddechrau-defnyddio-adrau-gydag-offer/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-ar-gyfer-achos-busnes/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-ar-gyfer-patrwm-alecsandraidd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-ar-gyfer-penderfyniadau-technegol-pwysig/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-arc42/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-ddefnyddio-planguage/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-edgex/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-jeff-tyree-and-art-akerman/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-gareth-morgan/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-gig-cymru/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-jeff-tyree-ac-art-akerman/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-michael-nygard/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-gan-planguage/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-y-prosiect-madr/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/awgrymiadau-ar-gyfer-ysgrifennu-adrs-da/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/beth-yw-cofnod-penderfyniad-pensaern%C3%AFaeth/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/canllawiau-i-gyflawni-penderfyniadau-cynaliadwy/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/confensiynau-enw-ffeil/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/cwestiynau-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/cyngor-gwaith-t%C3%AEm-ar-gyfer-adrs/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/meini-prawf-cynaliadwyedd-penderfynu/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/proses-cofnodion-penderfynol-pensaern%C3%AFol-aws/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/sut-i-ddechrau-defnyddio-adrs/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/sut-i-ddechrau-defnyddio-adrs-gyda-git/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/nogfennau/sut-i-ddechrau-defnyddio-adrs-gydag-offer/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/templedi/templed-cofnod-penderfyniad-prosiect-madr/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/amazon-web-services/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/api-yn-defnyddio-json-neu-grpc/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/cerddorfaeth-cynwysyddion-docker-swarm/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/cerddorfaeth-cynwysyddion-kubernetes/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/cronfa-ddata-mysql/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/cronfa-ddata-postgresql/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/cydrannau-svelte/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/datblygu-meddalwedd-ystwyth/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/dewis-technoleg-cronfa-ddata/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fformat-stamp-amser/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-awtomeiddio-porwr-ar-gyfer-profi-e2e-playwright-neu-selenium/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-css/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-cymwysiadau-gwe-pentwr-llawn-ar-gyfer-cynnyrch-cwmni-newydd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-python-django/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-ruby-on-rails/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/fframwaith-sveltekit/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/ffurfweddu-newidynnau-amgylchedd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/golygyddion-cod-ar-gyfer-rhaglennu/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/google-cloud-platform/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/gwaith-t%C3%AEm-ymddiriedaeth-uchel/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/gweithio-gartref/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/iaith-raglennu-go/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/iaith-raglennu-java/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/iaith-raglennu-python/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/iaith-raglennu-rust/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/ieithoedd-rhaglennu/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/integreiddio-parhaus/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/llyfrgell-javascript-react-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/llyfrgell-javascript-svelte-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/llyfrgell-javascript-vue-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/llyfrgell-siartiau-ar-gyfer-delweddu-data-gyda-typescript-a-json/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/metrigau-monitro-rhybuddion/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/microsoft-azure-devops/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/monorepo-neu-multirepo/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/opsiynau-dilysu-ac-awdurdodi/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/seilwaith-cwmwl-microsoft-azure/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/snake-case-neu-camelcase-ar-gyfer-api-rest/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/storio-cyfrinachau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/tailwind-css/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-001/enghreifftiau/wythnos-waith-4-diwrnod/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/awgrymiadau-ar-gyfer-ysgrifennu-adrau-da/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/beth-yw-cofnod-penderfyniad-saern%C3%AFaeth/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/canllawiau-i-gyflawni-penderfyniadau-cynaliadwy/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/confensiynau-enwi-ffeiliau-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/cwestiynau-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/cyngor-gwaith-t%C3%AEm-ar-gyfer-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/ffwythiannau-ffitrwydd-ar-gyfer-penderfyniadau-ar-ffurf-cod/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/meini-prawf-cynaliadwyedd-penderfyniadau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/proses-adr-aws/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/sut-i-ddechrau-defnyddio-adrau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/sut-i-ddechrau-defnyddio-adrau-gyda-git/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/dogfennau/sut-i-ddechrau-defnyddio-adrau-gydag-offer/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-ar-gyfer-achos-busnes/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-ar-gyfer-patrwm-alecsandraidd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-ar-gyfer-penderfyniadau-technegol-pwysig/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-arc42/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-ddefnyddio-planguage/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-edgex/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-jeff-tyree-and-art-akerman/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-gareth-morgan/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-gig-cymru/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-jeff-tyree-ac-art-akerman/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-michael-nygard/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-gan-planguage/</loc></url>
-  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-y-prosiect-madr/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/templedi/templed-cofnod-penderfyniad-prosiect-madr/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/amazon-web-services/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/api-yn-defnyddio-json-neu-grpc/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/cerddorfaeth-cynwysyddion-docker-swarm/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/cerddorfaeth-cynwysyddion-kubernetes/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/cronfa-ddata-mysql/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/cronfa-ddata-postgresql/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/cydrannau-svelte/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/datblygu-meddalwedd-ystwyth/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/dewis-technoleg-cronfa-ddata/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fformat-stamp-amser/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-awtomeiddio-porwr-ar-gyfer-profi-e2e-playwright-neu-selenium/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-css/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-cymwysiadau-gwe-pentwr-llawn-ar-gyfer-cynnyrch-cwmni-newydd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-python-django/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-ruby-on-rails/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/fframwaith-sveltekit/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/ffurfweddu-newidynnau-amgylchedd/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/golygyddion-cod-ar-gyfer-rhaglennu/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/google-cloud-platform/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/gwaith-t%C3%AEm-ymddiriedaeth-uchel/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/gweithio-gartref/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/iaith-raglennu-go/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/iaith-raglennu-java/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/iaith-raglennu-python/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/iaith-raglennu-rust/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/ieithoedd-rhaglennu/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/integreiddio-parhaus/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/llyfrgell-javascript-react-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/llyfrgell-javascript-svelte-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/llyfrgell-javascript-vue-ar-gyfer-y-pen-blaen/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/llyfrgell-siartiau-ar-gyfer-delweddu-data-gyda-typescript-a-json/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/metrigau-monitro-rhybuddion/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/microsoft-azure-devops/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/monorepo-neu-multirepo/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/opsiynau-dilysu-ac-awdurdodi/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/seilwaith-cwmwl-microsoft-azure/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/snake-case-neu-camelcase-ar-gyfer-api-rest/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/storio-cyfrinachau/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/tailwind-css/</loc></url>
+  <url><loc>https://architecture-decision-record.github.io/cy-gb/enghreifftiau/wythnos-waith-4-diwrnod/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/da-001/dokumenter/aws-adr-proces/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/da-001/dokumenter/baeredygtighedskriterier-for-beslutninger/</loc></url>
   <url><loc>https://architecture-decision-record.github.io/da-001/dokumenter/fitnessfunktioner-for-beslutninger-som-kode/</loc></url>

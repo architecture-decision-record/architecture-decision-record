@@ -1,6 +1,6 @@
 # Templed cofnod penderfyniad ar gyfer achos busnes
 
-Mae’r templed ADR hwn yn pwysleisio creu achos busnes ar gyfer penderfyniad, gan gynnwys meini prawf, ymgeiswyr, a chostau.
+Mae'r templed ADR hwn yn pwysleisio creu achos busnes ar gyfer penderfyniad, gan gynnwys meini prawf, ymgeiswyr a chostau.
 
 
 ## Lefel uchaf
@@ -9,128 +9,128 @@ Mae’r templed ADR hwn yn pwysleisio creu achos busnes ar gyfer penderfyniad, g
 * Statws
 * Meini prawf gwerthuso
 * Ymgeiswyr i'w hystyried
-* Ymchwilio a dadansoddi pob ymgeisydd
-   * A yw/ddim yn bodloni'r meini prawf a pham
-   * Dadansoddiad cost
-   * Dadansoddiad SWOT
-   * Barn ac adborth
-*Argymhelliad
+* Ymchwil a dadansoddiad o bob ymgeisydd
+  * A yw'n bodloni'r meini prawf ai peidio, a pham
+  * Dadansoddiad o gostau
+  * Dadansoddiad SWOT (cryfderau, gwendidau, cyfleoedd a bygythiadau)
+  * Barn ac adborth
+* Argymhelliad
 
 
-## Plymio dwfn lefel isel
+## Plymio'n ddwfn ar lefel isel
 
 **Teitl**:
 
-   * Cymal hanfodol amser byr, llai na 50 nod, fel neges ymrwymo git.
+  * Ymadrodd byr gorchmynnol yn yr amser presennol, llai na 50 nod, fel neges git commit.
 
 **Statws**:
 
-   * Un o'r rhai a gynigiwyd, a dderbyniwyd, a wrthodwyd, a anghymeradwywyd, a ddisodlwyd, etc.
+  * Un o arfaethedig, wedi'i dderbyn, wedi'i wrthod, anghymeradwy, wedi'i ddisodli, ac ati.
 
 **Meini prawf gwerthuso**:
 
-   * Crynodeb: eglurwch yn fyr yr hyn yr ydym yn ceisio ei ddarganfod a pham.
+  * Crynodeb: eglurwch yn fyr beth rydym yn ceisio ei ddarganfod a pham.
 
-   * Manylebau
+  * Manylion penodol
 
 **Ymgeiswyr i'w hystyried**:
 
-   * Crynodeb: eglurwch yn gryno sut y gwnaethom ddarganfod ymgeiswyr, a thynnwch sylw at unrhyw allgleifion.
+  * Crynodeb: eglurwch yn fyr sut y daethom o hyd i'r ymgeiswyr, a thynnwch sylw at unrhyw rai anarferol.
 
-   * Rhestrwch yr holl ymgeiswyr a'r opsiynau cysylltiedig; beth ydym yn ei werthuso fel atebion posibl?
+  * Rhestrwch yr holl ymgeiswyr a'r dewisiadau cysylltiedig; beth ydym yn ei werthuso fel atebion posibl?
 
-   * Manylebau
+  * Manylion penodol
 
 **Ymchwil a dadansoddiad o bob ymgeisydd**:
 
-   * Crynodeb: eglurwch yn fyr y dulliau ymchwil, a thynnwch sylw at batrymau, clystyrau, ac allgleifion.
+  * Crynodeb: eglurwch yn fyr y dulliau ymchwil, a thynnwch sylw at batrymau, clystyrau a rhai anarferol.
 
-   * A yw/ddim yn bodloni'r meini prawf a pham
+  * A yw'n bodloni'r meini prawf ai peidio, a pham
 
-     * Crynodeb
+    * Crynodeb
 
-     * Manylebau
+    * Manylion penodol
 
-   * Dadansoddiad cost
+  * Dadansoddiad o gostau
 
-     * Crynodeb
+    * Crynodeb
 
-     * Enghreifftiau
+    * Enghreifftiau
 
-       * Trwyddedu, megis cytundebau contract ac ymrwymiadau cyfreithiol
+      * Trwyddedu, fel cytundebau contract ac ymrwymiadau cyfreithiol
 
-       * Hyfforddiant, fel uwchsgilio a rheoli newid
+      * Hyfforddiant, fel uwchsgilio a rheoli newid
 
-       * Gweithredu, fel cymorth a chynnal a chadw
+      * Gweithredu, fel cymorth a chynnal a chadw
 
-       * Mesuryddion, fel lled band a defnydd CPU
+      * Mesuryddion, fel lled band a defnydd CPU
 
-   * Dadansoddiad SWOT
+  * Dadansoddiad SWOT
 
-     * Crynodeb
+    * Crynodeb
 
-     * Cryfderau
+    * Cryfderau
 
-     * Gwendidau
+    * Gwendidau
 
-     * Cyfleoedd
+    * Cyfleoedd
 
-     * Bygythiadau
+    * Bygythiadau
 
-   * Barn ac adborth mewnol
+  * Barn ac adborth mewnol
 
-     * Crynodeb
+    * Crynodeb
 
-     * Enghreifftiau
+    * Enghreifftiau
 
-       * Gan y tîm, yn ddelfrydol wedi'i ysgrifennu gan y person go iawn
+      * Gan y tîm, wedi'i ysgrifennu'n ddelfrydol gan yr unigolyn ei hun
 
-       * Gan randdeiliaid eraill
+      * Gan randdeiliaid eraill
 
-       * Priodoleddau ansawdd a.k.a. gofynion traws-swyddogaethol
+      * Priodoleddau ansawdd, a elwir hefyd yn ofynion trawsswyddogaethol 
 
-   * Barn ac adborth allanol
+  * Barn ac adborth allanol
 
-     * Crynodeb
+    * Crynodeb
 
-     * Pwy sy'n rhoi'r farn?
+    * Pwy sy'n rhoi'r farn?
 
-     * Beth ydych chi wedi ystyried ymgeiswyr eraill?
+    * Beth yw'r ymgeiswyr eraill a ystyriwyd gennych?
 
-     * Beth ydych chi'n ei greu?
+    * Beth ydych chi'n ei greu? 
 
-       * Enghreifftiau
+      * Enghreifftiau
 
-         * B2B neu B2C
+        * B2B neu B2C
 
-         * wynebu allanol neu gyflogai yn unig
+        * yn wynebu'r tu allan neu ar gyfer gweithwyr yn unig
 
-         * bwrdd gwaith neu ffôn symudol
+        * bwrdd gwaith neu symudol
 
-         * peilot neu gynhyrchiad
+        * peilot neu gynhyrchu
 
-         * monolith neu ficrowasanaethau
+        * monolith neu ficrowasanaethau
 
-     * Sut wnaethoch chi werthuso'r ymgeiswyr?
+    * Sut gwnaethoch chi werthuso'r ymgeiswyr?
 
-     * Pam wnaethoch chi ddewis yr enillydd?
+    * Pam gwnaethoch chi ddewis yr enillydd?
 
-     * Beth sy'n digwydd ers hynny?
+    * Beth sydd wedi bod yn digwydd ers hynny?
 
-       * Enghreifftiau
+      * Enghreifftiau
 
-         * Sut mae'r enillydd yn perfformio?
+        * Sut mae'r enillydd yn perfformio?
 
-         * Pa % o draffig defnyddwyr cynhyrchiad y byd go iawn sy'n llifo trwy'r enillydd?
+        * Pa % o draffig defnyddwyr cynhyrchu go iawn sy'n llifo drwy'r enillydd?
 
-         * Pa fathau o integreiddiadau sydd dan sylw, megis gyda phiblinellau cyflenwi parhaus, systemau rheoli cynnwys, dadansoddeg a metrigau, ac ati?
+        * Pa fathau o integreiddiadau sydd dan sylw, fel gyda phiblinellau cyflenwi parhaus, systemau rheoli cynnwys, dadansoddeg a metrigau, ac ati?
 
-         * Gan wybod beth rydych chi'n ei wybod nawr, beth fyddech chi'n cynghori pobl i'w wneud yn wahanol?
+        * O wybod yr hyn rydych yn ei wybod nawr, beth fyddech chi'n cynghori pobl i'w wneud yn wahanol?
 
-   * Hanesion
+  * Hanesion
 
 **Argymhelliad**:
 
-   * Crynodeb
+  * Crynodeb
 
-   * Manylebau
+  * Manylion penodol

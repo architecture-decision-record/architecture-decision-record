@@ -44,3 +44,41 @@ Translations are produced without native-reader review unless stated.
 The endonym comes from `Intl.DisplayNames`. For `*_001` the region is
 dropped (`Deutsch`); for other regions it becomes ` - `
 (`English - United States`). The first letter of each part is capitalized.
+
+## Welsh terminology (`cy-001`, `cy-gb`)
+
+Welsh translations follow the Welsh Government's TermCymru terminology list
+(`2026-07-02 - TermCymru.csv`) wherever it has an entry. Both Welsh locales
+hold identical content (`cy-gb` is a copy of `cy-001`). Terms used throughout:
+
+| English | Welsh | Source |
+|---|---|---|
+| architecture (software) | saernïaeth | TermCymru (ICT) |
+| architect | pensaer | TermCymru |
+| decision | penderfyniad | |
+| record | cofnod | TermCymru |
+| template | templed (pl. templedi) | TermCymru |
+| context | cyd-destun | TermCymru |
+| status | statws | |
+| consequence(s) | canlyniad(au) | |
+| requirement | gofyniad | TermCymru |
+| stakeholder | rhanddeiliad | TermCymru |
+| criteria / criterion | meini prawf / maen prawf | TermCymru |
+| teamwork | gwaith tîm | TermCymru |
+| sustainability / sustainable | cynaliadwyedd / cynaliadwy | TermCymru |
+| governance | llywodraethiant | TermCymru |
+| compliance | cydymffurfedd | TermCymru |
+| lifecycle | cylch oes | TermCymru |
+| repository | ystorfa | TermCymru |
+| pipeline | piblinell | TermCymru |
+| compatibility | cydweddoldeb | TermCymru |
+| scalability | graddadwyedd | |
+| rationale | sail resymegol | TermCymru |
+| timestamp | stamp amser | |
+| front end / back end | pen blaen / pen ôl | |
+
+Conventions: ADR plurals are "ADRau"; acronyms (ADR, AD, ADL, ASR, AKM) are kept;
+product names, code, and URLs stay in English; "deprecated" is "anghymeradwy",
+"superseded" "wedi'i ddisodli". The English acronym expansion
+"architecture decision record" is "cofnod penderfyniad saernïaeth".
+Directory names are Welsh slugs (`dogfennau`, `templedi`, `enghreifftiau`).
