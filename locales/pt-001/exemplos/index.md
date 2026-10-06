@@ -14,7 +14,7 @@
 
 * [Armazenamento de segredos](armazenamento-de-segredos)
 
-* [snake_case ou camelCase para uma API REST](snake_case-ou-camelcase-para-uma-api-rest)
+* [snake_case ou camelCase para uma API REST](snake-case-ou-camelcase-para-uma-api-rest)
 
 * [Formato de carimbo de data e hora](formato-de-carimbo-de-data-e-hora)
 

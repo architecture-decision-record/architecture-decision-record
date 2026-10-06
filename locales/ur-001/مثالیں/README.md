@@ -14,7 +14,7 @@
 
 * [رازوں کا ذخیرہ](رازوں-کا-ذخیرہ)
 
-* [REST API کے لیے snake_case یا camelCase](rest-api-کے-لیے-snake_case-یا-camelcase)
+* [REST API کے لیے snake_case یا camelCase](rest-api-کے-لیے-snake-case-یا-camelcase)
 
 * [ٹائم اسٹیمپ فارمیٹ](ٹائم-اسٹیمپ-فارمیٹ)
 

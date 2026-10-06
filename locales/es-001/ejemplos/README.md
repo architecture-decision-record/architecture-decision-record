@@ -14,7 +14,7 @@
 
 * [Almacenamiento de secretos](almacenamiento-de-secretos)
 
-* [snake_case frente a camelCase para una API REST](snake_case-frente-a-camelcase-para-una-api-rest)
+* [snake_case frente a camelCase para una API REST](snake-case-frente-a-camelcase-para-una-api-rest)
 
 * [Formato de marca de tiempo](formato-de-marca-de-tiempo)
 

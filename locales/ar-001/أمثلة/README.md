@@ -14,7 +14,7 @@
 
 * [تخزين الأسرار](تخزين-الأسرار)
 
-* [snake_case مقابل camelCase لواجهة REST](snake_case-مقابل-camelcase-لواجهة-rest)
+* [snake_case مقابل camelCase لواجهة REST](snake-case-مقابل-camelcase-لواجهة-rest)
 
 * [صيغة الطابع الزمني](صيغة-الطابع-الزمني)
 

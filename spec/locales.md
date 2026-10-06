@@ -21,7 +21,11 @@ vi-001, de-001, sv-001, ko-001, nl-001, da-001, et-001, it-001, th-001.
 Everything under `locales/<code>/` is translated, including directory names:
 the three section directories and every content directory. Slugs are
 lowercase, hyphen-separated, keep Latin-script product names, and have no
-punctuation other than `-`. Link targets must match the translated directory
+punctuation other than `-` (no underscores, spaces, or middle dots; Latin
+letters inside CJK names are lowercased and split with `-`, e.g.
+`google-cloud-platform`). A slug may equal the English one only when it is a
+product name or a genuine cognate in that language (listed in
+`scripts/audit-locales.py`). Link targets must match the translated directory
 names exactly. The English-to-local slug mapping is kept as a three-column
 TSV (section, English slug, localized directory) while translating.
 

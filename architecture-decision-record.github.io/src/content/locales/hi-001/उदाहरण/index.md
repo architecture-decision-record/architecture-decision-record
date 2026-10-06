@@ -14,7 +14,7 @@
 
 * [गोपनीय जानकारी का भंडारण](गोपनीय-जानकारी-का-भंडारण)
 
-* [REST API के लिए snake_case बनाम camelCase](rest-api-के-लिए-snake_case-बनाम-camelcase)
+* [REST API के लिए snake_case बनाम camelCase](rest-api-के-लिए-snake-case-बनाम-camelcase)
 
 * [टाइमस्टैम्प प्रारूप](टाइमस्टैम्प-प्रारूप)
 

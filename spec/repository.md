@@ -74,4 +74,7 @@ rule for that task.
    placeholders in the MADR template (`README.md` and `index.md`, two each).
 3. Every `#fragment` link matches a heading slug (letters, marks, numbers,
    `-` and `_` kept; spaces become `-`; duplicate headings get `-N`).
-4. `pnpm run check` in the website directory reports 0 errors.
+4. `python3 scripts/audit-locales.py` exits 0: every locale has every page and file
+   (203 files), README equals index, no stray files or symlinks (except `en-us`),
+   every slug is translated and clean, and all links and anchors resolve.
+5. `pnpm run check` in the website directory reports 0 errors.

@@ -14,7 +14,7 @@
 
 * [গোপন তথ্য সংরক্ষণ](গোপন-তথ্য-সংরক্ষণ)
 
-* [REST API-র জন্য snake_case বনাম camelCase](rest-api-র-জন্য-snake_case-বনাম-camelcase)
+* [REST API-র জন্য snake_case বনাম camelCase](rest-api-র-জন্য-snake-case-বনাম-camelcase)
 
 * [টাইমস্ট্যাম্প ফরম্যাট](টাইমস্ট্যাম্প-ফরম্যাট)
 

@@ -27,7 +27,7 @@ Indice:
   * [Prometheus + alertmanager + Rollbar + Graylog + Grafana](#prometheus--alertmanager--rollbar--graylog--grafana)
   * [Thanos](#thanos)
   * [Prometheus HA](#prometheus-ha)
-  * [ Datadog + PagerDuty + Threat Stack](#datadog--pagerduty--threat-stack)
+  * [Datadog + PagerDuty + Threat Stack](#datadog--pagerduty--threat-stack)
   * [Zabbix](#zabbix)
   * [Outlyer](#outlyer)
   * [Nagios + Nagiosgraph](#nagios--nagiosgraph)

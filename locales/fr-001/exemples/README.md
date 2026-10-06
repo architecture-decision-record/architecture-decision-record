@@ -14,7 +14,7 @@
 
 * [Stockage des secrets](stockage-des-secrets)
 
-* [snake_case ou camelCase pour une API REST](snake_case-ou-camelcase-pour-une-api-rest)
+* [snake_case ou camelCase pour une API REST](snake-case-ou-camelcase-pour-une-api-rest)
 
 * [Format d’horodatage](format-d-horodatage)
 

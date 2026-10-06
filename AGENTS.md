@@ -34,8 +34,8 @@ fix that file to match the spec (or change the spec deliberately).
 
 ## Before committing
 
-1. Locale complete: 203 files; links and anchors resolve (only the four known
-   `0005-example.md` MADR placeholders may fail).
+1. `python3 scripts/audit-locales.py` exits 0 (203 files per locale, translated slugs,
+   links and anchors resolve; the four MADR `0005-example.md` placeholders are ignored).
 2. `pnpm run check` in `architecture-decision-record.github.io` reports 0 errors.
 3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
    for Claude-assisted work.

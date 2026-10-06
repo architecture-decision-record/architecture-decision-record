@@ -14,7 +14,7 @@
 
 * [Хранение секретов](хранение-секретов)
 
-* [snake_case или camelCase для REST API](snake_case-или-camelcase-для-rest-api)
+* [snake_case или camelCase для REST API](snake-case-или-camelcase-для-rest-api)
 
 * [Формат временной метки](формат-временной-метки)
 

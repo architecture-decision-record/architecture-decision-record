@@ -16,7 +16,8 @@ a time; do not use parallel subagents.
 5. Copy each directory's `index.md` to `README.md`, copy `.locale-peer-id`
    files from `locales/en-001` (67), and copy `LICENSE.md` files unchanged.
 6. Delete `.DS_Store`; confirm 203 files.
-7. Run the checks in [spec/repository.md](../spec/repository.md#verification).
+7. Run `python3 scripts/audit-locales.py` and the other checks in
+   [spec/repository.md](../spec/repository.md#verification).
 8. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`
    (`locales/README.md` is a symlink to it).
 9. Add `<language>_<region>` to `LOCALES` in `src/lib/locales.js`, sorted by
