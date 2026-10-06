@@ -42,6 +42,15 @@
 		})
 	);
 
+	// The site has no search page of its own, and the search picker navigates
+	// to the bare query ("/?foo"), so hand the query to a web search scoped to
+	// this site.
+	const SITE_HOST = 'architecture-decision-record.github.io';
+	function searchSite(href: string) {
+		const query = decodeURIComponent(href.slice(href.indexOf('?') + 1));
+		location.assign(`https://duckduckgo.com/?q=${encodeURIComponent(`site:${SITE_HOST} ${query}`)}`);
+	}
+
 	const shareTargets: ShareTarget[] = [
 		{
 			id: 'email',
@@ -96,11 +105,15 @@
 			<div class="site-header-controls">
 				<PickerBar
 					labels={{
+						search: 'Search this site',
+						searchInput: 'Search terms',
+						searchSubmit: 'Search',
 						theme: 'Colour theme — all Lily Design System themes',
 						locale: 'Language',
 						textSize: 'Text size',
 						share: 'Share Picker'
 					}}
+					searchProps={{ navigate: searchSite }}
 					themesUrl="/themes/"
 					themes={themeSlugs}
 					themeProps={{

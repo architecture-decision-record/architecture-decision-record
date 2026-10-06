@@ -28,7 +28,7 @@
 	"dependencies": {
 		"@lilydesignsystem/svelte-headless": "^0.2.0",
 		"@lilydesignsystem/svelte-locale-picker": "^0.1.3",
-		"@lilydesignsystem/svelte-picker-bar": "^0.1.0",
+		"@lilydesignsystem/svelte-picker-bar": "^0.2.0",
 		"@lilydesignsystem/svelte-share-picker": "^0.1.2",
 		"@lilydesignsystem/svelte-text-size-picker": "^0.1.2",
 		"@lilydesignsystem/svelte-theme-picker": "^0.1.2",
