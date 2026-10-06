@@ -36,7 +36,7 @@ publishing commands.
   the built site needs (content included) must live inside this directory,
   never referenced via `../` at runtime.
 - Run `pnpm run check` before committing changes to `src/`.
-- The language picker (`LOCALES` in `src/lib/components/Header.svelte`) is
+- The language picker (`LOCALES` in `src/lib/locales.js`) is
   hand-maintained, sorted by code, and lists the locale dirs under `../locales/`
   (`xx-001` → `xx_001`). It only sets `lang`/`dir`; translated pages are not
   yet served.
@@ -48,3 +48,9 @@ publishing commands.
 - `static/sitemap.xml` is **generated** by `scripts/generate-sitemap.mjs` from the
   manifest (run with `content`, `build`, `dev`; or `pnpm run sitemap`); never
   hand-edit it. `static/robots.txt` points to it.
+- `static/search/<locale>.json` (per-locale search indexes) and `src/content/` are
+  **generated** from `../locales/` by `pnpm run content`; commit the output.
+  Locale list and slug rules live in `src/lib/locales.js` (shared with the
+  picker); add new locales there, then run `pnpm run content`.
+  The route `/<locale>/?<query>` is `src/routes/[locale]/`; see
+  `spec/locale-specific-search-picker/index.md`.

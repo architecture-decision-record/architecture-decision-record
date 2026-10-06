@@ -19,6 +19,7 @@ a time; do not use parallel subagents.
 7. Run the checks in [spec/repository.md](../spec/repository.md#verification).
 8. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`
    (`locales/README.md` is a symlink to it).
-9. Add `<language>_<region>` to `LOCALES` in `Header.svelte`, sorted by code;
-   run `pnpm run check`.
+9. Add `<language>_<region>` to `LOCALES` in `src/lib/locales.js`, sorted by
+   code; run `pnpm run content` (regenerates `static/search/<slug>.json`) and
+   `pnpm run check`.
 10. Commit, then follow [publish.md](publish.md).

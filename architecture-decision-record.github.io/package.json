@@ -12,7 +12,8 @@
 		"manifest": "node scripts/generate-manifest.mjs",
 		"llms": "node scripts/generate-llms.mjs",
 		"sitemap": "node scripts/generate-sitemap.mjs",
-		"content": "node scripts/sync-content.mjs && node scripts/generate-manifest.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs"
+		"search-index": "node scripts/generate-search-index.mjs",
+		"content": "node scripts/sync-content.mjs && node scripts/generate-manifest.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^4.0.0",

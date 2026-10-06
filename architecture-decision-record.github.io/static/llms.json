@@ -7,7 +7,7 @@
     "guide": 15,
     "templates": 11,
     "examples": 40,
-    "locales": 27
+    "locales": 28
   },
   "sections": {
     "guide": [
@@ -293,6 +293,7 @@
     "ar_001",
     "bn_001",
     "cy_001",
+    "cy_GB",
     "da_001",
     "de_001",
     "en",

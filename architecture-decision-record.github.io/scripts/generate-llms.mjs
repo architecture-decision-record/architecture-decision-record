@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Writes static/llms.txt and static/llms.json from src/lib/manifest.json,
-// src/content/templates.meta.json, and the LOCALES array in Header.svelte,
+// src/content/templates.meta.json, and the LOCALES array in src/lib/locales.js,
 // so the page lists and counts never drift from the site. Reads only files
 // inside this directory (it also runs in the standalone published repo).
 //   pnpm run llms
@@ -19,8 +19,8 @@ const manifest = JSON.parse(readFileSync(path.join(root, 'src/lib/manifest.json'
 const metaFile = path.join(root, 'src/content/templates.meta.json');
 const meta = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, 'utf8')) : {};
 
-const header = readFileSync(path.join(root, 'src/lib/components/Header.svelte'), 'utf8');
-const localeMatch = /const LOCALES = \[([^\]]*)\]/.exec(header);
+const localesSource = readFileSync(path.join(root, 'src/lib/locales.js'), 'utf8');
+const localeMatch = /export const LOCALES = \[([^\]]*)\]/.exec(localesSource);
 const locales = localeMatch ? [...localeMatch[1].matchAll(/'([^']+)'/g)].map((m) => m[1]) : [];
 
 const pages = (section) =>

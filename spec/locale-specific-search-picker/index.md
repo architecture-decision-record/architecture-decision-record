@@ -1,8 +1,9 @@
 # Locale-specific search picker
 
-Status: specification, not yet implemented. Today the picker's search sends
-the query to a site-scoped DuckDuckGo search (`searchSite` in
-`Header.svelte`), and the site does not yet serve translated pages.
+Status: implemented. Code: `src/lib/locales.js`, `src/lib/search.js`,
+`scripts/generate-search-index.mjs`, `src/routes/[locale]/`, and the picker
+wiring in `src/lib/components/Header.svelte`. The site does not yet serve
+translated pages, so result links go to the English page (or GitHub).
 
 ## Requirements
 
@@ -36,8 +37,9 @@ index files.
 
 - A script `scripts/generate-search-index.mjs` reads
   `locales/<slug>/{documents,templates,examples}/**/index.md` and writes
-  `static/search/<slug>.json`, one file per locale. The script runs with
-  `content`, `build`, and `dev`, like the other generators.
+  `static/search/<slug>.json`, one file per locale. The script reads the parent
+  monorepo, so it runs with `pnpm run content` (not `build`); the generated
+  `static/search/*.json` files are committed.
 - Because the site directory is published alone and must not reference `../`
   at runtime, `sync-content` (or this script) copies what it needs into the
   site directory first; the browser only ever fetches
@@ -70,8 +72,8 @@ index files.
 - Case-insensitive, Unicode-normalized (NFKC) matching.
 - Tokenize with `Intl.Segmenter(<locale>, { granularity: 'word' })` so that
   languages without spaces (`th`, `ja`, `zh-*`) work; drop non-word segments.
-- A record matches when every query token is a prefix of, or contained in,
-  its tokens. Rank by: title match, heading match, then body match; ties by
+- A record matches when every query token is a prefix of one of its tokens,
+  or (for query tokens of 3 or more characters) contained in one. Rank by: title match, heading match, then body match; ties by
   section order (documents, templates, examples).
 - A small library such as MiniSearch may be used for the index; whichever is
   chosen must accept a custom tokenizer for the rule above.
@@ -119,8 +121,8 @@ only when the visitor is already on a locale route.
 - Index size: budget each `/search/<slug>.json` at 1 MB uncompressed or less
   (GitHub Pages serves gzip). If exceeded, index titles, headings, and the
   first 500 characters of body text only.
-- `sitemap.xml` lists the 27 `/<slug>/` pages once they exist; `llms.json`
-  gains a `search` field only if the index is meant for agents.
+- The `/<slug>/` pages are search results pages (`noindex`), so they are not
+  listed in `sitemap.xml`.
 
 ## Acceptance tests
 

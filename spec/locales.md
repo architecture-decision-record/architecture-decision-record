@@ -33,7 +33,7 @@ TSV (section, English slug, localized directory) while translating.
    files from `locales/en`; copy `LICENSE.md` files unchanged.
 3. Run the verification in [repository.md](repository.md#verification).
 4. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`.
-5. Add the code to `LOCALES` in the website's `Header.svelte`, keeping the
+5. Add the code to `LOCALES` in the website's `src/lib/locales.js`, keeping the
    array sorted by code.
 6. Commit, push, publish the website subtree, verify.
 

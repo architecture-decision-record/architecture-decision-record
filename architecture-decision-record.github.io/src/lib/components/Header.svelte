@@ -8,6 +8,7 @@
 	import PickerBar, { DEFAULT_SIZES } from '@lilydesignsystem/svelte-picker-bar';
 	import type { ShareTarget } from '@lilydesignsystem/svelte-share-picker';
 	import { themes, DEFAULT_THEME_ID } from '#lib/data/themes.js';
+	import { LOCALES, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
 	const LOCALE_STORAGE_KEY = 'adr-locale';
@@ -21,11 +22,11 @@
 	// data-text-size values to a --user-font-scale.
 	const TEXT_SIZES = DEFAULT_SIZES;
 
-	// Locales translated under ../locales/ (one dir per entry below, with
-	// '_' written as '-'). The site itself still renders English content only:
-	// selecting a locale here sets lang/dir on <html> and persists the
-	// choice, but does not yet route to the translated pages.
-	const LOCALES = ['ar_001', 'bn_001', 'cy_001', 'da_001', 'de_001', 'en', 'en_001', 'en_GB', 'en_US', 'es_001', 'et_001', 'fr_001', 'hi_001', 'id_001', 'it_001', 'ja_001', 'ko_001', 'nl_001', 'pt_001', 'ru_001', 'sv_001', 'th_001', 'ur_001', 'vi_001', 'zh_001', 'zh_CN', 'zh_TW'];
+	// Locales translated under ../locales/ live in #lib/locales.js. The site
+	// itself still renders English content only: selecting a locale here sets
+	// lang/dir on <html> and persists the choice, but does not yet route to
+	// translated pages. Search is locale specific: it goes to /<locale>/?<query>.
+	let locale = $state(DEFAULT_LOCALE);
 
 	// Locale labels: the endonym with any parenthesised region turned into
 	// a dash, e.g. "English (United States)" -> "English - United States".
@@ -41,15 +42,6 @@
 			return [l, label.replace(/(^| - )(\S)/g, (_, sep, c) => sep + c.toLocaleUpperCase(tag))];
 		})
 	);
-
-	// The site has no search page of its own, and the search picker navigates
-	// to the bare query ("/?foo"), so hand the query to a web search scoped to
-	// this site.
-	const SITE_HOST = 'architecture-decision-record.github.io';
-	function searchSite(href: string) {
-		const query = decodeURIComponent(href.slice(href.indexOf('?') + 1));
-		location.assign(`https://duckduckgo.com/?q=${encodeURIComponent(`site:${SITE_HOST} ${query}`)}`);
-	}
 
 	const shareTargets: ShareTarget[] = [
 		{
@@ -113,7 +105,7 @@
 						textSize: 'Text size',
 						share: 'Share Picker'
 					}}
-					searchProps={{ navigate: searchSite }}
+					searchProps={{ action: `/${localeToSlug(locale)}/` }}
 					themesUrl="/themes/"
 					themes={themeSlugs}
 					themeProps={{
@@ -128,6 +120,7 @@
 						storageKey: LOCALE_STORAGE_KEY,
 						defaultValue: 'en',
 						name: 'locale',
+						onChange: (value: string) => (locale = value),
 						localeLabels: LOCALE_LABELS
 					}}
 					sizes={TEXT_SIZES}
