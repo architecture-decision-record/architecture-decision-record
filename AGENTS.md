@@ -1,0 +1,45 @@
+# Architecture Decision Record — agent guide
+
+Guide to architecture decision records (ADRs): templates, examples, and
+documents, translated into 27 locales, plus a SvelteKit website and Claude
+Code skills.
+
+**Read [spec/](spec/README.md) first. It is the single source of truth.** If
+this file, a README, a skill, `llms.txt`, or the site disagrees with the spec,
+fix that file to match the spec (or change the spec deliberately).
+
+## Map
+
+| Path | What |
+|---|---|
+| `spec/` | Specification: repository, content, locales, website, agents |
+| `README.md` | English overview; also parsed to build the site guide |
+| `locales/en-001/` | Source-of-truth English content (12 documents, 11 templates, 40 examples) |
+| `locales/<code>/` | Translations; 194 files each; directory names translated too |
+| `AGENTS/` | Task guides: translate a locale, add template/example, website, publish, review |
+| `skills/` | `architecture-decision-record-skill`, `architecture-decision-record-maintainer-skill` |
+| `architecture-decision-record.github.io/` | Website; has its own `AGENTS.md` |
+
+## Rules
+
+- Edit English in `locales/en-001`, then translate; never the reverse.
+- In each content directory keep `index.md` and `README.md` identical.
+- Never hand-edit `.locale-peer-id` files or translate `LICENSE.md` files.
+- Never hand-edit `architecture-decision-record.github.io/src/content/` or
+  `src/lib/manifest.json`; they are generated.
+- Translate locales one at a time, not with parallel subagents.
+- Keep product names, code, and URLs untranslated.
+- When counts change (templates, examples, locales), update the spec,
+  `static/llms.txt`, and the skills together.
+
+## Before committing
+
+1. Locale complete: 194 files; links and anchors resolve (only the four known
+   `0005-example.md` MADR placeholders may fail).
+2. `pnpm run check` in `architecture-decision-record.github.io` reports 0 errors.
+3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
+   for Claude-assisted work.
+4. Do not commit or push unless asked. Publish the site with the `git subtree
+   push` command in [spec/website.md](spec/website.md#publishing).
+
+Keep this file under 40,000 bytes; put detail in `spec/`.

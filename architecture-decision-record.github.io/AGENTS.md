@@ -1,7 +1,8 @@
 # Architecture Decision Record — website
 
 The published website for the Architecture Decision Record project. See
-[README.md](README.md) for the human-oriented overview.
+[README.md](README.md) for the human-oriented overview. Repository-wide rules and the
+specification live in the parent repo's `AGENTS.md` and `spec/`.
 
 ## What this is
 
@@ -35,3 +36,11 @@ publishing commands.
   the built site needs (content included) must live inside this directory,
   never referenced via `../` at runtime.
 - Run `pnpm run check` before committing changes to `src/`.
+- The language picker (`LOCALES` in `src/lib/components/Header.svelte`) is
+  hand-maintained, sorted by code, and lists the locale dirs under `../locales/`
+  (`xx-001` → `xx_001`). It only sets `lang`/`dir`; translated pages are not
+  yet served.
+- `static/llms.txt` is hand-authored; update its counts when templates,
+  examples, or locales change.
+- `typescript` stays on 6.x: SvelteKit 3 needs TypeScript's JS API, which 7.x
+  does not provide.

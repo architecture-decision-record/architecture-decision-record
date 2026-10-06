@@ -1,0 +1,14 @@
+# Architecture Decision Record (ADR)
+
+> A guide to architecture decision records: what they are, how to start using them, and a curated set of decision record templates and real-world examples. Source: https://github.com/architecture-decision-record/architecture-decision-record
+
+## Guide
+
+- [Guide](https://architecture-decision-record.github.io/guide/): what an ADR is, how to start, tools, git, file names, writing tips
+- [Templates](https://architecture-decision-record.github.io/templates/): 11 decision record templates (Nygard, MADR, arc42, Planguage, and others)
+- [Examples](https://architecture-decision-record.github.io/examples/): 40 example decision records
+- [Skills](https://architecture-decision-record.github.io/skills/): Claude Code skills for writing and maintaining ADRs
+
+## Optional
+
+- [Translations](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/locales): 27 locales (en-001 source plus 26 translations) of the documents, examples, and templates
