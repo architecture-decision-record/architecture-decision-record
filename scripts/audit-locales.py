@@ -30,8 +30,11 @@ COGNATES={'da-001':{'css-framework','mysql-database','postgresql-database','pyth
  'nl-001':{'css-framework','mysql-database','postgresql-database','python-django-framework','ruby-on-rails-framework','sveltekit-framework'},
  'de-001':{'css-framework','python-django-framework','ruby-on-rails-framework','sveltekit-framework'},
  'id-001':{'monorepo-vs-multirepo'},'fr-001':{'documents'}}
-SYMLINK_OK={'en-us'}   # en-us mirrors en-001, whose README.md files are symlinks to index.md
+SYMLINK_OK=set()   # README.md files are real copies of index.md, never symlinks
 locs=sorted(x for x in os.listdir('.') if re.match(r'^[a-z]{2,3}-[a-z0-9]{2,3}$',x) and x!=SRC)
+for dp,_,fs in os.walk(SRC):
+    for f in fs:
+        if os.path.islink(f'{dp}/{f}'): print('SOURCE SYMLINK',dp,f); sys.exit(1)
 problems=collections.defaultdict(list)
 for loc in locs:
     secs,pages=tree(loc)
