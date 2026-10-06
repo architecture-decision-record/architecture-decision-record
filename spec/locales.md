@@ -8,11 +8,11 @@ Welsh (`cy-gb`), English (`en-gb`, `en-us`) and Chinese (`zh-cn`, `zh-tw`).
 
 The picker uses `_` and mixed case instead (`en_GB`, `zh_TW`, `da_001`).
 
-## The 27 locales
+## The 28 locales
 
 en-001 (source), en-gb, en-us, cy-001, cy-gb, zh-001, zh-cn, zh-tw, hi-001,
 es-001, fr-001, ar-001, bn-001, ru-001, pt-001, ur-001, id-001, ja-001,
-vi-001, de-001, sv-001, ko-001, nl-001, da-001, et-001, it-001, th-001.
+vi-001, de-001, sv-001, ko-001, nl-001, da-001, et-001, it-001, th-001, fi-001.
 
 `locales/locales-by-priority.md` records the translation order.
 

@@ -30,3 +30,4 @@
 * [Eesti (Maailm)](et-001/)
 * [Italiano (Mondo)](it-001/)
 * [ไทย (โลก)](th-001/)
+* [Suomi (Maailma)](fi-001/)

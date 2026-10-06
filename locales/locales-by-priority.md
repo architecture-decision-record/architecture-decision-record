@@ -24,6 +24,7 @@ Translate into these locales. Translate serially NOT subagents. After each local
 - et-001
 - it-001
 - th-001
+- fi-001
 
 ## Details
 

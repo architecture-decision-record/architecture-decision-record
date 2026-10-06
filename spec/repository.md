@@ -15,7 +15,7 @@ architecture-decision-record.github.io/   website, published via git subtree (se
 ```
 
 Legacy locale dirs without a region (`en`, `es`, `fr`, `ja`, `ko`, `tr`) predate
-the `<language>-<region>` scheme and are not part of the 27 spec locales.
+the `<language>-<region>` scheme and are not part of the 28 spec locales.
 
 ## Per-locale layout
 
@@ -39,7 +39,7 @@ A complete locale has exactly **203 files**.
 | Documents | 12 |
 | Templates | 11 |
 | Examples | 40 |
-| Locales (hyphenated dirs, incl. `en-001`) | 27 |
+| Locales (hyphenated dirs, incl. `en-001`) | 28 |
 
 ## Commits
 

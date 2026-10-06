@@ -7,7 +7,7 @@
     "guide": 15,
     "templates": 11,
     "examples": 40,
-    "locales": 27
+    "locales": 28
   },
   "sections": {
     "guide": [
@@ -301,6 +301,7 @@
     "en_US",
     "es_001",
     "et_001",
+    "fi_001",
     "fr_001",
     "hi_001",
     "id_001",
