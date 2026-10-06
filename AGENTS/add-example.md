@@ -3,7 +3,7 @@
 Content rules: [spec/content.md](../spec/content.md).
 
 1. Create `locales/en-001/examples/<slug>/index.md` with the worked example,
-   and an identical `README.md`.
+   and `README.md` as a symlink to it (`ln -s index.md README.md`).
 2. Link it from `locales/en-001/examples/index.md` and `README.md` in the
    right group (general, ChatGPT, language, database, orchestration, web).
 3. Optionally add it to the curated `Examples:` list in the root `README.md`.

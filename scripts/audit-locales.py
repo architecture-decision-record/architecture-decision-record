@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit every locale against locales/en-001: all pages and files present, README == index,
+"""Audit every locale against locales/en-001: all pages and files present, every README.md a symlink to index.md,
 no stray files, translated slugs, slug hygiene, and every link/anchor resolving.
 Run from anywhere: python3 scripts/audit-locales.py (exit status 1 on any problem)."""
 import os,re,sys,filecmp,unicodedata,urllib.parse,collections
@@ -30,11 +30,13 @@ COGNATES={'da-001':{'css-framework','mysql-database','postgresql-database','pyth
  'nl-001':{'css-framework','mysql-database','postgresql-database','python-django-framework','ruby-on-rails-framework','sveltekit-framework'},
  'de-001':{'css-framework','python-django-framework','ruby-on-rails-framework','sveltekit-framework'},
  'id-001':{'monorepo-vs-multirepo'},'fr-001':{'documents'}}
-SYMLINK_OK=set()   # README.md files are real copies of index.md, never symlinks
+# Every README.md must be a symlink to the index.md beside it; no other symlinks are allowed.
 locs=sorted(x for x in os.listdir('.') if re.match(r'^[a-z]{2,3}-[a-z0-9]{2,3}$',x) and x!=SRC)
 for dp,_,fs in os.walk(SRC):
     for f in fs:
-        if os.path.islink(f'{dp}/{f}'): print('SOURCE SYMLINK',dp,f); sys.exit(1)
+        q=f'{dp}/{f}'
+        if (f=='README.md') != os.path.islink(q) or (f=='README.md' and os.readlink(q)!='index.md'):
+            print('SOURCE README/symlink problem',q); sys.exit(1)
 problems=collections.defaultdict(list)
 for loc in locs:
     secs,pages=tree(loc)
@@ -85,7 +87,10 @@ for loc in locs:
     for dp,dn,fn in os.walk(loc):
         for f in fn:
             if f=='.DS_Store': problems[loc].append(f'stray {dp}/{f}')
-            if os.path.islink(f'{dp}/{f}') and loc not in SYMLINK_OK: problems[loc].append(f'symlink {dp}/{f}')
+            q=f'{dp}/{f}'
+            if f=='README.md':
+                if not os.path.islink(q) or os.readlink(q)!='index.md': problems[loc].append(f'README.md must be a symlink to index.md: {q}')
+            elif os.path.islink(q): problems[loc].append(f'unexpected symlink {q}')
     allf=sum(len(fs) for _,_,fs in os.walk(loc))
     if allf!=203: problems[loc].append(f'file count {allf} != 203')
 for loc in locs:

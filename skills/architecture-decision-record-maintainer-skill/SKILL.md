@@ -24,7 +24,8 @@ locales/en-001/ ... th-001/  source-of-truth English (en-001) plus 26 other loca
 ```
 
 Every content directory has an `index.md` and (where meant for GitHub
-browsing) an identical `README.md` — keep both in sync if you touch one.
+browsing) a `README.md` that is a symlink to `index.md` (`ln -s index.md README.md`)
+— edit only `index.md`.
 `.locale-peer-id` files are opaque IDs used by the maintainer's own
 translation/sync tooling; never hand-edit them, and don't worry about
 regenerating them.

@@ -21,7 +21,8 @@ the `<language>-<region>` scheme and are not part of the 27 spec locales.
 
 Each locale holds three section directories (names translated per
 [locales.md](locales.md)): documents, templates, examples. Every content
-directory contains `index.md` and a byte-identical `README.md`. Locale
+directory contains `index.md` and a `README.md` that is a **symlink to `index.md`**
+(`ln -s index.md README.md`; never a copy, so the two cannot differ). Locale
 directories carry `.locale-peer-id` files (67 per locale: one per content
 directory plus section and locale roots); these are opaque, copied unchanged
 from `locales/en-001`, and never hand-edited. Template `LICENSE.md` files are
@@ -69,12 +70,12 @@ rule for that task.
 
 ## Verification
 
-1. `find locales/<code> -type f | wc -l` is 203 (excluding `.DS_Store`).
+1. `find locales/<code> \( -type f -o -type l \) | wc -l` is 203 (excluding `.DS_Store`).
 2. Every relative link resolves. Known, accepted failures: four `0005-example.md`
    placeholders in the MADR template (`README.md` and `index.md`, two each).
 3. Every `#fragment` link matches a heading slug (letters, marks, numbers,
    `-` and `_` kept; spaces become `-`; duplicate headings get `-N`).
 4. `python3 scripts/audit-locales.py` exits 0: every locale has every page and file
-   (203 files), README equals index, no stray files or symlinks,
+   (203 files), every `README.md` is a symlink to its `index.md` (the only symlinks allowed), no stray files,
    every slug is translated and clean, and all links and anchors resolve.
 5. `pnpm run check` in the website directory reports 0 errors.

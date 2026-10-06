@@ -23,7 +23,7 @@ fix that file to match the spec (or change the spec deliberately).
 ## Rules
 
 - Edit English in `locales/en-001`, then translate; never the reverse.
-- In each content directory keep `index.md` and `README.md` identical.
+- In each content directory `README.md` is a symlink to `index.md` (`ln -s index.md README.md`); edit `index.md` only.
 - Never hand-edit `.locale-peer-id` files or translate `LICENSE.md` files.
 - Never hand-edit `architecture-decision-record.github.io/src/content/` or
   `src/lib/manifest.json`; they are generated.

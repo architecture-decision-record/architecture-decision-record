@@ -7,7 +7,7 @@ Content rules: [spec/content.md](../spec/content.md).
    `# Decision record template <by|for|using> <name>`, credit the source with
    a link, then give narrative field descriptions or a literal copy of the
    template's headings.
-2. Add an identical `README.md`; verify with `diff`.
+2. Add `README.md` as a symlink to `index.md` (`ln -s index.md README.md`).
 3. Link it from `locales/en-001/templates/index.md` and `README.md` (kept
    identical).
 4. Add it to the root `README.md` in the `Templates:` list and in
