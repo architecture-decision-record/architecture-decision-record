@@ -5,12 +5,14 @@
 	"type": "module",
 	"description": "Architecture Decision Record (ADR) guide — published website (SvelteKit + Lily Design System)",
 	"scripts": {
-		"dev": "node scripts/generate-manifest.mjs && vite dev",
-		"build": "node scripts/generate-manifest.mjs && vite build",
+		"dev": "node scripts/generate-manifest.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite dev",
+		"build": "node scripts/generate-manifest.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"manifest": "node scripts/generate-manifest.mjs",
-		"content": "node scripts/sync-content.mjs && node scripts/generate-manifest.mjs"
+		"llms": "node scripts/generate-llms.mjs",
+		"sitemap": "node scripts/generate-sitemap.mjs",
+		"content": "node scripts/sync-content.mjs && node scripts/generate-manifest.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^4.0.0",

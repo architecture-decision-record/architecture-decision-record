@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 // Copies content from the sibling directories of this monorepo into
 // src/content/ here: guide sections are parsed out of the repo's own
-// README.md, templates and examples are copied from locales/en/. The
+// README.md, templates and examples are copied from locales/en-001/. The
 // copied files are committed — this script exists to regenerate them
-// after README.md or locales/en/ change. Never hand-edit files under
+// after README.md or locales/en-001/ change. Never hand-edit files under
 // src/content/; edit the source files and re-run `pnpm run content`
 // instead.
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -13,6 +13,8 @@ import path from 'node:path';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(here, '..');
 const repoRoot = path.resolve(siteRoot, '..');
+// Source-of-truth locale (see spec/locales.md).
+const SOURCE_LOCALE = 'en-001';
 const contentRoot = path.resolve(siteRoot, 'src/content');
 
 function slugify(text) {
@@ -95,7 +97,7 @@ function syncGuide(readme) {
 // repo, which has no README.md of its own.
 function syncTemplateMetadata(readme) {
   const meta = {};
-  const linkRe = /\[([^\]]+)\]\(locales\/en\/templates\/([a-z0-9-]+)\/?\)(?:\s*\(([^)]+)\))?/g;
+  const linkRe = /\[([^\]]+)\]\(locales\/en(?:-001)?\/templates\/([a-z0-9-]+)\/?\)(?:\s*\(([^)]+)\))?/g;
   let match;
   while ((match = linkRe.exec(readme))) {
     const [, title, slug, description] = match;
@@ -105,15 +107,15 @@ function syncTemplateMetadata(readme) {
   console.log(`Wrote metadata for ${Object.keys(meta).length} template(s) into src/content/templates.meta.json`);
 }
 
-// --- Templates and examples: copy locales/en/<section>/<slug>/index.md ---
+// --- Templates and examples: copy locales/<source locale>/<section>/<slug>/index.md ---
 function syncLocaleSection(section) {
-  const sourceDir = path.join(repoRoot, 'locales', 'en', section);
+  const sourceDir = path.join(repoRoot, 'locales', SOURCE_LOCALE, section);
   const outDir = path.join(contentRoot, section);
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
 
   if (!existsSync(sourceDir)) {
-    console.warn(`Skipping missing source section: locales/en/${section}`);
+    console.warn(`Skipping missing source section: locales/${SOURCE_LOCALE}/${section}`);
     return;
   }
 

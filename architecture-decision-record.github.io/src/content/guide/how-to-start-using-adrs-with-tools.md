@@ -1,5 +1,7 @@
 # How to start using ADRs with tools
 
+- [MySpec](https://myspec.dev) — Automated specification and architectural decision platform structuring project constitution, technical architecture, and ADRs into clean Markdown served via MCP.
+
 You can start using ADRs with tools any way you want.
 
 For example:

@@ -11,6 +11,6 @@ Rules: [spec/website.md](../spec/website.md). Work in
   newer than about a day may be held back by pnpm's release-age policy; do not
   bypass it without asking.
 - Hand-authored pages: `src/routes/+page.svelte`, `src/routes/skills/+page.svelte`,
-  `src/lib/components/Header.svelte`, `static/llms.txt`.
+  `src/lib/components/Header.svelte`. `static/llms.txt` and `llms.json` are generated.
 - Nothing may reference `../` at runtime.
 - Finish with `pnpm run check` (0 errors).

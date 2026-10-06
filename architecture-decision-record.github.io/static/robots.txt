@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://architecture-decision-record.github.io/sitemap.xml

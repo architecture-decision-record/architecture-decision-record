@@ -15,13 +15,13 @@ compiled with [mdsvex](https://mdsvex.pngwn.io/).
 This directory lives inside the `architecture-decision-record` monorepo,
 one level below the repository root. The guide pages are parsed out of the
 parent repo's own `README.md`; templates and examples are copied from
-`../locales/en/templates/` and `../locales/en/examples/` (see
+`../locales/en-001/templates/` and `../locales/en-001/examples/` (see
 [`scripts/sync-content.mjs`](scripts/sync-content.mjs)), and a navigation
 manifest is generated from the result (see
 [`scripts/generate-manifest.mjs`](scripts/generate-manifest.mjs)).
 
 **Never hand-edit files under `src/content/`.** Edit `../README.md` or
-`../locales/en/` instead, then regenerate:
+`../locales/en-001/` instead, then regenerate:
 
 ```sh
 pnpm run content   # re-parses/copies from one level up, then rebuilds the manifest

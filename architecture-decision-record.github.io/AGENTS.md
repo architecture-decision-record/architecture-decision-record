@@ -19,7 +19,7 @@ publishing commands.
 ## Working rules
 
 - `src/content/` is **generated** from the parent repo's `README.md` and
-  `locales/en/{templates,examples}/` by `scripts/sync-content.mjs` — never
+  `locales/en-001/{templates,examples}/` by `scripts/sync-content.mjs` — never
   hand-edit files under it. Edit the source content one level up (`../`),
   then run `pnpm run content` here.
 - `src/lib/manifest.json` is **generated** by `scripts/generate-manifest.mjs`
@@ -40,7 +40,11 @@ publishing commands.
   hand-maintained, sorted by code, and lists the locale dirs under `../locales/`
   (`xx-001` → `xx_001`). It only sets `lang`/`dir`; translated pages are not
   yet served.
-- `static/llms.txt` is hand-authored; update its counts when templates,
-  examples, or locales change.
+- `static/llms.txt` and `static/llms.json` are **generated** by
+  `scripts/generate-llms.mjs` (run by `pnpm run content`, `build`, and `dev`)
+  from the manifest and `LOCALES` — never hand-edit them.
 - `typescript` stays on 6.x: SvelteKit 3 needs TypeScript's JS API, which 7.x
   does not provide.
+- `static/sitemap.xml` is **generated** by `scripts/generate-sitemap.mjs` from the
+  manifest (run with `content`, `build`, `dev`; or `pnpm run sitemap`); never
+  hand-edit it. `static/robots.txt` points to it.

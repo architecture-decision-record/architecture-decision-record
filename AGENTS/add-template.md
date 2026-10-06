@@ -13,6 +13,6 @@ Content rules: [spec/content.md](../spec/content.md).
 4. Add it to the root `README.md` in the `Templates:` list and in
    `## ADR example templates`, with a short parenthetical.
 5. Update the template count (now 11) in `spec/repository.md`,
-   `spec/content.md`, `AGENTS.md`, and the site's `static/llms.txt`.
+   `spec/content.md`, `AGENTS.md` and run `pnpm run content` in the site (regenerates `llms.txt`/`llms.json`).
 6. Existing translations do not include it until translated; note this in the
    commit message.
