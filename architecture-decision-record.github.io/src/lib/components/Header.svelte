@@ -32,6 +32,11 @@
 	// a dash, e.g. "English (United States)" -> "English - United States".
 	// *_001 (world) locales drop the region: "English (world)" -> "English".
 	// The first letter of each part is capitalised: "español" -> "Español".
+	// The GB locales say "Great Britain" (Welsh: "Prydain Fawr") rather than
+	// "United Kingdom" (Welsh: "Y Deyrnas Unedig").
+	const REGION_OVERRIDES: Record<string, string> = { en_GB: 'Great Britain', cy_GB: 'Prydain Fawr' };
+	// Browsers lack Welsh display-name data and shorten Indonesian to "Indonesia".
+	const LANGUAGE_OVERRIDES: Record<string, string> = { cy: 'Cymraeg', id: 'Bahasa Indonesia' };
 	const LOCALE_LABELS = Object.fromEntries(
 		LOCALES.map((l) => {
 			const tag = l.replace('_', '-');
@@ -39,7 +44,9 @@
 			const label = l.endsWith('_001')
 				? name.replace(/\s*[(（][^)）]*[)）]\s*$/, '')
 				: name.replace(/\s*[(（]([^)）]*)[)）]\s*$/, ' - $1');
-			return [l, label.replace(/(^| - )(\S)/g, (_, sep, c) => sep + c.toLocaleUpperCase(tag))];
+			const [language, ...rest] = (l in REGION_OVERRIDES ? label.replace(/ - .*$/, ` - ${REGION_OVERRIDES[l]}`) : label).split(' - ');
+			const named = [LANGUAGE_OVERRIDES[l.split('_')[0]] ?? language, ...rest].join(' - ');
+			return [l, named.replace(/(^| - )(\S)/g, (_, sep, c) => sep + c.toLocaleUpperCase(tag))];
 		})
 	);
 
