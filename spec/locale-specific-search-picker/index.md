@@ -1,9 +1,9 @@
-# Locale-specific search picker
+# Locale-specific search picker and translated pages
 
 Status: implemented. Code: `src/lib/locales.js`, `src/lib/search.js`,
 `scripts/generate-search-index.mjs`, `src/routes/[locale]/`, and the picker
-wiring in `src/lib/components/Header.svelte`. The site does not yet serve
-translated pages, so result links go to the English page (or GitHub).
+wiring in `src/lib/components/Header.svelte`. Translated pages are served at
+`/<slug>/<section>/<dir>/` (see "Translated pages"), and results link to them.
 
 ## Requirements
 
@@ -82,12 +82,31 @@ index files.
 
 ### Result URLs
 
-Translated pages are not served yet. Until they are, each record's `url`
-points to the English page when one exists with the same slug mapping, or to
-the locale's directory on GitHub
-(`https://github.com/architecture-decision-record/architecture-decision-record/tree/main/locales/<slug>/<section>/<dir>/`).
-When translated pages are routed, `url` becomes `/<slug>/<section>/<dir>/`
-and this section is updated.
+Each record's `url` is the locale's own translated page,
+`/<slug>/<section>/<dir>/`, using the translated directory names. A result
+never links to the English page or to another locale.
+
+## Translated pages
+
+- `scripts/sync-locales.mjs` copies `locales/<slug>/<section>/<dir>/index.md`
+  (and each section's `index.md`) to `src/content/locales/<slug>/...` and
+  writes `src/lib/locale-pages.json`, the per-locale tree of sections and pages.
+  It runs with `pnpm run content`; output is committed.
+- Routes (all prerendered from the tree): `/<slug>/` (search page and contents
+  list), `/<slug>/<section>/` (section index), `/<slug>/<section>/<dir>/`
+  (page). Markdown is rendered at build time on the server with `marked`
+  (`src/lib/server/locale-pages.js`).
+- Relative links written for the GitHub layout (`dir-name`, `../other/`,
+  `index.md`) are rewritten to these routes; unknown targets are left as is
+  (the four `0005-example.md` MADR placeholders).
+- Headings get ids using the same slug rule as [../repository.md](../repository.md#verification),
+  plus alias ids for table-of-contents links that collapse `--` or turn `.`
+  and `/` into `-`.
+- Pages carry the locale's `lang` and `dir` (RTL for `ar`, `ur`).
+- `en-001`, `en-gb`, and `en-us` pages are `noindex` (they duplicate the
+  English site) and are not in `sitemap.xml`; every other locale's pages are.
+- The search page headline is the query (`/es-001/?try` shows "try"), with the
+  locale slug beneath it; with no query it shows the locale's contents.
 
 ## Picker wiring
 

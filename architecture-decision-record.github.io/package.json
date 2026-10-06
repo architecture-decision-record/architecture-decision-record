@@ -12,8 +12,9 @@
 		"manifest": "node scripts/generate-manifest.mjs",
 		"llms": "node scripts/generate-llms.mjs",
 		"sitemap": "node scripts/generate-sitemap.mjs",
+		"locales": "node scripts/sync-locales.mjs",
 		"search-index": "node scripts/generate-search-index.mjs",
-		"content": "node scripts/sync-content.mjs && node scripts/generate-manifest.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs"
+		"content": "node scripts/sync-content.mjs && node scripts/sync-locales.mjs && node scripts/generate-manifest.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^4.0.0",
@@ -33,6 +34,7 @@
 		"@lilydesignsystem/svelte-share-picker": "^0.1.2",
 		"@lilydesignsystem/svelte-text-size-picker": "^0.1.2",
 		"@lilydesignsystem/svelte-theme-picker": "^0.1.2",
+		"marked": "^18.1.0",
 		"rehype-slug": "^6.0.0"
 	},
 	"pnpm": {

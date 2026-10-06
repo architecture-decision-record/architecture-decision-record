@@ -48,7 +48,8 @@ publishing commands.
 - `static/sitemap.xml` is **generated** by `scripts/generate-sitemap.mjs` from the
   manifest (run with `content`, `build`, `dev`; or `pnpm run sitemap`); never
   hand-edit it. `static/robots.txt` points to it.
-- `static/search/<locale>.json` (per-locale search indexes) and `src/content/` are
+- `static/search/<locale>.json` (per-locale search indexes), `src/content/` (including
+  `src/content/locales/`, the translated pages) and `src/lib/locale-pages.json` are
   **generated** from `../locales/` by `pnpm run content`; commit the output.
   Locale list and slug rules live in `src/lib/locales.js` (shared with the
   picker); add new locales there, then run `pnpm run content`.

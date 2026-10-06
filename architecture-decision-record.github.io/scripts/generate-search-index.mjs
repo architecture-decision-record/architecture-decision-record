@@ -14,18 +14,9 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(here, '..');
 const localesRoot = path.resolve(siteRoot, '..', 'locales');
 const outDir = path.join(siteRoot, 'static/search');
-const REPO_TREE = 'https://github.com/architecture-decision-record/architecture-decision-record/tree/main/locales';
 const SOURCE = 'en-001';
 const BUDGET = 1_000_000; // bytes per locale file (spec)
 const SNIPPET_TEXT = 500;
-
-const manifest = JSON.parse(readFileSync(path.join(siteRoot, 'src/lib/manifest.json'), 'utf8'));
-const siteSlugs = {
-	documents: new Set(manifest.guide.map((p) => p.slug)),
-	templates: new Set(manifest.templates.map((p) => p.slug)),
-	examples: new Set(manifest.examples.map((p) => p.slug))
-};
-const siteSection = { documents: 'guide', templates: 'templates', examples: 'examples' };
 
 const subdirs = (dir) =>
 	readdirSync(dir, { withFileTypes: true })
@@ -37,15 +28,7 @@ const peerId = (dir) => {
 	return existsSync(f) ? readFileSync(f, 'utf8').trim() : '';
 };
 
-// English section/dir for each peer id, so a translated page can link to its
-// English twin while translated pages are not routed.
-const english = new Map();
 const englishSections = ['documents', 'templates', 'examples'];
-for (const section of englishSections) {
-	for (const dir of subdirs(path.join(localesRoot, SOURCE, section))) {
-		english.set(peerId(path.join(localesRoot, SOURCE, section, dir)), { section, dir });
-	}
-}
 const englishSectionByPeer = new Map(
 	englishSections.map((s) => [peerId(path.join(localesRoot, SOURCE, s)), s])
 );
@@ -76,12 +59,6 @@ function headingsOf(md) {
 	return out;
 }
 
-function recordUrl(slug, sectionDir, dir, peer) {
-	const en = english.get(peer);
-	if (en && siteSlugs[en.section].has(en.dir)) return `/${siteSection[en.section]}/${en.dir}/`;
-	return `${REPO_TREE}/${slug}/${sectionDir}/${dir}/`;
-}
-
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
@@ -102,13 +79,12 @@ for (const slug of slugs) {
 			if (!existsSync(file) || !statSync(file).isFile()) continue;
 			const md = readFileSync(file, 'utf8');
 			const title = plainText((/^#\s+(.+)$/m.exec(md) ?? [, dir])[1]);
-			const peer = peerId(path.join(sectionPath, dir));
 			records.push({
 				id: `${sectionDir}/${dir}`,
 				title,
 				section: sectionDir,
 				kind: section ?? englishSectionByPeer.get(peerId(sectionPath)) ?? '',
-				url: recordUrl(slug, sectionDir, dir, peer),
+				url: `/${slug}/${sectionDir}/${dir}/`,
 				headings: headingsOf(md),
 				text: plainText(md)
 			});

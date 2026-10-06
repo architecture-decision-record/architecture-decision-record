@@ -46,15 +46,25 @@
 </script>
 
 <svelte:head>
-	<title>Search · {slug}</title>
+	<title>{query ? `${query} · ${slug}` : slug}</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
 <section class="locale-search" lang={slugToTag(slug)} dir={rtl ? 'rtl' : 'ltr'}>
-	<h1>{slug}</h1>
+	<h1>{query || slug}</h1>
+	{#if query}<p class="locale-label">{slug}</p>{/if}
 
 	{#if status === 'idle'}
-		<p>Use the search control in the header to search this locale.</p>
+		{#each data.sections as section (section.dir)}
+			<h2>
+				{#if section.hasIndex}<a href="/{slug}/{section.dir}/">{section.title}</a>{:else}{section.title}{/if}
+			</h2>
+			<ul>
+				{#each section.pages as page (page.dir)}
+					<li><a href="/{slug}/{section.dir}/{page.dir}/">{page.title}</a></li>
+				{/each}
+			</ul>
+		{/each}
 	{:else if status === 'loading'}
 		<p aria-live="polite">Searching…</p>
 	{:else if status === 'unavailable'}
