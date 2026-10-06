@@ -63,11 +63,15 @@ locale**:
 - If the chosen locale has no equivalent page (e.g. partial `cy-001`), or the
   current page is not a content page (home, skills), it goes to `/<slug>/`,
   the locale's contents page.
-- Only a user selection navigates. The picker's initial call (restoring the
-  stored locale) must not, so a fresh load never redirects.
+- Only a user selection navigates. The picker's initial call must not, so a
+  fresh load never redirects.
 - `en` and `en_001` are one entry ("English"); `en_001` is not listed.
-- The picker does not yet follow the URL: arriving on `/de-001/...` from a
-  link leaves the picker on the stored locale.
+- The picker shows the language of the page being viewed: on a locale route
+  (`/de-001/...`) its value is that locale, so a shared link shows it (and
+  persists it as the stored choice); on every English-site page it is
+  `English`. A value that matches the URL's own locale never triggers
+  navigation; only a user selection does. The server-rendered HTML already
+  carries the right value.
 
 Search goes to `/<locale>/?<query>` (see
 [locale-specific-search-picker/](locale-specific-search-picker/index.md)).

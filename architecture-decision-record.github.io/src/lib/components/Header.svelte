@@ -10,7 +10,7 @@
 	import { themes, DEFAULT_THEME_ID } from '#lib/data/themes.js';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
-	import { LOCALES, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
+	import { LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
 	import { pathForLocale } from '#lib/locale-nav.js';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
@@ -31,6 +31,20 @@
 	// /<locale>/?<query>.
 	let locale = $state(DEFAULT_LOCALE);
 
+	// The picker shows the language of the page being viewed: the locale in the
+	// path on a locale route (/de-001/...), so a shared link shows (and persists)
+	// that locale, and English on every English-site page. Choosing a locale
+	// navigates, which changes the URL, which keeps the picker in step.
+	const urlLocale = $derived.by(() => {
+		let segment = page.url.pathname.split('/')[1] ?? '';
+		try {
+			segment = decodeURIComponent(segment);
+		} catch {
+			// keep the raw segment
+		}
+		return (LOCALE_SLUGS.includes(segment) && LOCALES.find((l) => localeToSlug(l) === segment)) || DEFAULT_LOCALE;
+	});
+
 	// The picker calls onChange once when it initialises (restoring the stored
 	// choice) and again on every user selection. Only a selection navigates:
 	// to the same page in the chosen locale, or to that locale's contents page.
@@ -42,7 +56,8 @@
 			pickerReady = true;
 			return;
 		}
-		if (changed) await goto(await pathForLocale(page.url.pathname, value));
+		// A value that matches the URL's own locale came from the URL, not a click.
+		if (changed && value !== urlLocale) await goto(await pathForLocale(page.url.pathname, value));
 	}
 
 	// Locale labels: the endonym with any parenthesised region turned into
@@ -144,6 +159,7 @@
 						storageKey: LOCALE_STORAGE_KEY,
 						defaultValue: 'en',
 						name: 'locale',
+						value: urlLocale,
 						onChange: onLocaleChange,
 						localeLabels: LOCALE_LABELS
 					}}
