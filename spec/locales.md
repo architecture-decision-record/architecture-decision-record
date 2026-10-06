@@ -30,7 +30,7 @@ TSV (section, English slug, localized directory) while translating.
 1. Translate 12 documents, 11 templates, 40 examples, plus the three section
    index pages.
 2. Copy each directory's `index.md` to `README.md`; copy `.locale-peer-id`
-   files from `locales/en`; copy `LICENSE.md` files unchanged.
+   files from `locales/en-001`; copy `LICENSE.md` files unchanged.
 3. Run the verification in [repository.md](repository.md#verification).
 4. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`.
 5. Add the code to `LOCALES` in the website's `src/lib/locales.js`, keeping the

@@ -15,7 +15,7 @@ fix that file to match the spec (or change the spec deliberately).
 | `spec/` | Specification: repository, content, locales, website, agents |
 | `README.md` | English overview; also parsed to build the site guide |
 | `locales/en-001/` | Source-of-truth English content (12 documents, 11 templates, 40 examples) |
-| `locales/<code>/` | Translations; 194 files each; directory names translated too |
+| `locales/<code>/` | Translations; 203 files each; directory names translated too |
 | `AGENTS/` | Task guides: translate a locale, add template/example, website, publish, review |
 | `skills/` | `architecture-decision-record-skill`, `architecture-decision-record-maintainer-skill` |
 | `architecture-decision-record.github.io/` | Website; has its own `AGENTS.md` |
@@ -34,7 +34,7 @@ fix that file to match the spec (or change the spec deliberately).
 
 ## Before committing
 
-1. Locale complete: 194 files; links and anchors resolve (only the four known
+1. Locale complete: 203 files; links and anchors resolve (only the four known
    `0005-example.md` MADR placeholders may fail).
 2. `pnpm run check` in `architecture-decision-record.github.io` reports 0 errors.
 3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`

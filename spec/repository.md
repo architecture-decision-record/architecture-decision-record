@@ -22,12 +22,14 @@ the `<language>-<region>` scheme and are not part of the 27 spec locales.
 Each locale holds three section directories (names translated per
 [locales.md](locales.md)): documents, templates, examples. Every content
 directory contains `index.md` and a byte-identical `README.md`. Locale
-directories carry `.locale-peer-id` files (58 per locale: one per content
+directories carry `.locale-peer-id` files (67 per locale: one per content
 directory plus section and locale roots); these are opaque, copied unchanged
-from `locales/en`, and never hand-edited. Template `LICENSE.md` files are
-copied unchanged and never translated.
+from `locales/en-001`, and never hand-edited. Template `LICENSE.md` files are
+copied unchanged and never translated. A new page gets one freshly generated
+32-character hex id in `locales/en-001`, copied to its translation in every
+locale (the nine newest pages were given ids this way).
 
-A complete locale has exactly **194 files**.
+A complete locale has exactly **203 files**.
 
 ## Counts
 
@@ -67,7 +69,7 @@ rule for that task.
 
 ## Verification
 
-1. `find locales/<code> -type f | wc -l` is 194 (excluding `.DS_Store`).
+1. `find locales/<code> -type f | wc -l` is 203 (excluding `.DS_Store`).
 2. Every relative link resolves. Known, accepted failures: four `0005-example.md`
    placeholders in the MADR template (`README.md` and `index.md`, two each).
 3. Every `#fragment` link matches a heading slug (letters, marks, numbers,

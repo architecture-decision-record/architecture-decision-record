@@ -14,8 +14,8 @@ a time; do not use parallel subagents.
 4. Keep code, URLs, and product names untranslated. Regenerate any table of
    contents from the translated headings.
 5. Copy each directory's `index.md` to `README.md`, copy `.locale-peer-id`
-   files from `locales/en` (58), and copy `LICENSE.md` files unchanged.
-6. Delete `.DS_Store`; confirm 194 files.
+   files from `locales/en-001` (67), and copy `LICENSE.md` files unchanged.
+6. Delete `.DS_Store`; confirm 203 files.
 7. Run the checks in [spec/repository.md](../spec/repository.md#verification).
 8. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`
    (`locales/README.md` is a symlink to it).
