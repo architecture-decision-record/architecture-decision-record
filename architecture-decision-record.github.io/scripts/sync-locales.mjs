@@ -36,6 +36,9 @@ const kindByPeer = new Map(KINDS.map((k) => [peerId(path.join(localesRoot, SOURC
 
 rmSync(outRoot, { recursive: true, force: true });
 const tree = {};
+// slug -> { "<section>/": peerId, "<section>/<dir>": peerId }: lets the language
+// picker find the same page in another locale.
+const peers = {};
 let pages = 0;
 
 const slugs = readdirSync(localesRoot, { withFileTypes: true })
@@ -46,10 +49,12 @@ const slugs = readdirSync(localesRoot, { withFileTypes: true })
 for (const slug of slugs) {
 	const localeDir = path.join(localesRoot, slug);
 	const sections = [];
+	peers[slug] = {};
 	for (const sectionDir of subdirs(localeDir)) {
 		const sectionPath = path.join(localeDir, sectionDir);
 		const kind = kindByPeer.get(peerId(sectionPath));
 		if (!kind) continue;
+		peers[slug][`${sectionDir}/`] = peerId(sectionPath);
 		const outSection = path.join(outRoot, slug, sectionDir);
 		mkdirSync(outSection, { recursive: true });
 		const sectionIndex = path.join(sectionPath, 'index.md');
@@ -64,6 +69,7 @@ for (const slug of slugs) {
 			if (!existsSync(file) || !statSync(file).isFile()) continue;
 			copyFileSync(file, path.join(outSection, `${dir}.md`));
 			sectionPages.push({ dir, title: titleOf(file, dir) });
+			peers[slug][`${sectionDir}/${dir}`] = peerId(path.join(sectionPath, dir));
 			pages += 1;
 		}
 		sections.push({ dir: sectionDir, kind, title, hasIndex: existsSync(sectionIndex), pages: sectionPages });
@@ -73,4 +79,5 @@ for (const slug of slugs) {
 }
 
 writeFileSync(path.join(siteRoot, 'src/lib/locale-pages.json'), JSON.stringify(tree));
+writeFileSync(path.join(siteRoot, 'src/lib/locale-peers.json'), JSON.stringify(peers));
 console.log(`Synced ${pages} locale page(s) for ${slugs.length} locale(s) into src/content/locales/ and src/lib/locale-pages.json`);

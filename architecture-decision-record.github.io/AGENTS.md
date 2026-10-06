@@ -38,8 +38,8 @@ publishing commands.
 - Run `pnpm run check` before committing changes to `src/`.
 - The language picker (`LOCALES` in `src/lib/locales.js`) is
   hand-maintained, sorted by code, and lists the locale dirs under `../locales/`
-  (`xx-001` → `xx_001`). It only sets `lang`/`dir`; translated pages are not
-  yet served.
+  (`xx-001` → `xx_001`). Choosing a locale navigates to the same page in that locale
+  (`src/lib/locale-nav.js`, via `.locale-peer-id`s).
 - `static/llms.txt` and `static/llms.json` are **generated** by
   `scripts/generate-llms.mjs` (run by `pnpm run content`, `build`, and `dev`)
   from the manifest and `LOCALES` — never hand-edit them.
@@ -49,7 +49,7 @@ publishing commands.
   manifest (run with `content`, `build`, `dev`; or `pnpm run sitemap`); never
   hand-edit it. `static/robots.txt` points to it.
 - `static/search/<locale>.json` (per-locale search indexes), `src/content/` (including
-  `src/content/locales/`, the translated pages) and `src/lib/locale-pages.json` are
+  `src/content/locales/`, the translated pages) and `src/lib/locale-pages.json` and `src/lib/locale-peers.json` are
   **generated** from `../locales/` by `pnpm run content`; commit the output.
   Locale list and slug rules live in `src/lib/locales.js` (shared with the
   picker); add new locales there, then run `pnpm run content`.

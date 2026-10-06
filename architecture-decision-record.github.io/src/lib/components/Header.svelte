@@ -8,7 +8,10 @@
 	import PickerBar, { DEFAULT_SIZES } from '@lilydesignsystem/svelte-picker-bar';
 	import type { ShareTarget } from '@lilydesignsystem/svelte-share-picker';
 	import { themes, DEFAULT_THEME_ID } from '#lib/data/themes.js';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import { LOCALES, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
+	import { pathForLocale } from '#lib/locale-nav.js';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
 	const LOCALE_STORAGE_KEY = 'adr-locale';
@@ -22,11 +25,25 @@
 	// data-text-size values to a --user-font-scale.
 	const TEXT_SIZES = DEFAULT_SIZES;
 
-	// Locales translated under ../locales/ live in #lib/locales.js. The site
-	// itself still renders English content only: selecting a locale here sets
-	// lang/dir on <html> and persists the choice, but does not yet route to
-	// translated pages. Search is locale specific: it goes to /<locale>/?<query>.
+	// Locales translated under ../locales/ live in #lib/locales.js. Selecting a
+	// locale sets lang/dir on <html>, persists the choice, and navigates to the
+	// same page in that locale. Search is locale specific: it goes to
+	// /<locale>/?<query>.
 	let locale = $state(DEFAULT_LOCALE);
+
+	// The picker calls onChange once when it initialises (restoring the stored
+	// choice) and again on every user selection. Only a selection navigates:
+	// to the same page in the chosen locale, or to that locale's contents page.
+	let pickerReady = false;
+	async function onLocaleChange(value: string) {
+		const changed = value !== locale;
+		locale = value;
+		if (!pickerReady) {
+			pickerReady = true;
+			return;
+		}
+		if (changed) await goto(await pathForLocale(page.url.pathname, value));
+	}
 
 	// Locale labels: the endonym with any parenthesised region turned into
 	// a dash, e.g. "English (United States)" -> "English - United States".
@@ -127,7 +144,7 @@
 						storageKey: LOCALE_STORAGE_KEY,
 						defaultValue: 'en',
 						name: 'locale',
-						onChange: (value: string) => (locale = value),
+						onChange: onLocaleChange,
 						localeLabels: LOCALE_LABELS
 					}}
 					sizes={TEXT_SIZES}
