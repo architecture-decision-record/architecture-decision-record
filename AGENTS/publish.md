@@ -1,6 +1,9 @@
 # Commit, push, publish
 
-Only when the user has asked.
+Automatic: do this at the end of every completed task, per
+[spec/repository.md](../spec/repository.md#delivery-automatically-commit-push-publish),
+after the relevant checks pass. A user instruction to hold off overrides it.
+Never force-push or rewrite history unasked.
 
 1. `git status`; stage specific paths (leave unrelated untracked files such as
    `locales/locales-by-priority.md` unless asked).

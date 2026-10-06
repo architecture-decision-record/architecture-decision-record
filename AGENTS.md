@@ -39,7 +39,9 @@ fix that file to match the spec (or change the spec deliberately).
 2. `pnpm run check` in `architecture-decision-record.github.io` reports 0 errors.
 3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
    for Claude-assisted work.
-4. Do not commit or push unless asked. Publish the site with the `git subtree
-   push` command in [spec/website.md](spec/website.md#publishing).
+4. Deliver automatically: commit, push, and publish the site subtree when
+   done, per [spec/repository.md](spec/repository.md#delivery-automatically-commit-push-publish).
+   Never force-push or rewrite history without being asked; if the user says
+   to hold off, hold off.
 
 Keep this file under 40,000 bytes; put detail in `spec/`.

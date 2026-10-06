@@ -41,7 +41,29 @@ A complete locale has exactly **194 files**.
 ## Commits
 
 Commits are SSH-signed. Trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
-for Claude-assisted commits.
+for Claude-assisted commits. Titles are present-tense imperative phrases.
+
+## Delivery: automatically commit, push, publish
+
+When an agent finishes a change, it delivers it without waiting to be asked:
+
+1. **Verify** with the checks below that apply to the change (for site changes,
+   `pnpm run check` and `pnpm run build`). If any check fails, stop: do not
+   commit, and report the failure.
+2. **Commit** the files belonging to the task, staged by path, signed, with
+   the trailer above. Do not sweep in unrelated changes; report them instead.
+3. **Push** with `git push origin main` (4 push URLs).
+4. **Publish** the website with `git subtree push` (see
+   [website.md](website.md#publishing)) whenever anything under
+   `architecture-decision-record.github.io/` changed in the commit.
+5. **Report** the commit hash, the push result, and the subtree range. Do not
+   claim the site redeployed unless it was checked.
+
+Limits: never force-push, rewrite history, skip signing or hooks, or delete
+remote branches automatically; those still require an explicit request.
+If a push or publish fails, stop and report; do not retry destructively.
+A user instruction to hold off (for example "don't push yet") overrides this
+rule for that task.
 
 ## Verification
 

@@ -36,6 +36,16 @@ produces `build/`.
 - `@lilydesignsystem/*` packages track latest; pnpm's release-age policy may
   hold back versions younger than about a day.
 
+## Themes
+
+`static/themes/<id>.css` are Lily's own generated theme files (45), copied
+unmodified from
+`https://raw.githubusercontent.com/lilydesignsystem/lilydesignsystem/main/themes/<id>.css`.
+Refresh all 45 whenever `@lilydesignsystem/*` packages are upgraded: a package
+that adds elements (e.g. `*-picker-tooltip`, `search-picker-*` in picker-bar
+0.2.0) is unstyled by older theme files, which breaks the header layout. Do
+not hand-edit them; site-specific styles go in `src/lib/styles/theme.css`.
+
 ## Language picker
 
 Sets `lang`/`dir` on `<html>` and persists the choice in `localStorage`

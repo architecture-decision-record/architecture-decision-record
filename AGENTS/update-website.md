@@ -10,6 +10,9 @@ Rules: [spec/website.md](../spec/website.md). Work in
   `pnpm run build`. Keep `typescript` on 6.x. `@lilydesignsystem/*` versions
   newer than about a day may be held back by pnpm's release-age policy; do not
   bypass it without asking.
+- After upgrading `@lilydesignsystem/*`, refresh `static/themes/*.css` from
+  Lily's upstream `themes/` (spec/website.md#themes); stale themes leave new
+  picker elements unstyled.
 - Hand-authored pages: `src/routes/+page.svelte`, `src/routes/skills/+page.svelte`,
   `src/lib/components/Header.svelte`. `static/llms.txt` and `llms.json` are generated.
 - Nothing may reference `../` at runtime.

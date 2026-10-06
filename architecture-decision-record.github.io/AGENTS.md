@@ -54,3 +54,5 @@ publishing commands.
   picker); add new locales there, then run `pnpm run content`.
   The route `/<locale>/?<query>` is `src/routes/[locale]/`; see
   `spec/locale-specific-search-picker/index.md`.
+- `static/themes/*.css` are copied unmodified from Lily's upstream `themes/`; refresh
+  all 45 after upgrading `@lilydesignsystem/*` (see `spec/website.md#themes`).
