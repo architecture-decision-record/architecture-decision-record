@@ -40,6 +40,26 @@ A preference that matches nothing is skipped, and with no match at all the
 visitor goes to `/en-001/`. Without JavaScript (and for crawlers) `/` stays a
 static page with a link to `/en-001/`, which is its canonical URL.
 
+## Locale landing page
+
+Every `/<locale>/` landing page starts with a hero and six cards, then the
+locale's existing lists of links (documents, templates, examples). All text is
+that locale's own, taken from its translated pages, so the landing page needs no
+strings of its own (`landingOf()` in `src/lib/server/locale-pages.js`, matched
+across locales by `.locale-peer-id`):
+
+- **Hero**: the title and first paragraph of "What is an architecture decision
+  record?".
+- **Six cards**, in this order: "How to start using ADRs", "How to start using
+  ADRs with git", "Suggestions for writing good ADRs", "File name conventions",
+  the Templates section, the Examples section. A page card shows its title
+  (the first heading) and its first prose paragraph, or its first list item when
+  it has no prose, clipped to about 170 characters. A section card shows its
+  title, the page count, and the first three names from its index.
+
+With a query (`/<locale>/?<query>`) the hero and cards are replaced by the search
+results. Cards use the theme's `.card-grid`, `.card`, and `.intro` styles.
+
 ## Generated vs hand-authored
 
 | Path | Kind |

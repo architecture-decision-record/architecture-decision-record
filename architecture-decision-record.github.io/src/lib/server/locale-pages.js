@@ -120,3 +120,128 @@ export async function loadLocalePage(slug, sectionDir, dir) {
 	const base = dir ? `${sectionDir}/${dir}/` : `${sectionDir}/`;
 	return render(markdown, slug, base);
 }
+
+/** Plain text of Markdown inline syntax. @param {string} s */
+function plain(s) {
+	return s
+		.replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+		.replace(/<[^>]+>/g, '')
+		.replace(/[*_`]+/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+/** @param {string} s @param {number} max characters (code points), cut at a word break when there is one */
+function clip(s, max) {
+	const chars = Array.from(s);
+	if (chars.length <= max) return s;
+	const cut = chars.slice(0, max).join('');
+	const space = cut.lastIndexOf(' ');
+	return (space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[\s,.;:、，。]+$/, '') + '…';
+}
+
+/**
+ * The first prose paragraph of a page (skipping headings, lists, tables, HTML,
+ * code, and contents lists), as plain text clipped to `max` characters. A page
+ * with no prose paragraph yields its first list item instead.
+ * @param {string} markdown @param {number} [max]
+ */
+export function firstParagraph(markdown, max = 170) {
+	let fence = false;
+	let firstItem = '';
+	/** @type {string[]} */
+	let para = [];
+	const done = () => {
+		const text = plain(para.join(' '));
+		para = [];
+		return text.length >= 20 && !/[:：]$/.test(text) ? clip(text, max) : '';
+	};
+	for (const raw of markdown.split('\n')) {
+		const line = raw.trim();
+		if (line.startsWith('```')) {
+			fence = !fence;
+			continue;
+		}
+		if (fence) continue;
+		if (!line) {
+			const text = done();
+			if (text) return text;
+			continue;
+		}
+		if (/^(#|[-*+]\s|\d+[.)]\s|\||<|>|!\[|---)/.test(line)) {
+			para = [];
+			const item = /^([-*+]|\d+[.)])\s+(.*)$/.exec(line);
+			if (item && !firstItem) {
+				const text = plain(item[2]);
+				if (text.length >= 20) firstItem = clip(text, max);
+			}
+			continue;
+		}
+		para.push(line);
+	}
+	return done() || firstItem;
+}
+
+/** @type {Record<string, Record<string, string>>} */
+const peerIds = (await import('#lib/locale-peers.json')).default;
+
+/** The page of `slug` that is the translation of the en-001 page `enKey` ("<section>/<dir>"). @param {string} slug @param {string} enKey */
+function peerKey(slug, enKey) {
+	const id = peerIds['en-001']?.[enKey];
+	return id ? Object.entries(peerIds[slug] ?? {}).find(([, v]) => v === id)?.[0] : undefined;
+}
+
+/** English (en-001) pages shown as cards on every locale landing page, in order. */
+const CARD_PAGES = [
+	'documents/how-to-start-using-adrs',
+	'documents/how-to-start-using-adrs-with-git',
+	'documents/suggestions-for-writing-good-adrs',
+	'documents/file-name-conventions-for-adrs'
+];
+const HERO_PAGE = 'documents/what-is-an-architecture-decision-record';
+
+/** @param {string} slug @param {string} key "<section>/<dir>" in that locale */
+async function pageInfo(slug, key) {
+	const [sectionDir, dir] = key.split('/');
+	const page = sectionsOf(slug).find((s) => s.dir === sectionDir)?.pages.find((p) => p.dir === dir);
+	if (!page) return null;
+	const load = files[`/src/content/locales/${slug}/${sectionDir}/${dir}.md`];
+	const markdown = load ? await load() : '';
+	// Some pages open with "##" rather than "#", and the index then falls back to the directory name.
+	const heading = /^#{1,6}\s+(.+?)\s*#*\s*$/m.exec(markdown)?.[1];
+	return { title: heading ? plain(heading) : page.title, text: firstParagraph(markdown), href: `/${slug}/${sectionDir}/${dir}/` };
+}
+
+/**
+ * The hero and six cards at the top of a locale landing page: the locale's own
+ * translated titles and first paragraphs, so nothing here needs translating
+ * separately. The hero is the "What is an architecture decision record?" page;
+ * the cards are four guide documents plus the Templates and Examples sections.
+ * @param {string} slug
+ */
+export async function landingOf(slug) {
+	const heroKey = peerKey(slug, HERO_PAGE);
+	const hero = heroKey ? await pageInfo(slug, heroKey) : null;
+	/** @type {{title: string, text: string, href: string}[]} */
+	const cards = [];
+	for (const enKey of CARD_PAGES) {
+		const key = peerKey(slug, enKey);
+		const info = key && (await pageInfo(slug, key));
+		if (info) cards.push(info);
+	}
+	for (const kind of ['templates', 'examples']) {
+		const section = sectionsOf(slug).find((s) => s.kind === kind);
+		if (!section?.hasIndex) continue;
+		// The section's own index lists its pages as links; show the count and the first names.
+		const load = files[`/src/content/locales/${slug}/${section.dir}/index.md`];
+		const names = load ? [...(await load()).matchAll(/^\s*[*-]\s+\[([^\]]+)\]\(/gm)].map((m) => plain(m[1])) : [];
+		const shown = (names.length ? names : section.pages.map((p) => p.title)).slice(0, 3);
+		cards.push({
+			title: section.title,
+			text: `${section.pages.length} · ${shown.join(' · ')} …`,
+			href: `/${slug}/${section.dir}/`
+		});
+	}
+	return { hero, cards };
+}
