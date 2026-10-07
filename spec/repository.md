@@ -41,7 +41,7 @@ A complete locale has exactly **203 files**.
 | Documents | 12 |
 | Templates | 11 |
 | Examples | 40 |
-| Locales (complete, hyphenated dirs, incl. `en-001`; `tr-001` and `tr-tr` are partial and not counted) | 28 |
+| Locales (hyphenated dirs, incl. `en-001`) | 30 |
 
 ## Commits
 

@@ -1,65 +1,65 @@
-# Architecture Decision Record: Rust programming language
+# Mimari Karar Kaydı: Rust programlama dili
 
-Decision Number: AR-001
+Karar Numarası: AR-001
 
-Decision Title: Adoption of Rust programming language
+Karar Başlığı: Rust programlama dilinin benimsenmesi
 
-Date: December 1, 2021
+Tarih: 1 Aralık 2021
 
-Status: Accepted
+Durum: Kabul Edildi
 
-### Problem Statement
+### Sorun Tanımı
 
-As we continue to develop software applications, we have observed that it is increasingly challenging to mitigate potential security vulnerabilities and prevent runtime errors. With the existing programming languages, such as C and C++, we continue to experience issues such as buffer overflows, memory leaks, and undefined behavior leading to applications' crashes. We require a programming language that provides memory safety guarantees and is efficient enough to support performance-critical applications.
+Yazılım uygulamaları geliştirmeye devam ettikçe, olası güvenlik açıklarını azaltmanın ve çalışma zamanı hatalarını önlemenin giderek zorlaştığını gözlemledik. C ve C++ gibi mevcut programlama dilleriyle arabellek taşmaları, bellek sızıntıları ve uygulamaların çökmesine yol açan tanımsız davranışlar gibi sorunlar yaşamaya devam ediyoruz. Bellek güvenliği garantileri sağlayan ve performans açısından kritik uygulamaları destekleyecek kadar verimli bir programlama diline ihtiyacımız var.
 
-### Considerations
+### Değerlendirmeler
 
-Several programming languages are designed to address the existing problems. Among them, Rust programming language has gained significant attention from the developers' community due to its unique design features. Considerations include;
+Birçok programlama dili, mevcut sorunları çözmek üzere tasarlanmıştır. Bunlar arasında Rust programlama dili, kendine özgü tasarım özellikleri nedeniyle geliştirici topluluğunun dikkatini önemli ölçüde çekmiştir. Değerlendirmeler şunları içerir:
 
-1. Memory safety and security
+1. Bellek güvenliği ve emniyeti
 
-2. Performance and efficiency
+2. Performans ve verimlilik
 
-3. Community support and adoption
+3. Topluluk desteği ve benimsenme
 
-4. Learning curve
+4. Öğrenme eğrisi
 
-5. Tools and ecosystem
+5. Araçlar ve ekosistem
 
-6. Compatibility with existing software systems.
+6. Mevcut yazılım sistemleriyle uyumluluk.
 
-### Constraints
+### Kısıtlar
 
-Adopting a new programming language requires retraining developers, which takes time and resources. Integrating the language into the existing development workflow may be a challenge. We must ensure compatibility with the existing systems and avoid breaking changes to maintain continuity.
+Yeni bir programlama dilini benimsemek, geliştiricilerin yeniden eğitilmesini gerektirir; bu da zaman ve kaynak ister. Dilin mevcut geliştirme iş akışına entegre edilmesi bir zorluk olabilir. Sürekliliği korumak için mevcut sistemlerle uyumluluğu sağlamalı ve uyumu bozan değişikliklerden kaçınmalıyız.
 
-### Implementation
+### Uygulama
 
-1. Our development team will undergo training to learn and familiarize themselves with the Rust programming language.
+1. Geliştirme ekibimiz, Rust programlama dilini öğrenmek ve tanımak için eğitim alacaktır.
 
-2. We will create a new project using Rust on a trial basis to evaluate its compatibility and suitability for our development purposes.
+2. Geliştirme amaçlarımıza uyumunu ve uygunluğunu değerlendirmek için deneme amaçlı olarak Rust ile yeni bir proje oluşturacağız.
 
-3. We will gradually migrate existing systems written in C and C++ to Rust.
+3. C ve C++ ile yazılmış mevcut sistemleri kademeli olarak Rust'a taşıyacağız.
 
-4. We will collaborate with the Rust community to explore the available tools and libraries that can enhance our development workflow.
+4. Geliştirme iş akışımızı iyileştirebilecek mevcut araçları ve kütüphaneleri keşfetmek için Rust topluluğuyla iş birliği yapacağız.
 
-5. We will monitor the performance of Rust and compare it to the performance of the existing programming languages regularly.
+5. Rust'ın performansını izleyecek ve düzenli olarak mevcut programlama dillerinin performansıyla karşılaştıracağız.
 
-6. We will adopt a long-term approach that balances the costs of training, integration, and potential benefits of using Rust.
+6. Eğitim, entegrasyon maliyetleri ile Rust kullanımının olası faydaları arasında denge kuran uzun vadeli bir yaklaşım benimseyeceğiz.
 
-### Rationale
+### Gerekçe
 
-We have adopted Rust due to its unique features designed to provide memory safety and security guarantees while maintaining performance and efficiency. Rust's robust type system, borrow checker, and memory safety concepts make it highly suitable for developing performance-critical and safety-critical applications. Moreover, Rust has a significant community of developers, enabling us to access a wide range of tools, libraries, and ecosystem that support our development workflow. Although Rust comes with a learning curve, we believe the benefits of adopting Rust outweigh the costs and provide an excellent opportunity for continued growth and innovation.
+Rust'ı; performansı ve verimliliği korurken bellek güvenliği ve emniyet garantileri sağlamak üzere tasarlanmış benzersiz özellikleri nedeniyle benimsedik. Rust'ın sağlam tür sistemi, ödünç alma denetleyicisi (borrow checker) ve bellek güvenliği kavramları, onu performans açısından kritik ve güvenlik açısından kritik uygulamalar geliştirmek için son derece uygun kılar. Ayrıca Rust, geliştirme iş akışımızı destekleyen çok çeşitli araçlara, kütüphanelere ve ekosisteme erişmemizi sağlayan geniş bir geliştirici topluluğuna sahiptir. Rust bir öğrenme eğrisi getirse de, Rust'ı benimsemenin faydalarının maliyetlerinden ağır bastığına ve sürekli büyüme ile yenilik için mükemmel bir fırsat sunduğuna inanıyoruz.
 
-### Consequences
+### Sonuçlar
 
-1. The adoption of Rust will require a significant investment in time and resources to train developers and integrate the language into the existing development workflow.
+1. Rust'ın benimsenmesi, geliştiricileri eğitmek ve dili mevcut geliştirme iş akışına entegre etmek için zaman ve kaynak açısından önemli bir yatırım gerektirecektir.
 
-2. Adopting Rust may cause some degree of compatibility issues with existing systems, requiring refactoring, and modifications.
+2. Rust'ı benimsemek, mevcut sistemlerle bir miktar uyumluluk sorununa yol açabilir; bu da yeniden düzenleme ve değişiklik gerektirir.
 
-3. Rust's adoption may increase the number of developers who can contribute to our project by attracting Rust developers who want to work on exciting projects.
+3. Rust'ın benimsenmesi, heyecan verici projelerde çalışmak isteyen Rust geliştiricilerini çekerek projemize katkıda bulunabilecek geliştirici sayısını artırabilir.
 
-4. The adoption could lead to improved performance, efficiency, and safety as compared to the existing languages.
+4. Benimseme, mevcut dillere kıyasla daha iyi performansa, verimliliğe ve güvenliğe yol açabilir.
 
-5. Finally, adopting Rust comes with the potential benefit of reducing security vulnerabilities in our applications.
+5. Son olarak, Rust'ı benimsemek uygulamalarımızdaki güvenlik açıklarını azaltma potansiyeli de taşır.
    
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>

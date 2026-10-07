@@ -1,85 +1,85 @@
-# Programming languages
+# Programlama dilleri
 
-Contents:
+İçindekiler:
 
-* [Summary](#summary)
-  * [Issue](#issue)
-  * [Decision](#decision)
-  * [Status](#status)
-* [Details](#details)
-  * [Assumptions](#assumptions)
-  * [Constraints](#constraints)
-  * [Positions](#positions)
-  * [Argument](#argument)
-  * [Implications](#implications)
-* [Related](#related)
-  * [Related decisions](#related-decisions)
-  * [Related requirements](#related-requirements)
-  * [Related artifacts](#related-artifacts)
-  * [Related principles](#related-principles)
-* [Notes](#notes)
-
-
-## Summary
+- [Özet](#özet)
+  - [Sorun](#sorun)
+  - [Karar](#karar)
+  - [Durum](#durum)
+- [Ayrıntılar](#ayrıntılar)
+  - [Varsayımlar](#varsayımlar)
+  - [Kısıtlamalar](#kısıtlamalar)
+  - [Pozisyonlar](#pozisyonlar)
+  - [Argüman](#argüman)
+  - [Etkiler](#etkiler)
+- [Bağlantılı](#bağlantılı)
+  - [Bağlantılı kararlar](#bağlantılı-kararlar)
+  - [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  - [Bağlantılı eserler](#bağlantılı-eserler)
+  - [Bağlantılı ilkeler](#bağlantılı-ilkeler)
+- [Notlar](#notlar)
 
 
-### Issue
-
-We need to choose programming languages for our software. We have two major needs: a front-end programming language suitable for web applications, and a back-end programming language suitable for server applications.
+## Özet
 
 
-### Decision
+### Sorun
 
-We are choosing TypeScript for the front-end.
-
-We are choosing Rust for the back-end.
+Yazılımlarımız için programlama dilleri seçmemiz gerekiyor. İki ana ihtiyacımız var: web uygulamaları için uygun bir ön uç programlama dili ve sunucu uygulamaları için uygun bir arka uç programlama dili.
 
 
-### Status
+### Karar
 
-Decided. We are open to new alternatives as they arise.
+Ön uç için TypeScript'i seçiyoruz.
 
-
-## Details
-
-
-### Assumptions
-
-The front-end applications are typical:
-
-  * Typical users and interactions
-
-  * Typical browsers and systems
-
-  * Typical developments and deployments
-
-The front-end applications is likely to evolve quickly:
-
-  * We want to ensure fast easy developments, deployments, iterations, etc.
-
-  * We value provability, such as type safety, and we are fine doing a bit more work to achieve it.
-
-  * We do not need legacy compatibility.
-
-The back-end applications are higher-than-typical:
-
-  * Higher-than-typical goals for quality, especially provability, reliability, security, etc.
-
-  * Higher-than-typical goals for near-real-time, i.e. we do not want pauses due to virtual machine garbage collection.
-
-  * Higher-than-typical goals for functional programming, especially for parallelization, multi-core processing, and memory safety.
-
-We accept lower compile-time speeds in favor of compile-time safety and runtime speeds.
+Arka uç için Rust'ı seçiyoruz.
 
 
-### Constraints
+### Durum
 
-We have a strong constraint on languages that are usable with major cloud provider services for functions, such as Amazon Lambda.
+Karar verildi. Ortaya çıkan yeni alternatiflere açığız.
 
 
-### Positions
+## Ayrıntılar
 
-We considered these languages:
+
+### Varsayımlar
+
+Ön uç uygulamaları tipiktir:
+
+  * Tipik kullanıcılar ve etkileşimler
+
+  * Tipik tarayıcılar ve sistemler
+
+  * Tipik geliştirmeler ve dağıtımlar
+
+Ön uç uygulamalarının hızla gelişmesi muhtemeldir:
+
+  * Hızlı ve kolay geliştirme, dağıtım, yineleme vb. sağlamak istiyoruz.
+
+  * Tür güvenliği gibi kanıtlanabilirliğe değer veriyoruz ve bunu sağlamak için biraz daha fazla iş yapmaktan çekinmiyoruz.
+
+  * Eski sürümlerle uyumluluğa ihtiyacımız yok.
+
+Arka uç uygulamaları tipikten daha yüksek düzeydedir:
+
+  * Kalite için, özellikle kanıtlanabilirlik, güvenilirlik, güvenlik vb. için tipikten daha yüksek hedefler.
+
+  * Neredeyse gerçek zamanlılık için tipikten daha yüksek hedefler; yani sanal makine çöp toplamasından kaynaklanan duraklamalar istemiyoruz.
+
+  * İşlevsel programlama için, özellikle paralelleştirme, çok çekirdekli işleme ve bellek güvenliği için tipikten daha yüksek hedefler.
+
+Derleme zamanı güvenliği ve çalışma zamanı hızları lehine daha düşük derleme zamanı hızlarını kabul ediyoruz.
+
+
+### Kısıtlamalar
+
+Amazon Lambda gibi büyük bulut sağlayıcılarının işlev hizmetleriyle kullanılabilen diller konusunda güçlü bir kısıtlamamız var.
+
+
+### Pozisyonlar
+
+Şu dilleri değerlendirdik:
 
   * C
 
@@ -115,101 +115,101 @@ We considered these languages:
 
 
 
-### Argument
+### Argüman
 
-Summary per language:
+Dil başına özet:
 
-  * C: rejected because of low safety; Rust can do nearly everything better.
+  * C: düşük güvenlik nedeniyle reddedildi; Rust hemen hemen her şeyi daha iyi yapabilir.
 
-  * C++: rejected because it's a mess; Rust can do nearly everything better.
+  * C++: dağınık olduğu için reddedildi; Rust hemen hemen her şeyi daha iyi yapabilir.
 
-  * Clojure: excellent modeling; best Lisp approximation; great runtime on the JVM.
+  * Clojure: mükemmel modelleme; en iyi Lisp yaklaşımı; JVM üzerinde harika çalışma zamanı.
   
-  * Elixir: excellent runtime including deployability and concurrency; excellent developer experience; relatively small ecosystem.
+  * Elixir: dağıtılabilirlik ve eşzamanlılık dahil mükemmel çalışma zamanı; mükemmel geliştirici deneyimi; görece küçük ekosistem.
 
-  * Erlang: excellent runtime including deployability and concurrency; challenging developer experience; relatively small ecosystem.
+  * Erlang: dağıtılabilirlik ve eşzamanlılık dahil mükemmel çalışma zamanı; zorlu geliştirici deneyimi; görece küçük ekosistem.
 
-  * Elm: looks very promising; IBM is publishing major case studies with good results; smaller ecosystem.
+  * Elm: çok umut verici görünüyor; IBM iyi sonuçlarla büyük vaka çalışmaları yayımlıyor; daha küçük ekosistem.
 
-  * Flow: interesting improvement over JavaScript; however; developers are moving away from it.
+  * Flow: JavaScript'e göre ilginç bir iyileştirme; ancak geliştiriciler ondan uzaklaşıyor.
 
-  * Go: excellent developer experience; excellent concurrency; but a track record of bad decisions that cripple the language.
+  * Go: mükemmel geliştirici deneyimi; mükemmel eşzamanlılık; ancak dili sakatlayan kötü kararlar geçmişi var.
 
-  * Haskell: best functional language; smaller developer community; hasn't achieved enough published production successes.
+  * Haskell: en iyi işlevsel dil; daha küçük geliştirici topluluğu; yeterli sayıda yayımlanmış üretim başarısına ulaşmadı.
 
-  * Java: excellent runtime; excellent ecosystem; sub-par developer experience.
+  * Java: mükemmel çalışma zamanı; mükemmel ekosistem; vasatın altında geliştirici deneyimi.
 
-  * JavaScript: most popular language ever; most widespread ecosystem.
+  * JavaScript: gelmiş geçmiş en popüler dil; en yaygın ekosistem.
 
-  * Kotlin: fixes so much of Java; excellent backing by JetBrains; good published cases of porting from Java to Kotlin.
+  * Kotlin: Java'nın pek çok sorununu giderir; JetBrains'in mükemmel desteği; Java'dan Kotlin'e geçişle ilgili yayımlanmış iyi örnekler.
   
-  * Python: most popular language for systems administration; great analytics tooling; good web frameworks; but abandoned by Google in favor of Go.
+  * Python: sistem yönetimi için en popüler dil; harika analitik araçları; iyi web çerçeveleri; ancak Google tarafından Go lehine terk edildi.
 
-  * Ruby: best developer experience ever; best web frameworks; nicest community; but very slow; somewhat hard to package.
+  * Ruby: gelmiş geçmiş en iyi geliştirici deneyimi; en iyi web çerçeveleri; en hoş topluluk; ancak çok yavaş; paketlemesi biraz zor.
 
-  * Rust: best new language; zero-abstraction emphasis; concurrency emphasis; however relatively small ecosystem; and has deliberate limits on some kinds of compiler accelerations e.g. direct memory access needs to be explicitly unsafe.
+  * Rust: en iyi yeni dil; sıfır soyutlama vurgusu; eşzamanlılık vurgusu; ancak görece küçük ekosistem; ve bazı derleyici hızlandırmaları üzerinde kasıtlı sınırlar var; örneğin doğrudan bellek erişiminin açıkça güvensiz (unsafe) olması gerekir.
 
-  * TypeScript: adds types to JavaScript; great transpiler; growing developer emphasis on porting from JavaScript to TypeScript; strong backing from Microsoft.
+  * TypeScript: JavaScript'e türler ekler; harika aktarıcı (transpiler); JavaScript'ten TypeScript'e geçişe artan geliştirici vurgusu; Microsoft'un güçlü desteği.
 
-We decided that VMs have a set of tradeoffs that we do not need right now, such as additional complexity that provides runtime capabilities.
+Sanal makinelerin şu anda ihtiyaç duymadığımız bir dizi ödünleşimi olduğuna karar verdik; örneğin çalışma zamanı yetenekleri sağlayan ek karmaşıklık.
 
-We believe that our core decision is driven by two cross-cutting concerns:
+Temel kararımızın iki kesişen kaygıdan kaynaklandığına inanıyoruz:
 
-  * For fastest runtime speed and tightest system access, we would choose JavaScript and C.
+  * En hızlı çalışma zamanı hızı ve en sıkı sistem erişimi için JavaScript ve C'yi seçerdik.
 
-  * For close-to-fastest runtime speed and close-to-tightest system access, we choose TypeScript and Rust.
+  * En hızlıya yakın çalışma zamanı hızı ve en sıkıya yakın sistem erişimi için TypeScript ve Rust'ı seçiyoruz.
 
-Honorable mentions go to the VM languages and web frameworks that we would choose if we wanted a VM language:
+Bir sanal makine dili isteseydik seçeceğimiz sanal makine dilleri ve web çerçeveleri için övgüye değer anmalar:
 
-  * Clojure and Luminus
+  * Clojure ve Luminus
 
-  * Java and Spring
+  * Java ve Spring
 
-  * Elixir and Phoenix
-
-
-### Implications
-
-Front-end developers will need to learn TypeScript. This is likely an easy learning curve if the developer's primary experience is using JavaScript.
-
-Back-end developers will need to learn Rust. This is likely a moderate learning curve if the developer's primary experience is using  C/C++, and a hard learning curve if the developer's primary experience is using Java, Python, Ruby, or similar memory-managed languages. 
-
-TypeScript and Rust are both relatively new. This means that many tools do not yet have documentation for these languages. For example, the devops pipeline will need to be set up for these languages, and so far, none of the devops tools that we are evaluating have default examples for these languages.
-
-Compile times for TypeScript and Rust are quite slow. Some of this may be due to the newness of the languages. We may want to look at how to mitigate slow compile times, such as by compile-on-demand, compile-concurrency, etc.
-
-IDE support for these languages is not yet ubiquitous and not yet first-class. For example, JetBrains sells the PyCharm IDE for first-class support for Python, but does not sell and IDE with first-class support for Rust; instead, JetBrains can use a Rust plug-in that provides perhaps 80% of Rust language support vis a vis Python language support.
+  * Elixir ve Phoenix
 
 
-## Related
+### Etkiler
+
+Ön uç geliştiricilerinin TypeScript öğrenmesi gerekecek. Geliştiricinin temel deneyimi JavaScript kullanmaksa, bu muhtemelen kolay bir öğrenme eğrisidir.
+
+Arka uç geliştiricilerinin Rust öğrenmesi gerekecek. Geliştiricinin temel deneyimi C/C++ kullanmaksa bu muhtemelen orta düzeyde, Java, Python, Ruby veya benzeri bellek yönetimli dilleri kullanmaksa zor bir öğrenme eğrisidir. 
+
+TypeScript ve Rust ikisi de görece yenidir. Bu, birçok aracın bu diller için henüz belgelerinin olmadığı anlamına gelir. Örneğin devops hattının bu diller için kurulması gerekecek ve şu ana kadar değerlendirdiğimiz devops araçlarının hiçbirinde bu diller için varsayılan örnekler yok.
+
+TypeScript ve Rust için derleme süreleri oldukça yavaştır. Bunun bir kısmı dillerin yeni olmasından kaynaklanıyor olabilir. İsteğe bağlı derleme, eşzamanlı derleme vb. yoluyla yavaş derleme sürelerini nasıl hafifletebileceğimize bakmak isteyebiliriz.
+
+Bu diller için IDE desteği henüz her yerde mevcut değil ve henüz birinci sınıf değil. Örneğin JetBrains, Python için birinci sınıf destek sunan PyCharm IDE'sini satıyor, ancak Rust için birinci sınıf destek sunan bir IDE satmıyor; bunun yerine JetBrains, Python dil desteğine kıyasla Rust dil desteğinin belki %80'ini sağlayan bir Rust eklentisi kullanabilir.
 
 
-### Related decisions
-
-We will aim toward ecosystem choices that align with these languages.
-
-For example, we want to choose an IDE that has good capabilities for these languages.
-
-For example, for our front-end web framework, we are more-likley to decide on a framework that tends to aim toward TypeScript (e.g. Vue) than a framework that tends to aim toward plain JavaScript (e.g. React).
+## Bağlantılı
 
 
-### Related requirements
+### Bağlantılı kararlar
 
-Our entire toolchain must support these languages.
+Bu dillerle uyumlu ekosistem seçimlerine yöneleceğiz.
 
+Örneğin bu diller için iyi yeteneklere sahip bir IDE seçmek istiyoruz.
 
-### Related artifacts
-
-We expect we may export some secrets to environment variables.
-
-
-### Related principles
-
-Measure twice, build once. We are prioritizing some safety over some speed.
-
-Runtime is more valuable than compile time. We are prioritizing customer usage over developer usage.
+Örneğin ön uç web çerçevemiz için, düz JavaScript'e yönelen bir çerçeve (örn. React) yerine TypeScript'e yönelen bir çerçeveye (örn. Vue) karar verme olasılığımız daha yüksektir.
 
 
-## Notes
+### Bağlantılı gereksinimler
 
-Any notes here.
+Tüm araç zincirimizin bu dilleri desteklemesi gerekir.
+
+
+### Bağlantılı eserler
+
+Bazı gizli bilgileri ortam değişkenlerine aktarabileceğimizi bekliyoruz.
+
+
+### Bağlantılı ilkeler
+
+İki kez ölç, bir kez inşa et. Bir miktar hıza karşı bir miktar güvenliği önceliklendiriyoruz.
+
+Çalışma zamanı, derleme zamanından daha değerlidir. Müşteri kullanımını geliştirici kullanımına tercih ediyoruz.
+
+
+## Notlar
+
+Notlar buraya.

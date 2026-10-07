@@ -84,7 +84,7 @@ Bunların çözülüp çözülmediğini veya nasıl yatıştırıldığını bel
 Önerilen tasarım tarafından karşılanmayan gereksinimlerin herhangi bir bölümünü belgeleyin.
 
 
-## Diğer İlgili ADR'ler
+## Diğer Bağlantılı ADR'ler
 
 İlgili ADR'leri listeleyin - örneğin bir özelliğin alt bileşeni için tasarım kararı, bu tasarım sonucunda kullanımdan kaldırılan bir tasarım vb.
 

@@ -1,45 +1,45 @@
-# Architecture Decision Record: Programming Code Editors
+# Mimari Karar Kaydı: Programlama Kod Düzenleyicileri
 
-## Context
+## Bağlam
 
-Programming code editors are an essential tool for developers to write and edit code. There are numerous code editors available, each with its own set of features, advantages, and disadvantages. The purpose of this ADR is to document the architectural decisions made for programming code editors.
+Programlama kod düzenleyicileri, geliştiricilerin kod yazması ve düzenlemesi için vazgeçilmez bir araçtır. Her birinin kendi özellikleri, avantajları ve dezavantajları olan çok sayıda kod düzenleyici mevcuttur. Bu MKK'nin amacı, programlama kod düzenleyicileri için alınan mimari kararları belgelemektir.
 
-## Priorities
+## Öncelikler
 
-The architecture for programming code editors should prioritize the following:
+Programlama kod düzenleyicilerinin mimarisi aşağıdakilere öncelik vermelidir:
 
-* **Modularity**: The code editor should be designed in a modular way, allowing developers to customize and extend it as needed. This allows for a flexible architecture that can adapt to the needs of different developers and teams.
+* **Modülerlik**: Kod düzenleyici modüler bir biçimde tasarlanmalı ve geliştiricilerin onu gerektiği gibi özelleştirmesine ve genişletmesine olanak tanımalıdır. Bu, farklı geliştiricilerin ve ekiplerin ihtiyaçlarına uyum sağlayabilen esnek bir mimariyi mümkün kılar.
 
-* **Performance**: The code editor should be performant and responsive, allowing developers to work efficiently without being slowed down by the tool they are using.
+* **Performans**: Kod düzenleyici performanslı ve duyarlı olmalı; geliştiricilerin kullandıkları araç yüzünden yavaşlamadan verimli çalışmasına olanak tanımalıdır.
 
-* **User Interface**: The user interface should be intuitive and easy to use, allowing developers to focus on their code rather than struggling with the editor.
+* **Kullanıcı arayüzü**: Kullanıcı arayüzü sezgisel ve kullanımı kolay olmalı; geliştiricilerin düzenleyiciyle uğraşmak yerine koduna odaklanmasına olanak tanımalıdır.
 
-* **Extensibility**: The code editor should be designed to allow for easy extension with third-party plugins and integrations.
+* **Genişletilebilirlik**: Kod düzenleyici, üçüncü taraf eklentiler ve entegrasyonlarla kolayca genişletilebilecek şekilde tasarlanmalıdır.
 
-* **Compatibility**: The code editor should be compatible with a wide range of programming languages and technologies, making it a useful tool for a broad range of developers.
+* **Uyumluluk**: Kod düzenleyici, çok çeşitli programlama dilleri ve teknolojilerle uyumlu olmalı; bu da onu geniş bir geliştirici kitlesi için yararlı bir araç haline getirmelidir.
 
-## Decision
+## Karar
 
-Based on these priorities, the architecture for programming code editors should be designed with the following components:
+Bu önceliklere dayanarak, programlama kod düzenleyicilerinin mimarisi aşağıdaki bileşenlerle tasarlanmalıdır:
 
-* **Core**: This component provides the basic functionality of the code editor, such as syntax highlighting, text editing, and file management.
+* **Çekirdek**: Bu bileşen, sözdizimi vurgulama, metin düzenleme ve dosya yönetimi gibi kod düzenleyicinin temel işlevselliğini sağlar.
 
-* **UI**: This component provides the user interface for the code editor, including menus, toolbars, and keyboard shortcuts.
+* **Kullanıcı arayüzü**: Bu bileşen, menüler, araç çubukları ve klavye kısayolları dahil kod düzenleyicinin kullanıcı arayüzünü sağlar.
 
-* **Plugins**: This component allows developers to extend the functionality of the code editor by installing third-party plugins. Plugins can provide additional features, such as code completion, linting, or debugging.
+* **Eklentiler**: Bu bileşen, geliştiricilerin üçüncü taraf eklentiler kurarak kod düzenleyicinin işlevselliğini genişletmesine olanak tanır. Eklentiler; kod tamamlama, kod denetimi (linting) veya hata ayıklama gibi ek özellikler sağlayabilir.
 
-* **Integrations**: This component allows the code editor to integrate with other tools and technologies, such as version control systems, build systems, or debugging tools.
+* **Entegrasyonlar**: Bu bileşen, kod düzenleyicinin sürüm denetim sistemleri, derleme sistemleri veya hata ayıklama araçları gibi diğer araç ve teknolojilerle bütünleşmesine olanak tanır.
 
-## Rationale
+## Gerekçe
 
-The modularity of the code editor allows developers to customize and extend it as needed. This is important because different developers and teams have different needs and workflows, and a flexible architecture can accommodate these differences.
+Kod düzenleyicinin modülerliği, geliştiricilerin onu gerektiği gibi özelleştirmesine ve genişletmesine olanak tanır. Bu önemlidir, çünkü farklı geliştiricilerin ve ekiplerin farklı ihtiyaçları ve iş akışları vardır ve esnek bir mimari bu farklılıkları karşılayabilir.
 
-* **Performance**: crucial because developers need to be able to work efficiently without being slowed down by their tools. A performant code editor is essential for productivity and can help developers maintain their focus and concentration.
+* **Performans**: çok önemlidir, çünkü geliştiricilerin araçları yüzünden yavaşlamadan verimli çalışabilmesi gerekir. Performanslı bir kod düzenleyici verimlilik için şarttır ve geliştiricilerin odaklarını ve dikkatlerini korumalarına yardımcı olabilir.
 
-* **UI**: important because it allows developers to focus on their code rather than struggling with the editor. This can lead to better productivity and less frustration for developers.
+* **Kullanıcı arayüzü**: önemlidir, çünkü geliştiricilerin düzenleyiciyle uğraşmak yerine koduna odaklanmasına olanak tanır. Bu, geliştiriciler için daha iyi verimliliğe ve daha az hayal kırıklığına yol açabilir.
 
-* **Extensibility**: powerful because it allows the code editor to be adapted to different needs and workflows. Third-party plugins and integrations can provide additional features and capabilities that are not included in the core editor.
+* **Genişletilebilirlik**: güçlüdür, çünkü kod düzenleyicinin farklı ihtiyaçlara ve iş akışlarına uyarlanmasına olanak tanır. Üçüncü taraf eklentiler ve entegrasyonlar, çekirdek düzenleyicide bulunmayan ek özellikler ve yetenekler sağlayabilir.
 
-* **Compatibility**: valuable because it allows the code editor to be used with a wide range of programming languages and technologies. This makes the editor a more useful tool for a broad range of developers.
+* **Uyumluluk**: değerlidir, çünkü kod düzenleyicinin çok çeşitli programlama dilleri ve teknolojilerle kullanılmasına olanak tanır. Bu, düzenleyiciyi geniş bir geliştirici kitlesi için daha yararlı bir araç haline getirir.
 
-The core, plugins, integrations, and UI components provide a clear separation of concerns and allow for a modular architecture that can be easily extended and customized. This architecture is flexible, performant, and compatible with a wide range of programming languages and technologies, making it a useful tool for developers.
+Çekirdek, eklentiler, entegrasyonlar ve kullanıcı arayüzü bileşenleri, ilgilerin net biçimde ayrılmasını sağlar ve kolayca genişletilebilen ve özelleştirilebilen modüler bir mimariye olanak tanır. Bu mimari esnektir, performanslıdır ve çok çeşitli programlama dilleri ve teknolojilerle uyumludur; bu da onu geliştiriciler için yararlı bir araç haline getirir.

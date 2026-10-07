@@ -1,10 +1,10 @@
-# Architecture Decision Record: React Front-End JavaScript Library
+# Mimari Karar Kaydı: React Ön Uç JavaScript Kütüphanesi
 
-## Context
+## Bağlam
 
-We need to choose a front-end JavaScript library for our application to develop a responsive and interactive user interface.
+Duyarlı ve etkileşimli bir kullanıcı arayüzü geliştirmek için uygulamamıza bir ön uç JavaScript kütüphanesi seçmemiz gerekiyor.
   
-## Option Considered
+## Değerlendirilen Seçenekler
 
 1. React
   
@@ -12,34 +12,34 @@ We need to choose a front-end JavaScript library for our application to develop 
 
 3. Svelte
    
-## Decision
+## Karar
 
-We will use React as our front-end JavaScript library.
+Ön uç JavaScript kütüphanemiz olarak React'i kullanacağız.
   
-## Rationale
+## Gerekçe
 
-1. **Component-Based Architecture:**  React provides a component-based architecture that allows us to break down the UI into small reusable components. This helps improve the modularity of our code and makes it easier to maintain, scale, and update the application.
+1. **Bileşen tabanlı mimari:**  React, kullanıcı arayüzünü küçük, yeniden kullanılabilir bileşenlere ayırmamıza olanak tanıyan bir bileşen tabanlı mimari sağlar. Bu, kodumuzun modülerliğini artırmaya yardımcı olur ve uygulamayı sürdürmeyi, ölçeklemeyi ve güncellemeyi kolaylaştırır.
   
-2. **Declarative programming:**  React uses a declarative style of programming that makes our code more intuitive and easier to read. It also provides a virtual DOM, which allows our code to run faster and more efficiently.
+2. **Bildirimsel programlama:**  React, kodumuzu daha sezgisel ve okunması daha kolay hale getiren bildirimsel bir programlama stili kullanır. Ayrıca kodumuzun daha hızlı ve verimli çalışmasına olanak tanıyan bir sanal DOM sağlar.
   
-3. **Large Community:**  React has a large and active community, and it is one of the most popular front-end libraries. This means that there are a lot of resources, tools, and libraries available that can help us develop our application faster and more efficiently.
+3. **Büyük topluluk:**  React büyük ve aktif bir topluluğa sahiptir ve en popüler ön uç kütüphanelerinden biridir. Bu, uygulamamızı daha hızlı ve daha verimli geliştirmemize yardımcı olabilecek çok sayıda kaynak, araç ve kütüphane bulunduğu anlamına gelir.
   
-4. **Better performance:**  React uses a one-way data flow, which helps simplify the application logic and makes it more efficient. It also provides server-side rendering, which helps improve the performance and SEO of our application.
+4. **Daha iyi performans:**  React, uygulama mantığını basitleştirmeye yardımcı olan ve onu daha verimli kılan tek yönlü bir veri akışı kullanır. Ayrıca uygulamamızın performansını ve SEO'sunu iyileştirmeye yardımcı olan sunucu tarafı oluşturma sağlar.
   
-5. **Flexibility:**  React can be used with other libraries and frameworks, which gives us the freedom to choose the best technology stack that suits our project's requirements.
+5. **Esneklik:**  React, diğer kütüphaneler ve çerçevelerle birlikte kullanılabilir; bu da projemizin gereksinimlerine en uygun teknoloji yığınını seçme özgürlüğü verir.
   
-## Consequences
+## Sonuçlar
 
-1. **Learning Curve:**  React has a learning curve, and it may take some time for developers who are new to React to get up to speed.
+1. **Öğrenme eğrisi:**  React'in bir öğrenme eğrisi vardır ve React'e yeni olan geliştiricilerin hız kazanması biraz zaman alabilir.
   
-2. **Build Tools:**  React requires additional build tools such as Babel and Webpack, which may add complexity to the development process.
+2. **Derleme araçları:**  React, Babel ve Webpack gibi ek derleme araçları gerektirir; bu da geliştirme sürecine karmaşıklık katabilir.
   
-3. **Browser compatibility:**  React has compatibility issues with older browsers since it uses ES6 features that are not supported in older browsers.
+3. **Tarayıcı uyumluluğu:**  React, eski tarayıcılarda desteklenmeyen ES6 özelliklerini kullandığı için eski tarayıcılarla uyumluluk sorunları yaşar.
   
- 4. Steep learning curve: It may take time for developers who are not familiar with React to learn how to use it efficiently, which may lead to slower development times.
+ 4. Dik öğrenme eğrisi: React'e aşina olmayan geliştiricilerin onu verimli kullanmayı öğrenmesi zaman alabilir; bu da geliştirme sürelerinin uzamasına yol açabilir.
 
-## Conclusion
+## Sonuç
 
-We have decided to use React for our application's front-end JavaScript library. Although it may have a learning curve, the benefits that React provides, such as its component-based architecture, declarative style of programming, better performance, flexibility, and large community, outweigh the potential drawbacks.
+Uygulamamızın ön uç JavaScript kütüphanesi olarak React'i kullanmaya karar verdik. Bir öğrenme eğrisi olsa da, React'in sağladığı bileşen tabanlı mimari, bildirimsel programlama stili, daha iyi performans, esneklik ve büyük topluluk gibi faydalar olası dezavantajlardan daha ağır basmaktadır.
 
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>

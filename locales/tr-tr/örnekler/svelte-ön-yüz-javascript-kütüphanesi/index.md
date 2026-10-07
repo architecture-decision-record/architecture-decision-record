@@ -1,49 +1,49 @@
-# Architecture Decision Record: Svelte Front-end JavaScript Library
+# Mimari Karar Kaydı: Svelte Ön Uç JavaScript Kütüphanesi
 
-Status: Accepted
+Durum: Kabul Edildi
 
-## Context
+## Bağlam
 
-We are developing a web application using a modern front-end JavaScript framework. We want to choose a library that is lightweight, fast, and easy to use. We have evaluated several libraries, including React, Vue, and Angular. We have also heard about Svelte, which claims to be a new kind of lightweight framework. We need to evaluate Svelte and decide whether it is a good fit for our application.
+Modern bir ön uç JavaScript çerçevesi kullanarak bir web uygulaması geliştiriyoruz. Hafif, hızlı ve kullanımı kolay bir kütüphane seçmek istiyoruz. React, Vue ve Angular dahil birkaç kütüphaneyi değerlendirdik. Ayrıca yeni bir tür hafif çerçeve olduğunu iddia eden Svelte'i de duyduk. Svelte'i değerlendirmemiz ve uygulamamıza uygun olup olmadığına karar vermemiz gerekiyor.
 
-## Decision
+## Karar
 
-After considering the benefits and drawbacks of each library, we have decided to use Svelte as our front-end JavaScript library for the following reasons:
+Her kütüphanenin yararlarını ve sakıncalarını değerlendirdikten sonra, aşağıdaki nedenlerle ön uç JavaScript kütüphanemiz olarak Svelte'i kullanmaya karar verdik:
 
-1. **Lightweight:**  Svelte is one of the lightest libraries available, which will help us keep our application size small and improve page load times.
+1. **Hafif:**  Svelte, mevcut en hafif kütüphanelerden biridir; bu, uygulama boyutumuzu küçük tutmamıza ve sayfa yükleme sürelerini iyileştirmemize yardımcı olacaktır.
 
-2. **Fast:**  Svelte is known for its fast rendering speed, which will make our application feel responsive and snappy.
+2. **Hızlı:**  Svelte, hızlı oluşturma hızıyla bilinir; bu, uygulamamızın duyarlı ve canlı hissettirmesini sağlayacaktır.
 
-3. **Easy to use:**  Svelte's syntax is simple and easy to understand, which will make it easier for our team to adopt it and write clean code.
+3. **Kullanımı kolay:**  Svelte'in sözdizimi basit ve anlaşılması kolaydır; bu, ekibimizin onu benimsemesini ve temiz kod yazmasını kolaylaştıracaktır.
 
-4. **Optimized for UI rendering:**  Svelte is optimized for rendering UI components, which will make it easier for us to create dynamic and reusable UI elements.
+4. **Kullanıcı arayüzü oluşturma için optimize edilmiş:**  Svelte, kullanıcı arayüzü bileşenlerini oluşturmak için optimize edilmiştir; bu, dinamik ve yeniden kullanılabilir arayüz öğeleri oluşturmamızı kolaylaştıracaktır.
 
-5. **Good documentation and community support:**  Svelte has a growing community and good documentation, which will help us get started quickly and resolve any issues that arise.
+5. **İyi belgeler ve topluluk desteği:**  Svelte'in büyüyen bir topluluğu ve iyi belgeleri vardır; bu, hızlı başlamamıza ve ortaya çıkan sorunları çözmemize yardımcı olacaktır.
 
-## Alternatives
+## Alternatifler
 
-We considered React, Vue, and Angular, but decided against them for the following reasons:
+React, Vue ve Angular'ı değerlendirdik, ancak aşağıdaki nedenlerle bunlardan vazgeçtik:
 
-1. **React:**  While React has a large user base and a wealth of libraries and resources, it can be complex and difficult to learn, especially for beginners.
+1. **React:**  React'in geniş bir kullanıcı tabanı ve zengin bir kütüphane ve kaynak yelpazesi olsa da, özellikle yeni başlayanlar için karmaşık ve öğrenmesi zor olabilir.
 
-2. **Vue:**  Vue is a lightweight library that is easy to learn and use, but it may not be as fast or optimized as Svelte.
+2. **Vue:**  Vue, öğrenmesi ve kullanması kolay hafif bir kütüphanedir, ancak Svelte kadar hızlı veya optimize olmayabilir.
 
-3. **Angular:**  Angular is a comprehensive framework that offers many features and tools, but it can be heavy and complex, and may require more maintenance than Svelte.
+3. **Angular:**  Angular, birçok özellik ve araç sunan kapsamlı bir çerçevedir, ancak ağır ve karmaşık olabilir ve Svelte'ten daha fazla bakım gerektirebilir.
 
-## Consequences
+## Sonuçlar
 
-Using Svelte as our front-end JavaScript library will have the following consequences:
+Ön uç JavaScript kütüphanemiz olarak Svelte'i kullanmanın sonuçları şunlar olacaktır:
 
-1. Our application will be lightweight and fast, which will improve user experience and engagement.
+1. Uygulamamız hafif ve hızlı olacak; bu da kullanıcı deneyimini ve etkileşimi iyileştirecektir.
 
-2. Our team will need to learn a new library, but the syntax of Svelte is simple and easy to understand, so the learning curve should be manageable.
+2. Ekibimizin yeni bir kütüphane öğrenmesi gerekecek, ancak Svelte'in sözdizimi basit ve anlaşılması kolay olduğundan öğrenme eğrisi yönetilebilir olmalıdır.
 
-3. Svelte is still a relatively new library, so we may encounter some issues that are not well documented or supported by the community.
+3. Svelte hâlâ görece yeni bir kütüphanedir; bu nedenle belgelenmemiş ya da topluluk tarafından desteklenmeyen bazı sorunlarla karşılaşabiliriz.
 
-4. The community of Svelte users is growing, so we may see more third-party libraries and resources become available in the future that can be used to supplement the core library.
+4. Svelte kullanıcılarının topluluğu büyümektedir; bu nedenle gelecekte çekirdek kütüphaneyi tamamlamak için kullanılabilecek daha fazla üçüncü taraf kütüphane ve kaynağın ortaya çıktığını görebiliriz.
 
-## Conclusion
+## Sonuç
 
-Based on our evaluation, we have decided to use Svelte as our front-end JavaScript library for our web application. We believe that Svelte's lightweight and fast nature, ease of use, and optimized UI rendering make it the best choice for our needs. We will continue to monitor the development of Svelte and its community and make modifications to our choice if needed.
+Değerlendirmemize dayanarak, web uygulamamızın ön uç JavaScript kütüphanesi olarak Svelte'i kullanmaya karar verdik. Svelte'in hafif ve hızlı yapısının, kullanım kolaylığının ve optimize edilmiş kullanıcı arayüzü oluşturmasının, ihtiyaçlarımız için en iyi seçim olduğuna inanıyoruz. Svelte'in ve topluluğunun gelişimini izlemeye devam edecek, gerekirse tercihimizde değişiklik yapacağız.
 
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>

@@ -1,314 +1,314 @@
-# Secrets storage
+# Gizli bilgilerin saklanması
 
-Contents:
+İçindekiler:
 
-* [Summary](#summary)
-  * [Issue](#issue)
-  * [Decision](#decision)
-  * [Status](#status)
-* [Details](#details)
-  * [Assumptions](#assumptions)
-  * [Constraints](#constraints)
-  * [Positions](#positions)
-  * [Argument](#argument)
-  * [Implications](#implications)
-* [Related](#related)
-  * [Related decisions](#related-decisions)
-  * [Related requirements](#related-requirements)
-  * [Related artifacts](#related-artifacts)
-  * [Related principles](#related-principles)
-* [Notes](#notes)
-  * [Vault by HashiCorp](#vault-by-hashicorp)
-  * [LastPass](#lastpass)
-  * [Bitwarden](#bitwarden)
-  * [EnvKey](#envkey)
-  * [Confidant by Lyft](#confidant-by-lyft)
-  * [Devolutions Password Server](#devolutions-password-server)
-  * [Secret Server by Thycotic](#secret-server-by-thycotic)
+- [Özet](#özet)
+  - [Sorun](#sorun)
+  - [Karar](#karar)
+  - [Durum](#durum)
+- [Ayrıntılar](#ayrıntılar)
+  - [Varsayımlar](#varsayımlar)
+  - [Kısıtlamalar](#kısıtlamalar)
+  - [Pozisyonlar](#pozisyonlar)
+  - [Argüman](#argüman)
+  - [Etkiler](#etkiler)
+- [Bağlantılı](#bağlantılı)
+  - [Bağlantılı kararlar](#bağlantılı-kararlar)
+  - [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  - [Bağlantılı eserler](#bağlantılı-eserler)
+  - [Bağlantılı ilkeler](#bağlantılı-ilkeler)
+- [Notlar](#notlar)
+  - [Vault by HashiCorp](#vault-by-hashicorp)
+  - [LastPass](#lastpass)
+  - [Bitwarden](#bitwarden)
+  - [EnvKey](#envkey)
+  - [Confidant by Lyft](#confidant-by-lyft)
+  - [Devolutions Password Server](#devolutions-password-server)
+  - [Secret Server by Thycotic](#secret-server-by-thycotic)
 
 
-## Summary
+## Özet
 
 
-### Issue
+### Sorun
 
-We need to store secrets, such as passwords, private keys, authentication tokens, etc.
+Parolalar, özel anahtarlar, kimlik doğrulama belirteçleri vb. gizli bilgileri saklamamız gerekiyor.
 
-Some of the secrets are user-oriented. For example, our developer wants to be able to use their mobile phone to look up a password to a service.
+Gizli bilgilerin bir kısmı kullanıcı odaklıdır. Örneğin geliştiricimiz, bir hizmetin parolasına bakmak için cep telefonunu kullanabilmek ister.
 
-Some of the secrets are system-oriented. For example, our continuous delivery pipeline needs to be able to look up the credentials for our cloud hosting.
+Gizli bilgilerin bir kısmı sistem odaklıdır. Örneğin sürekli teslim hattımızın, bulut barındırma kimlik bilgilerimize bakabilmesi gerekir.
 
 
-### Decision
+### Karar
 
-Bitwarden for user-oriented secrets
+Kullanıcı odaklı gizli bilgiler için Bitwarden
 
-Vault by HashiCorp for system-oriented secrets.
+Sistem odaklı gizli bilgiler için Vault by HashiCorp.
 
 
-### Status
+### Durum
 
-Decided. We are open to new alternatives as they arise.
+Karar verildi. Ortaya çıkan yeni alternatiflere açığız.
 
 
-## Details
+## Ayrıntılar
 
 
-### Assumptions
+### Varsayımlar
 
-For this purpose, and our current state, we value user-oriented convenience, such as usable mobile apps.
+Bu amaç ve mevcut durumumuz için, kullanılabilir mobil uygulamalar gibi kullanıcı odaklı kolaylığa değer veriyoruz.
 
-  * We want to ensure fast easy access on the go, such as for a developer doing on-call system reliability engineering.
+  * Örneğin nöbetçi sistem güvenilirliği mühendisliği yapan bir geliştirici gibi, hareket halindeyken hızlı ve kolay erişim sağlamak istiyoruz.
 
-  * We want to be able to share some secrets among selected people, such as a team.
+  * Bazı gizli bilgileri bir ekip gibi seçilmiş kişiler arasında paylaşabilmek istiyoruz.
 
-We are not trying to solve for single-provider, such as storing all secrets exclusively on Amazon or Azure or Google.
+Tek sağlayıcıya yönelik bir çözüm aramıyoruz; örneğin tüm gizli bilgileri yalnızca Amazon, Azure veya Google üzerinde saklamak gibi.
 
-We do not want ad-hoc approaches such as "remember it" or "write it on a note" or "figure out your own way to store it".
+"Aklında tut", "bir nota yaz" veya "kendi saklama yolunu bul" gibi geçici yaklaşımlar istemiyoruz.
 
-Our security model for this purpose is fine with using well-respected COTS vendors, such as SaaS password management tools.
+Bu amaç için güvenlik modelimiz, SaaS parola yönetim araçları gibi saygın hazır ticari (COTS) satıcıları kullanmaya uygundur.
 
 
-### Constraints
+### Kısıtlamalar
 
-Right now we want something that is easy i.e. no need to write code, no need to install servers, no need to make a major commitment, no need to standardize everyone.
+Şu anda kolay bir şey istiyoruz; yani kod yazmaya gerek yok, sunucu kurmaya gerek yok, büyük bir taahhüde gerek yok, herkesi standartlaştırmaya gerek yok.
 
 
-### Positions
+### Pozisyonlar
 
-We considered:
+Şunları değerlendirdik:
 
-1. User-oriented off-the-self password managers: LastPass, 1Password, Bitwarden, Dashlane, KeePass, pass, GPG, etc.
+1. Kullanıcı odaklı hazır parola yöneticileri: LastPass, 1Password, Bitwarden, Dashlane, KeePass, pass, GPG vb.
 
-2. System-oriented COTS password managers: AWS KMS, Vault by HashiCorp, EnvKy, Secret Server by Thycotic, Devolutions Password Server, Confidant by Lyft.
+2. Sistem odaklı COTS parola yöneticileri: AWS KMS, Vault by HashiCorp, EnvKey, Secret Server by Thycotic, Devolutions Password Server, Confidant by Lyft.
 
-3. Sharing-oriented approaches: using a shared Google document, or shared Slack channel, or shared network folder, etc.
+3. Paylaşım odaklı yaklaşımlar: paylaşılan bir Google belgesi, paylaşılan bir Slack kanalı veya paylaşılan bir ağ klasörü vb. kullanmak.
 
-4. Low-tech ad-hoc approaches, such as remembering, writing a note, or relying on each user to figure out their own approach.
+4. Hatırlamak, not yazmak ya da her kullanıcının kendi yaklaşımını bulmasına güvenmek gibi düşük teknolojili geçici yaklaşımlar.
 
 
-### Argument
+### Argüman
 
-Bitwarden, LastPass, 1Password, and Dashlane all are commercial off-the-shelf products.
+Bitwarden, LastPass, 1Password ve Dashlane'in hepsi hazır ticari ürünlerdir.
 
-  * Similar kinds of features for users, teams, organizations, etc.
+  * Kullanıcılar, ekipler, kuruluşlar vb. için benzer türde özellikler.
 
-  * Desktop capability for Windows and Mac, and mobile capability for Android and iOS.
+  * Windows ve Mac için masaüstü yeteneği, Android ve iOS için mobil yetenek.
 
-  * Browser extensions for Chrome and Firefox, for automatic form fill in, etc.
+  * Otomatik form doldurma vb. için Chrome ve Firefox tarayıcı uzantıları.
 
-Bitwarden has two advantages over the others:
+Bitwarden'ın diğerlerine göre iki avantajı vardır:
 
-  * Bitwarden is open source, which means the security can be peer reviewed and also the company is widely-appreciated by security-oriented developers.
+  * Bitwarden açık kaynaklıdır; bu, güvenliğinin akran incelemesinden geçebileceği ve şirketin güvenlik odaklı geliştiriciler tarafından yaygın olarak takdir edildiği anlamına gelir.
 
-  * Anecdotes by software workers describe a significant preference for Bitwarden over the others.
+  * Yazılım çalışanlarının anekdotları, Bitwarden'a diğerlerine kıyasla belirgin bir tercih olduğunu anlatıyor.
 
-A typical good example writeup: https://jcs.org/2017/11/17/bitwarden
+Tipik iyi bir örnek yazı: https://jcs.org/2017/11/17/bitwarden
 
-A typical side-by-side voting site: https://stackshare.io/stackups/bitwarden-vs-dashlane
+Tipik bir yan yana oylama sitesi: https://stackshare.io/stackups/bitwarden-vs-dashlane
 
-We defer KeyPass, pass, GPG, etc. because there's additional complexity. All of these look like fine solutions for technical users. GPG looks especially good for technical users who want cross-system command-oriented capabilities.
+KeyPass, pass, GPG vb. seçeneklerini erteliyoruz, çünkü ek karmaşıklık var. Bunların hepsi teknik kullanıcılar için iyi çözümler gibi görünüyor. GPG, sistemler arası komut odaklı yetenekler isteyen teknik kullanıcılar için özellikle iyi görünüyor.
 
-We defer KMS because it has single-provider lock-in.
+KMS'yi erteliyoruz, çünkü tek sağlayıcıya bağımlılık (lock-in) var.
 
-We choose Vault for system-oriented needs, because the reviews are amazingly positive, and because HashiCorp has an excellent track record fup top-quality software and support.
+Sistem odaklı ihtiyaçlar için Vault'u seçiyoruz, çünkü incelemeler şaşırtıcı derecede olumlu ve HashiCorp'un üst düzey yazılım ve destek konusunda mükemmel bir sicili var.
 
-We veto the approaches of sharing approaches such as via shared documents, shared channels, shared network folders, etc. These do not provide the security qualities that we want.
+Paylaşılan belgeler, paylaşılan kanallar, paylaşılan ağ klasörleri vb. aracılığıyla paylaşma yaklaşımlarını veto ediyoruz. Bunlar istediğimiz güvenlik niteliklerini sağlamıyor.
 
-We veto the ad-hoc low-tech approaches, because we all agree it's not a long-term path forward.
+Düşük teknolojili geçici yaklaşımları veto ediyoruz, çünkü bunun uzun vadeli bir yol olmadığı konusunda hepimiz hemfikiriz.
 
 
-### Implications
+### Etkiler
 
-Developers may need to track secrets in two places: Bitwarden for user-oriented access, and Vault for system-oriented access.
+Geliştiricilerin gizli bilgileri iki yerde izlemesi gerekebilir: kullanıcı odaklı erişim için Bitwarden ve sistem odaklı erişim için Vault.
 
 
-## Related
+## Bağlantılı
 
 
-### Related decisions
+### Bağlantılı kararlar
 
-The decision of which CI/CD server must include proof of capability for accessing secrets.
+Hangi CI/CD sunucusunun kullanılacağı kararı, gizli bilgilere erişme yeteneğinin kanıtını içermelidir.
 
-We will need to decide how to managea the secrets, in terms of policies, rotations, organizations, etc.
+Gizli bilgilerin politikalar, rotasyonlar, kuruluşlar vb. açısından nasıl yönetileceğine karar vermemiz gerekecek.
 
 
-### Related requirements
+### Bağlantılı gereksinimler
 
-The secrets will have related requirements for compliance, auditing, and HR onboarding/offboarding.
+Gizli bilgilerin uyumluluk, denetim ve İK işe alım/ayrılış süreçleri için ilgili gereksinimleri olacaktır.
 
 
-### Related artifacts
+### Bağlantılı eserler
 
-We expect we may export some secrets to environment variables.
+Bazı gizli bilgileri ortam değişkenlerine aktarabileceğimizi bekliyoruz.
 
 
-### Related principles
+### Bağlantılı ilkeler
 
-Easily reversible.
+Kolayca geri alınabilir.
 
-Easily parallel i.e. it's easy to use a variety of password managers.
+Kolayca paralel; yani çeşitli parola yöneticilerini kullanmak kolaydır.
 
-Cheap to try i.e. there's a free trial and no commitment.
+Denemesi ucuz; yani ücretsiz deneme var ve taahhüt gerekmiyor.
 
 
-## Notes
+## Notlar
 
-Evaluation notes here. The notes are all public comments on various devops discussion boards.
+Değerlendirme notları burada. Notların hepsi çeşitli devops tartışma panolarındaki herkese açık yorumlardır.
 
 
 ### Vault by HashiCorp
 
-Vault is exactly what you want here. 
+Burada istediğiniz tam olarak Vault'tur. 
 
-Don't just throw Vault into production though, stand it up in a test environment first, because HashiCorp's documentation can be pretty lacking even if their products are amazing.
+Yine de Vault'u doğrudan üretime atmayın; önce bir test ortamında kurun, çünkü ürünleri harika olsa da HashiCorp'un belgeleri oldukça yetersiz olabiliyor.
 
-Very steep learning curve and is not trivial to stand up. 
+Çok dik bir öğrenme eğrisi var ve kurulumu basit değil. 
 
-The initial setup is a bit of a pain. It's well worth it though, and the community will support it will enough for you to get by.
+İlk kurulum biraz zahmetli. Yine de buna değer ve topluluk, idare etmeniz için onu yeterince destekler.
 
-Horrid docs but there are lots of guides online of people setting it up and if you put a few of them together you will have a working setup.
+Belgeler berbat ama insanların kurulumunu anlattığı çok sayıda çevrimiçi rehber var; birkaçını bir araya getirirseniz çalışan bir kurulumunuz olur.
 
-Initial setup took fiddling with their helm charts (vault and consul). While technically you can use lots of other back-ends, I really really don't recommend it. The back-end/consul can be teeny tiny if you don't have a ton of data to store.
+İlk kurulum, helm şemalarıyla (vault ve consul) uğraşmayı gerektirdi. Teknik olarak birçok başka arka uç kullanabilirsiniz, ama gerçekten, gerçekten önermiyorum. Saklayacak çok veriniz yoksa arka uç/consul minicik olabilir.
 
-Definitely get comfortable/familiar with using the CLI, because the GUI is more like a proof-of-concept/advertisement portal for their enterprise edition.
+CLI'yi kullanmaya kesinlikle alışın/aşina olun, çünkü grafik arayüz, kurumsal sürümleri için bir kavram kanıtı/reklam portalı gibidir.
 
-The fact that you cannot just "fill it up" is a pain. For example if you have 5 fields you need to manually add each field for each item. So it's not like you pre-define fields for a specific category, and fill those fields for all the items in that category, it's more like "you generate everything every time", which (in my mind) is a pain in the ass.
+Onu "doldurup bırakamıyor" olmanız can sıkıcı. Örneğin 5 alanınız varsa, her öğe için her alanı elle eklemeniz gerekir. Yani belirli bir kategori için alanları önceden tanımlayıp o kategorideki tüm öğeler için bu alanları doldurmuyorsunuz; daha çok "her seferinde her şeyi sıfırdan üretiyorsunuz", bu da (bence) çok can sıkıcı.
 
-You may want to also look at goldfish as a UI for on top of vault. Makes it rather nice to get your team on board with it. They also have a demo. 1. Set up consul. 2. Set up vault pointing to consul. 3. Set up goldfish pointing to vault. 3. Setup some cron job to run consul snapshot for backups.
+Vault'un üzerinde bir arayüz olarak goldfish'e de bakmak isteyebilirsiniz. Ekibinizi bu işe ikna etmeyi oldukça güzel hale getiriyor. Bir de demoları var. 1. Consul'ü kurun. 2. Consul'e bakan Vault'u kurun. 3. Vault'a bakan goldfish'i kurun. 3. Yedekler için consul snapshot çalıştıracak bir cron işi kurun.
 
 
 
 ### LastPass
 
-LastPass Teams. We use it, has custom templates, ACL, nothing missing IMO.
+LastPass Teams. Biz kullanıyoruz; özel şablonları, ACL'si var, bence eksik bir şey yok.
 
-I implemented LastPass at my org and give it a C+/B-. The biggest issue lately is a lack of reliability. In the past 90 days there have been multiple hours where vaults were forced into offline mode. This isn't ideal for my org due to having, literally, 4,000+ passwords stored across 20+ shared folders. As you can imagine with that many passwords at least a few get updated or added daily. We have a DR plan if issues last more than an hour or two: a script signs and encrypts a CSV dump of vault every night that can be imported into keepass.
+LastPass'i kuruluşumda uyguladım ve ona C+/B- veriyorum. Son zamanlarda en büyük sorun güvenilirlik eksikliği. Son 90 günde kasaların çevrimdışı moda zorlandığı birden çok saat oldu. Kuruluşum 20'den fazla paylaşılan klasörde kelimenin tam anlamıyla 4.000'den fazla parola sakladığı için bu pek ideal değil. Bu kadar çok parolayla, en az birkaçının her gün güncellendiğini veya eklendiğini tahmin edebilirsiniz. Sorunlar bir iki saatten uzun sürerse bir felaket kurtarma planımız var: bir betik, her gece kasanın bir CSV dökümünü imzalayıp şifreler ve bu döküm keepass'e aktarılabilir.
 
-LastPass has had unreported blips of degraded service: login 'works' but doesn't pull sites, random features broken in the admin panel, and not properly sharing keys for new top level shared folders. I have a specific 'key push'/backup user that is in every group. Usually logging in as that user will fix any key sharing issues but not when the service is degraded despite what the status page says...
+LastPass'in bildirilmeyen hizmet kalitesi düşüşleri oldu: oturum açma 'çalışıyor' ama siteleri çekmiyor, yönetici panelinde rastgele özellikler bozuk ve yeni üst düzey paylaşılan klasörler için anahtarlar düzgün paylaşılmıyor. Her grupta bulunan özel bir 'anahtar gönderme'/yedekleme kullanıcım var. Genellikle bu kullanıcı olarak oturum açmak anahtar paylaşımı sorunlarını giderir, ancak durum sayfası ne derse desin hizmet düşük kalitedeyken işe yaramaz...
 
-For integration it can be easy if you have proper ACLs with a least privileged model e.g. if a user has read & write and read only on an entry or folder they only get read only permissions. Unfortunately my org's ACLs are not the best so I ended up using the JSON provisioning API and ~500 lines of python due to the dependent nature of our hundreds of ACLs not mapping well to the least privileged model. I ended up getting all ACLs a user was in and do a dependency walk of sorts.
+Entegrasyon, en az ayrıcalık modeliyle düzgün ACL'leriniz varsa kolay olabilir; örneğin bir kullanıcının bir girdi veya klasör üzerinde hem okuma-yazma hem salt okuma yetkisi varsa yalnızca salt okuma izni alır. Ne yazık ki kuruluşumun ACL'leri pek iyi değil; bu yüzden yüzlerce ACL'mizin bağımlı yapısı en az ayrıcalık modeline iyi oturmadığı için JSON sağlama API'sini ve yaklaşık 500 satırlık python'u kullanmak zorunda kaldım. Bir kullanıcının bulunduğu tüm ACL'leri alıp bir tür bağımlılık yürüyüşü yaptım.
 
-If your ACL or group structure is already built with a least privileged structure in mind the AD/LDAP sync tool for Windows will work well.
+ACL veya grup yapınız zaten en az ayrıcalık yapısı gözetilerek kurulmuşsa, Windows için AD/LDAP eşitleme aracı iyi çalışır.
 
-Reach out to their sales team and they can hook you up with a longer Enterprise trial. Be sure you fully understand its limitations before pulling the trigger. We had a good number of growing pains but aside from outages or impairments on the server side it's been incredibly smooth.
+Satış ekipleriyle iletişime geçin; size daha uzun bir Enterprise denemesi ayarlayabilirler. Karar vermeden önce sınırlamalarını tam olarak anladığınızdan emin olun. Epey büyüme sancısı yaşadık, ancak sunucu tarafındaki kesintiler veya aksamalar dışında inanılmaz derecede sorunsuz oldu.
 
 
 ### Bitwarden
 
-Bitwarden has a nice tooling around it (WebUI, CLI, Mobile, Desktop). Self-hosted and fairly easy to setup. Fairly good documentation and recommended tool by PrivacyTools.
+Bitwarden'ın etrafında güzel bir araç seti var (web arayüzü, CLI, mobil, masaüstü). Kendi sunucunuzda barındırılabilir ve kurulumu oldukça kolaydır. Oldukça iyi belgeleri var ve PrivacyTools tarafından önerilen bir araçtır.
 
 
 ### EnvKey
 
-https://www.envkey.com/ Is a saas. Really easy to implement, integrate and manage.
+https://www.envkey.com/ bir SaaS'tır. Uygulaması, entegre edilmesi ve yönetilmesi gerçekten kolaydır.
 
-Features:
+Özellikler:
 
-  * Protect API keys and credentials.
+  * API anahtarlarını ve kimlik bilgilerini korur.
 
-  * Keep configuration in sync everywhere.
+  * Yapılandırmayı her yerde eşitlenmiş tutar.
 
-  * Smart, end-to-end encrypted configuration and secrets management. 
+  * Akıllı, uçtan uca şifreli yapılandırma ve gizli bilgi yönetimi. 
 
-  * Prevent insecure sharing and config sprawl. 
+  * Güvensiz paylaşımı ve yapılandırma dağınıklığını önler. 
 
-  * Integrate in minutes.
+  * Dakikalar içinde entegre edilir.
 
-Capabilities:
+Yetenekler:
 
-  * Manage configuration and access levels for all your apps, environments, and teams in one place.
+  * Tüm uygulamalarınızın, ortamlarınızın ve ekiplerinizin yapılandırmasını ve erişim düzeylerini tek bir yerden yönetin.
 
-  * Configure any development or server environment with just a single environment variable.
+  * Herhangi bir geliştirme veya sunucu ortamını tek bir ortam değişkeniyle yapılandırın.
 
-Pros:
+Artılar:
 
-  * Good home page.
+  * İyi bir ana sayfa.
 
-  * Clear value prop.
+  * Açık değer önerisi.
 
-  * Visually excellent web app.
+  * Görsel olarak mükemmel web uygulaması.
 
-  * Superior example data e.g. Algolia, AWS, Datadog, GitHub, Stripe, etc.
+  * Üstün örnek veriler, örn. Algolia, AWS, Datadog, GitHub, Stripe vb.
 
-  * Spoke with the founder for 30m about the company, UI, etc. Dane sounds well-informed, honest about the pros/cons, and a viable partner.
+  * Kurucuyla şirket, arayüz vb. hakkında 30 dakika konuştum. Dane iyi bilgilendirilmiş, artıları/eksileri konusunda dürüst ve uygulanabilir bir ortak gibi görünüyor.
 
-  * The company is essentially a typical Y Combinator company, with 1 founder. Raised $120K in 2018-01.
+  * Şirket, esasen tek kurucuya sahip tipik bir Y Combinator şirketi. 2018-01'de 120 bin dolar yatırım aldı.
 
-  * Focus is on getting to enterprise features, esp. moving from EnvKey cloud-hosting to either on-prem or BYOC.
+  * Odak, kurumsal özelliklere ulaşmak, özellikle EnvKey bulut barındırmasından şirket içine (on-prem) ya da BYOC'ye geçmek.
 
-  * Potential path forward starting with EnvKey for ease of use, then later (or in parallel) adding Vault. 
+  * Olası bir yol: önce kullanım kolaylığı için EnvKey ile başlamak, sonra (ya da paralel olarak) Vault'u eklemek. 
 
 
 ### Confidant by Lyft
 
 https://lyft.github.io/confidant/
 
-Confidant is a open source secret management service that provides user-friendly storage and access to secrets in a secure way, from the developers at Lyft.
+Confidant, Lyft'teki geliştiricilerden gelen, gizli bilgilere kullanıcı dostu depolama ve güvenli erişim sağlayan açık kaynaklı bir gizli bilgi yönetim hizmetidir.
 
-KMS Authentication: Confidant solves the authentication chicken and egg problem by using AWS KMS and IAM to allow IAM roles to generate secure authentication tokens that can be verified by Confidant. Confidant also manages KMS grants for your IAM roles, which allows the IAM roles to generate tokens that can be used for service-to-service authentication, or to pass encrypted messages between services.
+KMS Kimlik Doğrulaması: Confidant, kimlik doğrulama için tavuk-yumurta sorununu AWS KMS ve IAM kullanarak çözer; IAM rollerinin Confidant tarafından doğrulanabilen güvenli kimlik doğrulama belirteçleri üretmesine izin verir. Confidant ayrıca IAM rolleriniz için KMS izinlerini (grants) yönetir; bu da IAM rollerinin hizmetten hizmete kimlik doğrulaması için ya da hizmetler arasında şifreli ileti iletmek için kullanılabilecek belirteçler üretmesine olanak tanır.
 
-At-rest encryption of versioned secrets: Confidant stores secrets in an append-only way in DynamoDB, generating a unique KMS data key for every revision of every secret, using Fernet symmetric authenticated cryptography.
+Sürümlü gizli bilgilerin beklemede şifrelenmesi: Confidant, gizli bilgileri DynamoDB'de yalnızca eklemeli bir biçimde saklar; Fernet simetrik kimlik doğrulamalı kriptografi kullanarak her gizli bilginin her revizyonu için benzersiz bir KMS veri anahtarı üretir.
 
-A user-friendly web interface for managing secrets: Confidant provides an AngularJS web interface that allows end-users to easily manage secrets, the mappings of secrets to services and the history of changes.
+Gizli bilgileri yönetmek için kullanıcı dostu bir web arayüzü: Confidant, son kullanıcıların gizli bilgileri, gizli bilgilerin hizmetlerle eşlemelerini ve değişiklik geçmişini kolayca yönetmesine olanak tanıyan bir AngularJS web arayüzü sağlar.
 
 
 ### Devolutions Password Server
 
 https://server.devolutions.net/
 
-Secure, manage, and monitor access to privileged accounts and sessions.
+Ayrıcalıklı hesaplara ve oturumlara erişimi güvenceye alın, yönetin ve izleyin.
 
-A comprehensive, highly-secured password vault that lets you control access to your privileged accounts, while also improving overall network visibility for sysadmins and providing a seamless experience for end users.
+Ayrıcalıklı hesaplarınıza erişimi denetlemenizi sağlarken sistem yöneticileri için genel ağ görünürlüğünü de iyileştiren ve son kullanıcılar için sorunsuz bir deneyim sunan kapsamlı, yüksek güvenlikli bir parola kasası.
 
-Features: centralized organization password vault, user-specific private vault, password manager, credential injection,
-Active Directory integration, role-based access control, two-factor authentication, enterprise ready, IP restrictions, management capabilities, automated password generator, mobile app access, password history, access reports, email alerts.
+Özellikler: merkezi kuruluş parola kasası, kullanıcıya özel özel kasa, parola yöneticisi, kimlik bilgisi enjeksiyonu,
+Active Directory entegrasyonu, rol tabanlı erişim denetimi, iki faktörlü kimlik doğrulama, kurumsal kullanıma hazır, IP kısıtlamaları, yönetim yetenekleri, otomatik parola üretici, mobil uygulama erişimi, parola geçmişi, erişim raporları, e-posta uyarıları.
 
-  * supports data encryption
+  * veri şifrelemeyi destekler
 
-  * supports multiple Authentication schemes including LDAP, O365, and Local users WITH support for MFA from multiple sources
+  * birden çok kaynaktan MFA desteğiyle LDAP, O365 ve yerel kullanıcılar dahil birden çok kimlik doğrulama şemasını destekler
 
-  * multiple repositories/vaults with fine-grained access controls for multiple teams
+  * birden çok ekip için ayrıntılı erişim denetimlerine sahip birden çok depo/kasa
 
-  * modern Web UI
+  * modern web arayüzü
 
-  * private credential and connection vaults for personal creds/connections
+  * kişisel kimlik bilgileri/bağlantılar için özel kimlik bilgisi ve bağlantı kasaları
 
-  * mobile apps for IOS/Android
+  * iOS/Android için mobil uygulamalar
 
-  * audit logs for each entry, who/what/when with an optional prompt for why they're accessing
+  * her girdi için kim/ne/ne zaman bilgisini içeren ve isteğe bağlı olarak erişim nedenini soran denetim günlükleri
 
-  * customizable templates (though they support hundreds of connection types natively)
+  * özelleştirilebilir şablonlar (yüzlerce bağlantı türünü yerel olarak desteklemelerine rağmen)
 
-  * tons more features and a Windows/Mac thick client (Remote Desktop Manager) that you can sync to that greatly expands the options...one-click connections
+  * çok daha fazla özellik ve eşitleyebileceğiniz bir Windows/Mac kalın istemcisi (Remote Desktop Manager); seçenekleri büyük ölçüde genişletir... tek tıkla bağlantılar
 
-  * pricing isn't all that bad - up to 15 users is $500 a year for the password server
+  * fiyatlandırma o kadar da kötü değil - parola sunucusu için 15 kullanıcıya kadar yılda 500 dolar
 
 
 ### Secret Server by Thycotic
 
 https://thycotic.com/products/secret-server/
 
-On-premise version features: 
+Şirket içi (on-premise) sürüm özellikleri: 
 
-  * Total control over your end-to-end security systems and infrastructure
+  * Uçtan uca güvenlik sistemleriniz ve altyapınız üzerinde tam denetim
 
-  * Deploy software within your on-premise data center or your own virtual private cloud instance
+  * Yazılımı şirket içi veri merkezinizde veya kendi sanal özel bulut örneğinizde dağıtın
 
-  * Meet legal and regulatory obligations that require all data and systems to reside on premise
+  * Tüm veri ve sistemlerin şirket içinde bulunmasını gerektiren yasal ve düzenleyici yükümlülükleri karşılayın
 
-Cloud version features:
+Bulut sürümü özellikleri:
 
-  * Software-as-a-service model lets you sign up and start right away
+  * Hizmet olarak yazılım modeli, kaydolup hemen başlamanızı sağlar
 
-  * Elastic scalability as you grow
+  * Büyüdükçe esnek ölçeklenebilirlik
 
-  * Controls and redundancy delivered by Azure with 99.9% uptime SLA
+  * Azure tarafından sunulan, %99,9 çalışma süresi SLA'sı ile denetimler ve yedeklilik
 
-User feedback:
+Kullanıcı geri bildirimi:
 
-  * We used to use that product. It was so easily bypassed and the rules only work for smart people. Lazy or dumb users can easily screw it up in a team area. Prices are negotiable when you talk to them.
+  * Eskiden bu ürünü kullanırdık. Çok kolay atlatılıyordu ve kurallar yalnızca akıllı insanlar için işliyor. Tembel ya da aptal kullanıcılar bir ekip alanında onu kolayca bozabiliyor. Fiyatlar onlarla konuştuğunuzda pazarlığa açık.
 
-  * You can run it using SQL express and an Win 7box. 
+  * SQL express ve bir Win 7 kutusuyla çalıştırabilirsiniz. 
 
-  * Cheap.
+  * Ucuz.

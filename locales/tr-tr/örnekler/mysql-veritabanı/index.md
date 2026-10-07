@@ -1,26 +1,26 @@
-# Architecture Decision Record: MySQL database
+# Mimari Karar Kaydı: MySQL veritabanı
 
-Title: Choosing MySQL as Database Management System for Project X
+Başlık: Proje X için Veritabanı Yönetim Sistemi Olarak MySQL'in Seçilmesi
 
-## Context and Problem Statement
+## Bağlam ve Sorun Tanımı
 
-We need to decide on which database management system (DBMS) to use for Project X. The database will be used to store and manage large amounts of data from multiple sources. We need a DBMS that can handle transactions, offer scalability, and provide high reliability and security. Among various options available, we are considering MySQL as a possible choice.
+Proje X için hangi veritabanı yönetim sistemini (VTYS) kullanacağımıza karar vermemiz gerekiyor. Veritabanı, birden fazla kaynaktan gelen büyük miktarda veriyi depolamak ve yönetmek için kullanılacak. İşlemleri yönetebilen, ölçeklenebilirlik sunan ve yüksek güvenilirlik ile güvenlik sağlayan bir VTYS'ye ihtiyacımız var. Mevcut çeşitli seçenekler arasında MySQL'i olası bir tercih olarak değerlendiriyoruz.
 
-## Decision Considerations
+## Karar Değerlendirme Ölçütleri
 
-- Ease of use and maintenance
+- Kullanım ve bakım kolaylığı
 
-- Community support and resources
+- Topluluk desteği ve kaynaklar
 
-- Performance and scalability
+- Performans ve ölçeklenebilirlik
 
-- Security and reliability
+- Güvenlik ve güvenilirlik
 
-- Cost and licensing
+- Maliyet ve lisanslama
 
-- Compatibility with our technology stack
+- Teknoloji yığınımızla uyumluluk
 
-## Considered Options
+## Değerlendirilen Seçenekler
 
 - MySQL
 
@@ -32,36 +32,36 @@ We need to decide on which database management system (DBMS) to use for Project 
 
 - MongoDB
 
-## Decision Outcome
+## Karar Sonucu
 
-After evaluating the above options based on our decision considerations, we have decided to choose MySQL as our DBMS for Project X.
+Yukarıdaki seçenekleri karar değerlendirme ölçütlerimize göre inceledikten sonra, Proje X için VTYS olarak MySQL'i seçmeye karar verdik.
 
-MySQL is a popular open-source system with a strong development community and a large pool of resources for problem-solving and knowledge sharing. It is well-known for its excellent performance and scalability capabilities, making it ideal for handling vast amounts of data with high levels of efficiency. The platform is secure, reliable, and has a wide range of features that are essential for our project, including ACID compliance for transactions, flexible data model, and support for various programming languages and frameworks.
+MySQL, güçlü bir geliştirme topluluğuna ve sorun çözme ile bilgi paylaşımı için geniş bir kaynak havuzuna sahip, popüler bir açık kaynak sistemdir. Mükemmel performansı ve ölçeklenebilirlik yetenekleriyle tanınır; bu da büyük miktarda veriyi yüksek verimlilikle işlemek için onu ideal kılar. Platform güvenli ve güvenilirdir; ayrıca projemiz için gerekli olan işlemlerde ACID uyumluluğu, esnek veri modeli ve çeşitli programlama dilleri ile çerçevelerin desteği gibi çok çeşitli özelliklere sahiptir.
 
-MySQL is also compatible with the majority of our technology stack, including our web development framework, hosting solutions, and other essential tools. Plus, its cost and licensing terms are competitive compared to other proprietary systems like Oracle and Microsoft SQL Server.
+MySQL ayrıca web geliştirme çerçevemiz, barındırma çözümlerimiz ve diğer temel araçlarımız dahil olmak üzere teknoloji yığınımızın çoğuyla uyumludur. Ayrıca maliyet ve lisanslama koşulları, Oracle ve Microsoft SQL Server gibi diğer ticari sistemlere kıyasla rekabetçidir.
 
-## Consequences
+## Sonuçlar
 
-We anticipate the following outcomes and consequences of our decision:
+Kararımızın aşağıdaki sonuçlarını ve etkilerini öngörüyoruz:
 
-### Positive
+### Olumlu
 
-- **High performance and scalability:**  MySQL offers exceptional performance and scalability capabilities, making it ideal for handling large amounts of data efficiently.
+- **Yüksek performans ve ölçeklenebilirlik:**  MySQL olağanüstü performans ve ölçeklenebilirlik yetenekleri sunar; bu da büyük miktarda veriyi verimli biçimde işlemek için onu ideal kılar.
 
-- **Secure and reliable:**  MySQL provides excellent security features and reliability, which is essential for managing critical data.
+- **Güvenli ve güvenilir:**  MySQL, kritik verilerin yönetimi için gerekli olan mükemmel güvenlik özellikleri ve güvenilirlik sağlar.
 
-- **Wide community support:**  MySQL has a vast community and various online resources, making it easier to seek help and solve problems.
+- **Geniş topluluk desteği:**  MySQL'in çok geniş bir topluluğu ve çeşitli çevrimiçi kaynakları vardır; bu da yardım istemeyi ve sorunları çözmeyi kolaylaştırır.
 
-- **Compatibility:**  MySQL is compatible with our technology stack and programming languages, streamlining our development process.
+- **Uyumluluk:**  MySQL, teknoloji yığınımız ve programlama dillerimizle uyumludur; bu da geliştirme sürecimizi kolaylaştırır.
 
-### Negative
+### Olumsuz
 
-- **Learning curve:**  There might be a learning curve for the development team, especially those not experienced with MySQL and SQL databases.
+- **Öğrenme eğrisi:**  Geliştirme ekibi için, özellikle MySQL ve SQL veritabanlarında deneyimi olmayanlar için bir öğrenme eğrisi olabilir.
 
-- **Limitations:**  MySQL may have some limitations when it comes to handling certain data types and complex data models, requiring careful development and optimization.
+- **Sınırlamalar:**  MySQL, belirli veri türlerini ve karmaşık veri modellerini işlerken bazı sınırlamalara sahip olabilir; bu da dikkatli geliştirme ve optimizasyon gerektirir.
 
-## Conclusion
+## Sonuç
 
-Based on the available data and our decision considerations, we believe that MySQL is the right choice for our database management system for Project X. MySQL offers high-performance, reliability, security, and scalability capabilities and is widely compatible with our technology stack. The development team will need to get familiar with using MySQL, but the available community support and resources should help in the process.
+Mevcut verilere ve karar değerlendirme ölçütlerimize dayanarak, MySQL'in Proje X için veritabanı yönetim sistemi açısından doğru seçim olduğuna inanıyoruz. MySQL yüksek performans, güvenilirlik, güvenlik ve ölçeklenebilirlik yetenekleri sunar ve teknoloji yığınımızla geniş ölçüde uyumludur. Geliştirme ekibinin MySQL kullanımına aşina olması gerekecek, ancak mevcut topluluk desteği ve kaynaklar bu süreçte yardımcı olmalıdır.
 
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>

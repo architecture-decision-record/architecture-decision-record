@@ -12,11 +12,11 @@
   * [Pozisyonlar](#pozisyonlar)
   * [Argüman](#argüman)
   * [Etkiler](#etkiler)
-* [İlgili](#ilgili)
-  * [İlgili kararlar](#ilgili-kararlar)
-  * [İlgili gereksinimler](#ilgili-gereksinimler)
-  * [İlgili eserler](#ilgili-eserler)
-  * [İlgili ilkeler](#ilgili-ilkeler)
+* [Bağlantılı](#bağlantılı)
+  * [Bağlantılı kararlar](#bağlantılı-kararlar)
+  * [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  * [Bağlantılı eserler](#bağlantılı-eserler)
+  * [Bağlantılı ilkeler](#bağlantılı-ilkeler)
 * [Notlar](#notlar)
 
 
@@ -90,10 +90,10 @@ Birkaç yaklaşımı değerlendirdik:
 Ortam değişkeni yapılandırmasını genelden herhangi bir gizli bilgi yönetiminden ayırmanın bir yolunu bulmamız gerekiyor.
 
 
-## İlgili
+## Bağlantılı
 
 
-### İlgili kararlar
+### Bağlantılı kararlar
 
 Tüm uygulamalarımızın bu yaklaşımı kullanmasını bekliyoruz.
 
@@ -102,7 +102,7 @@ Tüm uygulamalarımızın bu yaklaşımı kullanmasını bekliyoruz.
 Lisans sunucusu gibi daha yetenekli bir yaklaşım kullanan uygulamalarımızı olduğu gibi tutacağız.
 
 
-### İlgili gereksinimler
+### Bağlantılı gereksinimler
 
 Dosyalar için kancalar, testler ve sürekli entegrasyon dahil olmak üzere devops yetenekleri ekleyeceğiz.
 
@@ -110,12 +110,12 @@ Bu karar hakkında tüm geliştirici ekip arkadaşlarını eğitmemiz gerekiyor.
 
 
 
-### İlgili eserler
+### Bağlantılı eserler
 
 Dağıttığımız her alanın kendi .env dosyasına ve ilgili dosyalara ihtiyacı olacaktır.
 
 
-### İlgili ilkeler
+### Bağlantılı ilkeler
 
 Kolayca geri döndürülebilir.
 

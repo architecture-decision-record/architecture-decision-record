@@ -12,11 +12,11 @@
   * [Pozisyonlar](#pozisyonlar)
   * [Argüman](#argüman)
   * [Etkiler](#etkiler)
-* [İlgili](#ilgili)
-  * [İlgili kararlar](#ilgili-kararlar)
-  * [İlgili gereksinimler](#ilgili-gereksinimler)
-  * [İlgili eserler](#ilgili-eserler)
-  * [İlgili ilkeler](#ilgili-ilkeler)
+* [Bağlantılı](#bağlantılı)
+  * [Bağlantılı kararlar](#bağlantılı-kararlar)
+  * [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  * [Bağlantılı eserler](#bağlantılı-eserler)
+  * [Bağlantılı ilkeler](#bağlantılı-ilkeler)
 * [Notlar](#notlar)
   * [Serbest biçimli metin mesajları ve yapılandırılmış olay mesajları](#serbest-biçimli-metin-mesajları-ve-yapılandırılmış-olay-mesajları)
   * [Graylog daha kolay](#graylog-daha-kolay)
@@ -218,25 +218,25 @@ Devops boru hattımız ve dağıtım bulutlarımızla iyi çalışan araçlar is
 YAPILACAK.
 
 
-## İlgili
+## Bağlantılı
 
 
-### İlgili kararlar
+### Bağlantılı kararlar
 
 Seçimler test edilebilirliği, telemetriyi ve müşteri hizmetleri, site güvenilirliği mühendisliği vb. gibi diğer sistemleri etkileyecektir.
 
 
-### İlgili gereksinimler
+### Bağlantılı gereksinimler
 
 YAPILACAK.
 
 
-### İlgili eserler
+### Bağlantılı eserler
 
 YAPILACAK.
 
 
-### İlgili ilkeler
+### Bağlantılı ilkeler
 
 Kolayca geri döndürülebilir.
 

@@ -1,47 +1,47 @@
-# Architecture Decision Record: Tailwind CSS
+# Mimari Karar Kaydı: Tailwind CSS
 
-Decision: Use Tailwind CSS as the CSS framework to style a user interface.
+Karar: Kullanıcı arayüzünü biçimlendirmek için CSS çerçevesi olarak Tailwind CSS kullanılacaktır.
 
-## What is Tailwind CSS?
+## Tailwind CSS nedir?
 
-Tailwind is a utility-first CSS framework that allows for rapid development and customization of user interfaces. It is designed to be highly customizable and allows developers to write leaner and more efficient CSS. This framework provides a set of pre-defined classes to style the UI very fast.
+Tailwind, kullanıcı arayüzlerinin hızlı geliştirilmesine ve özelleştirilmesine olanak tanıyan, yardımcı sınıf öncelikli (utility-first) bir CSS çerçevesidir. Son derece özelleştirilebilir olacak şekilde tasarlanmıştır ve geliştiricilerin daha yalın ve verimli CSS yazmasına olanak tanır. Bu çerçeve, kullanıcı arayüzünü çok hızlı biçimlendirmek için önceden tanımlanmış bir sınıf kümesi sağlar.
 
-## Context
+## Bağlam
 
-We are building a web application for a client that requires a responsive and customizable user interface. The client has asked for consistent and modern styling. The development team has experience using custom CSS but wants to explore CSS frameworks that can save time and effort. We are looking for a framework that is easy to use, customizable, and has a large community for support.
+Bir müşteri için duyarlı ve özelleştirilebilir bir kullanıcı arayüzü gerektiren bir web uygulaması geliştiriyoruz. Müşteri tutarlı ve modern bir biçimlendirme istedi. Geliştirme ekibi özel CSS kullanma konusunda deneyimli, ancak zamandan ve emekten tasarruf sağlayabilecek CSS çerçevelerini keşfetmek istiyor. Kullanımı kolay, özelleştirilebilir ve destek için geniş bir topluluğa sahip bir çerçeve arıyoruz.
 
-## Decision Drivers
+## Karar Etkenleri
 
-- **Easy to use:**  We want a framework that is simple to learn and can be integrated into our development workflow.
+- **Kullanımı kolay:**  Öğrenmesi basit olan ve geliştirme iş akışımıza entegre edilebilecek bir çerçeve istiyoruz.
 
-- **Customizable:**  We want a framework that can be customized to match the client's brand guidelines and theme.
+- **Özelleştirilebilir:**  Müşterinin marka yönergelerine ve temasına uyacak şekilde özelleştirilebilecek bir çerçeve istiyoruz.
 
-- **Large community support:**  We want a framework that has an active community of developers and designers that can provide help and resources when needed.
+- **Geniş topluluk desteği:**  Gerektiğinde yardım ve kaynak sağlayabilecek aktif bir geliştirici ve tasarımcı topluluğuna sahip bir çerçeve istiyoruz.
 
-- **Time-saving:**  We want a framework that can save time and effort in styling the UI.
+- **Zaman tasarrufu:**  Kullanıcı arayüzünü biçimlendirmede zamandan ve emekten tasarruf sağlayabilecek bir çerçeve istiyoruz.
 
-## Considered Options
+## Değerlendirilen Seçenekler
 
-- **Bootstrap:**  A popular CSS framework with a lot of pre-built components and a large community of developers.
+- **Bootstrap:**  Çok sayıda hazır bileşene ve geniş bir geliştirici topluluğuna sahip popüler bir CSS çerçevesi.
 
-- **Foundation:**  Another popular CSS framework that was designed for mobile-first development.
+- **Foundation:**  Mobil öncelikli geliştirme için tasarlanmış, bir başka popüler CSS çerçevesi.
 
-- **Materialize:**  A CSS framework based on Google's Material Design language with pre-built components for UI development.
+- **Materialize:**  Google'ın Material Design diline dayanan ve kullanıcı arayüzü geliştirme için hazır bileşenler içeren bir CSS çerçevesi.
 
-- **Tailwind CSS:**  A utility-first CSS framework with a focus on customization and efficiency.
+- **Tailwind CSS:**  Özelleştirme ve verimliliğe odaklanan, yardımcı sınıf öncelikli bir CSS çerçevesi.
 
-## Decision Outcome
+## Karar Sonucu
 
-After considering the options, we decided to use Tailwind CSS for the following reasons:
+Seçenekleri değerlendirdikten sonra, aşağıdaki nedenlerle Tailwind CSS'i kullanmaya karar verdik:
 
-- **Easy to use:**  Tailwind's approach is simple and easy to understand. Its utility classes make building a UI faster.
+- **Kullanımı kolay:**  Tailwind'in yaklaşımı basit ve anlaşılması kolaydır. Yardımcı sınıfları, arayüz oluşturmayı hızlandırır.
 
-- **Customizable:**  Tailwind allows for customization by providing a set of configuration files that allow developers to modify the framework's default styles with ease.
+- **Özelleştirilebilir:**  Tailwind, geliştiricilerin çerçevenin varsayılan stillerini kolayca değiştirmesine olanak tanıyan bir dizi yapılandırma dosyası sağlayarak özelleştirmeye imkân verir.
 
-- **Large community support:**  Tailwind has a very active community of developers and designers that are consistently creating new resources, plugins, and tools.
+- **Geniş topluluk desteği:**  Tailwind'in, sürekli yeni kaynaklar, eklentiler ve araçlar oluşturan çok aktif bir geliştirici ve tasarımcı topluluğu vardır.
 
-- **Time-saving:**  Tailwind can save time, enabling developers to focus on other areas of the project.
+- **Zaman tasarrufu:**  Tailwind zamandan tasarruf sağlayarak geliştiricilerin projenin diğer alanlarına odaklanmasını mümkün kılar.
 
-We will use Tailwind CSS's utility classes to build the UI for our project. The development team will use its atomic and modular design system to write efficient and scalable CSS code. We will leverage Tailwind's pre-built templates and visual components to speed up the development process while utilizing custom styles to match the branding and theme of the client.
+Projemizin kullanıcı arayüzünü oluşturmak için Tailwind CSS'in yardımcı sınıflarını kullanacağız. Geliştirme ekibi, verimli ve ölçeklenebilir CSS kodu yazmak için atomik ve modüler tasarım sistemini kullanacaktır. Müşterinin markasına ve temasına uyması için özel stiller kullanırken, geliştirme sürecini hızlandırmak için Tailwind'in hazır şablonlarından ve görsel bileşenlerinden yararlanacağız.
 
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>

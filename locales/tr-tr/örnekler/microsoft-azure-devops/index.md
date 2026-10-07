@@ -12,11 +12,11 @@
   * [Pozisyonlar](#pozisyonlar)
   * [Argüman](#argüman)
   * [Etkiler](#etkiler)
-* [İlgili](#ilgili)
-  * [İlgili kararlar](#ilgili-kararlar)
-  * [İlgili gereksinimler](#ilgili-gereksinimler)
-  * [İlgili eserler](#ilgili-eserler)
-  * [İlgili ilkeler](#ilgili-ilkeler)
+* [Bağlantılı](#bağlantılı)
+  * [Bağlantılı kararlar](#bağlantılı-kararlar)
+  * [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  * [Bağlantılı eserler](#bağlantılı-eserler)
+  * [Bağlantılı ilkeler](#bağlantılı-ilkeler)
 * [Notlar](#notlar)
   * [Microsoft Devops CI: Tatmin Edici Olmayan Bir Macera](#microsoft-devops-ci-tatmin-edici-olmayan-bir-macera)
   * [Hacker News tartışma öne çıkanları](#hacker-news-tartışma-öne-çıkanları)
@@ -106,10 +106,10 @@ Akran deneyimlerimiz:
 Microsoft Azure DevOps'u seçmek, Azure'u seçmemekten daha pahalı (~3 kat) zaman ve maliyet açısından daha pahalı olma olasılığı yüksek görünüyor.
 
 
-## İlgili
+## Bağlantılı
 
 
-### İlgili kararlar
+### Bağlantılı kararlar
 
 Azure DevOps'u seçersek, Azure Repo, Azure Pipeline vb. dahil olmak üzere birçok ilgili teklif vardır. Azure Devops'u seçersek, bu, daha fazla Azure yeteneği kullanmayı kolaylaştırabilir veya diğer satıcıların yeteneklerini kullanmayı zorlaştırabilir.
 
@@ -118,7 +118,7 @@ Microsoft'un geliştirici deneyiminde büyük adımlar attığına inanıyoruz v
 Azure DevOps'u seçersek, Microsoft satın alma tekliflerini seçmeye vurgu yapmak isteyebiliriz ve potansiyel doku reddi, örneğin personel devir riski nedeniyle satın alma tekliflerine daha dikkatli/değerlendirmeyle yaklaşmak isteyebiliriz.
 
 
-### İlgili gereksinimler
+### Bağlantılı gereksinimler
 
 Derleme sürelerinin çok hızlı olmasını istiyoruz. Bunun için yüksek bir prim ödemeyi kabul ediyoruz. Bunun nedeni, çok hızlı yineleme yapmak istememizdir.
 
@@ -127,12 +127,12 @@ Güvenilirliğin çok yüksek olmasını istiyoruz. Bunun için yüksek bir prim
 En iyi 4 devops KPI'mız, hızlı derlemeler ve yüksek güvenilirlik gerektiren ortalama kurtarma süresini içerir.
 
 
-### İlgili eserler
+### Bağlantılı eserler
 
 Derleme sisteminin, Artifactory gibi diğer sistemlerde kullanıma uygun yapıtlar üretmesini istiyoruz.
 
 
-### İlgili ilkeler
+### Bağlantılı ilkeler
 
 Kolayca geri döndürülebilir. Azure DevOps'u AWS ile paralel olarak değerlendirebiliriz.
 

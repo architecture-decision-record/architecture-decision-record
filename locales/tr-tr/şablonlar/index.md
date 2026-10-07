@@ -10,3 +10,4 @@
 * [Planguage kullanan karar kaydı şablonu](planguage-ile-karar-kaydı-şablonu)
 * [Gareth Morgan tarafından karar kaydı şablonu](gareth-morgan-karar-kaydı-şablonu)
 * [GIG Cymru NHS Wales tarafından karar kaydı şablonu](gig-cymru-nhs-wales-karar-kaydı-şablonu)
+* [Ignacio Larrañaga tarafından Önemli Teknik Kararlar (ITD'ler) için karar kaydı şablonu](önemli-teknik-kararlar-karar-kaydı-şablonu)

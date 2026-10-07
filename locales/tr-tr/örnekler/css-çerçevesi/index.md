@@ -12,11 +12,11 @@
   - [Pozisyonlar](#pozisyonlar)
   - [Argüman](#argüman)
   - [Etkiler](#etkiler)
-- [İlgili](#ilgili)
-  - [İlgili kararlar](#ilgili-kararlar)
-  - [İlgili gereksinimler](#ilgili-gereksinimler)
-  - [İlgili eserler](#ilgili-eserler)
-  - [İlgili ilkeler](#ilgili-ilkeler)
+- [Bağlantılı](#bağlantılı)
+  - [Bağlantılı kararlar](#bağlantılı-kararlar)
+  - [Bağlantılı gereksinimler](#bağlantılı-gereksinimler)
+  - [Bağlantılı eserler](#bağlantılı-eserler)
+  - [Bağlantılı ilkeler](#bağlantılı-ilkeler)
 - [Notlar](#notlar)
 
 
@@ -110,27 +110,27 @@ Yukarıdaki gibi.
 İyi bir jQuery olmayan CSS çerçevesi bulursak, bu genellikle genel olarak yararlı ve iyidir.
 
 
-## İlgili
+## Bağlantılı
 
 
-### İlgili kararlar
+### Bağlantılı kararlar
 
 Seçtiğimiz CSS çerçevesi test edilebilirliği etkileyebilir.
 
 
-### İlgili gereksinimler
+### Bağlantılı gereksinimler
 
 Tamamen modern bir uygulamayı hızlı bir şekilde göndermek istiyoruz.
 
 Eski çerçeveler (özellikle Semantic UI) üzerinde eski bağımlılıkları (özellikle jQuery) kullanarak zaman harcamak istemiyoruz.
 
 
-### İlgili eserler
+### Bağlantılı eserler
 
 CSS'yi kullanacak tüm tipik HTML'yi etkiler.
 
 
-### İlgili ilkeler
+### Bağlantılı ilkeler
 
 Kolayca geri döndürülebilir.
 

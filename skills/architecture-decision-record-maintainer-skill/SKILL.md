@@ -18,7 +18,7 @@ locales/index.md             same, duplicate for the doc-site renderer
 locales/<lang>/documents/    per-section mirrors of README.md prose sections
 locales/<lang>/examples/     one dir per ADR example, each with index.md + README.md
 locales/<lang>/templates/    one dir per ADR template, each with index.md (+ LICENSE.md)
-locales/en-001/ ... fi-001/  source-of-truth English (en-001) plus 27 other locales,
+locales/en-001/ ... fi-001/  source-of-truth English (en-001) plus 29 other locales,
                              each named <language>-<region> (e.g. de-001, zh-tw, cy-gb);
                              section dirs are translated (documents, examples, templates)
 ```

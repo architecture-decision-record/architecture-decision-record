@@ -1,31 +1,31 @@
-# Decision record for work from home
+# Evden çalışma için karar kaydı
 
-Title: Employees can work from home
+Başlık: Çalışanlar evden çalışabilir
 
-Decision Maker: Management Team
+Karar Verici: Yönetim Ekibi
 
-Decision Date: July 1, 2021
+Karar Tarihi: 1 Temmuz 2021
 
-## Background
+## Arka Plan
 
-Due to the ongoing COVID-19 pandemic, many employees have been working remotely from home. This arrangement has provided benefits such as increased flexibility, improved work-life balance and a decrease in the spread of the virus. Furthermore, numerous employees have expressed that they would like to continue working from home even after the pandemic has ended.
+Devam eden COVID-19 salgını nedeniyle birçok çalışan evden uzaktan çalışmaktadır. Bu düzen; artan esneklik, iyileşen iş-yaşam dengesi ve virüsün yayılmasında azalma gibi faydalar sağlamıştır. Ayrıca çok sayıda çalışan, salgın sona erdikten sonra da evden çalışmaya devam etmek istediklerini ifade etmiştir.
 
-## Decision
+## Karar
 
-After weighing the pros and cons of allowing employees to work from home, the management team has decided to implement a permanent work from home policy for eligible employees. The policy applies to all full-time employees who can effectively perform their duties from home and have demonstrated success working remotely during the pandemic.
+Yönetim ekibi, çalışanların evden çalışmasına izin vermenin artılarını ve eksilerini tarttıktan sonra, uygun çalışanlar için kalıcı bir evden çalışma politikası uygulamaya karar vermiştir. Politika, görevlerini evden etkili biçimde yerine getirebilen ve salgın sırasında uzaktan çalışmada başarı gösteren tüm tam zamanlı çalışanlar için geçerlidir.
 
-Eligible employees can choose to work from home up to three days per week, while in-office work will be required for the remaining two days. To ensure effective communication and collaboration, regular check-ins with team members and managers will be required. Additionally, employees will be provided with the necessary equipment and resources to perform their duties effectively from home.
+Uygun çalışanlar haftada en fazla üç gün evden çalışmayı seçebilir; kalan iki gün için ofiste çalışma zorunlu olacaktır. Etkili iletişim ve iş birliğini sağlamak için ekip üyeleri ve yöneticilerle düzenli görüşmeler yapılması gerekecektir. Ayrıca çalışanlara, görevlerini evden etkili biçimde yerine getirmeleri için gerekli ekipman ve kaynaklar sağlanacaktır.
 
-The implementation of this policy will be reviewed and revisited regularly to ensure that it continues to benefit both the employees and the company.
+Bu politikanın uygulanması, hem çalışanlara hem de şirkete yararlı olmaya devam ettiğinden emin olmak için düzenli olarak gözden geçirilecek ve yeniden ele alınacaktır.
 
-## Reasoning
+## Gerekçe
 
-The decision to continue allowing employees to work from home is based on several factors, including employee work-life balance, greater flexibility and freedom, improved productivity, and less exposure to the risk of infection. By implementing a flexible work model, the company can attract and retain top talent while also providing a positive company culture.
+Çalışanların evden çalışmasına izin vermeye devam etme kararı; çalışanların iş-yaşam dengesi, daha fazla esneklik ve özgürlük, artan verimlilik ve enfeksiyon riskine daha az maruz kalma dahil çeşitli etkenlere dayanmaktadır. Şirket, esnek bir çalışma modeli uygulayarak hem en iyi yetenekleri çekebilir ve elde tutabilir hem de olumlu bir şirket kültürü sağlayabilir.
 
-## Implications
+## Etkiler
 
-The implementation of the permanent work from home policy will have several implications, including the need for ongoing communication and coordination among team members, adjusting work processes and protocols to accommodate a remote workforce, and ensuring that all employees have access to the necessary equipment, tools and resources.
+Kalıcı evden çalışma politikasının uygulanmasının çeşitli etkileri olacaktır: ekip üyeleri arasında sürekli iletişim ve koordinasyon ihtiyacı, iş süreçlerinin ve protokollerinin uzaktan çalışan bir iş gücüne uyacak şekilde ayarlanması ve tüm çalışanların gerekli ekipman, araç ve kaynaklara erişiminin sağlanması.
 
-## Conclusion
+## Sonuç
 
-The decision to implement a permanent work from home policy is in line with the company's values of promoting a healthy work-life balance, supporting employee well-being and promoting a positive company culture. We believe that this decision will enable our organization to be more agile and better suited to adapt to changing business needs while improving employee satisfaction and productivity.
+Kalıcı bir evden çalışma politikası uygulama kararı, şirketin sağlıklı bir iş-yaşam dengesini teşvik etme, çalışanların refahını destekleme ve olumlu bir şirket kültürünü geliştirme değerleriyle uyumludur. Bu kararın, kuruluşumuzun daha çevik olmasını ve değişen iş ihtiyaçlarına daha iyi uyum sağlamasını, aynı zamanda çalışan memnuniyetini ve verimliliğini artırmasını sağlayacağına inanıyoruz.

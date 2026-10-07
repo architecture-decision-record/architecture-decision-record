@@ -1,4 +1,4 @@
-# Architecture Decision Record: web application framework, batteries included, full stack, for a startup product
+# Mimari Karar Kaydı: girişim ürünü için hazır donanımlı, full stack web uygulama çerçevesi
 
 <!-- 
 
@@ -17,23 +17,23 @@ Low importance: 1. Runtime speed. 2. Scalability. 3. Backwards compatibility.
 
 -->
 
-**Primary Objective:**  
-To build a web application for paying customers to sign in, upload files, process data, and view reports, focusing on agile development, full-stack functionality, and strong compatibility with AI/ML tools, especially Project Jupyter notebooks.
+**Temel Hedef:**  
+Ödeme yapan müşterilerin oturum açabildiği, dosya yükleyebildiği, veri işleyebildiği ve rapor görüntüleyebildiği bir web uygulaması oluşturmak; çevik geliştirmeye, full stack işlevselliğe ve özellikle Project Jupyter not defterleri olmak üzere yapay zekâ/makine öğrenmesi araçlarıyla güçlü uyumluluğa odaklanmak.
 
-### Context and Requirements:
+### Bağlam ve Gereksinimler:
 
-1. **Agile Development (High Priority)**: As a startup, we need rapid iteration and flexibility. Agile practices, such as quick prototyping, iterative development, and adaptability to change, are key to our development cycle.
+1. **Çevik Geliştirme (Yüksek Öncelik)**: Bir girişim olarak hızlı yinelemeye ve esnekliğe ihtiyacımız var. Hızlı prototipleme, yinelemeli geliştirme ve değişime uyum sağlama gibi çevik uygulamalar, geliştirme döngümüzün anahtarıdır.
 
-2. **Full-Stack Framework (High Priority)**: We aim to minimize overhead by selecting a framework that can handle both backend and frontend efficiently, reducing the need for separate front-end frameworks.
+2. **Full Stack Çerçeve (Yüksek Öncelik)**: Hem arka ucu hem ön ucu verimli biçimde ele alabilen bir çerçeve seçerek ek yükü en aza indirmeyi, ayrı ön uç çerçevelerine olan ihtiyacı azaltmayı hedefliyoruz.
 
-3. **Compatibility with AI/ML Tools (High Priority)**: The ability to integrate easily with data analysis tools like Jupyter notebooks and Python's data science ecosystem (NumPy, Pandas, TensorFlow, etc.) is essential. This would facilitate efficient data processing and reporting.
+3. **Yapay Zekâ/Makine Öğrenmesi Araçlarıyla Uyumluluk (Yüksek Öncelik)**: Jupyter not defterleri ve Python'un veri bilimi ekosistemi (NumPy, Pandas, TensorFlow vb.) gibi veri analizi araçlarıyla kolayca bütünleşebilmek şarttır. Bu, verimli veri işlemeyi ve raporlamayı kolaylaştıracaktır.
 
-4. **Low Importance Criteria**:
-   - **Runtime Speed**: While performance is relevant, it is not the most critical factor at the start since we are more concerned with development speed and feature completeness.
-   - **Scalability**: We anticipate growth, but scalability concerns can be addressed later, and this is not a primary requirement right now.
-   - **Backwards Compatibility**: We are focusing on current technologies and are not heavily concerned about backward compatibility with legacy systems.
+4. **Düşük Önemli Ölçütler**:
+   - **Çalışma Zamanı Hızı**: Performans önemli olsa da, geliştirme hızı ve özellik bütünlüğü konusunda daha fazla endişe duyduğumuz için başlangıçta en kritik etken değildir.
+   - **Ölçeklenebilirlik**: Büyüme öngörüyoruz, ancak ölçeklenebilirlik kaygıları daha sonra ele alınabilir ve şu anda birincil bir gereksinim değildir.
+   - **Geriye Dönük Uyumluluk**: Güncel teknolojilere odaklanıyoruz ve eski sistemlerle geriye dönük uyumluluk konusunda çok endişeli değiliz.
 
-### Frameworks Evaluated:
+### Değerlendirilen Çerçeveler:
 
 1. **Django (Python)**  
 2. **Ruby on Rails (Ruby)**  
@@ -44,90 +44,90 @@ To build a web application for paying customers to sign in, upload files, proces
 
 ### 1. **Django (Python)**
 
-**Overview**:  
-Django is a high-level web framework for Python that promotes rapid development and clean, pragmatic design. It is known for its “batteries included” philosophy, meaning it includes many features such as authentication, routing, ORM, and form handling right out of the box.
+**Genel Bakış**:  
+Django, hızlı geliştirmeyi ve temiz, pragmatik tasarımı teşvik eden, Python için üst düzey bir web çerçevesidir. Kimlik doğrulama, yönlendirme, ORM ve form işleme gibi birçok özelliği kutudan çıktığı gibi içeren "hazır donanımlı" felsefesiyle bilinir.
 
-**Strengths**:  
-- **Full-Stack**: Django is a comprehensive, full-stack framework that can handle both backend and frontend needs with integrated features (e.g., templating engine, admin interface).
-- **Agile Development**: Django's well-defined structure and conventions allow for rapid development and adaptability, crucial for a startup environment. The framework comes with excellent documentation and a rich ecosystem of third-party packages, which accelerates development.
-- **AI/ML Integration**: Python's ecosystem is unmatched when it comes to data science and machine learning. Django, being Python-based, integrates seamlessly with tools like Jupyter notebooks, Pandas, NumPy, TensorFlow, and scikit-learn.
-- **Community and Ecosystem**: Django has an extensive community, robust documentation, and a wide range of plugins and extensions, which significantly speeds up development and troubleshooting.
+**Güçlü Yönler**:  
+- **Full Stack**: Django, entegre özelliklerle (örn. şablon motoru, yönetici arayüzü) hem arka uç hem ön uç ihtiyaçlarını karşılayabilen kapsamlı, full stack bir çerçevedir.
+- **Çevik Geliştirme**: Django'nun iyi tanımlanmış yapısı ve gelenekleri, bir girişim ortamı için çok önemli olan hızlı geliştirmeye ve uyum sağlamaya olanak tanır. Çerçeve, mükemmel belgelerle ve geliştirmeyi hızlandıran zengin bir üçüncü taraf paket ekosistemiyle gelir.
+- **Yapay Zekâ/Makine Öğrenmesi Entegrasyonu**: Veri bilimi ve makine öğrenmesi söz konusu olduğunda Python'un ekosistemi rakipsizdir. Python tabanlı olan Django; Jupyter not defterleri, Pandas, NumPy, TensorFlow ve scikit-learn gibi araçlarla sorunsuz bütünleşir.
+- **Topluluk ve Ekosistem**: Django'nun geniş bir topluluğu, sağlam belgeleri ve çok çeşitli eklenti ve uzantıları vardır; bu da geliştirmeyi ve sorun gidermeyi önemli ölçüde hızlandırır.
   
-**Weaknesses**:  
-- **Runtime Speed**: Python tends to be slower compared to languages like Rust or Elixir. However, for this use case, where performance is not the primary concern, this may not be a dealbreaker.
-- **Scalability**: While Django is highly scalable, there might be challenges at the very high scale without careful optimization (e.g., when handling heavy concurrent requests). However, Django can still be scaled effectively using load balancing and caching techniques.
+**Zayıf Yönler**:  
+- **Çalışma Zamanı Hızı**: Python, Rust veya Elixir gibi dillere kıyasla daha yavaş olma eğilimindedir. Ancak performansın birincil kaygı olmadığı bu kullanım durumunda bu, engelleyici olmayabilir.
+- **Ölçeklenebilirlik**: Django son derece ölçeklenebilir olsa da, dikkatli optimizasyon olmadan çok yüksek ölçekte zorluklar olabilir (örn. yoğun eşzamanlı istekleri işlerken). Yine de Django, yük dengeleme ve önbellekleme teknikleriyle etkili biçimde ölçeklenebilir.
 
-**Verdict**:  
-Django aligns well with the requirements for agile development, full-stack support, and AI/ML compatibility. Its Python integration offers seamless access to the data science tools and libraries necessary for the application.
+**Hüküm**:  
+Django; çevik geliştirme, full stack destek ve yapay zekâ/makine öğrenmesi uyumluluğu gereksinimleriyle iyi örtüşür. Python entegrasyonu, uygulama için gerekli veri bilimi araçlarına ve kütüphanelerine sorunsuz erişim sunar.
 
 ---
 
 ### 2. **Ruby on Rails (Ruby)**
 
-**Overview**:  
-Ruby on Rails (RoR) is a mature, full-stack web application framework known for its convention-over-configuration approach, which facilitates rapid development.
+**Genel Bakış**:  
+Ruby on Rails (RoR), hızlı geliştirmeyi kolaylaştıran, yapılandırma yerine gelenek yaklaşımıyla bilinen olgun, full stack bir web uygulaması çerçevesidir.
 
-**Strengths**:  
-- **Full-Stack**: RoR comes with built-in tools for both backend and frontend development (e.g., views, templates, scaffolding), and its rich library of gems allows quick implementation of various features.
-- **Agile Development**: Ruby on Rails is particularly known for its fast iteration cycles, which is advantageous for startups looking to quickly iterate on features. RoR supports test-driven development (TDD) and has an established ecosystem for agile workflows.
-- **Community and Ecosystem**: RoR has a well-established, strong community and a wide array of gems that can speed up development.
-- **Ease of Use**: Rails has a very developer-friendly syntax and is known for making tasks such as database migrations, model-view-controller (MVC) architecture, and route handling quick and simple.
+**Güçlü Yönler**:  
+- **Full Stack**: RoR hem arka uç hem ön uç geliştirme için yerleşik araçlarla (örn. görünümler, şablonlar, iskele oluşturma) gelir ve zengin gem kütüphanesi çeşitli özelliklerin hızlı uygulanmasına olanak tanır.
+- **Çevik Geliştirme**: Ruby on Rails, özellikle hızlı yineleme döngüleriyle bilinir; bu da özelliklerini hızla yinelemek isteyen girişimler için avantajlıdır. RoR, test güdümlü geliştirmeyi (TDD) destekler ve çevik iş akışları için yerleşik bir ekosisteme sahiptir.
+- **Topluluk ve Ekosistem**: RoR'un köklü, güçlü bir topluluğu ve geliştirmeyi hızlandırabilecek çok çeşitli gem'leri vardır.
+- **Kullanım Kolaylığı**: Rails'in çok geliştirici dostu bir sözdizimi vardır ve veritabanı geçişleri, Model-Görünüm-Denetleyici (MVC) mimarisi ve yol işleme gibi görevleri hızlı ve basit hale getirmesiyle bilinir.
 
-**Weaknesses**:  
-- **Performance**: Ruby tends to have slower runtime performance compared to Python or Elixir. While RoR can scale with the right infrastructure, Ruby’s performance might become a bottleneck for applications that require heavy real-time processing or high concurrent traffic.
-- **AI/ML Integration**: Although Ruby has some machine learning libraries, it is not as widely adopted in the AI/ML community as Python. Integration with tools like Jupyter notebooks is not as seamless, making Python a stronger choice for data-heavy applications.
+**Zayıf Yönler**:  
+- **Performans**: Ruby, Python veya Elixir'e kıyasla daha yavaş çalışma zamanı performansına sahip olma eğilimindedir. RoR doğru altyapıyla ölçeklenebilse de, Ruby'nin performansı yoğun gerçek zamanlı işleme veya yüksek eşzamanlı trafik gerektiren uygulamalar için bir darboğaz haline gelebilir.
+- **Yapay Zekâ/Makine Öğrenmesi Entegrasyonu**: Ruby'nin bazı makine öğrenmesi kütüphaneleri olsa da yapay zekâ/makine öğrenmesi topluluğunda Python kadar yaygın olarak benimsenmemiştir. Jupyter not defterleri gibi araçlarla entegrasyon o kadar sorunsuz değildir; bu da Python'u veri yoğun uygulamalar için daha güçlü bir seçim yapar.
   
-**Verdict**:  
-While Ruby on Rails excels in agile development and rapid prototyping, it falls short in terms of AI/ML compatibility compared to Python (Django). It’s a viable choice for startups that prioritize fast iteration over deep data analysis integration.
+**Hüküm**:  
+Ruby on Rails çevik geliştirmede ve hızlı prototiplemede mükemmel olsa da, yapay zekâ/makine öğrenmesi uyumluluğu açısından Python'a (Django) kıyasla yetersiz kalır. Derin veri analizi entegrasyonundan çok hızlı yinelemeye öncelik veren girişimler için uygulanabilir bir seçimdir.
 
 ---
 
 ### 3. **Phoenix (Elixir)**
 
-**Overview**:  
-Phoenix is a web framework built with Elixir, a functional programming language designed for scalability and concurrency. Phoenix leverages the Erlang VM, which is known for handling massive concurrency and fault-tolerant systems.
+**Genel Bakış**:  
+Phoenix, ölçeklenebilirlik ve eşzamanlılık için tasarlanmış işlevsel bir programlama dili olan Elixir ile oluşturulmuş bir web çerçevesidir. Phoenix, devasa eşzamanlılığı ve hataya dayanıklı sistemleri işlemesiyle bilinen Erlang VM'den yararlanır.
 
-**Strengths**:  
-- **Scalability and Performance**: Phoenix shines in scalability and handling high concurrency. It is built on the Erlang VM, which can support thousands (or even millions) of concurrent connections, making it a strong candidate for applications requiring real-time data processing or high-volume traffic.
-- **Full-Stack**: Phoenix includes everything needed to build both the backend and frontend of an application. It supports live views for interactive UI updates and includes a templating engine.
-- **Agile Development**: Phoenix is highly modular, allowing for rapid iteration on features. It is well-suited for startups that need to move quickly.
-- **AI/ML Compatibility**: While Elixir has emerging machine learning libraries, it is not as widely supported for AI/ML tasks as Python. Integrating with tools like Jupyter notebooks would require workarounds, as Elixir’s ecosystem for data science is not as mature as Python’s.
+**Güçlü Yönler**:  
+- **Ölçeklenebilirlik ve Performans**: Phoenix ölçeklenebilirlikte ve yüksek eşzamanlılığı işlemede öne çıkar. Binlerce (hatta milyonlarca) eşzamanlı bağlantıyı destekleyebilen Erlang VM üzerine kuruludur; bu da onu gerçek zamanlı veri işleme veya yüksek hacimli trafik gerektiren uygulamalar için güçlü bir aday yapar.
+- **Full Stack**: Phoenix, bir uygulamanın hem arka ucunu hem ön ucunu oluşturmak için gereken her şeyi içerir. Etkileşimli kullanıcı arayüzü güncellemeleri için canlı görünümleri (live views) destekler ve bir şablon motoru içerir.
+- **Çevik Geliştirme**: Phoenix son derece modülerdir ve özellikler üzerinde hızlı yinelemeye olanak tanır. Hızlı hareket etmesi gereken girişimler için çok uygundur.
+- **Yapay Zekâ/Makine Öğrenmesi Uyumluluğu**: Elixir'in gelişmekte olan makine öğrenmesi kütüphaneleri olsa da, yapay zekâ/makine öğrenmesi görevleri için Python kadar yaygın biçimde desteklenmez. Jupyter not defterleri gibi araçlarla entegrasyon geçici çözümler gerektirir, çünkü Elixir'in veri bilimi ekosistemi Python'unki kadar olgun değildir.
 
-**Weaknesses**:  
-- **AI/ML Ecosystem**: Elixir is not the primary language used in data science or machine learning, and the ecosystem is not as mature as Python’s. Thus, integration with tools like Jupyter notebooks or popular AI libraries (TensorFlow, PyTorch) will be cumbersome.
-- **Learning Curve**: If the team is unfamiliar with functional programming and Elixir, there might be a steeper learning curve.
+**Zayıf Yönler**:  
+- **Yapay Zekâ/Makine Öğrenmesi Ekosistemi**: Elixir, veri biliminde veya makine öğrenmesinde kullanılan birincil dil değildir ve ekosistemi Python'unki kadar olgun değildir. Bu nedenle Jupyter not defterleri veya popüler yapay zekâ kütüphaneleriyle (TensorFlow, PyTorch) entegrasyon zahmetli olacaktır.
+- **Öğrenme Eğrisi**: Ekip işlevsel programlamaya ve Elixir'e aşina değilse, daha dik bir öğrenme eğrisi olabilir.
 
-**Verdict**:  
-Phoenix is an excellent choice if scalability and concurrency are a primary concern. However, given the priority on AI/ML compatibility, Phoenix may not be the best fit due to Elixir's limited ecosystem in this space.
+**Hüküm**:  
+Ölçeklenebilirlik ve eşzamanlılık birincil kaygıysa Phoenix mükemmel bir seçimdir. Ancak yapay zekâ/makine öğrenmesi uyumluluğuna verilen öncelik göz önüne alındığında, Elixir'in bu alandaki sınırlı ekosistemi nedeniyle Phoenix en iyi seçim olmayabilir.
 
 ---
 
 ### 4. **Loco (Rust)**
 
-**Overview**:  
-Loco is a web framework built with Rust, a systems programming language known for its performance, memory safety, and concurrency. Rust is increasingly popular for building high-performance applications.
+**Genel Bakış**:  
+Loco, performansı, bellek güvenliği ve eşzamanlılığıyla bilinen bir sistem programlama dili olan Rust ile oluşturulmuş bir web çerçevesidir. Rust, yüksek performanslı uygulamalar geliştirmek için giderek daha popüler hale gelmektedir.
 
-**Strengths**:  
-- **Performance**: Rust’s primary strength lies in its high performance and memory safety, making it an excellent choice for applications requiring low-level control or extremely high performance.
-- **Concurrency**: Rust’s ownership system ensures memory safety while allowing safe concurrent programming, making it ideal for systems that need to scale efficiently and handle parallelism.
+**Güçlü Yönler**:  
+- **Performans**: Rust'ın birincil gücü yüksek performansında ve bellek güvenliğindedir; bu da onu düşük düzeyli denetim veya son derece yüksek performans gerektiren uygulamalar için mükemmel bir seçim yapar.
+- **Eşzamanlılık**: Rust'ın sahiplik sistemi bellek güvenliğini sağlarken güvenli eşzamanlı programlamaya izin verir; bu da onu verimli ölçeklenmesi ve paralelliği ele alması gereken sistemler için ideal kılar.
 
-**Weaknesses**:  
-- **Full-Stack Development**: Loco, while promising, is not as mature as the other frameworks in terms of providing a complete full-stack solution. It is more suitable for backend development, and the front-end ecosystem around Rust is still emerging.
-- **Agile Development**: Developing with Rust can be slower compared to higher-level languages like Python or Ruby due to its lower-level nature and steeper learning curve.
-- **AI/ML Ecosystem**: Rust does not have the same extensive ecosystem for AI/ML as Python. While there are growing libraries in Rust for numerical computing, they are far less mature than Python’s offerings, such as Jupyter notebooks or machine learning frameworks.
+**Zayıf Yönler**:  
+- **Full Stack Geliştirme**: Loco umut verici olsa da, eksiksiz bir full stack çözüm sunma açısından diğer çerçeveler kadar olgun değildir. Arka uç geliştirme için daha uygundur ve Rust çevresindeki ön uç ekosistemi hâlâ gelişmektedir.
+- **Çevik Geliştirme**: Rust ile geliştirme, daha düşük düzeyli doğası ve daha dik öğrenme eğrisi nedeniyle Python veya Ruby gibi üst düzey dillere kıyasla daha yavaş olabilir.
+- **Yapay Zekâ/Makine Öğrenmesi Ekosistemi**: Rust'ın yapay zekâ/makine öğrenmesi için Python kadar kapsamlı bir ekosistemi yoktur. Rust'ta sayısal hesaplama için büyüyen kütüphaneler olsa da, Jupyter not defterleri veya makine öğrenmesi çerçeveleri gibi Python'un sunduklarından çok daha az olgundurlar.
   
-**Verdict**:  
-While Rust and its framework Loco offer exceptional performance, the lack of full-stack support, agile development benefits, and AI/ML ecosystem make it less ideal for this specific use case. It is more suited for performance-critical applications rather than rapid web development with integrated data science tools.
+**Hüküm**:  
+Rust ve çerçevesi Loco olağanüstü performans sunsa da, full stack desteğinin, çevik geliştirme faydalarının ve yapay zekâ/makine öğrenmesi ekosisteminin eksikliği onu bu özel kullanım durumu için daha az ideal yapar. Entegre veri bilimi araçlarıyla hızlı web geliştirmeden çok, performans açısından kritik uygulamalar için daha uygundur.
 
 ---
 
-### Conclusion
+### Sonuç
 
-After evaluating the options based on the project’s requirements, **Django (Python)** is the most suitable choice. It offers the following advantages:
+Seçenekleri projenin gereksinimlerine göre değerlendirdikten sonra, **Django (Python)** en uygun seçimdir. Aşağıdaki avantajları sunar:
 
-- **Full-Stack Capabilities**: Django is a full-stack framework that integrates both backend and frontend development.
-- **Agile Development**: The framework is well-suited to rapid prototyping and iteration, which is essential for a startup environment.
-- **AI/ML Compatibility**: Python is the leading language in AI/ML, and Django’s compatibility with libraries like Jupyter notebooks ensures smooth integration for data analysis and processing.
-- **Community and Ecosystem**: Django’s strong community support and extensive library ecosystem provide numerous tools to accelerate development.
+- **Full Stack Yetenekleri**: Django, hem arka uç hem ön uç geliştirmeyi bütünleştiren full stack bir çerçevedir.
+- **Çevik Geliştirme**: Çerçeve, bir girişim ortamı için şart olan hızlı prototiplemeye ve yinelemeye çok uygundur.
+- **Yapay Zekâ/Makine Öğrenmesi Uyumluluğu**: Python yapay zekâ/makine öğrenmesinde önde gelen dildir ve Django'nun Jupyter not defterleri gibi kütüphanelerle uyumluluğu veri analizi ve işleme için sorunsuz entegrasyon sağlar.
+- **Topluluk ve Ekosistem**: Django'nun güçlü topluluk desteği ve geniş kütüphane ekosistemi, geliştirmeyi hızlandırmak için çok sayıda araç sağlar.
 
-While **Ruby on Rails** is also a strong contender for agile development, its limited AI/ML support makes it less ideal for this specific use case. **Phoenix (Elixir)** and **Loco (Rust)**, though excellent for scalability and performance, fall short in terms of AI/ML integration and full-stack development. Therefore, Django is the recommended framework for this project.
+**Ruby on Rails** da çevik geliştirme için güçlü bir aday olsa da, sınırlı yapay zekâ/makine öğrenmesi desteği onu bu özel kullanım durumu için daha az ideal yapar. **Phoenix (Elixir)** ve **Loco (Rust)** ölçeklenebilirlik ve performans için mükemmel olsalar da, yapay zekâ/makine öğrenmesi entegrasyonu ve full stack geliştirme açısından yetersiz kalırlar. Bu nedenle bu proje için önerilen çerçeve Django'dur.

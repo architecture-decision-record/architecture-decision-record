@@ -19,7 +19,7 @@ see [website.md](website.md#url-scheme). Only locale directories live in
 `locales/`; stray or duplicate directories (for example a copy of a locale
 under another name) fail the audit and the sync, and are deleted.
 
-## The 28 locales
+## The 30 locales
 
 | Directory and route | Picker value | Endonym (Intl) |
 |---|---|---|
@@ -46,34 +46,26 @@ under another name) fail the audit and the sync, and are deleted.
 | `ru-001` | `ru_001` | русский (весь мир) |
 | `sv-001` | `sv_001` | svenska (världen) |
 | `th-001` | `th_001` | ไทย (โลก) |
+| `tr-001` | `tr_001` | Türkçe (Dünya) |
+| `tr-tr` | `tr_TR` | Türkçe (Türkiye) |
 | `ur-001` | `ur_001` | اردو (دنیا) |
 | `vi-001` | `vi_001` | Tiếng Việt (Thế giới) |
 | `zh-001` | `zh_001` | 中文（世界） |
 | `zh-cn` | `zh_CN` | 中文（中国） |
 | `zh-tw` | `zh_TW` | 中文（台灣） |
 
-Counts: 28 locales, of which `en-001` is the source and 27 are translations or
-variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`).
-Every one of the 28 is complete: 203 files, 63 pages.
+Counts: 30 locales, of which `en-001` is the source and 29 are translations or
+variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`;
+`tr-tr` is a copy of `tr-001`). Every one is complete: 203 files, 63 pages.
 
 `locales/index.md` lists each locale as `* [<Endonym> (<World>)](<code>/)`.
-`locales/locales-by-priority.md` records the translation order (all 28 are
+`locales/locales-by-priority.md` records the translation order (all are
 done).
 
-Turkish is in progress and not yet one of the 28: `tr-001` (the world locale)
-and `tr-tr` (identical content, kept for the regional name) each hold a partial
-translation (188 of 203 files, 15 pages missing). Neither is listed in
-`locales/index.md`, in `LOCALES`, or wired into the website until
-`scripts/audit-locales.py` reports them OK. They are the only locale directories
-outside the 28.
-
-## Browser language routing
-
-`/` sends a visitor to a locale route from `navigator.languages`: the exact
-locale, else Chinese script/region (`zh-Hant`, `zh-HK` to `zh-tw`), else the
-language's `*-001` locale, else `/en/`. Full rules:
-[website.md](website.md#url-scheme). Adding a locale to `LOCALES` makes it
-eligible for routing automatically.
+Turkish: `tr-001` (the world locale) and `tr-tr` (identical content, kept for
+the regional name, like `cy-gb`) are complete. Turkish headings use "Bağlantılı"
+(related) rather than "İlgili": Turkish "İ" lowercases to "i" plus a combining
+dot, which breaks `#ilgili`-style anchors on the site.
 
 ## Translating directory names
 

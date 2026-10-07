@@ -1,53 +1,53 @@
-# Architecture Decision Record for Python Django Framework
+# Python Django Çerçevesi için Mimari Karar Kaydı
 
-Decision Date: 2021-07-15
+Karar Tarihi: 2021-07-15
 
-Status: Accepted
+Durum: Kabul Edildi
 
-## Context
+## Bağlam
 
-Our organization is planning to develop a web application that manages customer data. We have chosen Python as the programming language and are considering Django as the web framework for the development of the application.
+Kuruluşumuz, müşteri verilerini yöneten bir web uygulaması geliştirmeyi planlamaktadır. Programlama dili olarak Python'u seçtik ve uygulamanın geliştirilmesi için web çerçevesi olarak Django'yu değerlendiriyoruz.
 
-## Decision
+## Karar
 
-We have decided to use the Django web framework for the development of the web application. Django provides a robust set of tools and features for building web applications quickly and efficiently. 
+Web uygulamasının geliştirilmesi için Django web çerçevesini kullanmaya karar verdik. Django, web uygulamalarını hızlı ve verimli biçimde geliştirmek için sağlam bir araç ve özellik kümesi sunar. 
 
-## Factors
+## Etkenler
 
-Some of the factors that influenced our decision include:
+Kararımızı etkileyen etkenlerden bazıları şunlardır:
 
-1. Object-Relational Mapping (ORM): Django has a built-in ORM that allows us to interact with the database without writing SQL queries. This makes it easier to develop the application and maintain it in the long run.
+1. Nesne-İlişkisel Eşleme (ORM): Django'nun, SQL sorguları yazmadan veritabanıyla etkileşim kurmamızı sağlayan yerleşik bir ORM'si vardır. Bu, uygulamayı geliştirmeyi ve uzun vadede sürdürmeyi kolaylaştırır.
 
-2. MVC framework: Django follows a Model-View-Controller (MVC) architecture, making it easier to separate the business logic and presentation layers of the application.
+2. MVC çerçevesi: Django, Model-Görünüm-Denetleyici (MVC) mimarisini izler; bu da uygulamanın iş mantığı ile sunum katmanlarını ayırmayı kolaylaştırır.
 
-3. Scalability: Django is known for its scalability capabilities, making it an excellent choice for developing large-scale applications.
+3. Ölçeklenebilirlik: Django, ölçeklenebilirlik yetenekleriyle bilinir; bu da onu büyük ölçekli uygulamalar geliştirmek için mükemmel bir seçim yapar.
 
-4. Security: Django has built-in security features, such as protection against common web attacks like cross-site scripting (XSS) and SQL injection.
+4. Güvenlik: Django, siteler arası betik çalıştırma (XSS) ve SQL enjeksiyonu gibi yaygın web saldırılarına karşı koruma gibi yerleşik güvenlik özelliklerine sahiptir.
 
-5. Community Support: Django has a large and active community that provides support and contributes to the development of the framework.
+5. Topluluk desteği: Django, destek sağlayan ve çerçevenin gelişimine katkıda bulunan büyük ve aktif bir topluluğa sahiptir.
 
-## Alternatives Considered
+## Değerlendirilen Alternatifler
 
-We considered other web frameworks such as Flask and Pyramid. However, we found that Django is a more mature and well-established framework with a robust set of features.
+Flask ve Pyramid gibi diğer web çerçevelerini değerlendirdik. Ancak Django'nun daha olgun, köklü ve sağlam bir özellik kümesine sahip bir çerçeve olduğunu gördük.
 
-We also discussed developing the application without a web framework and using libraries like SQLAlchemy and Flask-RESTful. However, we found that Django offers broader functionality, making it a better choice for a complete web application.
+Ayrıca uygulamayı bir web çerçevesi olmadan, SQLAlchemy ve Flask-RESTful gibi kütüphaneler kullanarak geliştirmeyi de tartıştık. Ancak Django'nun daha geniş işlevsellik sunduğunu ve bunun tam bir web uygulaması için daha iyi bir seçim olduğunu gördük.
 
-## Consequences
+## Sonuçlar
 
-The adoption of Django will lead to the following consequences:
+Django'nun benimsenmesi aşağıdaki sonuçlara yol açacaktır:
 
-1. Easier to develop and maintain the application due to Django’s built-in tools and features.
+1. Django'nun yerleşik araçları ve özellikleri sayesinde uygulamayı geliştirmek ve sürdürmek daha kolay olacaktır.
 
-2. Separation of business logic and presentation layer, leading to more organized and easier to maintain code.
+2. İş mantığı ile sunum katmanının ayrılması, daha düzenli ve bakımı daha kolay bir koda yol açacaktır.
 
-3. Scalability and robustness of the application.
+3. Uygulamanın ölçeklenebilirliği ve sağlamlığı.
 
-4. Built-in security features that help protect the application against common web attacks.
+4. Uygulamayı yaygın web saldırılarına karşı korumaya yardımcı olan yerleşik güvenlik özellikleri.
 
-5. Access to a large and active community for support.
+5. Destek için büyük ve aktif bir topluluğa erişim.
 
-We understand that Django has a steeper learning curve than other frameworks, but we find that it is worth the investment for the long-term benefits it provides.
+Django'nun diğer çerçevelere göre daha dik bir öğrenme eğrisine sahip olduğunu biliyoruz, ancak sağladığı uzun vadeli faydalar için buna yatırım yapmaya değer olduğunu düşünüyoruz.
 
-## Conclusion
+## Sonuç
 
-Based on the factors considered, we have decided to use the Django web framework for the development of the web application. We believe that Django’s features, community support, and scalability capabilities make it the best choice for building a complete web application. We will train our developers to use Django to ensure that the framework is used effectively and efficiently.
+Değerlendirilen etkenlere dayanarak, web uygulamasının geliştirilmesi için Django web çerçevesini kullanmaya karar verdik. Django'nun özelliklerinin, topluluk desteğinin ve ölçeklenebilirlik yeteneklerinin, onu tam bir web uygulaması geliştirmek için en iyi seçim yaptığına inanıyoruz. Çerçevenin etkili ve verimli biçimde kullanılmasını sağlamak için geliştiricilerimizi Django konusunda eğiteceğiz.

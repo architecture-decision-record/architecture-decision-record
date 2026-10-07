@@ -7,7 +7,7 @@
     "guide": 15,
     "templates": 11,
     "examples": 40,
-    "locales": 28
+    "locales": 30
   },
   "sections": {
     "guide": [
@@ -313,6 +313,8 @@
     "ru_001",
     "sv_001",
     "th_001",
+    "tr_001",
+    "tr_TR",
     "ur_001",
     "vi_001",
     "zh_001",

@@ -1,43 +1,43 @@
-# Architecture Decision Record: snake_case v. camelCase for a REST API?
+# Mimari Karar Kaydı: REST API için snake_case mi camelCase mi?
 
-Decision: snake_case naming convention will be used for REST API endpoints
+Karar: REST API uç noktaları için snake_case adlandırma kuralı kullanılacaktır
 
-Status: Accepted
+Durum: Kabul Edildi
 
-## Context
+## Bağlam
 
-In naming conventions for REST APIs, there are two popular formats: snake_case and camelCase. The snake_case format is where each word in the name is separated by underscores, whereas camelCase is where the first word of the name is in lower case, and the subsequent words have their first letter capitalized. This decision will determine which naming convention should be used for a REST API.
+REST API'leri için adlandırma kurallarında iki popüler biçim vardır: snake_case ve camelCase. snake_case biçiminde addaki her sözcük alt çizgilerle ayrılırken, camelCase biçiminde adın ilk sözcüğü küçük harfle yazılır ve sonraki sözcüklerin ilk harfleri büyük yazılır. Bu karar, bir REST API için hangi adlandırma kuralının kullanılması gerektiğini belirleyecektir.
 
-## Decision Drivers
+## Karar Etkenleri
 
-- Consistency with existing naming conventions in the project
+- Projedeki mevcut adlandırma kurallarıyla tutarlılık
 
-- Readability and clarity for anyone who may be working on the API
+- API üzerinde çalışabilecek herkes için okunabilirlik ve açıklık
 
-- Alignment with industry best practices for REST API naming conventions
+- REST API adlandırma kuralları için sektördeki en iyi uygulamalarla uyum
 
-- Ease of implementation and maintenance
+- Uygulama ve bakım kolaylığı
 
-## Decision
+## Karar
 
-The snake_case naming convention will be used for REST API endpoints. This choice is driven by the following factors:
+REST API uç noktaları için snake_case adlandırma kuralı kullanılacaktır. Bu tercih aşağıdaki etkenlere dayanmaktadır:
 
-1. **Consistency**: The project already uses snake_case naming convention for all endpoints, and it would be beneficial to maintain this convention to ensure consistency across the entire project.
+1. **Tutarlılık**: Proje tüm uç noktalar için zaten snake_case adlandırma kuralını kullanmaktadır ve bu kuralı korumak, tüm proje boyunca tutarlılığı sağlamak açısından yararlı olacaktır.
 
-2. **Readability and clarity**: The snake_case convention is more readable and easier to understand. The underscores provide a clear separation between words, making it easier to parse and understand the meaning of the name.
+2. **Okunabilirlik ve açıklık**: snake_case kuralı daha okunabilir ve anlaşılması daha kolaydır. Alt çizgiler sözcükler arasında net bir ayrım sağlar; bu da adın anlamını ayrıştırmayı ve anlamayı kolaylaştırır.
 
-3. **Alignment with industry best practices**: The snake_case convention is widely used in the industry and is considered to be a best practice for REST APIs, making it a good choice for the project.
+3. **Sektördeki en iyi uygulamalarla uyum**: snake_case kuralı sektörde yaygın olarak kullanılmaktadır ve REST API'leri için en iyi uygulama olarak kabul edilir; bu da onu proje için iyi bir seçim yapar.
 
-4. **Ease of implementation and maintenance**: Keeping with the existing naming convention is easier to implement and maintain as all existing code and documentation would need to be updated if a new convention was chosen.
+4. **Uygulama ve bakım kolaylığı**: Mevcut adlandırma kuralını sürdürmek uygulaması ve bakımı daha kolaydır, çünkü yeni bir kural seçilirse tüm mevcut kodun ve belgelerin güncellenmesi gerekirdi.
 
-## Consequences
+## Sonuçlar
 
-There are potential consequences of this decision. 
+Bu kararın olası sonuçları vardır. 
 
-* If any new team members joining the project are unfamiliar with snake_case naming convention, it could lead to confusion and mistakes in development. However, since snake_case is a widely-used convention, such a risk is minimal. 
+* Projeye katılan yeni ekip üyeleri snake_case adlandırma kuralına aşina değilse, geliştirmede karışıklığa ve hatalara yol açabilir. Ancak snake_case yaygın olarak kullanılan bir kural olduğundan, bu risk asgaridir. 
   
-* If other tools or frameworks are used in the project that are heavily based on camelCase convention, it may require extra effort to convert between naming conventions. However, it is not a significant concern since the project has standardized on the snake_case convention. 
+* Projede büyük ölçüde camelCase kuralına dayanan başka araçlar veya çerçeveler kullanılırsa, adlandırma kuralları arasında dönüşüm yapmak ek çaba gerektirebilir. Ancak proje snake_case kuralında standartlaştığı için bu önemli bir endişe değildir. 
  
-Overall, the decision to use snake_case naming convention for REST API endpoints results in a consistent, readable, and industry-standard approach while being easy to implement and maintain.
+Genel olarak, REST API uç noktaları için snake_case adlandırma kuralını kullanma kararı; uygulaması ve bakımı kolay olurken tutarlı, okunabilir ve sektör standardı bir yaklaşım sağlar.
 
-<h6>Credit: this page is generated by ChatGPT, then edited for clarity and format.</h6>
+<h6>Kredi: Bu sayfa ChatGPT tarafından oluşturulmuş, ardından netlik ve biçim için düzenlenmiştir.</h6>
