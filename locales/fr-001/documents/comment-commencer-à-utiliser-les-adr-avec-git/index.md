@@ -8,10 +8,10 @@ Créez un répertoire pour les fichiers ADR :
 $ mkdir adr
 ```
 
-Pour chaque ADR, créez un fichier texte, par exemple `database.txt` :
+Pour chaque ADR, créez un fichier texte, par exemple `choose-database.md` :
 
 ```sh
-$ vi database.txt
+$ vi choose-database.md
 ```
 
 Écrivez dans l’ADR ce que vous voulez. Consultez les modèles de ce dépôt pour vous inspirer.

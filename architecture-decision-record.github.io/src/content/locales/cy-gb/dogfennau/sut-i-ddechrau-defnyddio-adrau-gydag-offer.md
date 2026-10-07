@@ -1,5 +1,7 @@
 ## Sut i ddechrau defnyddio ADRau gydag offer
 
+- [MySpec](https://myspec.dev) — Platfform manyleb a phenderfyniadau saernïaeth awtomataidd sy'n strwythuro cyfansoddiad y prosiect, y saernïaeth dechnegol ac ADRau yn Markdown glân a gyflwynir drwy MCP.
+
 Gallwch ddechrau defnyddio ADRau gydag offer mewn unrhyw ffordd a fynnwch.
 
 Er enghraifft:

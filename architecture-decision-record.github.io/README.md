@@ -7,28 +7,23 @@ project: templates, examples, and teamwork guidance for ADRs. Live at
 
 Built with [SvelteKit](https://svelte.dev/docs/kit) (`@sveltejs/adapter-static`,
 fully prerendered) and the [Lily Design System](https://lilydesignsystem.com/)
-(headless components, theme/text-size/share pickers). Content is Markdown,
-compiled with [mdsvex](https://mdsvex.pngwn.io/).
+(headless components, theme/text-size/share pickers). Content is Markdown from
+the parent repo's `locales/`, rendered at build time with [marked](https://marked.js.org/).
 
 ## Where the content comes from
 
-This directory lives inside the `architecture-decision-record` monorepo,
-one level below the repository root. The guide pages are parsed out of the
-parent repo's own `README.md`; templates and examples are copied from
-`../locales/en-001/templates/` and `../locales/en-001/examples/` (see
-[`scripts/sync-content.mjs`](scripts/sync-content.mjs)), and a navigation
-manifest is generated from the result (see
-[`scripts/generate-manifest.mjs`](scripts/generate-manifest.mjs)).
+This directory lives inside the `architecture-decision-record` monorepo, one
+level below the repository root. Every page is a locale page: `scripts/sync-locales.mjs`
+copies each locale's pages and its root `index.md` (the translated README, the
+landing page) from `../locales/<code>/` into `src/content/locales/` and writes
+`src/lib/locale-pages.json` and `locale-peers.json`. English is the `en-001`
+locale.
 
-Note: since the `/en/` site was removed, nothing routes `src/content/{guide,templates,examples}/`
-or `src/lib/manifest.json` any more; the site renders `locales/` directly (English is
-`en-001`). `pnpm run content` still regenerates them for now.
-
-**Never hand-edit files under `src/content/`.** Edit `../README.md` or
-`../locales/en-001/` instead, then regenerate:
+**Never hand-edit files under `src/content/`.** Edit `../locales/` instead, then
+regenerate:
 
 ```sh
-pnpm run content   # re-parses/copies from one level up, then rebuilds the manifest
+pnpm run content   # sync locales, search indexes, llms.txt/json, sitemap.xml
 ```
 
 ## Development
@@ -43,15 +38,13 @@ pnpm run check     # svelte-check
 
 ## Structure
 
-- `src/content/{guide,templates,examples}/` : synced Markdown source (see above).
-- `src/lib/manifest.json` : generated table of contents — see `scripts/generate-manifest.mjs`.
+- `src/content/locales/` : synced Markdown source (see above).
 - `src/routes/[locale]/…` : the locale routes (English is `en-001`), prerendered from
   `locales/` via `src/lib/server/locale-pages.js`; `/<locale>/?<query>` is search.
 - `src/routes/+page.svelte` : the language router at `/` (reads
   `navigator.languages`, goes to the matching locale route, else `/en-001/`).
   There is no `/en/` site; `/en/…` and the old section URLs (`/guide/`, …) 404.
-- `src/lib/components/Header.svelte`, `Footer.svelte`,
-  `MdLayout.svelte` : the site chrome.
+- `src/lib/components/Header.svelte`, `Footer.svelte`, `SearchResults.svelte` : the site chrome and search results.
 - `static/themes/*.css` : the 45 Lily Design System themes, switched at
   runtime by `ThemePicker.svelte`.
 

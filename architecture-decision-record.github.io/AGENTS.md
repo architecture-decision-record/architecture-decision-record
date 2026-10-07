@@ -18,17 +18,13 @@ publishing commands.
 
 ## Working rules
 
-- `src/content/` is **generated** from the parent repo's `README.md` and
-  `locales/en-001/{templates,examples}/` by `scripts/sync-content.mjs` — never
-  hand-edit files under it. Edit the source content one level up (`../`),
-  then run `pnpm run content` here.
-- `src/lib/manifest.json` is **generated** by `scripts/generate-manifest.mjs`
-  from `src/content/` — never hand-edit it.
-- Guide, template, and example pages are all rendered by the same pattern:
-  a `[slug]/+page.js` with `entries()` sourced from the manifest, dynamically
-  importing the matching `.md` file from `src/content/`, and a
-  `+page.svelte` that renders `data.content` (the mdsvex-compiled component).
-  Follow this pattern for any new section rather than inventing a new one.
+- `src/content/locales/` and `src/lib/locale-pages.json` / `locale-peers.json` are
+  **generated** from the parent repo's `locales/` by `scripts/sync-locales.mjs`
+  — never hand-edit them. Edit the source one level up (`../locales/`), then
+  run `pnpm run content` here.
+- Every page is a locale route (`src/routes/[locale]/…`), rendered at build time
+  by `src/lib/server/locale-pages.js` with `marked`; there are no per-page
+  routes or Markdown-to-Svelte (mdsvex) pipeline.
 - The only hand-authored page is `/` (`src/routes/+page.svelte`, the language
   router); every other page is a locale route rendered from `locales/`. There
   is no `/en/` site.

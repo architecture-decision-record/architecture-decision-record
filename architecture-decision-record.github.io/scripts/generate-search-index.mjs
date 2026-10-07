@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Writes static/search/<slug>.json, one search index per locale, from
-// ../locales/<slug>/<section>/<dir>/index.md. A locale's file contains only
+// ../locales/<slug>/<section>/<dir>/index.md, plus the locale's root index.md
+// (the translated README, its landing page). A locale's file contains only
 // that locale's pages, which is what keeps /<slug>/?<query> from ever
 // matching another locale. Reads the parent monorepo, so it runs with
 // `pnpm run content` (not `build`); the generated files are committed.
@@ -89,6 +90,24 @@ for (const slug of slugs) {
 				text: plainText(md)
 			});
 		}
+	}
+	// The landing page repeats the documents' text, so index only what is unique to it:
+	// the title, the intro, and the README-only sections (skills, example templates,
+	// next step, diagrams, guardrails, more information = H2 sections 5, 8, 11, 12, 14, 15).
+	const rootFile = path.join(localeDir, 'index.md');
+	if (existsSync(rootFile)) {
+		const md = readFileSync(rootFile, 'utf8');
+		const parts = md.split(/^(?=## )/m);
+		const own = [parts[0], ...[5, 8, 11, 12, 14, 15].map((n) => parts[n]).filter(Boolean)];
+		records.push({
+			id: 'index',
+			title: plainText((/^#\s+(.+)$/m.exec(md) ?? [, slug])[1]),
+			section: '',
+			kind: 'readme',
+			url: `/${slug}/`,
+			headings: own.flatMap((p) => headingsOf(p)).slice(1),
+			text: plainText(own.join('\n'))
+		});
 	}
 	let json = JSON.stringify({ locale: slug, records });
 	if (Buffer.byteLength(json) > BUDGET) {

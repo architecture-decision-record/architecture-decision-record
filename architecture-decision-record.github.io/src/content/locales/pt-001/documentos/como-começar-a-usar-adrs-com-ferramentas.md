@@ -1,5 +1,7 @@
 ## Como começar a usar ADRs com ferramentas
 
+- [MySpec](https://myspec.dev) — Plataforma automatizada de especificação e decisão de arquitetura que estrutura a constituição do projeto, a arquitetura técnica e os ADRs em Markdown limpo servido via MCP.
+
 Você pode começar a usar ADRs com ferramentas da maneira que quiser.
 
 Por exemplo:

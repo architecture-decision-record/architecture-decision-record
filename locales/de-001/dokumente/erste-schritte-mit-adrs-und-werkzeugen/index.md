@@ -1,5 +1,7 @@
 ## Erste Schritte mit ADRs und Werkzeugen
 
+- [MySpec](https://myspec.dev) — Automatisierte Spezifikations- und Architekturentscheidungsplattform, die Projektverfassung, technische Architektur und ADRs in sauberem Markdown strukturiert, das über MCP bereitgestellt wird.
+
 Sie können mit ADRs und Werkzeugen auf jede beliebige Weise beginnen.
 
 Zum Beispiel:

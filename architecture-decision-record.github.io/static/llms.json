@@ -20,7 +20,7 @@
         "url": "https://architecture-decision-record.github.io/en-001/documents/decision-sustainability-criteria/"
       },
       {
-        "title": "File name conventions",
+        "title": "File name conventions for ADRs",
         "url": "https://architecture-decision-record.github.io/en-001/documents/file-name-conventions-for-adrs/"
       },
       {
@@ -78,37 +78,37 @@
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-gig-cymru-nhs-wales/"
       },
       {
-        "title": "ADR template by Jeff Tyree and Art Akerman",
+        "title": "Decision record template by Jeff Tyree and Art Akerman",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/",
         "description": "more sophisticated"
       },
       {
-        "title": "ADR template by Michael Nygard",
+        "title": "Decision record template by Michael Nygard",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-michael-nygard/",
         "description": "simple and popular"
       },
       {
-        "title": "ADR template for Alexandrian pattern",
+        "title": "Decision record template for Alexandrian pattern",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-alexandrian-pattern/",
         "description": "simple with context specifics"
       },
       {
-        "title": "ADR template for business case",
+        "title": "Decision record template for business case",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-business-case/",
         "description": "more MBA-oriented, with costs, SWOT, and more opinions"
       },
       {
-        "title": "Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga",
+        "title": "Decision record template for Important Technical Decisions (ITDs) by Ignacio Larrañaga",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-important-technical-decisions/",
         "description": "lean and decision-first, optimized for fast executive review"
       },
       {
-        "title": "ADR template of the Markdown Any Decision Records (MADR) project",
+        "title": "Decision record template of the MADR Project",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-of-the-madr-project/",
         "description": "both simple and elaborate version; the latter emphasizes options and their pros and cons"
       },
       {
-        "title": "ADR template using Planguage",
+        "title": "Decision record template using Planguage",
         "url": "https://architecture-decision-record.github.io/en-001/templates/decision-record-template-using-planguage/",
         "description": "more quality assurance oriented"
       }

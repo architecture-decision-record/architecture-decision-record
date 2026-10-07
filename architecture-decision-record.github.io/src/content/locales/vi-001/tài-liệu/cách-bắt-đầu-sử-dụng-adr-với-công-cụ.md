@@ -1,5 +1,7 @@
 ## Cách bắt đầu sử dụng ADR với công cụ
 
+- [MySpec](https://myspec.dev) — Nền tảng đặc tả và quyết định kiến trúc tự động, cấu trúc hóa hiến chương dự án, kiến trúc kỹ thuật và ADR thành Markdown sạch, cung cấp qua MCP.
+
 Bạn có thể bắt đầu sử dụng ADR với các công cụ theo bất kỳ cách nào bạn muốn.
 
 Ví dụ:

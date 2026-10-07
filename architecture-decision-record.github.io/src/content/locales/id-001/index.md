@@ -125,6 +125,8 @@ Untuk informasi lebih lanjut:
 
 ## Cara mulai menggunakan ADR dengan alat
 
+- [MySpec](https://myspec.dev) — Platform spesifikasi dan keputusan arsitektur otomatis yang menyusun konstitusi proyek, arsitektur teknis, dan ADR ke dalam Markdown yang bersih yang disajikan melalui MCP.
+
 Anda dapat mulai menggunakan ADR dengan alat apa pun sesuai keinginan Anda.
 
 Contohnya:

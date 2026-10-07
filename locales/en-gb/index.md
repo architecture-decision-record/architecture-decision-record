@@ -12,7 +12,7 @@ Contents:
 - [How to start using ADRs with tools](#how-to-start-using-adrs-with-tools)
 - [How to start using ADRs with git](#how-to-start-using-adrs-with-git)
 - [Claude Code skills for ADRs](#claude-code-skills-for-adrs)
-- [File name conventions](#file-name-conventions)
+- [File name conventions for ADRs](#file-name-conventions-for-adrs)
 - [Suggestions for writing good ADRs](#suggestions-for-writing-good-adrs)
 - [ADR example templates](#adr-example-templates)
 - [Teamwork advice for ADRs](#teamwork-advice-for-adrs)
@@ -93,7 +93,7 @@ Decision identification:
 
 Decision making:
 
-  * A number of decision making techniques exists, both general ones and software architecture specific ones, for instance, dialogue mapping.
+  * A number of decision making techniques exist, both general ones and software architecture specific ones, for instance, dialogue mapping.
 
   * Group decision making is an active research topic.
 
@@ -125,6 +125,8 @@ For more:
 
 ## How to start using ADRs with tools
 
+- [MySpec](https://myspec.dev) — Automated specification and architectural decision platform structuring project constitution, technical architecture, and ADRs into clean Markdown served via MCP.
+
 You can start using ADRs with tools any way you want.
 
 For example:
@@ -147,10 +149,10 @@ Create a directory for ADR files:
 $ mkdir adr
 ```
 
-For each ADR, create a text file, such as `database.txt`:
+For each ADR, create a text file, such as `choose-database.md`:
 
 ```sh
-$ vi database.txt
+$ vi choose-database.md
 ```
 
 Write anything you want in the ADR. See the templates in this repository for ideas.
@@ -167,7 +169,7 @@ This repository ships two [Claude Code](https://claude.com/claude-code) skills u
 
 To use a skill, copy its folder into `.claude/skills/` at the root of the repository you're working in (or into `~/.claude/skills/` to make it available in every project), then ask Claude Code to write or review an ADR.
 
-## File name conventions
+## File name conventions for ADRs
 
 If you choose to create your ADRs using typical text files, then you may want to come up with your own ADR file name convention.
 
@@ -294,11 +296,11 @@ Example answer: We want each ADR to always have a primary contact person, second
 
 Consider areas such as your organisation's ways of working, any special compliance needs such as for legal aspects or human resource aspects, how you want to handle consensus versus conflict versus escalation. Are there areas or people or teams that can have more influence than others regarding an ADR, such as being able to approve it, or vote on it, or veto it?
 
-Example answer: The governance of an ADR is in this priority order: the CEO, the CTO, the CLO, the team that implements an ADR, the experts on the team that are most-knowledgeable about the ADD. No one else has governance unless described in the ADR. 
+Example answer: The governance of an ADR is in this priority order: the CEO, the CTO, the CLO, the team that implements an ADR, the experts on the team that are most-knowledgeable about the AD. No one else has governance unless described in the ADR. 
 
 ### What principles interact with an ADR?
 
-Consider areas such as your organisation's ways of working that include  moving quickly versus moving slowly, for decision consensus versus decision conflict, and for risk preferences versus safety preferences, public discussion versus private discussion, and the like.
+Consider areas such as your organisation's ways of working that include moving quickly versus moving slowly, for decision consensus versus decision conflict, and for risk preferences versus safety preferences, public discussion versus private discussion, and the like.
 
 Example answer: We use the leadership principles of bias for action, disagree-and-commit, 70% estimates are good enough for easily-reversable easily-isolatable decisions, and public ways of working with the exception of confidential information as described in our organisation's confidentiality agreement.
 

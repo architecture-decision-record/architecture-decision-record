@@ -125,6 +125,8 @@ Lisätietoa:
 
 ## Kuinka aloittaa ADR-tietueiden käyttö työkaluilla
 
+- [MySpec](https://myspec.dev) — Automatisoitu määrittely- ja arkkitehtuuripäätösalusta, joka jäsentää projektin perustan, tekniset arkkitehtuurit ja ADR-tietueet selkeäksi Markdowniksi, jota tarjotaan MCP:n kautta.
+
 Voit aloittaa ADR-tietueiden käytön työkaluilla millä tavalla haluat.
 
 Esimerkiksi:

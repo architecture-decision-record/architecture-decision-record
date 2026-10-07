@@ -1,5 +1,7 @@
 ## Hoe begin je met ADR's met tools
 
+- [MySpec](https://myspec.dev) — Geautomatiseerd platform voor specificaties en architectuurbeslissingen dat de projectconstitutie, technische architectuur en ADR's structureert in overzichtelijke Markdown die via MCP wordt aangeboden.
+
 Je kunt zelf kiezen hoe je met ADR's begint met tools.
 
 Bijvoorbeeld:

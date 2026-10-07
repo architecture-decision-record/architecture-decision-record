@@ -125,6 +125,8 @@ Daha fazlası için:
 
 ## Araçlarla ADR kullanmaya nasıl başlanır?
 
+- [MySpec](https://myspec.dev) — Proje anayasasını, teknik mimariyi ve ADR'leri MCP üzerinden sunulan temiz Markdown'a dönüştüren otomatik belirtim ve mimari karar platformu.
+
 İstediğiniz şekilde araçlarla ADR'leri kullanmaya başlayabilirsiniz.
 
 Örneğin:

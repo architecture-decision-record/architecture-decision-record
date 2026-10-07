@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Writes static/llms.txt and static/llms.json from the en-001 pages in
-// src/lib/locale-pages.json, src/content/templates.meta.json, and the LOCALES array in src/lib/locales.js,
+// src/lib/locale-pages.json, the en-001 template index and root README under
+// src/content/locales/en-001/, and the LOCALES array in src/lib/locales.js,
 // so the page lists and counts never drift from the site. Reads only files
 // inside this directory (it also runs in the standalone published repo).
 //   pnpm run llms
@@ -17,8 +18,18 @@ const SUMMARY =
 
 const tree = JSON.parse(readFileSync(path.join(root, 'src/lib/locale-pages.json'), 'utf8'));
 const english = tree['en-001'] ?? [];
-const metaFile = path.join(root, 'src/content/templates.meta.json');
-const meta = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, 'utf8')) : {};
+// Template titles come from the en-001 templates index; short descriptions
+// ("simple and popular") from the "ADR example templates" list in the en-001 root README.
+const enRoot = path.join(root, 'src/content/locales/en-001');
+const read = (f) => (existsSync(f) ? readFileSync(f, 'utf8') : '');
+const dirOf = (href) => href.replace(/\/$/, '').split('/').pop();
+const meta = {};
+for (const m of read(path.join(enRoot, 'templates/index.md')).matchAll(/\[([^\]]+)\]\(([^)]+)\)/g)) {
+  meta[dirOf(m[2])] = { title: m[1].trim() };
+}
+for (const m of read(path.join(enRoot, 'index.md')).matchAll(/^- \[[^\]]+\]\(templates\/([^/)]+)\/?\) \(([^)]+)\)\s*$/gm)) {
+  if (meta[m[1]]) meta[m[1]].description = m[2];
+}
 
 const localesSource = readFileSync(path.join(root, 'src/lib/locales.js'), 'utf8');
 const localeMatch = /export const LOCALES = \[([^\]]*)\]/.exec(localesSource);

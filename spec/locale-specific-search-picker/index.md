@@ -41,9 +41,15 @@ index files.
   monorepo, so it runs with `pnpm run content` (not `build`); the generated
   `static/search/*.json` files are committed.
 - Because the site directory is published alone and must not reference `../`
-  at runtime, `sync-content` (or this script) copies what it needs into the
+  at runtime, `sync-locales` (or this script) copies what it needs into the
   site directory first; the browser only ever fetches
   `/search/<slug>.json`.
+- Besides the pages, each index has one record for the locale's landing page
+  (`id: index`, `kind: readme`, `url: /<locale>/`, sorted after documents,
+  templates, and examples). It holds only the text unique to the translated
+  README (title, intro, and the sections that have no document of their own:
+  skills, example templates, next step, diagrams, guardrails, more information),
+  so it does not duplicate every document hit.
 - Each record: `id`, `title` (first H1), `section` (translated section dir
   name), `url` (the page path, see below), `headings` (all headings), and
   `text` (Markdown stripped to plain text). Nothing from another locale is

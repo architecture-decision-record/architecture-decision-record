@@ -125,6 +125,8 @@ Per saperne di più:
 
 ## Come iniziare a usare gli ADR con strumenti
 
+- [MySpec](https://myspec.dev) — Piattaforma automatizzata di specifiche e decisioni architetturali che struttura la costituzione del progetto, l'architettura tecnica e gli ADR in Markdown pulito servito tramite MCP.
+
 Puoi scegliere come iniziare a usare gli ADR con gli strumenti.
 
 Per esempio:

@@ -26,7 +26,7 @@ fix that file to match the spec (or change the spec deliberately).
 - In each content directory `README.md` is a symlink to `index.md` (`ln -s index.md README.md`); edit `index.md` only.
 - Never hand-edit `.locale-peer-id` files or translate `LICENSE.md` files.
 - Never hand-edit `architecture-decision-record.github.io/src/content/` or
-  `src/lib/manifest.json`; they are generated.
+  `src/lib/locale-pages.json`; they are generated.
 - Translate locales one at a time, not with parallel subagents.
 - Keep product names, code, and URLs untranslated.
 - When counts change (templates, examples, locales), update the spec,

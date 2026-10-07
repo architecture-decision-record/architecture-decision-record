@@ -1,5 +1,7 @@
 ## Sådan kommer du i gang med ADR'er med værktøjer
 
+- [MySpec](https://myspec.dev) — Automatiseret specifikations- og arkitekturbeslutningsplatform, der strukturerer projektets forfatning, teknisk arkitektur og ADR'er i ren Markdown leveret via MCP.
+
 Du kan selv vælge, hvordan du kommer i gang med ADR'er med værktøjer.
 
 For eksempel:

@@ -1,5 +1,7 @@
 ## Kuidas ADR-e kasutama hakata tööriistadega
 
+- [MySpec](https://myspec.dev) — Automatiseeritud spetsifikatsiooni- ja arhitektuuriotsuste platvorm, mis struktureerib projekti põhikirja, tehnilise arhitektuuri ja ADR-id puhtaks Markdowniks, mida pakutakse MCP kaudu.
+
 Sa võid ise valida, kuidas tööriistadega ADR-idega alustada.
 
 Näiteks:

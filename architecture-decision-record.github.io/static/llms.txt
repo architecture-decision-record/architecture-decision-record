@@ -6,7 +6,7 @@
 
 - [AWS Architectural Decision Records Process](https://architecture-decision-record.github.io/en-001/documents/aws-adr-process/)
 - [Decision Sustainability Criteria](https://architecture-decision-record.github.io/en-001/documents/decision-sustainability-criteria/)
-- [File name conventions](https://architecture-decision-record.github.io/en-001/documents/file-name-conventions-for-adrs/)
+- [File name conventions for ADRs](https://architecture-decision-record.github.io/en-001/documents/file-name-conventions-for-adrs/)
 - [Fitness functions for decisions as code](https://architecture-decision-record.github.io/en-001/documents/fitness-functions-for-decisions-as-code/)
 - [Guidelines to Achieve Sustainable Decisions](https://architecture-decision-record.github.io/en-001/documents/guidelines-to-achieve-sustainable-decisions/)
 - [How to start using ADRs](https://architecture-decision-record.github.io/en-001/documents/how-to-start-using-adrs/)
@@ -23,13 +23,13 @@
 - [Decision record template by EdgeX](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-edgex/)
 - [Decision record template by Gareth Morgan](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-gareth-morgan/)
 - [Decision record template by GIG Cymru NHS Wales](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-gig-cymru-nhs-wales/)
-- [ADR template by Jeff Tyree and Art Akerman](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/): more sophisticated
-- [ADR template by Michael Nygard](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-michael-nygard/): simple and popular
-- [ADR template for Alexandrian pattern](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-alexandrian-pattern/): simple with context specifics
-- [ADR template for business case](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-business-case/): more MBA-oriented, with costs, SWOT, and more opinions
-- [Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-important-technical-decisions/): lean and decision-first, optimized for fast executive review
-- [ADR template of the Markdown Any Decision Records (MADR) project](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-of-the-madr-project/): both simple and elaborate version; the latter emphasizes options and their pros and cons
-- [ADR template using Planguage](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-using-planguage/): more quality assurance oriented
+- [Decision record template by Jeff Tyree and Art Akerman](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/): more sophisticated
+- [Decision record template by Michael Nygard](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-michael-nygard/): simple and popular
+- [Decision record template for Alexandrian pattern](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-alexandrian-pattern/): simple with context specifics
+- [Decision record template for business case](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-business-case/): more MBA-oriented, with costs, SWOT, and more opinions
+- [Decision record template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-important-technical-decisions/): lean and decision-first, optimized for fast executive review
+- [Decision record template of the MADR Project](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-of-the-madr-project/): both simple and elaborate version; the latter emphasizes options and their pros and cons
+- [Decision record template using Planguage](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-using-planguage/): more quality assurance oriented
 
 ## Examples
 

@@ -1,4 +1,4 @@
-# File name conventions
+# File name conventions for ADRs
 
 If you choose to create your ADRs using typical text files, then you may want to come up with your own ADR file name convention.
 
