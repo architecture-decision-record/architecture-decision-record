@@ -55,7 +55,7 @@ index files.
 ## Route: `/<locale>/?<query>`
 
 - `src/routes/[locale]/+page.svelte` with `entries()` returning the locale
-  slugs (the 28 locale directories, as in [../locales.md](../locales.md)) so
+  slugs (the 28 complete locale directories, as in [../locales.md](../locales.md)) so
   each is prerendered as `/<slug>/index.html`. An unknown slug is a 404.
 - The query is the whole `location.search` minus the leading `?`, decoded with
   `decodeURIComponent`. It is read in the browser (`onMount` / `$effect`),
