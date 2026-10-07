@@ -14,8 +14,10 @@ locales/<code>/                   one directory per locale (see locales.md)
 architecture-decision-record.github.io/   website, published via git subtree (see website.md)
 ```
 
-Legacy locale dirs without a region (`en`, `es`, `fr`, `ja`, `ko`, `tr`) predate
-the `<language>-<region>` scheme and are not part of the 28 spec locales.
+Every directory under `locales/` is named `<language>-<region>` (lowercase, a
+hyphen, e.g. `en-001`, `cy-gb`, `zh-tw`); two-letter, region-less directories
+such as `locales/en/` do not exist. `en-001` is the English source of truth, so
+links to English content use `locales/en-001/`.
 
 ## Per-locale layout
 

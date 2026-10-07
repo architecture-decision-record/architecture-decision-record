@@ -87,7 +87,7 @@ function syncGuide(readme) {
 // people will write with it (e.g. "[000] Title", "{Your Title Here}"), not
 // a description of the template itself — so title it from README.md's own
 // "Templates:" list instead, e.g. "[Decision record template by Michael
-// Nygard](locales/en/templates/decision-record-template-by-michael-nygard/)",
+// Nygard](locales/en-001/templates/decision-record-template-by-michael-nygard/)",
 // optionally overridden by the more polished text some templates also get
 // in the "## ADR example templates" section further down (which sometimes
 // also carries a short parenthetical description). This has to run here,

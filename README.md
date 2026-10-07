@@ -38,36 +38,36 @@ Contents:
 
 Templates:
 
-- [Decision record template by Jeff Tyree and Art Akerman](locales/en/templates/decision-record-template-by-jeff-tyree-and-art-akerman/)
-- [Decision record template by Michael Nygard](locales/en/templates/decision-record-template-by-michael-nygard/)
-- [Decision record template by EdgeX](locales/en/templates/decision-record-template-by-edgex/)
-- [Decision record template by arc42](locales/en/templates/decision-record-template-by-arc42/)
-- [Decision record template for Alexandrian pattern](locales/en/templates/decision-record-template-for-alexandrian-pattern/)
-- [Decision record template for business case](locales/en/templates/decision-record-template-for-business-case/)
-- [Decision record template of the MADR project](locales/en/templates/decision-record-template-of-the-madr-project/)
-- [Decision record template using Planguage](locales/en/templates/decision-record-template-using-planguage/)
+- [Decision record template by Jeff Tyree and Art Akerman](locales/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/)
+- [Decision record template by Michael Nygard](locales/en-001/templates/decision-record-template-by-michael-nygard/)
+- [Decision record template by EdgeX](locales/en-001/templates/decision-record-template-by-edgex/)
+- [Decision record template by arc42](locales/en-001/templates/decision-record-template-by-arc42/)
+- [Decision record template for Alexandrian pattern](locales/en-001/templates/decision-record-template-for-alexandrian-pattern/)
+- [Decision record template for business case](locales/en-001/templates/decision-record-template-for-business-case/)
+- [Decision record template of the MADR project](locales/en-001/templates/decision-record-template-of-the-madr-project/)
+- [Decision record template using Planguage](locales/en-001/templates/decision-record-template-using-planguage/)
 - [Decision record template by Paulo Merson](https://github.com/pmerson/ADR-template)
 - [Decision record template by Olaf Zimmermann](https://medium.com/olzzio/y-statements-10eb07b5a177)
-- [Decision record template by Gareth Morgan](locales/en/templates/decision-record-template-by-gareth-morgan/)
-- [Decision record template by GIG Cymru NHS Wales](locales/en/templates/decision-record-template-by-gig-cymru-nhs-wales/)
-- [Decision record template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](locales/en/templates/decision-record-template-for-important-technical-decisions/)
+- [Decision record template by Gareth Morgan](locales/en-001/templates/decision-record-template-by-gareth-morgan/)
+- [Decision record template by GIG Cymru NHS Wales](locales/en-001/templates/decision-record-template-by-gig-cymru-nhs-wales/)
+- [Decision record template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](locales/en-001/templates/decision-record-template-for-important-technical-decisions/)
 - [Translations into more languages](locales/)
 
 Examples:
 
-- [CSS framework](locales/en/examples/css-framework/)
-- [Environment variable configuration](locales/en/examples/environment-variable-configuration/)
-- [Metrics, monitors, alerts](locales/en/examples/metrics-monitors-alerts/)
-- [Microsoft Azure DevOps](locales/en/examples/microsoft-azure-devops/)
-- [Monorepo vs multirepo](locales/en/examples/monorepo-vs-multirepo/)
-- [Programming languages](locales/en/examples/programming-languages/)
-- [Secrets storage](locales/en/examples/secrets-storage/)
-- [Timestamp format](locales/en/examples/timestamp-format/)
-- [Many more...](locales/en/examples/)
+- [CSS framework](locales/en-001/examples/css-framework/)
+- [Environment variable configuration](locales/en-001/examples/environment-variable-configuration/)
+- [Metrics, monitors, alerts](locales/en-001/examples/metrics-monitors-alerts/)
+- [Microsoft Azure DevOps](locales/en-001/examples/microsoft-azure-devops/)
+- [Monorepo vs multirepo](locales/en-001/examples/monorepo-vs-multirepo/)
+- [Programming languages](locales/en-001/examples/programming-languages/)
+- [Secrets storage](locales/en-001/examples/secrets-storage/)
+- [Timestamp format](locales/en-001/examples/timestamp-format/)
+- [Many more...](locales/en-001/examples/)
 
 [Translations into more languages](locales/)
 
-<div class="include" data-path="locales/en/documents/what-is-an-architecture-decision-record">
+<div class="include" data-path="locales/en-001/documents/what-is-an-architecture-decision-record">
 
 ## What is an architecture decision record?
 
@@ -97,7 +97,7 @@ Abbreviations:
 
 </div>
 
-<div class="include" data-path="locales/en/documents/how-to-start-using-adrs">
+<div class="include" data-path="locales/en-001/documents/how-to-start-using-adrs">
 
 ## How to start using ADRs
 
@@ -147,7 +147,7 @@ For more:
 
 </div>
 
-<div class="include" data-path="locales/en/documents/how-to-start-using-adrs-with-tools">
+<div class="include" data-path="locales/en-001/documents/how-to-start-using-adrs-with-tools">
 
 ## How to start using ADRs with tools
 
@@ -167,7 +167,7 @@ For example:
 
 </div>
 
-<div class="include" data-path="locales/en/documents/how-to-start-using-ADRs-with-git">
+<div class="include" data-path="locales/en-001/documents/how-to-start-using-ADRs-with-git">
 
 ## How to start using ADRs with git
 
@@ -201,7 +201,7 @@ This repository ships two [Claude Code](https://claude.com/claude-code) skills u
 
 To use a skill, copy its folder into `.claude/skills/` at the root of the repository you're working in (or into `~/.claude/skills/` to make it available in every project), then ask Claude Code to write or review an ADR.
 
-<div class="include" data-path="locales/en/documents/file-name-conventions-for-adrs">
+<div class="include" data-path="locales/en-001/documents/file-name-conventions-for-adrs">
 
 ## File name conventions for ADRs
 
@@ -229,7 +229,7 @@ Our file name convention:
 
 </div>
 
-<div class="include" data-path="locales/en/documents/suggestions-for-writing-good-adrs">
+<div class="include" data-path="locales/en-001/documents/suggestions-for-writing-good-adrs">
 
 ## Suggestions for writing good ADRs
 
@@ -269,21 +269,21 @@ A new ADR may take the place of a previous ADR:
 
 ADR example templates that we have collected on the net:
 
-- [ADR template by Michael Nygard](locales/en/templates/decision-record-template-by-michael-nygard/) (simple and popular)
+- [ADR template by Michael Nygard](locales/en-001/templates/decision-record-template-by-michael-nygard/) (simple and popular)
 
-- [ADR template by Jeff Tyree and Art Akerman](locales/en/templates/decision-record-template-by-jeff-tyree-and-art-akerman/) (more sophisticated)
+- [ADR template by Jeff Tyree and Art Akerman](locales/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/) (more sophisticated)
 
-- [ADR template for Alexandrian pattern](locales/en/templates/decision-record-template-for-alexandrian-pattern/) (simple with context specifics)
+- [ADR template for Alexandrian pattern](locales/en-001/templates/decision-record-template-for-alexandrian-pattern/) (simple with context specifics)
 
-- [ADR template for business case](locales/en/templates/decision-record-template-for-business-case/) (more MBA-oriented, with costs, SWOT, and more opinions)
+- [ADR template for business case](locales/en-001/templates/decision-record-template-for-business-case/) (more MBA-oriented, with costs, SWOT, and more opinions)
 
-- [ADR template of the Markdown Any Decision Records (MADR) project](locales/en/templates/decision-record-template-of-the-madr-project/) (both simple and elaborate version; the latter emphasizes options and their pros and cons)
+- [ADR template of the Markdown Any Decision Records (MADR) project](locales/en-001/templates/decision-record-template-of-the-madr-project/) (both simple and elaborate version; the latter emphasizes options and their pros and cons)
 
-- [ADR template using Planguage](locales/en/templates/decision-record-template-using-planguage/) (more quality assurance oriented)
+- [ADR template using Planguage](locales/en-001/templates/decision-record-template-using-planguage/) (more quality assurance oriented)
 
-- [Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](locales/en/templates/decision-record-template-for-important-technical-decisions/) (lean and decision-first, optimized for fast executive review)
+- [Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](locales/en-001/templates/decision-record-template-for-important-technical-decisions/) (lean and decision-first, optimized for fast executive review)
 
-<div class="include" data-path="locales/en/documents/teamwork-advice-for-adrs">
+<div class="include" data-path="locales/en-001/documents/teamwork-advice-for-adrs">
 
 ## Teamwork advice for ADRs
 
@@ -297,7 +297,7 @@ In theory, immutability is ideal. In practice, mutability has worked better for 
 
 </div>
 
-<div class="include" data-path="locales/en/documents/teamwork-questions-for-adrs">
+<div class="include" data-path="locales/en-001/documents/teamwork-questions-for-adrs">
 
 ## Teamwork questions for ADRs
 
@@ -352,7 +352,7 @@ Example answer: We use the leadership principles of bias for action, disagree-an
 
 </div>
 
-<div class="include" data-path="locales/en/documents/next-step-concepts-for-adrs">
+<div class="include" data-path="locales/en-001/documents/next-step-concepts-for-adrs">
 
 ## Next step concepts for ADRs
 
@@ -362,7 +362,7 @@ Example answer: We use the leadership principles of bias for action, disagree-an
 
 </div>
 
-<div class="include" data-path="locales/en/documents/architecture-diagrams-views-viewpoints">
+<div class="include" data-path="locales/en-001/documents/architecture-diagrams-views-viewpoints">
 
 ## Architecture diagrams & views & viewpoints
 
@@ -412,7 +412,7 @@ Related diagrams:
 
 - An Activity Diagram depicts the workflow of activities a software system undertakes, like an NPC AI.
 
-<div class="include" data-path="locales/en/documents/fitness-functions-for-decisions-as-code">
+<div class="include" data-path="locales/en-001/documents/fitness-functions-for-decisions-as-code">
 
 ## Fitness functions for decisions as code
 

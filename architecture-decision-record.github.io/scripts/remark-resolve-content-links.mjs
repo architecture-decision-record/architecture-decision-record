@@ -1,6 +1,6 @@
 // The guide content (copied out of the parent repo's README.md — see
 // sync-content.mjs) links to templates and examples with relative paths
-// like "locales/en/templates/decision-record-template-by-michael-nygard/",
+// like "locales/en-001/templates/decision-record-template-by-michael-nygard/",
 // which only resolve inside the source repo. Rewrite those into this site's
 // own routes. A relative link into "skills/" (the Claude Code skills, which
 // this site doesn't mirror as pages) instead goes to the source repo on
@@ -17,14 +17,14 @@ export function remarkResolveContentLinks() {
       const url = node.url;
       if (!url || /^([a-z]+:)?\/\//i.test(url) || url.startsWith('#') || url.startsWith('mailto:')) return;
 
-      const match = /^locales\/en\/(templates|examples)\/([a-z0-9-]+)\/?$/.exec(url);
+      const match = /^locales\/en(?:-001)?\/(templates|examples)\/([a-z0-9-]+)\/?$/.exec(url);
       if (match) {
         const [, section, slug] = match;
         node.url = `/en/${SECTION_ROUTES[section]}/${slug}/`;
         return;
       }
 
-      const bare = /^locales\/en\/(templates|examples)\/?$/.exec(url);
+      const bare = /^locales\/en(?:-001)?\/(templates|examples)\/?$/.exec(url);
       if (bare) {
         node.url = `/en/${SECTION_ROUTES[bare[1]]}/`;
         return;

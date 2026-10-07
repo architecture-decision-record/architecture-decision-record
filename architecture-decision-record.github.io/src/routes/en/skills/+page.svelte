@@ -39,7 +39,7 @@
 	<p>
 		Documents the repo's layout (<code>README.md</code>, <code>locales/&lt;lang&gt;/{`{documents,examples,templates}`}</code>),
 		the <code>&lt;div class="include"&gt;</code> mirroring pattern between README.md sections and
-		<code>locales/en/documents/</code>, and the exact steps for adding a new template, example, or
+		<code>locales/en-001/documents/</code>, and the exact steps for adding a new template, example, or
 		tool/guardrail link — including which files need to change together, based on how past
 		contributions (like the ADR Guard addition) actually shipped. It also gives a PR-review
 		checklist.

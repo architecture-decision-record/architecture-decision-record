@@ -1,6 +1,6 @@
 ---
 name: architecture-decision-record-maintainer-skill
-description: Use when working ON the joelparkerhenderson/architecture-decision-record repository itself (this repo) — adding or editing a decision-record template, example, tool/guardrail link, or translation; reviewing a contributor's PR against it; or keeping README.md and locales/en/ in sync. Not for writing an ADR for some other project — use architecture-decision-record-skill for that.
+description: Use when working ON the joelparkerhenderson/architecture-decision-record repository itself (this repo) — adding or editing a decision-record template, example, tool/guardrail link, or translation; reviewing a contributor's PR against it; or keeping README.md and locales/en-001/ in sync. Not for writing an ADR for some other project — use architecture-decision-record-skill for that.
 ---
 
 # architecture-decision-record repo maintainer skill
@@ -35,7 +35,7 @@ regenerating them.
 Several `README.md` sections are wrapped like this:
 
 ```html
-<div class="include" data-path="locales/en/documents/how-to-start-using-adrs">
+<div class="include" data-path="locales/en-001/documents/how-to-start-using-adrs">
 
 ## How to start using ADRs
 ...
@@ -43,11 +43,11 @@ Several `README.md` sections are wrapped like this:
 ```
 
 The wrapped content is duplicated (sometimes with tiny wording drift) in
-`locales/en/documents/<slug>/index.md`. In practice, **contributor PRs only
+`locales/en-001/documents/<slug>/index.md`. In practice, **contributor PRs only
 ever touch `README.md`**, editing content inside these divs directly — see
 recent history (`git log --stat -- README.md`, and note it's the only file
 changed in typo fixes, new tool links, etc.). Assume the repo owner's own
-tooling reconciles `locales/en/documents/` and the other-language
+tooling reconciles `locales/en-001/documents/` and the other-language
 translations from `README.md` afterward; don't attempt to keep them in sync
 yourself unless the user explicitly asks you to edit inside `locales/`.
 
@@ -74,7 +74,7 @@ and "Decision Guardian" entries as the pattern to match.
 
 ## Adding a new ADR template
 
-1. Create `locales/en/templates/decision-record-template-<slug>/index.md`
+1. Create `locales/en-001/templates/decision-record-template-<slug>/index.md`
    (and a `LICENSE.md` if the source template carries one, e.g. Nygard's).
    Title the file `# Decision record template <by|for|using> <name>`, credit
    the source with a link, then either narrative field descriptions or a
@@ -83,7 +83,7 @@ and "Decision Guardian" entries as the pattern to match.
    before you have kept these byte-identical — `diff` the two before
    committing).
 3. Add a bullet linking to the new directory in **both**
-   `locales/en/templates/index.md` and `locales/en/templates/README.md`
+   `locales/en-001/templates/index.md` and `locales/en-001/templates/README.md`
    (these two files are kept byte-identical — verify with `diff`).
 4. Add the template to `README.md` in **two** places:
    - The `Templates:` bullet list near the top of the file.
@@ -93,9 +93,9 @@ and "Decision Guardian" entries as the pattern to match.
 
 ## Adding a new ADR example
 
-1. Create `locales/en/examples/<slug>/` with `index.md` (and matching
+1. Create `locales/en-001/examples/<slug>/` with `index.md` (and matching
    `README.md`) containing the worked example.
-2. Add a bullet in `locales/en/examples/index.md` (and its `README.md` twin).
+2. Add a bullet in `locales/en-001/examples/index.md` (and its `README.md` twin).
 3. Add a bullet under `Examples:` near the top of `README.md` if it's
    prominent enough to feature there (the top list is a curated subset, not
    every example — check current entries before deciding).
@@ -120,7 +120,7 @@ and "Decision Guardian" entries as the pattern to match.
 Check for:
 - Only `README.md` changed (expected for prose/link additions — flag it as
   unusual, not necessarily wrong, if `locales/` was hand-edited instead).
-- New template/example additions include the `locales/en/templates|examples`
+- New template/example additions include the `locales/en-001/templates|examples`
   directory *and* the corresponding `index.md`/link updates described above,
   not just a `README.md` mention with nothing to link to.
 - New external tool/service links: is it a genuine ADR-related tool
