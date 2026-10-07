@@ -38,7 +38,7 @@ Worldwide top 10 order by count:
 
 - en-us English - United States
 - zh-cn Chinese - China
-- hi-id Hindi - India
+- hi-in Hindi - India
 - es-es Spanish - Spain
 - fr-fr French - France
 - ar-eg Arabic - Egypt

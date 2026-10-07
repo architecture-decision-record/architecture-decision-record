@@ -10,6 +10,7 @@ const cases = [
 	[['cy-GB'], '/cy-gb/'],
 	[['EN_us'], '/en-us/'],
 	[['en-GB'], '/en-gb/'],
+	[['hi-IN'], '/hi-in/'],
 	[['tr-TR'], '/tr-tr/'],
 	[['zh-TW'], '/zh-tw/'],
 	[['zh-CN'], '/zh-cn/'],
