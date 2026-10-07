@@ -14,7 +14,7 @@
 		"locales": "node scripts/sync-locales.mjs",
 		"search-index": "node scripts/generate-search-index.mjs",
 		"content": "node scripts/sync-locales.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs",
-		"test": "node --test tests/",
+		"test": "node --test \"tests/*.test.mjs\"",
 		"verify": "node scripts/check-built-site.mjs"
 	},
 	"devDependencies": {
