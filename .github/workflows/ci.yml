@@ -53,6 +53,8 @@ jobs:
       # No broken internal links or anchors in the prerendered pages.
       - run: pnpm run verify
       # axe-core (WCAG 2.2 AA) on key pages at desktop and phone width, plus colour
-      # contrast on all 45 themes, in a real browser.
-      - run: pnpm exec playwright install --with-deps chromium
+      # contrast on all 45 themes, in a real browser. The runner's preinstalled
+      # Google Chrome is used, so no browser download is needed.
       - run: pnpm run a11y
+        env:
+          PW_CHANNEL: chrome

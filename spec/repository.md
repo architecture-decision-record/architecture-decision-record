@@ -93,8 +93,8 @@ rule for that task.
 
 7. `pnpm run a11y` (after the build) runs axe-core in a browser on key pages at
    desktop and 390px width, with the phone search panel open, and checks colour
-   contrast on all 45 themes: 0 violations. Locally set `PW_CHANNEL=chrome` to use
-   an installed Chrome.
+   contrast on all 45 themes: 0 violations. Set `PW_CHANNEL=chrome` to use an
+   installed Chrome (CI does, so it downloads no browser).
 
 CI (`.github/workflows/ci.yml`) runs checks 4 to 7 on every push to `main` and
 every pull request, so a change that breaks any of them is caught before it is
