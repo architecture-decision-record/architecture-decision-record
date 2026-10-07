@@ -20,13 +20,13 @@ export function remarkResolveContentLinks() {
       const match = /^locales\/en\/(templates|examples)\/([a-z0-9-]+)\/?$/.exec(url);
       if (match) {
         const [, section, slug] = match;
-        node.url = `/${SECTION_ROUTES[section]}/${slug}/`;
+        node.url = `/en/${SECTION_ROUTES[section]}/${slug}/`;
         return;
       }
 
       const bare = /^locales\/en\/(templates|examples)\/?$/.exec(url);
       if (bare) {
-        node.url = `/${SECTION_ROUTES[bare[1]]}/`;
+        node.url = `/en/${SECTION_ROUTES[bare[1]]}/`;
         return;
       }
 

@@ -26,7 +26,7 @@ const locales = localeMatch ? [...localeMatch[1].matchAll(/'([^']+)'/g)].map((m)
 const pages = (section) =>
   manifest[section].map((p) => ({
     title: section === 'templates' ? (meta[p.slug]?.title ?? p.title) : p.title,
-    url: `${SITE}/${section}/${p.slug}/`,
+    url: `${SITE}/en/${section}/${p.slug}/`,
     ...(section === 'templates' && meta[p.slug]?.description ? { description: meta[p.slug].description } : {})
   }));
 
@@ -56,7 +56,7 @@ const txt = [
   '',
   '## Optional',
   '',
-  `- [Skills](${SITE}/skills/): Claude Code skills for writing and maintaining ADRs`,
+  `- [Skills](${SITE}/en/skills/): Claude Code skills for writing and maintaining ADRs`,
   `- [Translations](${REPO}/tree/main/locales): ${locales.length} language picker entries; translated documents, examples, and templates`,
   `- [Source repository](${REPO}): README, specification (spec/), agent guides (AGENTS.md, AGENTS/)`,
   ''
@@ -74,7 +74,7 @@ const json = {
     locales: locales.length
   },
   sections,
-  skills: `${SITE}/skills/`,
+  skills: `${SITE}/en/skills/`,
   locales,
   translations: `${REPO}/tree/main/locales`
 };

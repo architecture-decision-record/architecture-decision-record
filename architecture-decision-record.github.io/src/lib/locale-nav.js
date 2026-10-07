@@ -30,17 +30,17 @@ function parseLocalePath(pathname) {
 
 /** Page key in en-001 for a page of the English site, or null. @param {string} pathname */
 function parseEnglishPath(pathname) {
-	const m = /^\/(guide|templates|examples)\/([^/]+)\/$/.exec(decode(pathname));
+	const m = /^\/en\/(guide|templates|examples)\/([^/]+)\/$/.exec(decode(pathname));
 	return m ? { key: `${ENGLISH_ROUTES[m[1]]}/${m[2]}` } : null;
 }
 
 /** English-site path for an en-001 page key, if the English site has that page. @param {string} key */
 function englishSitePath(key) {
 	const [section, dir] = key.split('/');
-	if (!dir) return '/';
+	if (!dir) return '/en/';
 	const route = Object.entries(ENGLISH_ROUTES).find(([, s]) => s === section)?.[0];
 	const list = /** @type {{slug: string}[] | undefined} */ (route && /** @type {any} */ (manifest)[route]);
-	return list?.some((p) => p.slug === dir) ? `/${route}/${dir}/` : '/';
+	return list?.some((p) => p.slug === dir) ? `/en/${route}/${dir}/` : '/en/';
 }
 
 /**
@@ -59,7 +59,7 @@ export async function pathForLocale(pathname, toValue) {
 
 	if (toEnglishSite) {
 		const enKey = sourcePeer && Object.entries(peers[SOURCE] ?? {}).find(([, id]) => id === sourcePeer)?.[0];
-		return enKey ? englishSitePath(enKey) : '/';
+		return enKey ? englishSitePath(enKey) : '/en/';
 	}
 	if (!sourcePeer) return `/${toSlug}/`;
 	const target = Object.entries(peers[toSlug] ?? {}).find(([, id]) => id === sourcePeer)?.[0];

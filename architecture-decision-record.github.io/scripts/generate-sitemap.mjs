@@ -13,9 +13,9 @@ const SITE = 'https://architecture-decision-record.github.io';
 
 const manifest = JSON.parse(readFileSync(path.join(root, 'src/lib/manifest.json'), 'utf8'));
 
-const paths = ['/', '/guide/', '/templates/', '/examples/', '/skills/'];
+const paths = ['/en/', '/en/guide/', '/en/templates/', '/en/examples/', '/en/skills/'];
 for (const section of ['guide', 'templates', 'examples']) {
-  for (const page of manifest[section]) paths.push(`/${section}/${page.slug}/`);
+  for (const page of manifest[section]) paths.push(`/en/${section}/${page.slug}/`);
 }
 
 // Translated pages, except the English locales (en-*), which duplicate the

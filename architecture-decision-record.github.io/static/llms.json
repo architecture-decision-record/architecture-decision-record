@@ -13,282 +13,282 @@
     "guide": [
       {
         "title": "What is an architecture decision record?",
-        "url": "https://architecture-decision-record.github.io/guide/what-is-an-architecture-decision-record/"
+        "url": "https://architecture-decision-record.github.io/en/guide/what-is-an-architecture-decision-record/"
       },
       {
         "title": "How to start using ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/how-to-start-using-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs/"
       },
       {
         "title": "How to start using ADRs with tools",
-        "url": "https://architecture-decision-record.github.io/guide/how-to-start-using-adrs-with-tools/"
+        "url": "https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs-with-tools/"
       },
       {
         "title": "How to start using ADRs with git",
-        "url": "https://architecture-decision-record.github.io/guide/how-to-start-using-adrs-with-git/"
+        "url": "https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs-with-git/"
       },
       {
         "title": "Claude Code skills for ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/claude-code-skills-for-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/claude-code-skills-for-adrs/"
       },
       {
         "title": "File name conventions for ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/file-name-conventions-for-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/file-name-conventions-for-adrs/"
       },
       {
         "title": "Suggestions for writing good ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/suggestions-for-writing-good-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/suggestions-for-writing-good-adrs/"
       },
       {
         "title": "ADR example templates",
-        "url": "https://architecture-decision-record.github.io/guide/adr-example-templates/"
+        "url": "https://architecture-decision-record.github.io/en/guide/adr-example-templates/"
       },
       {
         "title": "Teamwork advice for ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/teamwork-advice-for-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/teamwork-advice-for-adrs/"
       },
       {
         "title": "Teamwork questions for ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/teamwork-questions-for-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/teamwork-questions-for-adrs/"
       },
       {
         "title": "Next step concepts for ADRs",
-        "url": "https://architecture-decision-record.github.io/guide/next-step-concepts-for-adrs/"
+        "url": "https://architecture-decision-record.github.io/en/guide/next-step-concepts-for-adrs/"
       },
       {
         "title": "Architecture diagrams & views & viewpoints",
-        "url": "https://architecture-decision-record.github.io/guide/architecture-diagrams-and-views-and-viewpoints/"
+        "url": "https://architecture-decision-record.github.io/en/guide/architecture-diagrams-and-views-and-viewpoints/"
       },
       {
         "title": "Fitness functions for decisions as code",
-        "url": "https://architecture-decision-record.github.io/guide/fitness-functions-for-decisions-as-code/"
+        "url": "https://architecture-decision-record.github.io/en/guide/fitness-functions-for-decisions-as-code/"
       },
       {
         "title": "Decision guardrails for pull requests",
-        "url": "https://architecture-decision-record.github.io/guide/decision-guardrails-for-pull-requests/"
+        "url": "https://architecture-decision-record.github.io/en/guide/decision-guardrails-for-pull-requests/"
       },
       {
         "title": "For more information",
-        "url": "https://architecture-decision-record.github.io/guide/for-more-information/"
+        "url": "https://architecture-decision-record.github.io/en/guide/for-more-information/"
       }
     ],
     "templates": [
       {
         "title": "ADR template by Jeff Tyree and Art Akerman",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-jeff-tyree-and-art-akerman/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-jeff-tyree-and-art-akerman/",
         "description": "more sophisticated"
       },
       {
         "title": "ADR template by Michael Nygard",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-michael-nygard/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-michael-nygard/",
         "description": "simple and popular"
       },
       {
         "title": "ADR template for Alexandrian pattern",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-for-alexandrian-pattern/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-for-alexandrian-pattern/",
         "description": "simple with context specifics"
       },
       {
         "title": "ADR template for business case",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-for-business-case/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-for-business-case/",
         "description": "more MBA-oriented, with costs, SWOT, and more opinions"
       },
       {
         "title": "ADR template of the Markdown Any Decision Records (MADR) project",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-of-the-madr-project/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-of-the-madr-project/",
         "description": "both simple and elaborate version; the latter emphasizes options and their pros and cons"
       },
       {
         "title": "ADR template using Planguage",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-using-planguage/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-using-planguage/",
         "description": "more quality assurance oriented"
       },
       {
         "title": "Decision record template by arc42",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-arc42/"
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-arc42/"
       },
       {
         "title": "Decision record template by EdgeX",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-edgex/"
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-edgex/"
       },
       {
         "title": "Decision record template by Gareth Morgan",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-gareth-morgan/"
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-gareth-morgan/"
       },
       {
         "title": "Decision record template by GIG Cymru NHS Wales",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-by-gig-cymru-nhs-wales/"
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-by-gig-cymru-nhs-wales/"
       },
       {
         "title": "Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga",
-        "url": "https://architecture-decision-record.github.io/templates/decision-record-template-for-important-technical-decisions/",
+        "url": "https://architecture-decision-record.github.io/en/templates/decision-record-template-for-important-technical-decisions/",
         "description": "lean and decision-first, optimized for fast executive review"
       }
     ],
     "examples": [
       {
         "title": "Architecture Decision Record (ADR) for Svelte Components",
-        "url": "https://architecture-decision-record.github.io/examples/svelte-components/"
+        "url": "https://architecture-decision-record.github.io/en/examples/svelte-components/"
       },
       {
         "title": "Architecture Decision Record for Amazon Web Services",
-        "url": "https://architecture-decision-record.github.io/examples/amazon-web-services/"
+        "url": "https://architecture-decision-record.github.io/en/examples/amazon-web-services/"
       },
       {
         "title": "Architecture Decision Record for Google Cloud Platform",
-        "url": "https://architecture-decision-record.github.io/examples/google-cloud-platform/"
+        "url": "https://architecture-decision-record.github.io/en/examples/google-cloud-platform/"
       },
       {
         "title": "Architecture Decision Record for Python Django Framework",
-        "url": "https://architecture-decision-record.github.io/examples/python-django-framework/"
+        "url": "https://architecture-decision-record.github.io/en/examples/python-django-framework/"
       },
       {
         "title": "Architecture Decision Record: API using JSON v. gRPC",
-        "url": "https://architecture-decision-record.github.io/examples/api-using-json-v-grpc/"
+        "url": "https://architecture-decision-record.github.io/en/examples/api-using-json-v-grpc/"
       },
       {
         "title": "Architecture Decision Record: authentication authorization options",
-        "url": "https://architecture-decision-record.github.io/examples/authentication-authorization-options/"
+        "url": "https://architecture-decision-record.github.io/en/examples/authentication-authorization-options/"
       },
       {
         "title": "Architecture Decision Record: chart library toolkit for data visualization using TypeScript and JSON",
-        "url": "https://architecture-decision-record.github.io/examples/chart-library-toolkit-for-data-visualization-using-typescript-and-json/"
+        "url": "https://architecture-decision-record.github.io/en/examples/chart-library-toolkit-for-data-visualization-using-typescript-and-json/"
       },
       {
         "title": "Architecture Decision Record: Choosing a Database Technology",
-        "url": "https://architecture-decision-record.github.io/examples/choosing-a-database-technology/"
+        "url": "https://architecture-decision-record.github.io/en/examples/choosing-a-database-technology/"
       },
       {
         "title": "Architecture Decision Record: CSS framework",
-        "url": "https://architecture-decision-record.github.io/examples/css-framework/"
+        "url": "https://architecture-decision-record.github.io/en/examples/css-framework/"
       },
       {
         "title": "Architecture Decision Record: Docker Swarm Container Orchestration",
-        "url": "https://architecture-decision-record.github.io/examples/docker-swarm-container-orchestration/"
+        "url": "https://architecture-decision-record.github.io/en/examples/docker-swarm-container-orchestration/"
       },
       {
         "title": "Architecture Decision Record: Go programming language",
-        "url": "https://architecture-decision-record.github.io/examples/go-programming-language/"
+        "url": "https://architecture-decision-record.github.io/en/examples/go-programming-language/"
       },
       {
         "title": "Architecture Decision Record: Java programming language",
-        "url": "https://architecture-decision-record.github.io/examples/java-programming-language/"
+        "url": "https://architecture-decision-record.github.io/en/examples/java-programming-language/"
       },
       {
         "title": "Architecture Decision Record: Kubernetes container orchestration",
-        "url": "https://architecture-decision-record.github.io/examples/kubernetes-container-orchestration/"
+        "url": "https://architecture-decision-record.github.io/en/examples/kubernetes-container-orchestration/"
       },
       {
         "title": "Architecture Decision Record: Microsoft Azure cloud infrastructure\"",
-        "url": "https://architecture-decision-record.github.io/examples/microsoft-azure-cloud-infrastructure/"
+        "url": "https://architecture-decision-record.github.io/en/examples/microsoft-azure-cloud-infrastructure/"
       },
       {
         "title": "Architecture Decision Record: MySQL database",
-        "url": "https://architecture-decision-record.github.io/examples/mysql-database/"
+        "url": "https://architecture-decision-record.github.io/en/examples/mysql-database/"
       },
       {
         "title": "Architecture Decision Record: PostgreSQL database",
-        "url": "https://architecture-decision-record.github.io/examples/postgresql-database/"
+        "url": "https://architecture-decision-record.github.io/en/examples/postgresql-database/"
       },
       {
         "title": "Architecture Decision Record: Programming Code Editors",
-        "url": "https://architecture-decision-record.github.io/examples/programming-code-editors/"
+        "url": "https://architecture-decision-record.github.io/en/examples/programming-code-editors/"
       },
       {
         "title": "Architecture Decision Record: Python programming language",
-        "url": "https://architecture-decision-record.github.io/examples/python-programming-language/"
+        "url": "https://architecture-decision-record.github.io/en/examples/python-programming-language/"
       },
       {
         "title": "Architecture Decision Record: React Front-End JavaScript Library",
-        "url": "https://architecture-decision-record.github.io/examples/react-front-end-javascript-library/"
+        "url": "https://architecture-decision-record.github.io/en/examples/react-front-end-javascript-library/"
       },
       {
         "title": "Architecture Decision Record: Ruby on Rails Framework",
-        "url": "https://architecture-decision-record.github.io/examples/ruby-on-rails-framework/"
+        "url": "https://architecture-decision-record.github.io/en/examples/ruby-on-rails-framework/"
       },
       {
         "title": "Architecture Decision Record: Rust programming language",
-        "url": "https://architecture-decision-record.github.io/examples/rust-programming-language/"
+        "url": "https://architecture-decision-record.github.io/en/examples/rust-programming-language/"
       },
       {
         "title": "Architecture Decision Record: snake_case v. camelCase for a REST API?",
-        "url": "https://architecture-decision-record.github.io/examples/snake-case-v-camelcase-for-a-rest-api/"
+        "url": "https://architecture-decision-record.github.io/en/examples/snake-case-v-camelcase-for-a-rest-api/"
       },
       {
         "title": "Architecture Decision Record: Svelte Front-end JavaScript Library",
-        "url": "https://architecture-decision-record.github.io/examples/svelte-front-end-javascript-library/"
+        "url": "https://architecture-decision-record.github.io/en/examples/svelte-front-end-javascript-library/"
       },
       {
         "title": "Architecture Decision Record: SvelteKit framework",
-        "url": "https://architecture-decision-record.github.io/examples/sveltekit-framework/"
+        "url": "https://architecture-decision-record.github.io/en/examples/sveltekit-framework/"
       },
       {
         "title": "Architecture Decision Record: Tailwind CSS",
-        "url": "https://architecture-decision-record.github.io/examples/tailwind-css/"
+        "url": "https://architecture-decision-record.github.io/en/examples/tailwind-css/"
       },
       {
         "title": "Architecture Decision Record: Vue front-end JavaScript library",
-        "url": "https://architecture-decision-record.github.io/examples/vue-front-end-javascript-library/"
+        "url": "https://architecture-decision-record.github.io/en/examples/vue-front-end-javascript-library/"
       },
       {
         "title": "Architecture Decision Record: web application framework, batteries included, full stack, for a startup product",
-        "url": "https://architecture-decision-record.github.io/examples/web-application-framework-batteries-included-full-stack-for-a-startup-product/"
+        "url": "https://architecture-decision-record.github.io/en/examples/web-application-framework-batteries-included-full-stack-for-a-startup-product/"
       },
       {
         "title": "browser-automation-framework-for-e2e-testing-playwright-vs-selenium",
-        "url": "https://architecture-decision-record.github.io/examples/browser-automation-framework-for-e2e-testing-playwright-vs-selenium/"
+        "url": "https://architecture-decision-record.github.io/en/examples/browser-automation-framework-for-e2e-testing-playwright-vs-selenium/"
       },
       {
         "title": "Decision record for 4-day work-week",
-        "url": "https://architecture-decision-record.github.io/examples/4-day-work-week/"
+        "url": "https://architecture-decision-record.github.io/en/examples/4-day-work-week/"
       },
       {
         "title": "Decision record for agile software development",
-        "url": "https://architecture-decision-record.github.io/examples/agile-software-development/"
+        "url": "https://architecture-decision-record.github.io/en/examples/agile-software-development/"
       },
       {
         "title": "Decision Record for continuous integration",
-        "url": "https://architecture-decision-record.github.io/examples/continuous-integration/"
+        "url": "https://architecture-decision-record.github.io/en/examples/continuous-integration/"
       },
       {
         "title": "Decision Record for High Trust Teamwork",
-        "url": "https://architecture-decision-record.github.io/examples/high-trust-teamwork/"
+        "url": "https://architecture-decision-record.github.io/en/examples/high-trust-teamwork/"
       },
       {
         "title": "Decision record for work from home",
-        "url": "https://architecture-decision-record.github.io/examples/work-from-home/"
+        "url": "https://architecture-decision-record.github.io/en/examples/work-from-home/"
       },
       {
         "title": "Environment variable configuration",
-        "url": "https://architecture-decision-record.github.io/examples/environment-variable-configuration/"
+        "url": "https://architecture-decision-record.github.io/en/examples/environment-variable-configuration/"
       },
       {
         "title": "Metrics, monitors, alerts",
-        "url": "https://architecture-decision-record.github.io/examples/metrics-monitors-alerts/"
+        "url": "https://architecture-decision-record.github.io/en/examples/metrics-monitors-alerts/"
       },
       {
         "title": "Microsoft Azure DevOps",
-        "url": "https://architecture-decision-record.github.io/examples/microsoft-azure-devops/"
+        "url": "https://architecture-decision-record.github.io/en/examples/microsoft-azure-devops/"
       },
       {
         "title": "Monorepo vs multirepo",
-        "url": "https://architecture-decision-record.github.io/examples/monorepo-vs-multirepo/"
+        "url": "https://architecture-decision-record.github.io/en/examples/monorepo-vs-multirepo/"
       },
       {
         "title": "Programming languages",
-        "url": "https://architecture-decision-record.github.io/examples/programming-languages/"
+        "url": "https://architecture-decision-record.github.io/en/examples/programming-languages/"
       },
       {
         "title": "Secrets storage",
-        "url": "https://architecture-decision-record.github.io/examples/secrets-storage/"
+        "url": "https://architecture-decision-record.github.io/en/examples/secrets-storage/"
       },
       {
         "title": "Timestamp format",
-        "url": "https://architecture-decision-record.github.io/examples/timestamp-format/"
+        "url": "https://architecture-decision-record.github.io/en/examples/timestamp-format/"
       }
     ]
   },
-  "skills": "https://architecture-decision-record.github.io/skills/",
+  "skills": "https://architecture-decision-record.github.io/en/skills/",
   "locales": [
     "ar_001",
     "bn_001",

@@ -120,15 +120,15 @@
 <Header label="Site header">
 	<ContainerWithFixedWidth maxWidth="64rem">
 		<div class="site-header-bar">
-			<a class="brand" href="/">
+			<a class="brand" href="/en/">
 				<img class="brand-icon" src="/icon.png" alt="" width="28" height="28" />
 				<strong>Architecture Decision Record</strong>
 			</a>
 			<nav class="site-nav" aria-label="Primary">
-				<a href="/guide/">Guide</a>
-				<a href="/templates/">Templates</a>
-				<a href="/examples/">Examples</a>
-				<a href="/skills/">Skills</a>
+				<a href="/en/guide/">Guide</a>
+				<a href="/en/templates/">Templates</a>
+				<a href="/en/examples/">Examples</a>
+				<a href="/en/skills/">Skills</a>
 				<a href="https://github.com/architecture-decision-record/architecture-decision-record">
 					GitHub
 				</a>

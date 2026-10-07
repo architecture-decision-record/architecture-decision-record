@@ -41,12 +41,14 @@ pnpm run check     # svelte-check
 
 - `src/content/{guide,templates,examples}/` : synced Markdown source (see above).
 - `src/lib/manifest.json` : generated table of contents — see `scripts/generate-manifest.mjs`.
-- `src/routes/guide/[slug]/`, `templates/[slug]/`, `examples/[slug]/` : dynamic
-  routes that prerender one page per Markdown file, using `entries()` to
-  enumerate slugs from the manifest.
-- `src/routes/+page.svelte` : hand-authored home page.
-- `src/routes/skills/+page.svelte` : hand-authored page promoting the two
+- `src/routes/en/guide/[slug]/`, `en/templates/[slug]/`, `en/examples/[slug]/` :
+  dynamic routes that prerender one page per Markdown file (served at
+  `/en/guide/<slug>/` etc.), using `entries()` to enumerate slugs from the manifest.
+- `src/routes/en/+page.svelte` : hand-authored home page (`/en/`).
+- `src/routes/en/skills/+page.svelte` : hand-authored page promoting the two
   Claude Code skills that ship in the parent repo's `skills/` directory.
+- `src/routes/{,guide,templates,examples,skills}/` : redirect-only routes that
+  forward the old pre-`/en/` URLs to `/en/…`.
 - `src/lib/components/Header.svelte`, `Footer.svelte`, `CardLinkList.svelte`,
   `MdLayout.svelte` : the site chrome.
 - `static/themes/*.css` : the 45 Lily Design System themes, switched at

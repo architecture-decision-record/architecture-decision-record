@@ -13,7 +13,7 @@ Rules: [spec/website.md](../spec/website.md). Work in
 - After upgrading `@lilydesignsystem/*`, refresh `static/themes/*.css` from
   Lily's upstream `themes/` (spec/website.md#themes); stale themes leave new
   picker elements unstyled.
-- Hand-authored pages: `src/routes/+page.svelte`, `src/routes/skills/+page.svelte`,
+- Hand-authored pages: `src/routes/en/+page.svelte`, `src/routes/en/skills/+page.svelte`,
   `src/lib/components/Header.svelte`. `static/llms.txt` and `llms.json` are generated.
 - Nothing may reference `../` at runtime.
 - Finish with `pnpm run check` (0 errors).

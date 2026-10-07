@@ -1,17 +1,13 @@
-import { error } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 import manifest from '#lib/manifest.json';
 
 export const prerender = true;
 
 export function entries() {
-	return manifest.templates.map((t) => ({ slug: t.slug }));
+	return manifest.templates.map((p) => ({ slug: p.slug }));
 }
 
-export async function load({ params }) {
-	const template = manifest.templates.find((t) => t.slug === params.slug);
-	if (!template) error(404, 'Template not found');
-
-	const mod = await import(`../../../content/templates/${params.slug}.md`);
-
-	return { template, content: mod.default };
+// Old URL (before the site moved under /en/): forward to /en/templates/<slug>/.
+export function load({ params }) {
+	redirect(308, `/en/templates/${params.slug}/`);
 }
