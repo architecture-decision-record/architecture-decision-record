@@ -2,83 +2,80 @@
 
 > A guide to architecture decision records: what they are, how to start using them, and a curated set of decision record templates and real-world examples. Source: https://github.com/architecture-decision-record/architecture-decision-record
 
-## Guide
+## Documents
 
-- [What is an architecture decision record?](https://architecture-decision-record.github.io/en/guide/what-is-an-architecture-decision-record/)
-- [How to start using ADRs](https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs/)
-- [How to start using ADRs with tools](https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs-with-tools/)
-- [How to start using ADRs with git](https://architecture-decision-record.github.io/en/guide/how-to-start-using-adrs-with-git/)
-- [Claude Code skills for ADRs](https://architecture-decision-record.github.io/en/guide/claude-code-skills-for-adrs/)
-- [File name conventions for ADRs](https://architecture-decision-record.github.io/en/guide/file-name-conventions-for-adrs/)
-- [Suggestions for writing good ADRs](https://architecture-decision-record.github.io/en/guide/suggestions-for-writing-good-adrs/)
-- [ADR example templates](https://architecture-decision-record.github.io/en/guide/adr-example-templates/)
-- [Teamwork advice for ADRs](https://architecture-decision-record.github.io/en/guide/teamwork-advice-for-adrs/)
-- [Teamwork questions for ADRs](https://architecture-decision-record.github.io/en/guide/teamwork-questions-for-adrs/)
-- [Next step concepts for ADRs](https://architecture-decision-record.github.io/en/guide/next-step-concepts-for-adrs/)
-- [Architecture diagrams & views & viewpoints](https://architecture-decision-record.github.io/en/guide/architecture-diagrams-and-views-and-viewpoints/)
-- [Fitness functions for decisions as code](https://architecture-decision-record.github.io/en/guide/fitness-functions-for-decisions-as-code/)
-- [Decision guardrails for pull requests](https://architecture-decision-record.github.io/en/guide/decision-guardrails-for-pull-requests/)
-- [For more information](https://architecture-decision-record.github.io/en/guide/for-more-information/)
+- [AWS Architectural Decision Records Process](https://architecture-decision-record.github.io/en-001/documents/aws-adr-process/)
+- [Decision Sustainability Criteria](https://architecture-decision-record.github.io/en-001/documents/decision-sustainability-criteria/)
+- [File name conventions](https://architecture-decision-record.github.io/en-001/documents/file-name-conventions-for-adrs/)
+- [Fitness functions for decisions as code](https://architecture-decision-record.github.io/en-001/documents/fitness-functions-for-decisions-as-code/)
+- [Guidelines to Achieve Sustainable Decisions](https://architecture-decision-record.github.io/en-001/documents/guidelines-to-achieve-sustainable-decisions/)
+- [How to start using ADRs](https://architecture-decision-record.github.io/en-001/documents/how-to-start-using-adrs/)
+- [How to start using ADRs with git](https://architecture-decision-record.github.io/en-001/documents/how-to-start-using-adrs-with-git/)
+- [how-to-start-using-adrs-with-tools](https://architecture-decision-record.github.io/en-001/documents/how-to-start-using-adrs-with-tools/)
+- [suggestions-for-writing-good-adrs](https://architecture-decision-record.github.io/en-001/documents/suggestions-for-writing-good-adrs/)
+- [Teamwork advice for ADRs](https://architecture-decision-record.github.io/en-001/documents/teamwork-advice-for-adrs/)
+- [teamwork-questions-for-adrs](https://architecture-decision-record.github.io/en-001/documents/teamwork-questions-for-adrs/)
+- [what-is-an-architecture-decision-record](https://architecture-decision-record.github.io/en-001/documents/what-is-an-architecture-decision-record/)
 
 ## Templates
 
-- [ADR template by Jeff Tyree and Art Akerman](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-jeff-tyree-and-art-akerman/): more sophisticated
-- [ADR template by Michael Nygard](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-michael-nygard/): simple and popular
-- [ADR template for Alexandrian pattern](https://architecture-decision-record.github.io/en/templates/decision-record-template-for-alexandrian-pattern/): simple with context specifics
-- [ADR template for business case](https://architecture-decision-record.github.io/en/templates/decision-record-template-for-business-case/): more MBA-oriented, with costs, SWOT, and more opinions
-- [ADR template of the Markdown Any Decision Records (MADR) project](https://architecture-decision-record.github.io/en/templates/decision-record-template-of-the-madr-project/): both simple and elaborate version; the latter emphasizes options and their pros and cons
-- [ADR template using Planguage](https://architecture-decision-record.github.io/en/templates/decision-record-template-using-planguage/): more quality assurance oriented
-- [Decision record template by arc42](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-arc42/)
-- [Decision record template by EdgeX](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-edgex/)
-- [Decision record template by Gareth Morgan](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-gareth-morgan/)
-- [Decision record template by GIG Cymru NHS Wales](https://architecture-decision-record.github.io/en/templates/decision-record-template-by-gig-cymru-nhs-wales/)
-- [Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](https://architecture-decision-record.github.io/en/templates/decision-record-template-for-important-technical-decisions/): lean and decision-first, optimized for fast executive review
+- [Decision record template by arc42](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-arc42/)
+- [Decision record template by EdgeX](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-edgex/)
+- [Decision record template by Gareth Morgan](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-gareth-morgan/)
+- [Decision record template by GIG Cymru NHS Wales](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-gig-cymru-nhs-wales/)
+- [ADR template by Jeff Tyree and Art Akerman](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-jeff-tyree-and-art-akerman/): more sophisticated
+- [ADR template by Michael Nygard](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-by-michael-nygard/): simple and popular
+- [ADR template for Alexandrian pattern](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-alexandrian-pattern/): simple with context specifics
+- [ADR template for business case](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-business-case/): more MBA-oriented, with costs, SWOT, and more opinions
+- [Template for Important Technical Decisions (ITDs) by Ignacio Larrañaga](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-for-important-technical-decisions/): lean and decision-first, optimized for fast executive review
+- [ADR template of the Markdown Any Decision Records (MADR) project](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-of-the-madr-project/): both simple and elaborate version; the latter emphasizes options and their pros and cons
+- [ADR template using Planguage](https://architecture-decision-record.github.io/en-001/templates/decision-record-template-using-planguage/): more quality assurance oriented
 
 ## Examples
 
-- [Architecture Decision Record (ADR) for Svelte Components](https://architecture-decision-record.github.io/en/examples/svelte-components/)
-- [Architecture Decision Record for Amazon Web Services](https://architecture-decision-record.github.io/en/examples/amazon-web-services/)
-- [Architecture Decision Record for Google Cloud Platform](https://architecture-decision-record.github.io/en/examples/google-cloud-platform/)
-- [Architecture Decision Record for Python Django Framework](https://architecture-decision-record.github.io/en/examples/python-django-framework/)
-- [Architecture Decision Record: API using JSON v. gRPC](https://architecture-decision-record.github.io/en/examples/api-using-json-v-grpc/)
-- [Architecture Decision Record: authentication authorization options](https://architecture-decision-record.github.io/en/examples/authentication-authorization-options/)
-- [Architecture Decision Record: chart library toolkit for data visualization using TypeScript and JSON](https://architecture-decision-record.github.io/en/examples/chart-library-toolkit-for-data-visualization-using-typescript-and-json/)
-- [Architecture Decision Record: Choosing a Database Technology](https://architecture-decision-record.github.io/en/examples/choosing-a-database-technology/)
-- [Architecture Decision Record: CSS framework](https://architecture-decision-record.github.io/en/examples/css-framework/)
-- [Architecture Decision Record: Docker Swarm Container Orchestration](https://architecture-decision-record.github.io/en/examples/docker-swarm-container-orchestration/)
-- [Architecture Decision Record: Go programming language](https://architecture-decision-record.github.io/en/examples/go-programming-language/)
-- [Architecture Decision Record: Java programming language](https://architecture-decision-record.github.io/en/examples/java-programming-language/)
-- [Architecture Decision Record: Kubernetes container orchestration](https://architecture-decision-record.github.io/en/examples/kubernetes-container-orchestration/)
-- [Architecture Decision Record: Microsoft Azure cloud infrastructure"](https://architecture-decision-record.github.io/en/examples/microsoft-azure-cloud-infrastructure/)
-- [Architecture Decision Record: MySQL database](https://architecture-decision-record.github.io/en/examples/mysql-database/)
-- [Architecture Decision Record: PostgreSQL database](https://architecture-decision-record.github.io/en/examples/postgresql-database/)
-- [Architecture Decision Record: Programming Code Editors](https://architecture-decision-record.github.io/en/examples/programming-code-editors/)
-- [Architecture Decision Record: Python programming language](https://architecture-decision-record.github.io/en/examples/python-programming-language/)
-- [Architecture Decision Record: React Front-End JavaScript Library](https://architecture-decision-record.github.io/en/examples/react-front-end-javascript-library/)
-- [Architecture Decision Record: Ruby on Rails Framework](https://architecture-decision-record.github.io/en/examples/ruby-on-rails-framework/)
-- [Architecture Decision Record: Rust programming language](https://architecture-decision-record.github.io/en/examples/rust-programming-language/)
-- [Architecture Decision Record: snake_case v. camelCase for a REST API?](https://architecture-decision-record.github.io/en/examples/snake-case-v-camelcase-for-a-rest-api/)
-- [Architecture Decision Record: Svelte Front-end JavaScript Library](https://architecture-decision-record.github.io/en/examples/svelte-front-end-javascript-library/)
-- [Architecture Decision Record: SvelteKit framework](https://architecture-decision-record.github.io/en/examples/sveltekit-framework/)
-- [Architecture Decision Record: Tailwind CSS](https://architecture-decision-record.github.io/en/examples/tailwind-css/)
-- [Architecture Decision Record: Vue front-end JavaScript library](https://architecture-decision-record.github.io/en/examples/vue-front-end-javascript-library/)
-- [Architecture Decision Record: web application framework, batteries included, full stack, for a startup product](https://architecture-decision-record.github.io/en/examples/web-application-framework-batteries-included-full-stack-for-a-startup-product/)
-- [browser-automation-framework-for-e2e-testing-playwright-vs-selenium](https://architecture-decision-record.github.io/en/examples/browser-automation-framework-for-e2e-testing-playwright-vs-selenium/)
-- [Decision record for 4-day work-week](https://architecture-decision-record.github.io/en/examples/4-day-work-week/)
-- [Decision record for agile software development](https://architecture-decision-record.github.io/en/examples/agile-software-development/)
-- [Decision Record for continuous integration](https://architecture-decision-record.github.io/en/examples/continuous-integration/)
-- [Decision Record for High Trust Teamwork](https://architecture-decision-record.github.io/en/examples/high-trust-teamwork/)
-- [Decision record for work from home](https://architecture-decision-record.github.io/en/examples/work-from-home/)
-- [Environment variable configuration](https://architecture-decision-record.github.io/en/examples/environment-variable-configuration/)
-- [Metrics, monitors, alerts](https://architecture-decision-record.github.io/en/examples/metrics-monitors-alerts/)
-- [Microsoft Azure DevOps](https://architecture-decision-record.github.io/en/examples/microsoft-azure-devops/)
-- [Monorepo vs multirepo](https://architecture-decision-record.github.io/en/examples/monorepo-vs-multirepo/)
-- [Programming languages](https://architecture-decision-record.github.io/en/examples/programming-languages/)
-- [Secrets storage](https://architecture-decision-record.github.io/en/examples/secrets-storage/)
-- [Timestamp format](https://architecture-decision-record.github.io/en/examples/timestamp-format/)
+- [Decision record for 4-day work-week](https://architecture-decision-record.github.io/en-001/examples/4-day-work-week/)
+- [Decision record for agile software development](https://architecture-decision-record.github.io/en-001/examples/agile-software-development/)
+- [Architecture Decision Record for Amazon Web Services](https://architecture-decision-record.github.io/en-001/examples/amazon-web-services/)
+- [Architecture Decision Record: API using JSON v. gRPC](https://architecture-decision-record.github.io/en-001/examples/api-using-json-v-grpc/)
+- [Architecture Decision Record: authentication authorization options](https://architecture-decision-record.github.io/en-001/examples/authentication-authorization-options/)
+- [browser-automation-framework-for-e2e-testing-playwright-vs-selenium](https://architecture-decision-record.github.io/en-001/examples/browser-automation-framework-for-e2e-testing-playwright-vs-selenium/)
+- [Architecture Decision Record: chart library toolkit for data visualization using TypeScript and JSON](https://architecture-decision-record.github.io/en-001/examples/chart-library-toolkit-for-data-visualization-using-typescript-and-json/)
+- [Architecture Decision Record: Choosing a Database Technology](https://architecture-decision-record.github.io/en-001/examples/choosing-a-database-technology/)
+- [Decision Record for continuous integration](https://architecture-decision-record.github.io/en-001/examples/continuous-integration/)
+- [Architecture Decision Record: CSS framework](https://architecture-decision-record.github.io/en-001/examples/css-framework/)
+- [Architecture Decision Record: Docker Swarm Container Orchestration](https://architecture-decision-record.github.io/en-001/examples/docker-swarm-container-orchestration/)
+- [Environment variable configuration](https://architecture-decision-record.github.io/en-001/examples/environment-variable-configuration/)
+- [Architecture Decision Record: Go programming language](https://architecture-decision-record.github.io/en-001/examples/go-programming-language/)
+- [Architecture Decision Record for Google Cloud Platform](https://architecture-decision-record.github.io/en-001/examples/google-cloud-platform/)
+- [Decision Record for High Trust Teamwork](https://architecture-decision-record.github.io/en-001/examples/high-trust-teamwork/)
+- [Architecture Decision Record: Java programming language](https://architecture-decision-record.github.io/en-001/examples/java-programming-language/)
+- [Architecture Decision Record: Kubernetes container orchestration](https://architecture-decision-record.github.io/en-001/examples/kubernetes-container-orchestration/)
+- [Metrics, monitors, alerts](https://architecture-decision-record.github.io/en-001/examples/metrics-monitors-alerts/)
+- [Architecture Decision Record: Microsoft Azure cloud infrastructure"](https://architecture-decision-record.github.io/en-001/examples/microsoft-azure-cloud-infrastructure/)
+- [Microsoft Azure DevOps](https://architecture-decision-record.github.io/en-001/examples/microsoft-azure-devops/)
+- [Monorepo vs multirepo](https://architecture-decision-record.github.io/en-001/examples/monorepo-vs-multirepo/)
+- [Architecture Decision Record: MySQL database](https://architecture-decision-record.github.io/en-001/examples/mysql-database/)
+- [Architecture Decision Record: PostgreSQL database](https://architecture-decision-record.github.io/en-001/examples/postgresql-database/)
+- [Architecture Decision Record: Programming Code Editors](https://architecture-decision-record.github.io/en-001/examples/programming-code-editors/)
+- [Programming languages](https://architecture-decision-record.github.io/en-001/examples/programming-languages/)
+- [Architecture Decision Record for Python Django Framework](https://architecture-decision-record.github.io/en-001/examples/python-django-framework/)
+- [Architecture Decision Record: Python programming language](https://architecture-decision-record.github.io/en-001/examples/python-programming-language/)
+- [Architecture Decision Record: React Front-End JavaScript Library](https://architecture-decision-record.github.io/en-001/examples/react-front-end-javascript-library/)
+- [Architecture Decision Record: Ruby on Rails Framework](https://architecture-decision-record.github.io/en-001/examples/ruby-on-rails-framework/)
+- [Architecture Decision Record: Rust programming language](https://architecture-decision-record.github.io/en-001/examples/rust-programming-language/)
+- [Secrets storage](https://architecture-decision-record.github.io/en-001/examples/secrets-storage/)
+- [Architecture Decision Record: snakecase v. camelCase for a REST API?](https://architecture-decision-record.github.io/en-001/examples/snake-case-v-camelcase-for-a-rest-api/)
+- [Architecture Decision Record (ADR) for Svelte Components](https://architecture-decision-record.github.io/en-001/examples/svelte-components/)
+- [Architecture Decision Record: Svelte Front-end JavaScript Library](https://architecture-decision-record.github.io/en-001/examples/svelte-front-end-javascript-library/)
+- [Architecture Decision Record: SvelteKit framework](https://architecture-decision-record.github.io/en-001/examples/sveltekit-framework/)
+- [Architecture Decision Record: Tailwind CSS](https://architecture-decision-record.github.io/en-001/examples/tailwind-css/)
+- [Timestamp format](https://architecture-decision-record.github.io/en-001/examples/timestamp-format/)
+- [Architecture Decision Record: Vue front-end JavaScript library](https://architecture-decision-record.github.io/en-001/examples/vue-front-end-javascript-library/)
+- [Architecture Decision Record: web application framework, batteries included, full stack, for a startup product](https://architecture-decision-record.github.io/en-001/examples/web-application-framework-batteries-included-full-stack-for-a-startup-product/)
+- [Decision record for work from home](https://architecture-decision-record.github.io/en-001/examples/work-from-home/)
 
 ## Optional
 
-- [Skills](https://architecture-decision-record.github.io/en/skills/): Claude Code skills for writing and maintaining ADRs
+- [Skills](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills): Claude Code skills for writing and maintaining ADRs
 - [Translations](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/locales): 30 language picker entries; translated documents, examples, and templates
 - [Source repository](https://github.com/architecture-decision-record/architecture-decision-record): README, specification (spec/), agent guides (AGENTS.md, AGENTS/)

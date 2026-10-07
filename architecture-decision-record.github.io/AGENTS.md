@@ -29,9 +29,9 @@ publishing commands.
   importing the matching `.md` file from `src/content/`, and a
   `+page.svelte` that renders `data.content` (the mdsvex-compiled component).
   Follow this pattern for any new section rather than inventing a new one.
-- The home page (`src/routes/en/+page.svelte`) and the skills page
-  (`src/routes/en/skills/+page.svelte`) are hand-authored, not generated —
-  edit them directly.
+- The only hand-authored page is `/` (`src/routes/+page.svelte`, the language
+  router); every other page is a locale route rendered from `locales/`. There
+  is no `/en/` site.
 - Because this directory is `git subtree`-published on its own, everything
   the built site needs (content included) must live inside this directory,
   never referenced via `../` at runtime.

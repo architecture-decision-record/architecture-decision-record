@@ -103,8 +103,8 @@ never links to the English page or to another locale.
   plus alias ids for table-of-contents links that collapse `--` or turn `.`
   and `/` into `-`.
 - Pages carry the locale's `lang` and `dir` (RTL for `ar`, `ur`).
-- `en-001`, `en-gb`, and `en-us` pages are `noindex` (they duplicate the
-  English site) and are not in `sitemap.xml`; every other locale's pages are.
+- `en-gb` and `en-us` pages are `noindex` (they duplicate `en-001`) and are not
+  in `sitemap.xml`; every other locale's pages, `en-001` included, are.
 - The search page headline is the query (`/es-001/?try` shows "try"), with the
   locale slug beneath it; with no query it shows the locale's contents.
 

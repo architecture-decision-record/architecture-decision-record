@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Writes static/sitemap.xml from the fixed top-level routes plus the guide,
-// template, and example pages listed in src/lib/manifest.json. URLs end in
-// "/" to match `trailingSlash = 'always'` in src/routes/+layout.js. Reads only
+// Writes static/sitemap.xml from the translated pages in
+// src/lib/locale-pages.json (English is the en-001 locale; en-gb and en-us
+// duplicate it and are noindex). URLs end in "/" to match `trailingSlash = 'always'` in src/routes/+layout.js. Reads only
 // files inside this directory (it also runs in the standalone published repo).
 //   pnpm run sitemap
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -11,18 +11,10 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://architecture-decision-record.github.io';
 
-const manifest = JSON.parse(readFileSync(path.join(root, 'src/lib/manifest.json'), 'utf8'));
-
-const paths = ['/en/', '/en/guide/', '/en/templates/', '/en/examples/', '/en/skills/'];
-for (const section of ['guide', 'templates', 'examples']) {
-  for (const page of manifest[section]) paths.push(`/en/${section}/${page.slug}/`);
-}
-
-// Translated pages, except the English locales (en-*), which duplicate the
-// English site and are noindex.
+const paths = [];
 const tree = JSON.parse(readFileSync(path.join(root, 'src/lib/locale-pages.json'), 'utf8'));
 for (const [slug, sections] of Object.entries(tree)) {
-	if (slug.startsWith('en-')) continue;
+	if (slug === 'en-gb' || slug === 'en-us') continue;
 	for (const s of sections) {
 		if (s.hasIndex) paths.push(`/${slug}/${s.dir}/`);
 		for (const p of s.pages) paths.push(`/${slug}/${s.dir}/${p.dir}/`);

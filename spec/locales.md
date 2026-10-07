@@ -14,8 +14,8 @@ Links to English content use `locales/en-001/`.
 The picker uses `_` and mixed case instead (`en_GB`, `zh_TW`, `da_001`); its
 bare value `en` means `en-001`. A directory name is also the locale's route
 (`/<code>/`) and its search-index name (`static/search/<code>.json`). The
-website's English site at `/en/` is separate from the `/en-001/` locale route;
-see [website.md](website.md#url-scheme). Only locale directories live in
+website has no separate `/en/` site: English is the `/en-001/` locale route
+(`/en/` returns 404); see [website.md](website.md#url-scheme). Only locale directories live in
 `locales/`; stray or duplicate directories (for example a copy of a locale
 under another name) fail the audit and the sync, and are deleted.
 

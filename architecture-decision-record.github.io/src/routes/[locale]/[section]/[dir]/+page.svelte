@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>{data.title}</title>
-	{#if data.locale.startsWith('en-')}<meta name="robots" content="noindex" />{/if}
+	{#if ['en-gb', 'en-us'].includes(data.locale)}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
 <a class="back-link" href={data.section.hasIndex ? `/${data.locale}/${data.section.dir}/` : `/${data.locale}/`}>

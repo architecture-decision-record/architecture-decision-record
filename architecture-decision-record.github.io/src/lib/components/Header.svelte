@@ -120,15 +120,14 @@
 <Header label="Site header">
 	<ContainerWithFixedWidth maxWidth="64rem">
 		<div class="site-header-bar">
-			<a class="brand" href="/en/">
+			<a class="brand" href="/en-001/">
 				<img class="brand-icon" src="/icon.png" alt="" width="28" height="28" />
 				<strong>Architecture Decision Record</strong>
 			</a>
 			<nav class="site-nav" aria-label="Primary">
-				<a href="/en/guide/">Guide</a>
-				<a href="/en/templates/">Templates</a>
-				<a href="/en/examples/">Examples</a>
-				<a href="/en/skills/">Skills</a>
+				<a href="/en-001/">Documents</a>
+				<a href="/en-001/templates/">Templates</a>
+				<a href="/en-001/examples/">Examples</a>
 				<a href="https://github.com/architecture-decision-record/architecture-decision-record">
 					GitHub
 				</a>
@@ -144,7 +143,7 @@
 						textSize: 'Text size',
 						share: 'Share Picker'
 					}}
-					searchProps={{ action: locale === 'en' ? '/en/' : `/${localeToSlug(locale)}/` }}
+					searchProps={{ action: `/${localeToSlug(locale)}/` }}
 					themesUrl="/themes/"
 					themes={themeSlugs}
 					themeProps={{

@@ -20,6 +20,10 @@ parent repo's own `README.md`; templates and examples are copied from
 manifest is generated from the result (see
 [`scripts/generate-manifest.mjs`](scripts/generate-manifest.mjs)).
 
+Note: since the `/en/` site was removed, nothing routes `src/content/{guide,templates,examples}/`
+or `src/lib/manifest.json` any more; the site renders `locales/` directly (English is
+`en-001`). `pnpm run content` still regenerates them for now.
+
 **Never hand-edit files under `src/content/`.** Edit `../README.md` or
 `../locales/en-001/` instead, then regenerate:
 
@@ -41,16 +45,12 @@ pnpm run check     # svelte-check
 
 - `src/content/{guide,templates,examples}/` : synced Markdown source (see above).
 - `src/lib/manifest.json` : generated table of contents — see `scripts/generate-manifest.mjs`.
-- `src/routes/en/guide/[slug]/`, `en/templates/[slug]/`, `en/examples/[slug]/` :
-  dynamic routes that prerender one page per Markdown file (served at
-  `/en/guide/<slug>/` etc.), using `entries()` to enumerate slugs from the manifest.
-- `src/routes/en/+page.svelte` : hand-authored home page (`/en/`).
-- `src/routes/en/skills/+page.svelte` : hand-authored page promoting the two
-  Claude Code skills that ship in the parent repo's `skills/` directory.
+- `src/routes/[locale]/…` : the locale routes (English is `en-001`), prerendered from
+  `locales/` via `src/lib/server/locale-pages.js`; `/<locale>/?<query>` is search.
 - `src/routes/+page.svelte` : the language router at `/` (reads
-  `navigator.languages`, goes to the matching locale route, else `/en/`). The old
-  pre-`/en/` section URLs (`/guide/`, `/templates/`, …) intentionally 404.
-- `src/lib/components/Header.svelte`, `Footer.svelte`, `CardLinkList.svelte`,
+  `navigator.languages`, goes to the matching locale route, else `/en-001/`).
+  There is no `/en/` site; `/en/…` and the old section URLs (`/guide/`, …) 404.
+- `src/lib/components/Header.svelte`, `Footer.svelte`,
   `MdLayout.svelte` : the site chrome.
 - `static/themes/*.css` : the 45 Lily Design System themes, switched at
   runtime by `ThemePicker.svelte`.
