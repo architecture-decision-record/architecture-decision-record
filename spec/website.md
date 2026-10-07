@@ -64,7 +64,7 @@ theme's `.card-grid`, `.card`, and `.intro` styles.
 
 ## Accessibility
 
-The site is checked with axe-core (WCAG 2.2 AA and best-practice rules) and passes
+The site is checked with axe-core (WCAG 2.2 AA and best-practice rules; `pnpm run a11y`, run by CI) and passes
 with zero violations on the home router, landing pages, documents, templates,
 examples, and search results, in left-to-right and right-to-left locales, at
 desktop and 390px widths. Rules that keep it so:

@@ -91,6 +91,11 @@ rule for that task.
    reports 0 broken links or anchors (the MADR `0005-example.md` sample is the
    only link it ignores).
 
-CI (`.github/workflows/ci.yml`) runs checks 4 to 6 on every push to `main` and
+7. `pnpm run a11y` (after the build) runs axe-core in a browser on key pages at
+   desktop and 390px width, with the phone search panel open, and checks colour
+   contrast on all 45 themes: 0 violations. Locally set `PW_CHANNEL=chrome` to use
+   an installed Chrome.
+
+CI (`.github/workflows/ci.yml`) runs checks 4 to 7 on every push to `main` and
 every pull request, so a change that breaks any of them is caught before it is
 published. Run them locally before committing.

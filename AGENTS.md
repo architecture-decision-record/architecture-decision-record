@@ -38,7 +38,7 @@ fix that file to match the spec (or change the spec deliberately).
    links and anchors resolve; the four MADR `0005-example.md` placeholders are ignored).
 2. In `architecture-decision-record.github.io`: `pnpm run content` leaves no uncommitted
    changes, `pnpm test` and `pnpm run check` pass, and after `pnpm run build`,
-   `pnpm run verify` reports 0 problems. CI (`.github/workflows/ci.yml`) runs all of these
+   `pnpm run verify` and `pnpm run a11y` report 0 problems. CI (`.github/workflows/ci.yml`) runs all of these
    and the locale audit on every push and pull request.
 3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
    for Claude-assisted work.

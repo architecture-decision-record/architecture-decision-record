@@ -15,12 +15,15 @@
 		"search-index": "node scripts/generate-search-index.mjs",
 		"content": "node scripts/sync-locales.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs",
 		"test": "node --test \"tests/*.test.mjs\"",
-		"verify": "node scripts/check-built-site.mjs"
+		"verify": "node scripts/check-built-site.mjs",
+		"a11y": "node scripts/check-accessibility.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^4.0.0",
 		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"axe-core": "^4.14.0",
+		"playwright": "^1.63.0",
 		"svelte": "^5.57.1",
 		"svelte-check": "^4.7.6",
 		"typescript": "^6.0.3",
