@@ -85,6 +85,12 @@ function render(markdown, slug, base) {
 	const seen = new Map();
 	marked.use({
 		renderer: {
+			// Code blocks scroll sideways on narrow screens; tabindex makes them reachable by keyboard.
+			code({ text, lang }) {
+				const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+				const language = lang?.split(/\s/)[0];
+				return `<pre tabindex="0"><code${language ? ` class="language-${language}"` : ''}>${escaped}\n</code></pre>\n`;
+			},
 			heading({ tokens, depth }) {
 				const inner = this.parser.parseInline(tokens);
 				let id = slugify(inner);

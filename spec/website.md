@@ -62,6 +62,27 @@ search results. A locale without a root `index.md` falls back to a plain list of
 its pages. English variants `en-gb` and `en-us` are `noindex`. Cards use the
 theme's `.card-grid`, `.card`, and `.intro` styles.
 
+## Accessibility
+
+The site is checked with axe-core (WCAG 2.2 AA and best-practice rules) and passes
+with zero violations on the home router, landing pages, documents, templates,
+examples, and search results, in left-to-right and right-to-left locales, at
+desktop and 390px widths. Rules that keep it so:
+
+- **Contrast in every theme.** The 45 Lily themes differ widely, and their accent
+  (`--color-primary`) and "muted" text colours fail AA contrast in about half of
+  them. Links and card titles therefore use the theme's text colour
+  (`--color-base-content`), underlined; muted-looking paragraphs use the same
+  colour. Do not reintroduce `--color-primary` or `--lily-text-muted` for text.
+  Verified on all 45 themes (landing page and a document).
+- **Phone search.** At 40rem and below, the search field opens over the row of
+  picker buttons, full width, inside the header (`src/lib/styles/theme.css`, plain
+  class selectors; the theme positions the panel inside `:where()`, so they win),
+  and the other pickers are hidden only while it is open.
+- **Keyboard.** Tab order follows the visual order; Enter opens search with the field
+  focused, Enter submits, Escape closes it and returns focus to the button. Code
+  blocks (`<pre>`) have `tabindex="0"` because they scroll sideways on narrow screens.
+
 ## Generated vs hand-authored
 
 | Path | Kind |

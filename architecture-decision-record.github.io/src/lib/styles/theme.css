@@ -78,8 +78,17 @@ body {
 	line-height: 1.6;
 }
 
+/* Links use the theme's text colour, underlined: the accent (primary) colour
+ * fails WCAG AA contrast on the page or card background in about half of the
+ * 45 themes (checked with axe-core on every theme). */
 a {
-	color: var(--color-primary);
+	color: var(--color-base-content);
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
 }
 
 .site-header-bar {
@@ -128,6 +137,58 @@ a {
 	margin-left: auto;
 }
 
+/* --- Phones: search opens over the picker buttons ---
+ * The theme drops the search panel below its button, which on a narrow
+ * screen runs off the edge and covers the page. At 40rem and below the panel
+ * instead fills the row of picker buttons, full width, inside the header (with
+ * its ⏎ button), and the other pickers are hidden only while it is open. The
+ * theme positions the panel inside :where() (zero specificity), so these plain
+ * class selectors win. Logical properties keep it correct for right-to-left
+ * pages (ar, ur).
+ */
+@media (max-width: 40rem) {
+	.site-header-controls {
+		position: relative;
+		flex: 1 1 100%;
+		justify-content: flex-end;
+		margin-left: 0;
+	}
+
+	.site-header-controls .picker-bar,
+	.site-header-controls .search-picker {
+		position: static;
+	}
+
+	.site-header-controls .search-picker-panel:not([hidden]) {
+		position: absolute;
+		inset-block: 0;
+		inset-inline: 0;
+		z-index: 20;
+		display: flex;
+		align-items: stretch;
+		min-width: 0;
+		max-height: none;
+		margin: 0;
+		padding: 0.25rem;
+		background-color: var(--lily-surface, var(--color-base-100));
+	}
+
+	.site-header-controls .search-picker-form {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	.site-header-controls .search-picker-input {
+		flex: 1 1 auto;
+		min-width: 0;
+	}
+
+	.site-header-controls .picker-bar:has(.search-picker-panel:not([hidden])) > :not(.search-picker),
+	.site-header-controls .picker-bar:has(.search-picker-panel:not([hidden])) .search-picker-button {
+		visibility: hidden;
+	}
+}
+
 main {
 	max-width: 64rem;
 	margin: 0 auto;
@@ -139,11 +200,12 @@ main {
 	margin-top: 3rem;
 	padding: 2rem 0;
 	font-size: 0.9rem;
-	color: var(--lily-text-muted, var(--color-base-content));
+	color: var(--color-base-content);
 }
 
+/* Full-strength text: fading it with opacity dropped contrast below 4.5:1 (WCAG AA). */
 .site-footer-notice {
-	opacity: 0.75;
+	margin: 0;
 }
 
 .back-link {
@@ -191,7 +253,7 @@ main {
 	border-left: 3px solid var(--color-primary);
 	margin-left: 0;
 	padding-left: 1rem;
-	color: var(--lily-text-muted, var(--color-base-content));
+	color: var(--color-base-content);
 }
 
 .prose table {
@@ -232,7 +294,7 @@ main {
 .card-description {
 	margin: 0.5rem 0 0;
 	font-size: 0.9rem;
-	color: var(--lily-text-muted, var(--color-base-content));
+	color: var(--color-base-content);
 }
 
 /* --- Home page intro ---
@@ -254,7 +316,7 @@ main {
 .intro p {
 	font-size: 1.15rem;
 	max-width: 42rem;
-	color: var(--lily-text-muted, var(--color-base-content));
+	color: var(--color-base-content);
 }
 
 .button-row {
@@ -300,5 +362,11 @@ main {
 .link-list-description {
 	margin: 0.35rem 0 0;
 	font-size: 0.9rem;
-	color: var(--lily-text-muted, var(--color-base-content));
+	color: var(--color-base-content);
+}
+
+/* Code blocks are keyboard-focusable (they scroll sideways on narrow screens). */
+.prose pre:focus-visible {
+	outline: 2px solid var(--color-base-content);
+	outline-offset: 2px;
 }
