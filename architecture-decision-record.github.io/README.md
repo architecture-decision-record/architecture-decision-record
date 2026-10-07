@@ -47,8 +47,8 @@ pnpm run check     # svelte-check
 - `src/routes/en/+page.svelte` : hand-authored home page (`/en/`).
 - `src/routes/en/skills/+page.svelte` : hand-authored page promoting the two
   Claude Code skills that ship in the parent repo's `skills/` directory.
-- `src/routes/{,guide,templates,examples,skills}/` : redirect-only routes that
-  forward the old pre-`/en/` URLs to `/en/…`.
+- `src/routes/+page.js` : redirects `/` to `/en/`. The old pre-`/en/` section
+  URLs (`/guide/`, `/templates/`, …) intentionally 404.
 - `src/lib/components/Header.svelte`, `Footer.svelte`, `CardLinkList.svelte`,
   `MdLayout.svelte` : the site chrome.
 - `static/themes/*.css` : the 45 Lily Design System themes, switched at

@@ -17,10 +17,10 @@ Every language lives under its own first path segment, so the English site is
 | `/en/skills/` | Claude Code skills |
 | `/<locale>/`, `/<locale>/<section>/<dir>/` | Translations (see [locale-specific-search-picker/](locale-specific-search-picker/index.md)) |
 
-The pre-`/en/` URLs (`/`, `/guide/…`, `/templates/…`, `/examples/…`, `/skills/`)
-are prerendered redirects (HTTP 308 semantics, emitted as meta refresh) to
-their `/en/` equivalents, so old links keep working. They are not in
-`sitemap.xml` or `llms.txt`. `en` is reserved: it is not a locale slug (the
+The pre-`/en/` URLs (`/guide/…`, `/templates/…`, `/examples/…`, `/skills/`)
+are **not** redirected: they return 404 (GitHub Pages serves `404.html`).
+Only `/` is a prerendered redirect (meta refresh) to `/en/`, so that the bare
+domain works. `en` is reserved: it is not a locale slug (the
 English locale directory is `en-001`).
 
 ## Generated vs hand-authored
