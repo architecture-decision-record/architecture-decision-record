@@ -105,7 +105,8 @@ function render(markdown, slug, base) {
 			if (resolved) token.href = resolved;
 		}
 	});
-	return marked.parse(markdown, { async: false });
+	// GitHub alert markers ("> [!IMPORTANT]") have no meaning here; the blockquote carries the note.
+	return marked.parse(markdown.replace(/^> \[!(?:IMPORTANT|NOTE|WARNING|TIP|CAUTION)\]\n/gim, ''), { async: false });
 }
 
 /**
@@ -183,65 +184,50 @@ export function firstParagraph(markdown, max = 170) {
 	return done() || firstItem;
 }
 
-/** @type {Record<string, Record<string, string>>} */
-const peerIds = (await import('#lib/locale-peers.json')).default;
+/** Indexes of the H2 sections of the assembled README shown as the six cards (see spec/website.md). */
+const CARD_SECTIONS = [0, 1, 6, 7, 8, 12];
 
-/** The page of `slug` that is the translation of the en-001 page `enKey` ("<section>/<dir>"). @param {string} slug @param {string} enKey */
-function peerKey(slug, enKey) {
-	const id = peerIds['en-001']?.[enKey];
-	return id ? Object.entries(peerIds[slug] ?? {}).find(([, v]) => v === id)?.[0] : undefined;
-}
-
-/** English (en-001) pages shown as cards on every locale landing page, in order. */
-const CARD_PAGES = [
-	'documents/how-to-start-using-adrs',
-	'documents/how-to-start-using-adrs-with-git',
-	'documents/suggestions-for-writing-good-adrs',
-	'documents/file-name-conventions-for-adrs'
-];
-const HERO_PAGE = 'documents/what-is-an-architecture-decision-record';
-
-/** @param {string} slug @param {string} key "<section>/<dir>" in that locale */
-async function pageInfo(slug, key) {
-	const [sectionDir, dir] = key.split('/');
-	const page = sectionsOf(slug).find((s) => s.dir === sectionDir)?.pages.find((p) => p.dir === dir);
-	if (!page) return null;
-	const load = files[`/src/content/locales/${slug}/${sectionDir}/${dir}.md`];
-	const markdown = load ? await load() : '';
-	// Some pages open with "##" rather than "#", and the index then falls back to the directory name.
-	const heading = /^#{1,6}\s+(.+?)\s*#*\s*$/m.exec(markdown)?.[1];
-	return { title: heading ? plain(heading) : page.title, text: firstParagraph(markdown), href: `/${slug}/${sectionDir}/${dir}/` };
+/**
+ * Split Markdown into H2 sections, ignoring "## " inside code fences.
+ * @param {string} markdown @returns {{title: string, body: string}[]}
+ */
+function h2Sections(markdown) {
+	/** @type {{title: string, body: string[]}[]} */
+	const out = [];
+	let fence = false;
+	for (const line of markdown.split('\n')) {
+		if (line.startsWith('```')) fence = !fence;
+		const h = !fence && /^##\s+(.+?)\s*#*\s*$/.exec(line);
+		if (h) out.push({ title: plain(h[1]), body: [] });
+		else out.at(-1)?.body.push(line);
+	}
+	return out.map((s) => ({ title: s.title, body: s.body.join('\n') }));
 }
 
 /**
- * The hero and six cards at the top of a locale landing page: the locale's own
- * translated titles and first paragraphs, so nothing here needs translating
- * separately. The hero is the "What is an architecture decision record?" page;
- * the cards are four guide documents plus the Templates and Examples sections.
+ * The landing page of a locale: its root index.md, the translated README. The
+ * title and first paragraph become the hero, six of its sections become cards
+ * (title and first prose paragraph, linking to the section's anchor), and the
+ * rest is rendered below. Null when the locale has no root index.md.
  * @param {string} slug
  */
 export async function landingOf(slug) {
-	const heroKey = peerKey(slug, HERO_PAGE);
-	const hero = heroKey ? await pageInfo(slug, heroKey) : null;
-	/** @type {{title: string, text: string, href: string}[]} */
-	const cards = [];
-	for (const enKey of CARD_PAGES) {
-		const key = peerKey(slug, enKey);
-		const info = key && (await pageInfo(slug, key));
-		if (info) cards.push(info);
-	}
-	for (const kind of ['templates', 'examples']) {
-		const section = sectionsOf(slug).find((s) => s.kind === kind);
-		if (!section?.hasIndex) continue;
-		// The section's own index lists its pages as links; show the count and the first names.
-		const load = files[`/src/content/locales/${slug}/${section.dir}/index.md`];
-		const names = load ? [...(await load()).matchAll(/^\s*[*-]\s+\[([^\]]+)\]\(/gm)].map((m) => plain(m[1])) : [];
-		const shown = (names.length ? names : section.pages.map((p) => p.title)).slice(0, 3);
-		cards.push({
-			title: section.title,
-			text: `${section.pages.length} · ${shown.join(' · ')} …`,
-			href: `/${slug}/${section.dir}/`
-		});
-	}
-	return { hero, cards };
+	const load = files[`/src/content/locales/${slug}/index.md`];
+	if (!load) return null;
+	const lines = (await load()).split('\n');
+	const h1 = lines.findIndex((l) => /^#\s+/.test(l));
+	let i = h1 + 1;
+	while (i < lines.length && !lines[i].trim()) i++;
+	const start = i;
+	while (i < lines.length && lines[i].trim()) i++;
+	const body = lines.slice(i).join('\n');
+	const sections = h2Sections(body);
+	return {
+		hero: { title: plain(lines[h1].replace(/^#\s+/, '')), text: plain(lines.slice(start, i).join(' ')) },
+		cards: CARD_SECTIONS.flatMap((n) => {
+			const s = sections[n];
+			return s ? [{ title: s.title, text: firstParagraph(s.body), href: `#${slugify(s.title)}` }] : [];
+		}),
+		html: render(body, slug, '')
+	};
 }

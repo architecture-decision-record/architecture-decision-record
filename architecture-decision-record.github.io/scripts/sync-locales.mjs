@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Copies every locale's pages from ../locales/<slug>/<section>/<dir>/index.md
-// (and each section's own index.md) into src/content/locales/<slug>/..., and
+// (and each section's own index.md, and the locale's own index.md) into src/content/locales/<slug>/..., and
 // writes src/lib/locale-pages.json, the per-locale tree that drives the
 // /<locale>/, /<locale>/<section>/ and /<locale>/<section>/<page>/ routes.
 // Reads the parent monorepo, so it runs with `pnpm run content`; the copied
@@ -50,6 +50,12 @@ for (const slug of slugs) {
 	const localeDir = path.join(localesRoot, slug);
 	const sections = [];
 	peers[slug] = {};
+	// The locale's own index.md is its landing page: the translated README.
+	const rootIndex = path.join(localeDir, 'index.md');
+	if (existsSync(rootIndex)) {
+		mkdirSync(path.join(outRoot, slug), { recursive: true });
+		copyFileSync(rootIndex, path.join(outRoot, slug, 'index.md'));
+	}
 	for (const sectionDir of subdirs(localeDir)) {
 		const sectionPath = path.join(localeDir, sectionDir);
 		const kind = kindByPeer.get(peerId(sectionPath));

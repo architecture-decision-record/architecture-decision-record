@@ -91,8 +91,19 @@ for loc in locs:
             if f=='README.md':
                 if not os.path.islink(q) or os.readlink(q)!='index.md': problems[loc].append(f'README.md must be a symlink to index.md: {q}')
             elif os.path.islink(q): problems[loc].append(f'unexpected symlink {q}')
+    # root index.md = the translated README: 15 sections, README.md symlink beside it
+    root_ok=os.path.isfile(f'{loc}/index.md')
+    if root_ok:
+        if not os.path.islink(f'{loc}/README.md'): problems[loc].append('root README.md must be a symlink to index.md')
+        nh=0;fence=False
+        for l in open(f'{loc}/index.md',encoding='utf8'):
+            if l.startswith('```'): fence=not fence
+            if not fence and l.startswith('## '): nh+=1
+        if nh!=15: problems[loc].append(f'root index.md has {nh} sections, expected 15')
+    else: problems[loc].append('missing root index.md (translated README)')
     allf=sum(len(fs) for _,_,fs in os.walk(loc))
-    if allf!=203: problems[loc].append(f'file count {allf} != 203')
+    want=205 if root_ok else 203
+    if allf!=want: problems[loc].append(f'file count {allf} != {want}')
 for loc in locs:
     pr=problems.get(loc,[])
     real=[p for p in pr if not p.startswith('(product')]

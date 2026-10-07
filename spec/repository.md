@@ -32,7 +32,11 @@ copied unchanged and never translated. A new page gets one freshly generated
 32-character hex id in `locales/en-001`, copied to its translation in every
 locale (the nine newest pages were given ids this way).
 
-A complete locale has exactly **203 files**.
+Each locale also has a root `index.md` (with a `README.md` symlink): its
+translated top-level README, which is the locale's landing page on the website
+(see [locales.md](locales.md#root-index-the-translated-readme)).
+
+A complete locale has exactly **205 files**.
 
 ## Counts
 
@@ -72,12 +76,12 @@ rule for that task.
 
 ## Verification
 
-1. `find locales/<code> \( -type f -o -type l \) | wc -l` is 203 (excluding `.DS_Store`).
+1. `find locales/<code> \( -type f -o -type l \) | wc -l` is 205 (excluding `.DS_Store`).
 2. Every relative link resolves. Known, accepted failures: four `0005-example.md`
    placeholders in the MADR template (`README.md` and `index.md`, two each).
 3. Every `#fragment` link matches a heading slug (letters, marks, numbers,
    `-` and `_` kept; spaces become `-`; duplicate headings get `-N`).
 4. `python3 scripts/audit-locales.py` exits 0: every locale has every page and file
-   (203 files), every `README.md` is a symlink to its `index.md` (the only symlinks allowed), no stray files,
+   (205 files), every `README.md` is a symlink to its `index.md` (the only symlinks allowed), no stray files,
    every slug is translated and clean, and all links and anchors resolve.
 5. `pnpm run check` in the website directory reports 0 errors.

@@ -16,7 +16,9 @@ a time; do not use parallel subagents.
 5. Make each directory's `README.md` a symlink to its `index.md`
    (`ln -s index.md README.md`), copy `.locale-peer-id`
    files from `locales/en-001` (67), and copy `LICENSE.md` files unchanged.
-6. Delete `.DS_Store`; confirm 203 files.
+6. Write the root `index.md` (the translated README; `ln -s index.md README.md`) as
+   described in [../spec/locales.md](../spec/locales.md#root-index-the-translated-readme).
+   Delete `.DS_Store`; confirm 205 files.
 7. Run `python3 scripts/audit-locales.py` and the other checks in
    [spec/repository.md](../spec/repository.md#verification).
 8. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`

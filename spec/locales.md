@@ -56,7 +56,7 @@ under another name) fail the audit and the sync, and are deleted.
 
 Counts: 30 locales, of which `en-001` is the source and 29 are translations or
 variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`;
-`tr-tr` is a copy of `tr-001`). Every one is complete: 203 files, 63 pages.
+`tr-tr` is a copy of `tr-001`). Every one is complete: 205 files, 63 pages, and a root index.
 
 `locales/index.md` lists each locale as `* [<Endonym> (<World>)](<code>/)`.
 `locales/locales-by-priority.md` records the translation order (all are
@@ -80,11 +80,43 @@ product name or a genuine cognate in that language (listed in
 names exactly. The English-to-local slug mapping is kept as a three-column
 TSV (section, English slug, localized directory) while translating.
 
+## Root index (the translated README)
+
+`locales/<code>/index.md` is the locale's translation of the top-level
+`README.md`, and the locale's landing page on the website. `README.md` beside it
+is a symlink. It has this fixed structure (the website and the audit rely on it):
+
+1. `# <title>` and one intro paragraph (the hero), then the "Important" note
+   (`> [!IMPORTANT]`), then the Contents list, the Templates list (13 entries),
+   and the Examples list (8 entries plus "many more"). Links are relative to
+   the locale root, for example `templates/<dir>/`.
+2. Exactly **15 `##` sections**, in this order: what is an ADR; how to start;
+   how to start with tools; how to start with git; Claude Code skills; file name
+   conventions; suggestions for writing good ADRs; ADR example templates;
+   teamwork advice; teamwork questions; next step concepts; architecture
+   diagrams, views and viewpoints; fitness functions; decision guardrails for
+   pull requests; for more information.
+3. Sections that exist as documents (all except skills, example templates, next
+   step, diagrams, guardrails, more information) are the locale's own translated
+   documents, with headings shifted so each starts at `##`. The other five are
+   translated from the README. "For more information" keeps the English titles
+   and URLs of external works and translates only the group labels and two
+   phrases. The teamwork questions document has no title of its own, so its
+   `##` title is added.
+4. Contents anchors are the heading slugs defined in
+   [repository.md](repository.md#verification). Headings must not start with a
+   capital "İ" (Turkish), whose lowercase form breaks anchors.
+
+`locales/en-001/index.md` is built the same way from English, and the top-level
+`README.md` stays the canonical English overview. A few README passages differ
+slightly from the documents they include (for example an extra tool bullet); the
+locale roots follow the documents.
+
 ## Translation workflow (per locale, serial)
 
 1. Translate 12 documents, 11 templates, 40 examples, plus the three section
    index pages.
-2. Make each directory's `README.md` a symlink to its `index.md`; copy `.locale-peer-id`
+2. Write the root `index.md` (above) and make each directory's `README.md` a symlink to its `index.md`; copy `.locale-peer-id`
    files from `locales/en-001`; copy `LICENSE.md` files unchanged.
 3. Run the verification in [repository.md](repository.md#verification).
 4. Append `* [<Endonym> (<World>)](<code>/)` to `locales/index.md`.
