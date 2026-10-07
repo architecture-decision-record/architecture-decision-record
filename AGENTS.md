@@ -36,7 +36,10 @@ fix that file to match the spec (or change the spec deliberately).
 
 1. `python3 scripts/audit-locales.py` exits 0 (205 files per locale, translated slugs,
    links and anchors resolve; the four MADR `0005-example.md` placeholders are ignored).
-2. `pnpm run check` in `architecture-decision-record.github.io` reports 0 errors.
+2. In `architecture-decision-record.github.io`: `pnpm run content` leaves no uncommitted
+   changes, `pnpm test` and `pnpm run check` pass, and after `pnpm run build`,
+   `pnpm run verify` reports 0 problems. CI (`.github/workflows/ci.yml`) runs all of these
+   and the locale audit on every push and pull request.
 3. Commits are SSH-signed; add `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`
    for Claude-assisted work.
 4. Deliver automatically: commit, push, and publish the site subtree when

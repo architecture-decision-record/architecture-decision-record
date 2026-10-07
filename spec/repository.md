@@ -84,4 +84,13 @@ rule for that task.
 4. `python3 scripts/audit-locales.py` exits 0: every locale has every page and file
    (205 files), every `README.md` is a symlink to its `index.md` (the only symlinks allowed), no stray files,
    every slug is translated and clean, and all links and anchors resolve.
-5. `pnpm run check` in the website directory reports 0 errors.
+5. In the website directory: `pnpm run content` leaves no uncommitted changes (the
+   generated files are current), `pnpm test` passes (the `/` language router
+   rules), and `pnpm run check` reports 0 errors.
+6. After `pnpm run build`, `pnpm run verify` crawls the prerendered pages and
+   reports 0 broken links or anchors (the MADR `0005-example.md` sample is the
+   only link it ignores).
+
+CI (`.github/workflows/ci.yml`) runs checks 4 to 6 on every push to `main` and
+every pull request, so a change that breaks any of them is caught before it is
+published. Run them locally before committing.
