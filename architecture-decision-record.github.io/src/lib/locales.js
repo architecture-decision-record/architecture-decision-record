@@ -40,8 +40,7 @@ export function isRtlSlug(slug) {
  * Per preference, the first rule that matches wins:
  *  1. the exact locale ("cy_GB" or "cy-GB" -> "cy-gb", "zh-TW" -> "zh-tw");
  *  2. Chinese by script or region ("zh-Hant", "zh-HK", "zh-MO" -> "zh-tw"; "zh-Hans" -> "zh-cn");
- *  3. English without a variant locale ("en", "en-AU") -> the English site, "/en/";
- *  4. the language's world locale ("de-DE", "pt-BR", "fi" -> "de-001", "pt-001", "fi-001").
+ *  3. the language's international *-001 locale ("en-AU", "de-DE", "pt-BR", "fi" -> "en-001", "de-001", "pt-001", "fi-001").
  * Preferences that match nothing are skipped; with no match at all the result
  * is "/en/". See spec/website.md.
  * @param {readonly string[]} languages
@@ -58,7 +57,6 @@ export function routeForLanguages(languages) {
 		if (region && LOCALE_SLUGS.includes(`${lang}-${region}`)) return `/${lang}-${region}/`;
 		if (lang === 'zh' && (script === 'hant' || region === 'hk' || region === 'mo')) return '/zh-tw/';
 		if (lang === 'zh' && script === 'hans') return '/zh-cn/';
-		if (lang === 'en') return '/en/';
 		if (LOCALE_SLUGS.includes(`${lang}-001`)) return `/${lang}-001/`;
 	}
 	return '/en/';

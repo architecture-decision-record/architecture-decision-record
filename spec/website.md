@@ -28,10 +28,9 @@ each preference, most preferred first, the first rule that matches wins:
    `en-US` to `/en-us/`;
 2. Chinese by script or region: `zh-Hant`, `zh-HK`, `zh-MO` go to `/zh-tw/`,
    `zh-Hans` to `/zh-cn/`;
-3. English without a variant locale (`en`, `en-AU`) goes to the English site,
-   `/en/`;
-4. the language's world locale: `de-DE`, `fr-CA`, `pt-BR`, `fi` go to `de-001`,
-   `fr-001`, `pt-001`, `fi-001`.
+3. the language's international `*-001` locale: `en-AU` goes to `/en-001/`,
+   `de-DE`, `fr-CA`, `pt-BR`, `fi` go to `/de-001/`, `/fr-001/`, `/pt-001/`,
+   `/fi-001/`. (`/en-001/` then forwards to `/en/` in the browser, see above.)
 
 A preference that matches nothing is skipped, and with no match at all the
 visitor goes to `/en/`. Without JavaScript (and for crawlers) `/` stays a static
