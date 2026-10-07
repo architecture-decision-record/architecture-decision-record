@@ -14,6 +14,11 @@ en-001 (source), en-gb, en-us, cy-001, cy-gb, zh-001, zh-cn, zh-tw, hi-001,
 es-001, fr-001, ar-001, bn-001, ru-001, pt-001, ur-001, id-001, ja-001,
 vi-001, de-001, sv-001, ko-001, nl-001, da-001, et-001, it-001, th-001, fi-001.
 
+Turkish is in progress and not yet one of the 28: `tr-001` (the world locale) and
+`tr-tr` (identical content, kept for the regional name) each hold a partial translation
+(188 of 203 files, 15 pages missing). Neither is listed in `locales/index.md` or wired into
+the website until `scripts/audit-locales.py` reports them OK.
+
 `locales/locales-by-priority.md` records the translation order.
 
 ## Translating directory names
