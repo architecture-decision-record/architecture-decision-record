@@ -32,3 +32,34 @@ const RTL = new Set(['ar', 'ur', 'he', 'fa']);
 export function isRtlSlug(slug) {
 	return RTL.has(slug.split('-')[0]);
 }
+
+/**
+ * The route to send a visitor to, from the browser's language preferences
+ * (`navigator.languages`, most preferred first). Used by the "/" page.
+ *
+ * Per preference, the first rule that matches wins:
+ *  1. the exact locale ("cy_GB" or "cy-GB" -> "cy-gb", "zh-TW" -> "zh-tw");
+ *  2. Chinese by script or region ("zh-Hant", "zh-HK", "zh-MO" -> "zh-tw"; "zh-Hans" -> "zh-cn");
+ *  3. English without a variant locale ("en", "en-AU") -> the English site, "/en/";
+ *  4. the language's world locale ("de-DE", "pt-BR", "fi" -> "de-001", "pt-001", "fi-001").
+ * Preferences that match nothing are skipped; with no match at all the result
+ * is "/en/". See spec/website.md.
+ * @param {readonly string[]} languages
+ * @returns {string} a path such as "/cy-gb/" or "/en/"
+ */
+export function routeForLanguages(languages) {
+	for (const raw of languages) {
+		const parts = String(raw).trim().replace(/_/g, '-').toLowerCase().split('-').filter(Boolean);
+		const lang = parts[0];
+		if (!lang) continue;
+		const script = parts.find((p, i) => i > 0 && /^[a-z]{4}$/.test(p));
+		const region = parts.find((p, i) => i > 0 && /^([a-z]{2}|\d{3})$/.test(p));
+
+		if (region && LOCALE_SLUGS.includes(`${lang}-${region}`)) return `/${lang}-${region}/`;
+		if (lang === 'zh' && (script === 'hant' || region === 'hk' || region === 'mo')) return '/zh-tw/';
+		if (lang === 'zh' && script === 'hans') return '/zh-cn/';
+		if (lang === 'en') return '/en/';
+		if (LOCALE_SLUGS.includes(`${lang}-001`)) return `/${lang}-001/`;
+	}
+	return '/en/';
+}

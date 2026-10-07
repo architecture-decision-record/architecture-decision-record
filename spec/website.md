@@ -19,8 +19,23 @@ Every language lives under its own first path segment, so the English site is
 
 The pre-`/en/` URLs (`/guide/…`, `/templates/…`, `/examples/…`, `/skills/`)
 are **not** redirected: they return 404 (GitHub Pages serves `404.html`).
-Only `/` is a prerendered redirect (meta refresh) to `/en/`, so that the bare
-domain works. `en` is reserved: it is not a locale slug (the
+`/` is the language router: a prerendered static page whose script reads
+`navigator.languages` and replaces itself (no extra history entry) with the
+visitor's locale route, via `routeForLanguages()` in `src/lib/locales.js`. For
+each preference, most preferred first, the first rule that matches wins:
+
+1. the exact locale: `cy_GB` or `cy-GB` goes to `/cy-gb/`, `zh-TW` to `/zh-tw/`,
+   `en-US` to `/en-us/`;
+2. Chinese by script or region: `zh-Hant`, `zh-HK`, `zh-MO` go to `/zh-tw/`,
+   `zh-Hans` to `/zh-cn/`;
+3. English without a variant locale (`en`, `en-AU`) goes to the English site,
+   `/en/`;
+4. the language's world locale: `de-DE`, `fr-CA`, `pt-BR`, `fi` go to `de-001`,
+   `fr-001`, `pt-001`, `fi-001`.
+
+A preference that matches nothing is skipped, and with no match at all the
+visitor goes to `/en/`. Without JavaScript (and for crawlers) `/` stays a static
+page with a link to `/en/` and `/en/` as canonical. `en` is reserved: it is not a locale slug (the
 English locale directory is `en-001`).
 
 ## Generated vs hand-authored
