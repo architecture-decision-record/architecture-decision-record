@@ -144,7 +144,7 @@
 						textSize: 'Text size',
 						share: 'Share Picker'
 					}}
-					searchProps={{ action: `/${localeToSlug(locale)}/` }}
+					searchProps={{ action: locale === 'en' ? '/en/' : `/${localeToSlug(locale)}/` }}
 					themesUrl="/themes/"
 					themes={themeSlugs}
 					themeProps={{

@@ -35,7 +35,15 @@ each preference, most preferred first, the first rule that matches wins:
 
 A preference that matches nothing is skipped, and with no match at all the
 visitor goes to `/en/`. Without JavaScript (and for crawlers) `/` stays a static
-page with a link to `/en/` and `/en/` as canonical. `en` is reserved: it is not a locale slug (the
+page with a link to `/en/` and `/en/` as canonical. `/en/` is also English search: `/en/?<query>` shows results from the en-001
+index (the picker's search form posts there when English is selected).
+
+en-001 and the English site are one language. In the browser, `/en-001/` (with
+any `?query`) forwards to `/en/`, and `/en-001/documents|templates|examples/…`
+pages forward to their `/en/guide|templates|examples/…` counterparts. en-001
+pages with no counterpart (`aws-adr-process`,
+`guidelines-to-achieve-sustainable-decisions`,
+`decision-sustainability-criteria`) are served as they are. `en` is reserved: it is not a locale slug (the
 English locale directory is `en-001`).
 
 ## Generated vs hand-authored

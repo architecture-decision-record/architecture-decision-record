@@ -66,3 +66,22 @@ export async function pathForLocale(pathname, toValue) {
 	if (!target) return `/${toSlug}/`;
 	return `/${toSlug}/${target}`;
 }
+
+/**
+ * Where an en-001 locale page forwards to on the English site ("/en/..."), or
+ * null when it has no counterpart there and is served as is. The English site
+ * and en-001 are one language: see spec/website.md.
+ * @param {string} pathname e.g. "/en-001/", "/en-001/documents/<dir>/"
+ * @returns {string | null}
+ */
+export function englishSiteRedirect(pathname) {
+	const here = parseLocalePath(pathname);
+	if (decode(pathname).split('/').filter(Boolean).join('/') === SOURCE) return '/en/';
+	if (!here || here.slug !== SOURCE) return null;
+	const [section, dir] = here.key.split('/');
+	const route = Object.entries(ENGLISH_ROUTES).find(([, s]) => s === section)?.[0];
+	if (!route) return null;
+	if (!dir) return `/en/${route}/`;
+	const list = /** @type {{slug: string}[] | undefined} */ (/** @type {any} */ (manifest)[route]);
+	return list?.some((p) => p.slug === dir) ? `/en/${route}/${dir}/` : null;
+}

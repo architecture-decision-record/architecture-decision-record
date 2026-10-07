@@ -1,5 +1,15 @@
 <script>
 	import manifest from '#lib/manifest.json';
+	import { page } from '$app/state';
+	import { queryFromSearch } from '#lib/search.js';
+	import SearchResults from '#lib/components/SearchResults.svelte';
+
+	// "/en/?<query>" is English search (the picker's search form posts here).
+	// location.search exists only in the browser; prerendering shows the contents.
+	let query = $state('');
+	$effect(() => {
+		query = queryFromSearch(page.url.search);
+	});
 </script>
 
 <svelte:head>
@@ -9,6 +19,14 @@
 		content="Templates, examples, and a Claude Code skill for writing architecture decision records (ADRs)."
 	/>
 </svelte:head>
+
+{#if query}
+	<section class="locale-search" lang="en" dir="ltr">
+		<h1>{query}</h1>
+		<p class="locale-label">en</p>
+		<SearchResults slug="en-001" />
+	</section>
+{:else}
 
 <section class="intro">
 	<h1>Architecture decision record (ADR)</h1>
@@ -60,3 +78,4 @@
 		</li>
 	</ul>
 </section>
+{/if}
