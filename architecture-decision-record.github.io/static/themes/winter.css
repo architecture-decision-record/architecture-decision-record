@@ -2079,6 +2079,7 @@
         .locale-picker,
         .text-size-picker,
         .search-picker,
+        .link-picker,
         .share-picker,
         .date-time-picker
     ) {
@@ -2091,6 +2092,7 @@
         .locale-picker-button,
         .text-size-picker-button,
         .search-picker-button,
+        .link-picker-button,
         .share-picker-button,
         .date-time-picker-button
     ) {
@@ -2126,6 +2128,7 @@
         .locale-picker-icon,
         .text-size-picker-icon,
         .motion-picker-icon,
+        .link-picker-icon,
         .share-picker-icon,
         .search-picker-icon
     ) {
@@ -2182,6 +2185,31 @@
 
     :where(.share-picker-target:hover, .share-picker-copy:hover) {
         background-color: var(--lily-surface-alt);
+    }
+
+    /* link-picker's list holds real page links (a disclosure, not a menu),
+       so its items get the share list's treatment; the current page is
+       marked by aria-current and shown in bold. */
+    :where(.link-picker-list) > :where(.link-picker-list-item) {
+        list-style: none;
+    }
+
+    :where(.link-picker-link) {
+        display: block;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        color: var(--lily-text);
+        text-decoration: none;
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    :where(.link-picker-link:hover) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    :where(.link-picker-link[aria-current="page"]) {
+        font-weight: 600;
+        background-color: var(--lily-surface-sunken);
     }
 
     /* Copy feedback. Never display:none this — that silences the live
@@ -2465,6 +2493,7 @@
         .locale-picker-tooltip,
         .text-size-picker-tooltip,
         .motion-picker-tooltip,
+        .link-picker-tooltip,
         .share-picker-tooltip,
         .search-picker-tooltip,
         .date-time-picker-tooltip
@@ -2489,6 +2518,7 @@
         .locale-picker-tooltip,
         .text-size-picker-tooltip,
         .motion-picker-tooltip,
+        .link-picker-tooltip,
         .share-picker-tooltip,
         .search-picker-tooltip,
         .date-time-picker-tooltip
@@ -2505,6 +2535,7 @@
         .locale-picker-tooltip,
         .text-size-picker-tooltip,
         .motion-picker-tooltip,
+        .link-picker-tooltip,
         .share-picker-tooltip,
         .search-picker-tooltip,
         .date-time-picker-tooltip
@@ -2557,6 +2588,8 @@
         .theme-picker-list,
         .locale-picker-list,
         .text-size-picker-list,
+        .motion-picker-list,
+        .link-picker-list,
         .share-picker-list,
         .search-picker-panel
     ) {
@@ -2582,17 +2615,60 @@
         .theme-picker-list,
         .locale-picker-list,
         .text-size-picker-list,
+        .motion-picker-list,
+        .link-picker-list,
         .share-picker-list,
         .search-picker-panel
     )[hidden] {
         display: none;
     }
 
-    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list)
+    /* Popups open under their button, aligned to its start edge, and flip to
+       its end edge (or above it) when they would run off the viewport. A header
+       picker near the right edge otherwise overflows, and focusing the popup
+       scrolls the whole page sideways. `position: fixed` makes the viewport the
+       containing block that the flip fallbacks are checked against; browsers
+       without anchor positioning keep the absolute placement above. */
+    @supports (position-area: block-end) {
+        :where(.theme-picker) { anchor-name: --lily-theme-picker; }
+        :where(.locale-picker) { anchor-name: --lily-locale-picker; }
+        :where(.text-size-picker) { anchor-name: --lily-text-size-picker; }
+        :where(.motion-picker) { anchor-name: --lily-motion-picker; }
+        :where(.link-picker) { anchor-name: --lily-link-picker; }
+        :where(.share-picker) { anchor-name: --lily-share-picker; }
+        :where(.search-picker) { anchor-name: --lily-search-picker; }
+        :where(.theme-picker-list) { position-anchor: --lily-theme-picker; }
+        :where(.locale-picker-list) { position-anchor: --lily-locale-picker; }
+        :where(.text-size-picker-list) { position-anchor: --lily-text-size-picker; }
+        :where(.motion-picker-list) { position-anchor: --lily-motion-picker; }
+        :where(.link-picker-list) { position-anchor: --lily-link-picker; }
+        :where(.share-picker-list) { position-anchor: --lily-share-picker; }
+        :where(.search-picker-panel) { position-anchor: --lily-search-picker; }
+        :where(
+            .theme-picker-list,
+            .locale-picker-list,
+            .text-size-picker-list,
+            .motion-picker-list,
+            .link-picker-list,
+            .share-picker-list,
+            .search-picker-panel
+        ) {
+            position: fixed;
+            inset: auto;
+            position-area: block-end span-inline-end;
+            position-try-fallbacks: flip-inline, flip-block, flip-block flip-inline;
+            min-width: 0;
+            width: max-content;
+            max-width: calc(100vw - 1rem);
+        }
+    }
+
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
         > :where(
             .theme-picker-option,
             .locale-picker-option,
-            .text-size-picker-option
+            .text-size-picker-option,
+            .motion-picker-option
         ) {
         padding: var(--lily-space-xs) var(--lily-space-sm);
         border-radius: var(--lily-radius-sm);
@@ -2601,7 +2677,7 @@
 
     /* data-active is the keyboard cursor (aria-activedescendant); focus
        stays on the listbox, so this is the only visible cue for it. */
-    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list)
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
         > :where([data-active]) {
         background-color: var(--lily-surface-alt);
         outline: var(--lily-focus-ring);
@@ -2610,7 +2686,7 @@
 
     /* aria-selected marks the applied theme/locale, which is not the
        same thing as the keyboard cursor. Both can be visible at once. */
-    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list)
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
         > :where([aria-selected="true"]) {
         font-weight: 600;
         background-color: var(--lily-surface-sunken);

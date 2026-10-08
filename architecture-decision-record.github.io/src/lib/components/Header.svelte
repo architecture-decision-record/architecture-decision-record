@@ -12,6 +12,7 @@
 	import { page } from '$app/state';
 	import { LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
 	import { pathForLocale } from '#lib/locale-nav.js';
+	import localeSections from '#lib/locale-sections.json';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
 	const LOCALE_STORAGE_KEY = 'adr-locale';
@@ -111,6 +112,30 @@
 		}
 	];
 
+	// The link picker (a home icon, leftmost in the bar): the locale's landing page,
+	// its templates and examples indexes, and the GitHub repository. Hrefs follow the
+	// locale being viewed, because section directories are translated.
+	const REPOSITORY = 'https://github.com/architecture-decision-record/architecture-decision-record';
+	const currentPath = $derived.by(() => {
+		try {
+			return decodeURIComponent(page.url.pathname);
+		} catch {
+			return page.url.pathname;
+		}
+	});
+	const links = $derived.by(() => {
+		const slug = localeToSlug(urlLocale);
+		const sections = (localeSections as Record<string, Record<string, string>>)[slug] ?? {};
+		const home = `/${slug}/`;
+		const entries = [{ label: 'Home', href: home, current: currentPath === home }];
+		for (const [label, kind] of [['Templates', 'templates'], ['Examples', 'examples']] as const) {
+			if (!sections[kind]) continue;
+			const href = `${home}${sections[kind]}/`;
+			entries.push({ label, href, current: currentPath === href });
+		}
+		return [...entries, { label: 'GitHub', href: REPOSITORY, newTab: true }];
+	});
+
 	// The closed theme control is one glyph, so nothing else on the page
 	// states the active theme. Tracked here (via themeProps.onChange) only
 	// to feed the visually-hidden status paragraph below.
@@ -135,6 +160,7 @@
 			<div class="site-header-controls">
 				<PickerBar
 					labels={{
+						link: 'Site links',
 						search: 'Search this site',
 						searchInput: 'Search terms',
 						searchSubmit: 'Search',
@@ -143,6 +169,8 @@
 						textSize: 'Text size',
 						share: 'Share Picker'
 					}}
+					{links}
+					linkProps={{ navigate: (href: string) => goto(href) }}
 					searchProps={{ action: `/${localeToSlug(locale)}/` }}
 					themesUrl="/themes/"
 					themes={themeSlugs}

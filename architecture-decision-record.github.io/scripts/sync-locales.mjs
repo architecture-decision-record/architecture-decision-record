@@ -36,6 +36,9 @@ const kindByPeer = new Map(KINDS.map((k) => [peerId(path.join(localesRoot, SOURC
 
 rmSync(outRoot, { recursive: true, force: true });
 const tree = {};
+// slug -> { templates: "<dir>", examples: "<dir>" }: where a locale's section indexes live,
+// small enough to ship to every page (the header's link picker uses it).
+const sectionDirs = {};
 // slug -> { "<section>/": peerId, "<section>/<dir>": peerId }: lets the language
 // picker find the same page in another locale.
 const peers = {};
@@ -82,8 +85,10 @@ for (const slug of slugs) {
 	}
 	sections.sort((a, b) => KINDS.indexOf(a.kind) - KINDS.indexOf(b.kind));
 	tree[slug] = sections;
+	sectionDirs[slug] = Object.fromEntries(sections.filter((s) => s.hasIndex).map((s) => [s.kind, s.dir]));
 }
 
 writeFileSync(path.join(siteRoot, 'src/lib/locale-pages.json'), JSON.stringify(tree));
 writeFileSync(path.join(siteRoot, 'src/lib/locale-peers.json'), JSON.stringify(peers));
+writeFileSync(path.join(siteRoot, 'src/lib/locale-sections.json'), JSON.stringify(sectionDirs));
 console.log(`Synced ${pages} locale page(s) for ${slugs.length} locale(s) into src/content/locales/ and src/lib/locale-pages.json`);

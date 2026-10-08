@@ -3,3 +3,9 @@ packages:
 
 allowBuilds:
   esbuild: true
+
+# The project's own design system is exempt from the 1-day release-age policy,
+# so new Lily releases can be adopted as soon as they are published. Every other
+# package keeps the default policy.
+minimumReleaseAgeExclude:
+  - '@lilydesignsystem/*'
