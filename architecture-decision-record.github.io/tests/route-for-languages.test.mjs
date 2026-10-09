@@ -31,9 +31,9 @@ const cases = [
 	[['tr-CY'], '/tr-001/'],
 	// first usable preference wins; unmatched ones are skipped
 	[['xx', 'fr-CA'], '/fr-001/'],
-	[['sw', 'sw-KE', 'ja'], '/ja-001/'],
+	[['am', 'am-ET', 'ja'], '/ja-001/'],
 	// nothing matches: English
-	[['sw-KE'], '/en-001/'],
+	[['am-ET'], '/en-001/'],
 	[['nb-NO'], '/en-001/'],
 	[[], '/en-001/'],
 	[[''], '/en-001/']

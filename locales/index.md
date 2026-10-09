@@ -30,3 +30,4 @@
 * [Türkçe (Dünya)](tr-001/)
 * [Türkçe (Türkiye)](tr-tr/)
 * [Íslenska (Heimurinn)](is-001/)
+* [Kiswahili (Dunia)](sw-001/)
