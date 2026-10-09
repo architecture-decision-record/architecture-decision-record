@@ -14,6 +14,7 @@
 * [বাংলা (বিশ্ব)](bn-001/)
 * [Русский (мир)](ru-001/)
 * [Português (Mundo)](pt-001/)
+* [Português (Brasil)](pt-br/)
 * [اردو (دنیا)](ur-001/)
 * [Bahasa Indonesia (Dunia)](id-001/)
 * [日本語 (世界)](ja-001/)
