@@ -38,6 +38,7 @@ for dp,_,fs in os.walk(SRC):
         if (f=='README.md') != os.path.islink(q) or (f=='README.md' and os.readlink(q)!='index.md'):
             print('SOURCE README/symlink problem',q); sys.exit(1)
 problems=collections.defaultdict(list)
+if os.system('python3 ../scripts/build-locale-sitemaps.py --check')!=0: problems['sitemaps'].append('a locale sitemap.xml is stale: run scripts/build-locale-sitemaps.py')
 for loc in locs:
     secs,pages=tree(loc)
     # section dirs: map by peer id; examples section has empty id -> match by being the remaining
@@ -101,7 +102,8 @@ for loc in locs:
             if not fence and l.startswith('## '): nh+=1
         if nh!=15: problems[loc].append(f'root index.md has {nh} sections, expected 15')
     else: problems[loc].append('missing root index.md (translated README)')
-    allf=sum(len(fs) for _,_,fs in os.walk(loc))
+    allf=sum(len([f for f in fs if f!='sitemap.xml']) for _,_,fs in os.walk(loc))
+    if not os.path.isfile(f'{loc}/sitemap.xml'): problems[loc].append('missing sitemap.xml (run scripts/build-locale-sitemaps.py)')
     want=205 if root_ok else 203
     if allf!=want: problems[loc].append(f'file count {allf} != {want}')
 for loc in locs:

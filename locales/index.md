@@ -29,3 +29,4 @@
 * [Suomi (Maailma)](fi-001/)
 * [Türkçe (Dünya)](tr-001/)
 * [Türkçe (Türkiye)](tr-tr/)
+* [Íslenska (Heimurinn)](is-001/)
