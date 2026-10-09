@@ -1,0 +1,3610 @@
+/* ============================================================================
+ * Lily theme: forest
+ *
+ * Standalone Lily Design System theme — declares the theme tokens and inlines
+ * the component CSS for all 492 Lily components, so this single file is the
+ * only stylesheet required to render a Lily-styled page.
+ *
+ * Credit for the theme source: DaisyUI (https://daisyui.com/)
+ *
+ * Upstream tracked: DaisyUI v5-era theme palette, adapted to Lily tokens and hooks.
+ * ========================================================================= */
+
+/* Theme tokens — the colour, radius, border, and depth variables consumed
+ * by every Lily component rule below. The theme applies by default (`:root`)
+ * and also when explicitly opted into via `<html data-theme="forest">`,
+ * so multiple themes can coexist in one document and be switched at runtime
+ * by updating the `data-theme` attribute. */
+
+:where(:root, :root[data-theme="forest"]) {
+    color-scheme: dark;
+
+    /* Page-level surface (primary canvas). Sits behind body copy
+       and primary content areas. Lightest base shade in light
+       themes, deepest in dark themes. */
+    --color-base-100: oklch(20.84% 0.008 17.911);
+    /* Secondary surface — section panels, card backgrounds,
+       sidebars, table-header fills. One step away from the page
+       surface. */
+    --color-base-200: oklch(18.52% 0.007 17.911);
+    /* Tertiary surface — dividers, sunken wells, hover-row
+       backgrounds. The most muted of the three base shades. */
+    --color-base-300: oklch(16.2% 0.007 17.911);
+    /* Primary text colour. High-contrast against base-100 to meet
+       WCAG contrast ratios for body copy. */
+    --color-base-content: oklch(83.77% 0.001 17.911);
+    /* Primary brand / action colour. Used on primary buttons,
+       active navigation items, selected states, and the focus
+       ring. */
+    --color-primary: oklch(68.63% 0.185 148.958);
+    /* Foreground colour used over `--color-primary` fills (so
+       primary buttons retain a guaranteed contrast ratio). */
+    --color-primary-content: oklch(0% 0 0);
+    /* Secondary brand colour. Pressed/hover state for primary
+       buttons and visited links; also drives the secondary chrome
+       family. */
+    --color-secondary: oklch(69.78% 0.135 168.327);
+    /* Foreground colour used over `--color-secondary` fills. */
+    --color-secondary-content: oklch(13.96% 0.027 168.327);
+    /* Accent colour — used sparingly for emphasis, the AI label,
+       illustrations, and tertiary call-outs. */
+    --color-accent: oklch(70.63% 0.119 185.713);
+    /* Foreground colour used over `--color-accent` fills. */
+    --color-accent-content: oklch(14.12% 0.023 185.713);
+    /* Neutral chrome surface — footer bars, code blocks,
+       tooltips, government-banner strips. Typically the theme's
+       darkest neutral. */
+    --color-neutral: oklch(30.7% 0.039 171.364);
+    /* Foreground colour used over `--color-neutral` fills. */
+    --color-neutral-content: oklch(86.14% 0.007 171.364);
+    /* Informational status colour — informational banners, links,
+       'did-you-know' callouts. */
+    --color-info: oklch(72.06% 0.191 231.6);
+    /* Foreground colour used over `--color-info` fills. */
+    --color-info-content: oklch(0% 0 0);
+    /* Success / confirmation colour — used on success panels,
+       completed step indicators, validation pass states, and the
+       green RAG status. */
+    --color-success: oklch(64.8% 0.15 160);
+    /* Foreground colour used over `--color-success` fills. */
+    --color-success-content: oklch(0% 0 0);
+    /* Warning colour — yellow/amber band; used on phase banners,
+       in-progress states, validation warnings, and the amber RAG
+       status. */
+    --color-warning: oklch(84.71% 0.199 83.87);
+    /* Foreground colour used over `--color-warning` fills. Often
+       dark so text remains legible on a bright yellow background. */
+    --color-warning-content: oklch(0% 0 0);
+    /* Error / destructive colour — used on alert dialogs, error
+       messages, validation failures, urgent care cards, and the
+       red RAG status. */
+    --color-error: oklch(71.76% 0.221 22.18);
+    /* Foreground colour used over `--color-error` fills. */
+    --color-error-content: oklch(0% 0 0);
+    /* Smallest corner radius. Applied to chips, badges, switches,
+       and radio/checkbox containers (mapped to `--lily-radius-
+       sm`). */
+    --radius-selector: 1rem;
+    /* Medium corner radius. Applied to inputs, buttons, menu
+       items, tooltips, and most everyday form controls (mapped to
+       `--lily-radius-md`). */
+    --radius-field: 2rem;
+    /* Largest corner radius. Applied to cards, dialogs, drawers,
+       and hero blocks (mapped to `--lily-radius-lg`). */
+    --radius-box: 1rem;
+    /* Base size for selector-style controls (checkbox/radio glyph
+       size, switch thumb diameter). Currently unused by Lily's
+       baseline component rules but available for theme
+       extensions. */
+    --size-selector: 0.25rem;
+    /* Base size for field-style controls (input height
+       multiplier). Currently unused by Lily's baseline component
+       rules but available for theme extensions. */
+    --size-field: 0.25rem;
+    /* Default border width applied to inputs, buttons, dividers,
+       table cells, etc. Single source of truth for the system's
+       stroke weight. */
+    --border: 1px;
+    /* Depth flag (0 or 1). Lily's baseline rules read it
+       implicitly via the shadow tokens; a depth-0 theme
+       effectively renders flat. */
+    --depth: 0;
+    /* Noise flag (0 or 1). Reserved for theme extensions that
+       want to layer a subtle texture; the baseline rules do not
+       consume it. */
+    --noise: 0;
+}
+
+/* ----------------------------------------------------------------------------
+ * Lily component styling — applied automatically once this theme stylesheet
+ * is loaded. Every Lily class hook (492 components) consumes the theme tokens
+ * declared above, so no other stylesheet is required for the theme to render.
+ *
+ * Rules live in @layer lily with :where() selectors so the specificity stays
+ * at 0 — application CSS always wins. To replace a Lily component's default
+ * look, declare a higher-specificity rule (or a later @layer) in your own
+ * stylesheet.
+ * -------------------------------------------------------------------------- */
+
+@layer lily {
+    /* ==========================================================================
+     * Tokens & primitives
+     * --------------------------------------------------------------------------
+     * Lily exposes a small, stable set of derived tokens (the `--lily-*`
+     * family) layered on top of the upstream theme primitives (the
+     * `--color-*`, `--radius-*`, `--border`, `--depth`, `--noise` family).
+     *
+     * Component rules consume only the `--lily-*` tokens. That indirection
+     * means a consumer can swap upstream themes (or invent a new one) without
+     * touching component CSS — the component rules below remain stable
+     * because their inputs do.
+     * ====================================================================== */
+
+    :where(:root) {
+        /* --- Surfaces ------------------------------------------------------ */
+        /* Default page surface — the canvas behind body copy. */
+        --lily-surface: var(--color-base-100);
+        /* Secondary surface — section panels, sidebars, table headers,
+           muted callouts. One step away from the page background. */
+        --lily-surface-alt: var(--color-base-200);
+        /* Sunken surface — used behind progress tracks, skeletons, and
+           inset wells. Suggests depth without requiring a shadow. */
+        --lily-surface-sunken: var(--color-base-300);
+
+        /* --- Text ---------------------------------------------------------- */
+        /* Primary body-copy colour. Maps to the theme's high-contrast
+           reading colour. */
+        --lily-text: var(--color-base-content);
+        /* Error text: the theme's error colour pulled toward the theme's own reading colour (`--color-base-content`, not `--lily-text`, which a host page may override) so it
+           keeps WCAG contrast as text on the page and on the error-tinted
+           callout surface (`--color-error` itself is a fill colour). */
+        --lily-error-text: color-mix(
+            in oklch,
+            var(--color-error) 22%,
+            var(--color-base-content)
+        );
+        /* Muted / secondary text — mixed 70% with transparent to keep the
+           hue but lower contrast for captions, helptext, placeholders. */
+        --lily-text-muted: color-mix(
+            in oklch,
+            var(--color-base-content) 70%,
+            transparent
+        );
+
+        /* --- Borders ------------------------------------------------------- */
+        /* Default border — 20% blend with body content colour, low-contrast,
+           used for subtle dividers between content blocks. */
+        --lily-border: color-mix(
+            in oklch,
+            var(--color-base-content) 20%,
+            transparent
+        );
+        /* Higher-contrast border — 40% blend, used on inputs, buttons, and
+           anywhere a clear edge is required (WCAG non-text contrast). */
+        --lily-border-strong: color-mix(
+            in oklch,
+            var(--color-base-content) 40%,
+            transparent
+        );
+
+        /* --- Focus ring ---------------------------------------------------- */
+        /* Outline colour for `:focus-visible`. Always the primary brand
+           colour so focus is visually tied to interactive intent. */
+        --lily-focus-ring: var(--color-primary);
+
+        /* --- Radii --------------------------------------------------------- */
+        /* Three tiers of corner rounding. `sm` for chips/badges,
+           `md` for inputs/buttons/cards, `lg` for dialogs/heroes. */
+        --lily-radius-sm: var(--radius-selector);
+        --lily-radius-md: var(--radius-field);
+        --lily-radius-lg: var(--radius-box);
+
+        /* --- Spacing scale ------------------------------------------------- */
+        /* Five-step spacing scale used by every gap, padding, and margin.
+           Linear progression keeps rhythm consistent at any zoom level. */
+        --lily-space-xs: 0.25rem;
+        --lily-space-sm: 0.5rem;
+        --lily-space-md: 1rem;
+        --lily-space-lg: 1.5rem;
+        --lily-space-xl: 2rem;
+
+        /* --- Typography ---------------------------------------------------- */
+        /* Body font stack — system fonts first so consumers get a
+           native-feeling baseline without shipping a web font. */
+        --lily-font-body:
+            system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+            Arial, sans-serif;
+        /* Monospaced font stack — used by code, kbd, identifiers, and
+           anywhere alignment matters more than reading speed. */
+        --lily-font-mono:
+            ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+            "Liberation Mono", monospace;
+
+        /* --- Shadows ------------------------------------------------------- */
+        /* Three depth tiers. The shadow colour is derived from the body
+           content token so it adapts to light/dark themes automatically. */
+        --lily-shadow-sm: 0 1px 2px
+            color-mix(in oklch, var(--color-base-content) 8%, transparent);
+        --lily-shadow-md: 0 4px 12px
+            color-mix(in oklch, var(--color-base-content) 12%, transparent);
+        --lily-shadow-lg: 0 12px 32px
+            color-mix(in oklch, var(--color-base-content) 16%, transparent);
+    }
+
+    /* Focus ring — every interactive Lily class hook gets the same visible
+       focus indicator. Centralising the selector means a consumer can
+       restyle every focus state at once by overriding `--lily-focus-ring`
+       (or this rule) rather than chasing 100+ component selectors. */
+    :where(
+        [class$="-input"],
+        [class$="-button"],
+        [class$="-link"],
+        [class$="-list-item"],
+        [class$="-option"],
+        [class$="-picker-button"],
+        .button,
+        .input,
+        .select,
+        .option,
+        .menu-item,
+        .tab-bar-button,
+        .switch-button,
+        .toggle-button,
+        .checkbox-input,
+        .radio-input,
+        .file-upload,
+        .signature-pad,
+        .editable
+    ):focus-visible {
+        outline: 2px solid var(--lily-focus-ring);
+        outline-offset: 2px;
+    }
+
+    /* ==========================================================================
+     * Inputs
+     * --------------------------------------------------------------------------
+     * Every Lily class ending in `-input` (textual, date, picker, range, file,
+     * national-identifier, etc.) shares the same baseline styling. The
+     * `[class$="-input"]` attribute selector catches single-class usage
+     * (`class="email-input"`); consumers needing multi-class composition can
+     * override with higher-specificity rules in their own stylesheet.
+     *
+     * The `:not([class$="-with-mask-input"])` exclusion exists because the
+     * masked-input variant carries its own typography (monospaced + letter
+     * spacing) and we don't want the generic baseline overriding it.
+     * Hidden inputs (`type="hidden"`) are also excluded — they must not be
+     * laid out as visible inputs.
+     * ====================================================================== */
+
+    /* Baseline visual treatment for every textual input. */
+    :where(
+        [class$="-input"]:not([class$="-with-mask-input"]):not([type="hidden"]),
+        .input
+    ) {
+        appearance: none; /* drop UA native chrome (Safari especially) */
+        display: inline-block;
+        width: 100%; /* fill parent by default; consumer caps via container */
+        max-width: 100%;
+        min-height: 2.5rem; /* WCAG 2.5.5 target-size guidance (~44px) */
+        padding: 0.5rem 0.75rem;
+        font: inherit;
+        font-family: var(--lily-font-body);
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        box-sizing: border-box;
+        /* Smooth focus/hover edge transitions — short enough to feel
+           responsive, long enough to read as intentional. */
+        transition:
+            border-color 120ms ease,
+            box-shadow 120ms ease;
+    }
+
+    /* Hover affordance — switches the border to the primary brand colour so
+       users get a visual cue that the field is interactive. The `:not(:disabled)`
+       guard prevents the cue from appearing on locked-out controls. */
+    :where([class$="-input"], .input):hover:not(:disabled) {
+        border-color: var(--color-primary);
+    }
+
+    /* Disabled / aria-disabled — desaturate and shift to the muted surface so
+       the control reads as inactive without losing its layout footprint. */
+    :where([class$="-input"], .input):disabled,
+    :where([class$="-input"], .input)[aria-disabled="true"] {
+        color: var(--lily-text-muted);
+        background-color: var(--lily-surface-alt);
+        cursor: not-allowed;
+    }
+
+    /* Invalid input — red border. The `aria-invalid="true"` attribute is the
+       ARIA contract; pairing it with a colour change keeps WCAG 1.4.1
+       (no colour-only meaning) honest because the ARIA state is also there. */
+    :where([class$="-input"], .input)[aria-invalid="true"] {
+        border-color: var(--color-error);
+    }
+
+    /* Placeholder — match the muted text token. `opacity: 1` overrides Firefox's
+       legacy default placeholder opacity, which would otherwise compound on
+       our already-muted colour. */
+    :where([class$="-input"], .input)::placeholder {
+        color: var(--lily-text-muted);
+        opacity: 1;
+    }
+
+    /* --- Input type-specific tweaks ----------------------------------------- */
+
+    /* Hidden inputs must never render. */
+    :where(.hidden-input) {
+        display: none;
+    }
+
+    /* Submit / reset / image / generic button inputs render as buttons. */
+    :where(.button-input, .submit-input, .reset-input, .image-input) {
+        width: auto;
+        min-width: 2.5rem;
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+        border-color: transparent;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    /* Reset input is the secondary-action variant — muted surface, not the
+       primary brand colour, because "reset" is a destructive op. */
+    :where(.reset-input) {
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border-color: var(--lily-border-strong);
+    }
+
+    /* Color input — narrow swatch with internal padding so the colour chip
+       reads cleanly inside the input frame. */
+    :where(.color-input) {
+        min-height: 2.5rem;
+        padding: 0.25rem;
+        width: 3rem;
+        cursor: pointer;
+    }
+
+    /* Range / angle slider — strip the input chrome so the consumer can
+       restyle the track. `accent-color` provides a minimal styled fallback. */
+    :where(.range-input, .angle-slider-range-input) {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        height: 1.5rem;
+        accent-color: var(--color-primary);
+    }
+
+    /* File inputs — slightly tighter padding because the UA-rendered
+       "Choose file" button consumes most of the visual space. */
+    :where(.file-input, .image-file-input) {
+        padding: 0.375rem 0.5rem;
+        cursor: pointer;
+    }
+
+    /* Checkbox / radio — small square/round controls with the brand accent. */
+    :where(.checkbox-input, .radio-input) {
+        width: 1.125rem;
+        height: 1.125rem;
+        min-height: 0; /* override the 2.5rem input baseline */
+        padding: 0;
+        accent-color: var(--color-primary);
+        cursor: pointer;
+    }
+    :where(.radio-input) {
+        border-radius: 50%;
+    }
+    :where(.checkbox-input) {
+        border-radius: var(--lily-radius-sm);
+    }
+
+    /* Textarea variants — taller minimum, line-height tuned for reading,
+       vertical-only resize so layout columns aren't disturbed. */
+    :where(.text-area-input, .text-area-input-with-character-counter) {
+        min-height: 6rem;
+        line-height: 1.5;
+        resize: vertical;
+    }
+    /* Character-counter variant stacks the textarea and the counter span. */
+    :where(.text-area-input-with-character-counter) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* --- Composite inputs with built-in DOM structure ----------------------- */
+
+    /* PIN input — N small slots side-by-side. The wrapper is invisible;
+       the children carry the styling. */
+    :where(.pin-input-div) {
+        display: inline-flex;
+        gap: 0.5rem;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        width: auto;
+        min-height: 0;
+    }
+    :where(.pin-input-div > input) {
+        width: 2.5rem;
+        height: 3rem;
+        padding: 0;
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 600;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        color: var(--lily-text);
+    }
+
+    /* Password-toggle composite — text input + reveal button, sharing
+       a single visual frame via flush radii. */
+    :where(.password-input-or-text-input-div) {
+        display: inline-flex;
+        align-items: stretch;
+        width: 100%;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        min-height: 0;
+    }
+    :where(.password-input-or-text-input-div > input) {
+        flex: 1;
+        min-height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border-strong);
+        border-right: 0; /* drop the seam where input meets button */
+        border-radius: var(--lily-radius-md) 0 0 var(--lily-radius-md);
+    }
+    :where(.password-input-or-text-input-div > button) {
+        padding: 0 0.75rem;
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: 0 var(--lily-radius-md) var(--lily-radius-md) 0;
+        cursor: pointer;
+    }
+
+    /* --- Input compositions ------------------------------------------------- */
+
+    /* Input group — flush-joined controls (input + button, etc.). The negative
+       margin collapses overlapping borders into a single shared edge. */
+    :where(.input-group) {
+        display: inline-flex;
+        align-items: stretch;
+        width: 100%;
+    }
+    :where(.input-group > *) {
+        border-radius: 0;
+        margin-left: calc(-1 * var(--border));
+    }
+    :where(.input-group > *:first-child) {
+        border-top-left-radius: var(--lily-radius-md);
+        border-bottom-left-radius: var(--lily-radius-md);
+        margin-left: 0;
+    }
+    :where(.input-group > *:last-child) {
+        border-top-right-radius: var(--lily-radius-md);
+        border-bottom-right-radius: var(--lily-radius-md);
+    }
+
+    /* Masked input — monospaced font + slight letter-spacing so the mask
+       template (phone, SSN, etc.) aligns over the typed characters. */
+    :where(.input-with-mask) {
+        font-family: var(--lily-font-mono);
+        letter-spacing: 0.05em;
+    }
+
+    /* Search input — reserve space on the inline-start for the magnifier
+       glyph. The `linear-gradient(transparent, transparent)` is a no-op
+       background-image; it ensures the property exists so consumers can
+       layer an SVG icon over it by overriding `background-image`. */
+    :where(.text-input-with-search, .search-input) {
+        background-image: linear-gradient(transparent, transparent);
+        padding-inline-start: 2.25rem;
+    }
+
+    /* ==========================================================================
+     * Views
+     * --------------------------------------------------------------------------
+     * Read-only display chips for identifiers, dates, ratings, and other
+     * pre-formatted data. Every Lily class ending in `-view` is a span/div
+     * that renders a value the user shouldn't edit.
+     *
+     * The exclusions (`theme-view`, `split-view`)
+     * are larger containers that don't fit the chip pattern — they're
+     * styled separately further down.
+     * ====================================================================== */
+
+    :where(
+        [class$="-view"]:not(.theme-view):not(
+                .split-view
+            )
+    ) {
+        display: inline-block;
+        padding: 0.125rem 0.5rem;
+        font-family: var(--lily-font-mono); /* fixed-width for alignment */
+        color: var(--lily-text);
+        background-color: var(--lily-surface-alt);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        line-height: 1.4;
+    }
+
+    /* Dates / ranges are human-readable, not codes — switch back to body font. */
+    :where(.date-time-view, .date-range, .review-date) {
+        font-family: var(--lily-font-body);
+    }
+
+    /* Theme-view — small label + colour swatch composition. */
+    :where(.theme-view) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        color: var(--lily-text);
+    }
+
+    /* ==========================================================================
+     * Buttons
+     * --------------------------------------------------------------------------
+     * Every class ending in `-button` and the bare `.button` share one
+     * baseline. Hamburger-menu is excluded because it's an icon-only square
+     * with its own minimal frame styling (further down).
+     * ====================================================================== */
+
+    /* Baseline button — primary-coloured pill. Variants override colour or
+       shape below. */
+    :where(.button, [class$="-button"]:not(.hamburger-menu-button)) {
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem; /* leave room for an icon + label */
+        min-height: 2.5rem; /* WCAG target-size guidance */
+        padding: 0.5rem 1rem;
+        font: inherit;
+        font-family: var(--lily-font-body);
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--color-primary-content);
+        background-color: var(--color-primary);
+        border: var(--border) solid transparent;
+        border-radius: var(--lily-radius-md);
+        cursor: pointer;
+        user-select: none; /* prevent text drag-select on double-click */
+        text-decoration: none;
+        transition:
+            background-color 120ms ease,
+            color 120ms ease,
+            border-color 120ms ease;
+    }
+
+    /* Hover — shift to the secondary token for a subtle change of state. */
+    :where(.button, [class$="-button"]):hover:not(:disabled):not(
+            [aria-disabled="true"]
+        ) {
+        background-color: var(--color-secondary);
+        color: var(--color-secondary-content);
+    }
+
+    /* Disabled — half opacity, not-allowed cursor. */
+    :where(.button, [class$="-button"]):disabled,
+    :where(.button, [class$="-button"])[aria-disabled="true"] {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    /* Pressed (toggle/switch active state) — re-use the secondary colour. */
+    :where(.button, [class$="-button"])[aria-pressed="true"] {
+        background-color: var(--color-secondary);
+        color: var(--color-secondary-content);
+    }
+
+    /* --- Button variants ---------------------------------------------------- */
+
+    /* Icon button — square; aspect-ratio keeps it from squashing when the
+       icon font changes size. */
+    :where(.icon-button) {
+        padding: 0.5rem;
+        min-width: 2.5rem;
+        aspect-ratio: 1;
+    }
+
+    /* Floating action button — pinned to the bottom-right of the viewport.
+       Uses logical inset properties so it flips correctly under RTL. */
+    :where(.float-button) {
+        position: fixed;
+        inset-block-end: 1rem;
+        inset-inline-end: 1rem;
+        box-shadow: var(--lily-shadow-lg);
+        border-radius: 999px;
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+    }
+
+    /* Split button — extra padding-end for the dropdown caret. */
+    :where(.split-button) {
+        padding-inline-end: 0.5rem;
+    }
+
+    /* Download button — stacks the action label over a hint (filesize, etc.). */
+    :where(.download-button) {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: start;
+    }
+
+    /* Clipboard-copy — muted style because it's auxiliary, not primary. */
+    :where(.clipboard-copy-button) {
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border-color: var(--lily-border-strong);
+    }
+
+    /* Switch button — iOS-style toggle pill. The track is the sunken
+       surface; the thumb is drawn by the consumer (or via ::before in
+       higher-specificity overrides). */
+    :where(.switch-button) {
+        position: relative;
+        width: 2.75rem;
+        min-width: 2.75rem;
+        height: 1.5rem;
+        min-height: 1.5rem;
+        padding: 0;
+        background-color: var(--lily-surface-sunken);
+        border-radius: 999px;
+    }
+    :where(
+        .switch-button[aria-pressed="true"],
+        .switch-button[aria-checked="true"]
+    ) {
+        background-color: var(--color-primary);
+    }
+
+    /* Toggle button — when un-pressed, render as a muted secondary chip. */
+    :where(.toggle-button[aria-pressed="false"]) {
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border-color: var(--lily-border-strong);
+    }
+
+    /* Link-style "button" — for back/skip/go-to controls that look like
+       text links but use the button machinery for keyboard semantics. */
+    :where(
+        .back-link,
+        .skip-link,
+        .go-to-top,
+        .go-to-next-section,
+        .go-to-previous-section
+    ) {
+        background-color: transparent;
+        color: var(--color-primary);
+        border-color: transparent;
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    /* Skip-link — visually hidden off-screen until focused, then snaps to the
+       top-left of the page. Required pattern for keyboard accessibility
+       (WCAG 2.4.1 bypass blocks). */
+    :where(.skip-link) {
+        position: absolute;
+        top: -3rem;
+        left: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+        text-decoration: none;
+        border-radius: var(--lily-radius-md);
+        z-index: 9999;
+    }
+    :where(.skip-link:focus) {
+        top: 0.5rem;
+    }
+
+    /* Button group — horizontal cluster of related actions. */
+    :where(.button-group) {
+        display: inline-flex;
+        gap: 0.25rem;
+    }
+
+    /* --- Bars of buttons (action / menu / tab / task / tool) ---------------- */
+
+    :where(.action-bar, .menu-bar, .tab-bar, .task-bar, .tool-bar) {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        background-color: var(--lily-surface-alt);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+    }
+    /* Children of bars render flush with the bar — transparent background,
+       no border, so the bar's surface acts as the visual frame. */
+    :where(
+        .action-bar-button,
+        .menu-bar-button,
+        .tab-bar-button,
+        .task-bar-button,
+        .tool-bar-button
+    ) {
+        background-color: transparent;
+        color: var(--lily-text);
+        border-color: transparent;
+    }
+    /* Selected tab — explicit primary colour. */
+    :where(.tab-bar-button[aria-selected="true"]) {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+    /* Panel revealed by the active tab. */
+    :where(.tab-panel) {
+        padding: 1rem;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+    }
+
+    /* ==========================================================================
+     * Links, anchors, link-like
+     * --------------------------------------------------------------------------
+     * Generic `-link` styling — primary-coloured underlined text. The
+     * exclusions (`skip-link`, `back-link`) are styled as buttons above.
+     * ====================================================================== */
+
+    :where([class$="-link"]:not(.skip-link):not(.back-link)) {
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+    }
+    /* Hover — thicker underline for a subtle affordance cue. */
+    :where([class$="-link"]):hover {
+        text-decoration-thickness: 2px;
+    }
+    /* Visited — secondary token. */
+    :where([class$="-link"]):visited {
+        color: var(--color-secondary);
+    }
+
+    /* ==========================================================================
+     * Lists & list items
+     * --------------------------------------------------------------------------
+     * Lily wraps `<ol>` / `<ul>` in role-specific classes (CheckList, DoList,
+     * etc.). The baseline kills the default browser bullet styling and zeroes
+     * margins so consumers can compose lists inside other components.
+     * ====================================================================== */
+
+    /* Baseline — kill bullets and the indent gutter on every list class. */
+    :where(
+        .accordion-list,
+        .breadcrumb-list,
+        .chat-list,
+        .check-list,
+        .collection-list,
+        .contents-list,
+        .description-list,
+        .document-list,
+        .do-list,
+        .dont-list,
+        .icon-list,
+        .pagination-list,
+        .section-list,
+        .step-list,
+        .summary-list,
+        .task-list,
+        .timeline-list,
+        .tour-list,
+        .tree-list,
+        .validation-list
+    ) {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Baseline — every list-item gets a thin hairline rule between rows. */
+    :where(
+        .accordion-list-item,
+        .breadcrumb-list-item,
+        .chat-list-item,
+        .check-list-item,
+        .collection-list-item,
+        .contents-list-item,
+        .description-list-item,
+        .document-list-item,
+        .do-list-item,
+        .dont-list-item,
+        .icon-list-item,
+        .pagination-list-item,
+        .section-list-item,
+        .step-list-item,
+        .summary-list-item,
+        .task-list-item,
+        .timeline-list-item,
+        .tour-list-item,
+        .tree-list-item,
+        .validation-list-item
+    ) {
+        padding: 0.5rem 0;
+        border-bottom: var(--border) solid var(--lily-border);
+    }
+
+    /* --- Breadcrumb --------------------------------------------------------- */
+    /* Horizontal list separated by a "/" pseudo-element between items. */
+    :where(.breadcrumb-list) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    :where(.breadcrumb-list-item) {
+        border: 0; /* override the generic list-item bottom-border */
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+    }
+    /* Slash separator generated between adjacent items, not before the first. */
+    :where(.breadcrumb-list-item + .breadcrumb-list-item)::before {
+        content: "/";
+        margin-inline-end: 0.5rem;
+        color: var(--lily-text-muted);
+    }
+    /* Final crumb (the current page) — muted because it isn't a link. */
+    :where(.breadcrumb-list-item[aria-current="page"]) {
+        color: var(--lily-text-muted);
+    }
+
+    /* --- Pagination --------------------------------------------------------- */
+    :where(.pagination-list) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        align-items: center;
+    }
+    :where(.pagination-list-item) {
+        border: 0;
+        padding: 0;
+    }
+    /* Pagination link — square-ish chip with a generous tap target. */
+    :where(.pagination-link) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--lily-radius-md);
+        text-decoration: none;
+    }
+    /* Current page — filled with the primary brand colour. */
+    :where(.pagination-link[aria-current="page"]) {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+
+    /* --- Marker glyphs ------------------------------------------------------ */
+    /* Check / do — green ✓; dont — red ✗. The `::marker` pseudo-element
+       only works on list-items with the default list-style display, so the
+       generic baseline above intentionally kept that. */
+    :where(.check-list-item)::marker {
+        content: "✓ ";
+        color: var(--color-success);
+    }
+    :where(.do-list-item)::marker {
+        content: "✓ ";
+        color: var(--color-success);
+    }
+    :where(.dont-list-item)::marker {
+        content: "✗ ";
+        color: var(--lily-error-text);
+    }
+
+    /* --- Tree --------------------------------------------------------------- */
+    /* Nested tree lists indent their children. */
+    :where(.tree-list .tree-list) {
+        padding-inline-start: 1.25rem;
+    }
+    :where(.tree-list-item) {
+        border: 0;
+    }
+
+    /* --- Step list ---------------------------------------------------------- */
+    /* CSS counter draws the step number in a circular badge. */
+    :where(.step-list) {
+        counter-reset: lily-step;
+    }
+    :where(.step-list-item) {
+        counter-increment: lily-step;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    :where(.step-list-item)::before {
+        content: counter(lily-step);
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--lily-surface-sunken);
+        color: var(--lily-text);
+        font-weight: 600;
+    }
+    /* Step status variants — colour-coded badge fill. */
+    :where(.step-list-item[data-status="finished"])::before {
+        background-color: var(--color-success);
+        color: var(--color-success-content);
+    }
+    :where(.step-list-item[data-status="in-progress"])::before {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+    :where(.step-list-item[data-status="error"])::before {
+        background-color: var(--color-error);
+        color: var(--color-error-content);
+    }
+
+    /* --- Task list ---------------------------------------------------------- */
+    /* Flex row so the checkbox aligns with its label. */
+    :where(.task-list-item) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* --- Timeline ----------------------------------------------------------- */
+    /* Vertical rule down the left, with a dot per event. */
+    :where(.timeline-list-item) {
+        position: relative;
+        padding-inline-start: 1.5rem;
+        border-left: var(--border) solid var(--lily-border-strong);
+        margin-inline-start: 0.5rem;
+    }
+    :where(.timeline-list-item)::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: -0.4rem;
+        inset-block-start: 0.65rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+    }
+
+    /* --- Validation list — pass / fail / pending status colours ------------ */
+    :where(.validation-list-item[data-status="passed"]) {
+        color: var(--color-success);
+    }
+    :where(.validation-list-item[data-status="failed"]) {
+        color: var(--lily-error-text);
+    }
+    :where(.validation-list-item[data-status="pending"]) {
+        color: var(--lily-text-muted);
+    }
+
+    /* --- Description list (semantic <dl>) ----------------------------------- */
+    /* Two-column grid: term in the left column, description in the right. */
+    :where(.description-list) {
+        display: grid;
+        grid-template-columns: minmax(min-content, max-content) 1fr;
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+    }
+    /* `display: contents` lets the dt/dd children participate directly in
+       the parent grid without an intermediate row wrapper. */
+    :where(.description-list-item) {
+        display: contents;
+        border: 0;
+    }
+    :where(.description-list dt) {
+        font-weight: 600;
+    }
+
+    /* --- Summary list (three-column key/value/action grid) ------------------ */
+    :where(.summary-list) {
+        display: grid;
+        grid-template-columns: minmax(0, max-content) 1fr auto;
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+    }
+    :where(.summary-list-item) {
+        display: contents;
+        border: 0;
+    }
+
+    /* --- Icon / collection / document lists — flex rows with leading icon -- */
+    :where(.icon-list-item, .collection-list-item, .document-list-item) {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    /* --- Navs --------------------------------------------------------------- */
+    /* Nav wrappers are layout-neutral by default — the inner list handles
+       layout, the nav just provides the landmark semantics. */
+    :where(
+        .accordion-nav,
+        .breadcrumb-nav,
+        .chat-nav,
+        .contents-nav,
+        .pagination-nav,
+        .section-nav,
+        .tree-nav,
+        .navigation-menu
+    ) {
+        display: block;
+        padding: 0;
+    }
+
+    /* ==========================================================================
+     * Tables (plain, data, calendar, kanban, gantt)
+     * --------------------------------------------------------------------------
+     * Every Lily table variant shares the same baseline: full-width, collapsed
+     * borders, body font. Variants override below for specialised behaviour
+     * (kanban columns, gantt bars, calendar selection).
+     * ====================================================================== */
+
+    :where(.table, .data-table, .calendar-table, .kanban-table, .gantt-table) {
+        width: 100%;
+        border-collapse: collapse; /* shared edges between cells */
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        font-family: var(--lily-font-body);
+    }
+
+    /* Thead gets the alt surface so it visually anchors above the body. */
+    :where(
+        .table-head,
+        .data-table-head,
+        .calendar-table-head,
+        .kanban-table-head,
+        .gantt-table-thead
+    ) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    /* Header cells — bold, slightly tighter padding, with a 2px under-rule. */
+    :where(
+        .table-th,
+        .data-table-th,
+        .calendar-table-th,
+        .kanban-table-th,
+        .gantt-table-th
+    ) {
+        padding: 0.625rem 0.75rem;
+        text-align: start;
+        font-weight: 600;
+        border-bottom: 2px solid var(--lily-border-strong);
+    }
+
+    /* Body cells — top-aligned (multi-line content reads better when the
+       baseline is at the top, not centred). */
+    :where(
+        .table-td,
+        .data-table-td,
+        .calendar-table-td,
+        .kanban-table-td,
+        .gantt-table-td
+    ) {
+        padding: 0.625rem 0.75rem;
+        border-bottom: var(--border) solid var(--lily-border);
+        vertical-align: top;
+    }
+
+    /* Row hover — subtle highlight for scanning long tables. */
+    :where(
+        .table-row,
+        .data-table-row,
+        .calendar-table-row,
+        .kanban-table-row,
+        .gantt-table-tr
+    ):hover {
+        background-color: var(--lily-surface-alt);
+    }
+
+    /* Data-table filter form — chips that sit above the table. */
+    :where(.data-filter-form) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 1rem;
+        background-color: var(--lily-surface-alt);
+        border-radius: var(--lily-radius-md);
+    }
+
+    /* --- Calendar specifics ------------------------------------------------- */
+    /* Selected date — filled with the primary brand colour. */
+    :where(.calendar-table-td[aria-selected="true"]) {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+    /* Today — outlined rather than filled, so a selected non-today date
+       still reads as the "selected" one. */
+    :where(.calendar-table-td[aria-current="date"]) {
+        outline: 2px solid var(--color-primary);
+        outline-offset: -2px;
+    }
+
+    /* --- Kanban specifics --------------------------------------------------- */
+    /* Each column renders as a `<td>`; widen the cells so cards have room. */
+    :where(.kanban-table) {
+        display: table;
+    }
+    :where(.kanban-table-td) {
+        vertical-align: top;
+        background-color: var(--lily-surface);
+        min-width: 14rem;
+    }
+
+    /* --- Gantt specifics ---------------------------------------------------- */
+    /* Cells marked as bars are filled with the primary colour to render the
+       schedule bar inline within the grid. */
+    :where(.gantt-table-td[data-state="bar"]) {
+        background-color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+     * Cards, panels, surfaces
+     * --------------------------------------------------------------------------
+     * Family of generic content containers. Differ mostly in elevation
+     * (shadow depth) and accent colour.
+     * ====================================================================== */
+
+    :where(
+        .card,
+        .feature-card,
+        .product-card,
+        .care-card,
+        .hover-card,
+        .panel,
+        .floating-panel,
+        .success-panel
+    ) {
+        display: block;
+        padding: 1rem;
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-lg);
+        box-shadow: var(--lily-shadow-sm);
+    }
+    /* Feature card — generous padding because it leads the page. */
+    :where(.feature-card) {
+        padding: 1.5rem;
+    }
+    /* Hover card — popover-like; lift it with the medium shadow. */
+    :where(.hover-card) {
+        box-shadow: var(--lily-shadow-md);
+    }
+    /* Floating panel — pinned overlay; largest shadow. */
+    :where(.floating-panel) {
+        box-shadow: var(--lily-shadow-lg);
+    }
+    /* Success panel — green border + faint green tint. */
+    :where(.success-panel) {
+        border-color: var(--color-success);
+        background-color: color-mix(
+            in oklch,
+            var(--color-success) 8%,
+            var(--lily-surface)
+        );
+    }
+    /* Care card urgency variants — coloured left rail (urgent/non-urgent/
+       primary). Pattern adapted from the NHS care-card guidance. */
+    :where(.care-card[data-urgency="urgent"]) {
+        border-color: var(--color-error);
+        border-left-width: 0.375rem;
+    }
+    :where(.care-card[data-urgency="non-urgent"]) {
+        border-color: var(--color-info);
+        border-left-width: 0.375rem;
+    }
+    :where(.care-card[data-urgency="primary"]) {
+        border-color: var(--color-primary);
+        border-left-width: 0.375rem;
+    }
+
+    /* ==========================================================================
+     * Banners, alerts, callouts, notifications
+     * --------------------------------------------------------------------------
+     * Family of messages with a coloured left rail. The rail colour is set
+     * per severity so the message reads at a glance.
+     * ====================================================================== */
+
+    /* Baseline — alert/banner/callout/notification all share the same frame. */
+    :where(
+        .alert,
+        .banner,
+        .announcement-banner,
+        .phase-banner,
+        .government-banner,
+        .medical-banner,
+        .super-banner,
+        .information-callout,
+        .warning-callout,
+        .summary-box,
+        .notification,
+        .toast,
+        .sonner
+    ) {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        border-inline-start-width: 0.375rem; /* the coloured rail */
+        border-radius: var(--lily-radius-md);
+    }
+
+    /* Severity variants — rail + faint background tint. */
+    :where(
+        .alert[data-severity="info"],
+        .information-callout,
+        .announcement-banner
+    ) {
+        border-inline-start-color: var(--color-info);
+        background-color: color-mix(
+            in oklch,
+            var(--color-info) 8%,
+            var(--lily-surface)
+        );
+    }
+    :where(.alert[data-severity="success"]) {
+        border-inline-start-color: var(--color-success);
+        background-color: color-mix(
+            in oklch,
+            var(--color-success) 8%,
+            var(--lily-surface)
+        );
+    }
+    :where(.alert[data-severity="warning"], .warning-callout, .phase-banner) {
+        border-inline-start-color: var(--color-warning);
+        background-color: color-mix(
+            in oklch,
+            var(--color-warning) 12%,
+            var(--lily-surface)
+        );
+    }
+    :where(
+        .alert[data-severity="error"],
+        .error-message,
+        .error-summary,
+        .super-banner
+    ) {
+        border-inline-start-color: var(--color-error);
+        background-color: color-mix(
+            in oklch,
+            var(--color-error) 8%,
+            var(--lily-surface)
+        );
+    }
+    /* Medical banner — primary brand colour. */
+    :where(.medical-banner) {
+        border-inline-start-color: var(--color-primary);
+    }
+    /* Medical banner inner boxes — danger / advice variants. */
+    :where(.medical-banner-box-for-danger) {
+        border-color: var(--color-error);
+        background-color: color-mix(
+            in oklch,
+            var(--color-error) 8%,
+            var(--lily-surface)
+        );
+    }
+    :where(.medical-banner-box-for-advice) {
+        border-color: var(--color-info);
+        background-color: color-mix(
+            in oklch,
+            var(--color-info) 8%,
+            var(--lily-surface)
+        );
+    }
+    /* Government banner — solid neutral surface (US-government / GOV.UK
+       style: a chrome bar at the top of the page identifying the site
+       as an official property). No coloured rail. */
+    :where(.government-banner) {
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+        border-color: transparent;
+        border-inline-start-color: transparent;
+    }
+    /* Summary box — primary-coloured rail; used for "answer at a glance"
+       callouts on long forms (e.g. cost summary). */
+    :where(.summary-box) {
+        border-color: var(--color-primary);
+        border-inline-start-width: 0.375rem;
+    }
+
+    /* Banner boxes — chrome strip variants used inside header areas. */
+    :where(.banner-box, .medical-banner-box) {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    /* Sticky promo — sits at the very top of the viewport on scroll. */
+    :where(.sticky-promo-banner) {
+        position: sticky;
+        inset-block-start: 0;
+        z-index: 10;
+    }
+
+    /* Error message — inline form-validation message. */
+    :where(.error-message) {
+        color: var(--lily-error-text);
+        font-weight: 600;
+    }
+    /* Error summary — heavyweight 4px border (GOV.UK pattern) so users
+       scrolling back to the top of a form see it immediately. */
+    :where(.error-summary) {
+        padding: 1rem;
+        border: 0.25rem solid var(--color-error);
+    }
+
+    /* Toast / Sonner — floating notifications; medium elevation. */
+    :where(.toast, .sonner) {
+        box-shadow: var(--lily-shadow-md);
+    }
+    /* In-page notification — small elevation. */
+    :where(.notification) {
+        box-shadow: var(--lily-shadow-sm);
+    }
+
+    /* ==========================================================================
+     * Forms
+     * --------------------------------------------------------------------------
+     * Form / field / fieldset layout primitives. Stack vertically with a
+     * consistent gap so consumer markup stays brief.
+     * ====================================================================== */
+
+    :where(.form, .editable-form) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    /* Field — wraps a single label + input + hint/error trio. */
+    :where(.field) {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+    }
+    /* Fieldset — semantic <fieldset>; border + padded inset, legend bold. */
+    :where(.fieldset) {
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 1rem;
+    }
+    :where(.fieldset > legend) {
+        padding-inline: 0.5rem;
+        font-weight: 600;
+    }
+    /* Label — bold and dark; consumers can override per-form. */
+    :where(.label) {
+        font-weight: 600;
+        color: var(--lily-text);
+    }
+    /* Hint — small muted helptext under the input. */
+    :where(.hint) {
+        color: var(--lily-text-muted);
+        font-size: 0.875rem;
+    }
+    /* Character counter — same colour/size as hint but right-aligned. */
+    :where(.character-counter) {
+        color: var(--lily-text-muted);
+        font-size: 0.875rem;
+        text-align: end;
+    }
+
+    /* ==========================================================================
+     * Layout & containers
+     * ====================================================================== */
+
+    /* Page-width containers. */
+    :where(
+        .container,
+        .container-with-fixed-width,
+        .container-with-fluid-width
+    ) {
+        display: block;
+        width: 100%;
+        margin-inline: auto;
+        padding-inline: 1rem;
+        box-sizing: border-box;
+    }
+    /* Fixed-width — caps at a comfortable reading width (~1152px). */
+    :where(.container-with-fixed-width) {
+        max-width: 72rem;
+    }
+    /* Fluid-width — fills the viewport edge-to-edge. */
+    :where(.container-with-fluid-width) {
+        max-width: none;
+    }
+    /* Reset the inline padding when a container should butt against the edge. */
+    :where(.padding-reset) {
+        padding-inline: 0;
+    }
+
+    /* Flex / grid / masonry primitives. */
+    :where(.flex-stack) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    :where(.grid) {
+        display: grid;
+        gap: 1rem;
+    }
+    :where(.masonry) {
+        column-count: 3;
+        column-gap: 1rem;
+    }
+    /* Horizontal-rule replacement that respects theme borders. */
+    :where(.separator) {
+        border: 0;
+        border-top: var(--border) solid var(--lily-border);
+        margin: 1rem 0;
+    }
+    /* Generic content tile. */
+    :where(.tile) {
+        display: block;
+        padding: 1rem;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+    }
+    /* Sidebar — secondary-surface panel; sits beside main content. */
+    :where(.sidebar) {
+        display: block;
+        background-color: var(--lily-surface-alt);
+        padding: 1rem;
+        border-radius: var(--lily-radius-md);
+    }
+    /* Aspect-ratio box — 16:9 default; consumers override `aspect-ratio`. */
+    :where(.aspect-ratio-container) {
+        position: relative;
+        display: block;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: var(--lily-radius-md);
+    }
+    /* Framer — bordered box for embeds / illustrations. */
+    :where(.framer) {
+        padding: 1rem;
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+    }
+    /* Article-layout — declares column-width tokens that content-block reads.
+       Pattern lifted from the Reuters Graphics components system. */
+    :where(.article-layout) {
+        --content-width-narrower: 20.625rem; /* 330px */
+        --content-width-narrow: 31.875rem;   /* 510px */
+        --content-width-normal: 41.25rem;    /* 660px (default reading width) */
+        --content-width-wide: 58.125rem;     /* 930px (chart escape) */
+        --content-width-wider: 75rem;        /* 1200px (full-bleed escape) */
+        display: block;
+    }
+    /* Content-block — reads the column-width tokens; switch via data-width. */
+    :where(.content-block) {
+        max-width: var(--content-width-normal);
+        margin-inline: auto;
+        padding-inline: 1rem;
+        box-sizing: border-box;
+    }
+    :where(.content-block[data-width="narrower"]) {
+        max-width: var(--content-width-narrower);
+    }
+    :where(.content-block[data-width="narrow"]) {
+        max-width: var(--content-width-narrow);
+    }
+    :where(.content-block[data-width="wide"]) {
+        max-width: var(--content-width-wide);
+    }
+    :where(.content-block[data-width="wider"]) {
+        max-width: var(--content-width-wider);
+    }
+
+    /* --- Grail layout (5-region responsive page shell) --------------------- */
+    /* Header spans the top; left-aside / main / right-aside fill the middle;
+       footer spans the bottom. At ≤768px the asides drop below the main. */
+    :where(.grail-layout) {
+        display: grid;
+        min-height: 100vh;
+        grid-template-areas:
+            "header header header"
+            "left   main   right"
+            "footer footer footer";
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+    }
+    :where(.grail-layout-top-header) {
+        grid-area: header;
+    }
+    :where(.grail-layout-left-aside) {
+        grid-area: left;
+    }
+    :where(.grail-layout-center-main) {
+        grid-area: main;
+    }
+    :where(.grail-layout-right-aside) {
+        grid-area: right;
+    }
+    :where(.grail-layout-bottom-footer) {
+        grid-area: footer;
+    }
+    /* Header / footer chrome — secondary surface, padded. */
+    :where(.grail-layout-top-header, .grail-layout-bottom-footer) {
+        background-color: var(--lily-surface-alt);
+        padding: 1rem;
+    }
+    /* Asides — secondary surface, padded. */
+    :where(.grail-layout-left-aside, .grail-layout-right-aside) {
+        padding: 1rem;
+        background-color: var(--lily-surface-alt);
+    }
+    /* Main content area — primary surface, more generous padding. */
+    :where(.grail-layout-center-main) {
+        padding: 1.5rem;
+    }
+    /* Mobile breakpoint — collapse to a single column, stacking the regions. */
+    @media (max-width: 48rem) {
+        :where(.grail-layout) {
+            grid-template-areas: "header" "main" "left" "right" "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto;
+        }
+    }
+
+    /* Standalone semantic header / footer landmarks. */
+    :where(.header) {
+        display: block;
+        padding: 1rem;
+        background-color: var(--lily-surface);
+        border-bottom: var(--border) solid var(--lily-border);
+    }
+    :where(.footer) {
+        display: block;
+        padding: 1rem;
+        background-color: var(--lily-surface-alt);
+        border-top: var(--border) solid var(--lily-border);
+    }
+
+    /* ==========================================================================
+     * Dialogs, popovers, overlays
+     * --------------------------------------------------------------------------
+     * Modal and floating UI. Backdrop is a blur + 50% black overlay; dialog
+     * frames are rounded with the largest shadow.
+     * ====================================================================== */
+
+    /* Native <dialog> + variant types. */
+    :where(
+        .dialog,
+        .alert-dialog,
+        .timeout-dialog,
+        .popconfirm-dialog,
+        .file-dialog
+    ) {
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-lg);
+        padding: 1.5rem;
+        box-shadow: var(--lily-shadow-lg);
+        max-width: min(40rem, 90vw); /* cap on big screens, fit on small */
+    }
+    /* Backdrop — dim the page and blur slightly so focus stays on the dialog. */
+    :where(
+        .dialog::backdrop,
+        .alert-dialog::backdrop,
+        .timeout-dialog::backdrop,
+        .popconfirm-dialog::backdrop,
+        .file-dialog::backdrop
+    ) {
+        background-color: color-mix(in oklch, black 50%, transparent);
+        backdrop-filter: blur(2px);
+    }
+    /* Alert dialog — red rail so the user knows it's destructive. */
+    :where(.alert-dialog) {
+        border-color: var(--color-error);
+        border-inline-start-width: 0.375rem;
+    }
+
+    /* Popover / tooltip family — small floating labels. */
+    :where(.popover, .popup, .tooltip, .coachmark, .contextual-help) {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+        border-radius: var(--lily-radius-md);
+        box-shadow: var(--lily-shadow-md);
+        font-size: 0.875rem;
+        max-width: 20rem;
+    }
+    /* Popover / popup — surface-coloured (more substantial than a tooltip). */
+    :where(.popover, .popup) {
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        max-width: 24rem;
+    }
+    /* Coachmark — primary-coloured border so it reads as a tutorial hint. */
+    :where(.coachmark) {
+        border: 2px solid var(--color-primary);
+    }
+
+    /* Full-page overlay container — dims everything beneath a high-z child. */
+    :where(.overlay-container) {
+        position: fixed;
+        inset: 0;
+        background-color: color-mix(in oklch, black 50%, transparent);
+        z-index: 100;
+    }
+
+    /* Drawers — side panels (right edge by default; RTL-aware via logical
+       properties). Sit above the overlay container (z-index 101). */
+    :where(.drawer, .slide-out-drawer, .sheet) {
+        position: fixed;
+        inset-block: 0;
+        inset-inline-end: 0;
+        width: min(28rem, 90vw);
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border-inline-start: var(--border) solid var(--lily-border);
+        box-shadow: var(--lily-shadow-lg);
+        padding: 1rem;
+        z-index: 101;
+    }
+
+    /* ==========================================================================
+     * Menus
+     * ====================================================================== */
+
+    /* Menu containers — surface-coloured popover with thin border + sm shadow. */
+    :where(.menu, .context-menu, .dropdown-menu, .tree-menu, .command) {
+        display: block;
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 0.25rem;
+        box-shadow: var(--lily-shadow-sm);
+        list-style: none;
+        margin: 0;
+    }
+    /* Menu items — flex row with icon + label slot. */
+    :where(.menu-item, .context-menu-item) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--lily-radius-md);
+        cursor: pointer;
+    }
+    /* Highlight on hover / aria-selected — alt surface. */
+    :where(
+        .menu-item:hover,
+        .context-menu-item:hover,
+        .menu-item[aria-selected="true"]
+    ) {
+        background-color: var(--lily-surface-alt);
+    }
+    /* Menu group — section within a menu. The aria-label becomes a header. */
+    :where(.menu-group) {
+        padding: 0.25rem 0;
+    }
+    :where(.menu-group::before) {
+        content: attr(aria-label);
+        display: block;
+        padding: 0.25rem 0.75rem;
+        color: var(--lily-text-muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    /* Cascader / navigation-menu — horizontal flex row of menu columns. */
+    :where(.cascader, .navigation-menu) {
+        display: flex;
+        gap: 0.25rem;
+    }
+    /* Hamburger — bordered icon-button. */
+    :where(.hamburger-menu) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        background: transparent;
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        color: var(--lily-text);
+        cursor: pointer;
+    }
+
+    /* ==========================================================================
+     * Segments, toggles, groups
+     * ====================================================================== */
+
+    /* Generic group containers — inline-flex, wrap, small gap. */
+    :where(
+        .segment-group,
+        .toggle-group,
+        .checkbox-group,
+        .radio-group,
+        .dial-group,
+        .tag-group,
+        .avatar-group,
+        .mutually-exclusive
+    ) {
+        display: inline-flex;
+        gap: 0.25rem;
+        flex-wrap: wrap;
+    }
+    /* Segment group / toggle group get an inset background (iOS-segmented
+       control aesthetic). */
+    :where(.segment-group, .toggle-group) {
+        padding: 0.25rem;
+        background-color: var(--lily-surface-alt);
+        border-radius: var(--lily-radius-md);
+    }
+    /* Segment items — transparent until pressed; then primary fill. */
+    :where(.segment-group-item) {
+        padding: 0.375rem 0.75rem;
+        background: transparent;
+        border: 0;
+        border-radius: var(--lily-radius-md);
+        color: var(--lily-text);
+        cursor: pointer;
+    }
+    :where(
+        .segment-group-item[aria-pressed="true"],
+        .segment-group-item[aria-selected="true"]
+    ) {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+    /* Avatar group — overlap each subsequent avatar by 0.5rem, with a
+       contrast ring for separation. */
+    :where(.avatar-group > *) {
+        margin-inline-start: -0.5rem;
+        border: 2px solid var(--lily-surface);
+    }
+
+    /* ==========================================================================
+     * Progress, loading
+     * ====================================================================== */
+
+    /* Native <progress> / <meter> / bar variant — short, pill-shaped track. */
+    :where(.progress, .progress-bar, .meter) {
+        display: block;
+        width: 100%;
+        height: 0.5rem;
+        appearance: none;
+        background-color: var(--lily-surface-sunken);
+        border: 0;
+        border-radius: 999px;
+        overflow: hidden;
+    }
+    /* Vendor pseudo-elements: track + value. */
+    :where(.progress::-webkit-progress-bar, .meter::-webkit-meter-bar) {
+        background-color: var(--lily-surface-sunken);
+    }
+    :where(
+        .progress::-webkit-progress-value,
+        .meter::-webkit-meter-optimum-value
+    ) {
+        background-color: var(--color-primary);
+    }
+    :where(.progress::-moz-progress-bar) {
+        background-color: var(--color-primary);
+    }
+
+    /* Progress circle — conic-gradient renders the sweep based on the
+       --progress custom property (0–100). */
+    :where(.progress-circle) {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--color-primary) calc(var(--progress, 0) * 1%),
+            var(--lily-surface-sunken) 0
+        );
+    }
+    /* Spinner / loading — classic CSS rotating partial-ring. */
+    :where(.progress-spinner, .loading) {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 3px solid var(--lily-surface-sunken);
+        border-top-color: var(--color-primary);
+        border-radius: 50%;
+        animation: lily-spin 0.8s linear infinite;
+    }
+    @keyframes lily-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    /* Skeleton — shimmering placeholder while content is loading. */
+    :where(.skeleton) {
+        display: block;
+        background: linear-gradient(
+            90deg,
+            var(--lily-surface-alt) 0%,
+            var(--lily-surface-sunken) 50%,
+            var(--lily-surface-alt) 100%
+        );
+        background-size: 200% 100%;
+        animation: lily-skeleton 1.4s ease-in-out infinite;
+        border-radius: var(--lily-radius-md);
+        min-height: 1rem;
+    }
+    @keyframes lily-skeleton {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+    /* Respect prefers-reduced-motion — kill the perpetual animations.
+       (WCAG 2.3.3 Animation from interactions.) */
+    @media (prefers-reduced-motion: reduce) {
+        :where(.progress-spinner, .loading, .skeleton, .beach-ball) {
+            animation: none;
+        }
+    }
+
+    /* ==========================================================================
+     * Avatars, badges, tags, status
+     * ====================================================================== */
+
+    /* Avatar — circular tile (2.5rem) with sunken background as the
+       fallback colour when no image is provided. */
+    :where(.avatar) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: var(--lily-surface-sunken);
+        color: var(--lily-text);
+        overflow: hidden;
+        font-weight: 600;
+    }
+    :where(.avatar-image) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    /* Avatar fallback text — uppercase initials. */
+    :where(.avatar-text) {
+        text-transform: uppercase;
+    }
+
+    /* Badge / flair / tag family — small pill-shaped labels. */
+    :where(.badge, .flair, .status-tag, .tag, .ai-label) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.125rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 1.5;
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+        border-radius: 999px;
+    }
+    /* Tag — neutral chip with a visible border (so it's not confused with
+       a status badge). */
+    :where(.tag) {
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+    }
+    /* AI label — accent colour so AI-generated content is visually marked. */
+    :where(.ai-label) {
+        background-color: var(--color-accent);
+        color: var(--color-accent-content);
+    }
+    /* Status tags — pre-baked colour for each status. */
+    :where(.status-tag[data-status="success"]) {
+        background-color: var(--color-success);
+        color: var(--color-success-content);
+    }
+    :where(.status-tag[data-status="warning"]) {
+        background-color: var(--color-warning);
+        color: var(--color-warning-content);
+    }
+    :where(.status-tag[data-status="error"]) {
+        background-color: var(--color-error);
+        color: var(--color-error-content);
+    }
+    :where(.status-tag[data-status="info"]) {
+        background-color: var(--color-info);
+        color: var(--color-info-content);
+    }
+
+    /* Status light — a coloured dot followed by a label. */
+    :where(.status-light) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+    }
+    :where(.status-light)::before {
+        content: "";
+        display: inline-block;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-radius: 50%;
+        background-color: var(--color-neutral);
+    }
+    :where(.status-light[data-status="success"])::before {
+        background-color: var(--color-success);
+    }
+    :where(.status-light[data-status="warning"])::before {
+        background-color: var(--color-warning);
+    }
+    :where(.status-light[data-status="error"])::before {
+        background-color: var(--color-error);
+    }
+    :where(.status-light[data-status="info"])::before {
+        background-color: var(--color-info);
+    }
+
+    /* ==========================================================================
+     * Pickers, ratings, theme
+     * ====================================================================== */
+
+    /* Picker baseline — inline row of selectable chips/buttons. */
+    :where(
+        .color-picker,
+        .five-face-rating-picker,
+        .five-star-rating-picker,
+        .net-promoter-score-picker,
+        .red-amber-green-picker,
+        .red-orange-yellow-green-blue-picker,
+        .emoji-character-picker,
+        .calendar-range-picker
+    ) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+    }
+    /* Picker buttons — small alt-surface chips. */
+    :where(
+        .color-picker-button,
+        .five-face-rating-picker-button,
+        .five-star-rating-picker-button,
+        .net-promoter-score-picker-button,
+        .red-amber-green-picker-button,
+        .red-orange-yellow-green-blue-picker-button
+    ) {
+        background-color: var(--lily-surface-alt);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border);
+        min-width: 2rem;
+        min-height: 2rem;
+        padding: 0.25rem 0.5rem;
+    }
+    /* Color picker — circular swatch. */
+    :where(.color-picker-button) {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0;
+        border-radius: 50%;
+    }
+    /* Filled stars — warning (gold) colour for both viewer and pressed state. */
+    :where(
+        .five-star-rating-view,
+        .five-star-rating-picker-button[aria-pressed="true"]
+    ) {
+        color: var(--color-warning);
+    }
+    /* RAG (red/amber/green) — semantic colour per status. */
+    :where(
+        .red-amber-green-view[data-status="red"],
+        .red-amber-green-picker-button[data-status="red"]
+    ) {
+        background-color: var(--color-error);
+        color: var(--color-error-content);
+    }
+    :where(
+        .red-amber-green-view[data-status="amber"],
+        .red-amber-green-picker-button[data-status="amber"]
+    ) {
+        background-color: var(--color-warning);
+        color: var(--color-warning-content);
+    }
+    :where(
+        .red-amber-green-view[data-status="green"],
+        .red-amber-green-picker-button[data-status="green"]
+    ) {
+        background-color: var(--color-success);
+        color: var(--color-success-content);
+    }
+
+    /* Native <select> styling — drop the UA chrome and draw our own caret
+       via two stacked linear-gradients. */
+    :where(select.theme-select, .select, .select-with-extras, .tree-select) {
+        width: 100%;
+        min-height: 2.5rem;
+        padding: 0.5rem 2rem 0.5rem 0.75rem; /* extra right padding for caret */
+        font: inherit;
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        appearance: none;
+        background-image:
+            linear-gradient(45deg, transparent 50%, var(--lily-text) 50%),
+            linear-gradient(135deg, var(--lily-text) 50%, transparent 50%);
+        background-position:
+            calc(100% - 1.1rem) 1.1rem,
+            calc(100% - 0.7rem) 1.1rem;
+        background-size: 0.4rem 0.4rem;
+        background-repeat: no-repeat;
+    }
+    /* Options inherit the select colours so the dropdown matches the input. */
+    :where(.option, .theme-select-option) {
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+    }
+
+    /* The four *-picker helpers are an icon button that opens a popup,
+       so they are styled as a popup rather than a form field. No :has()
+       guard is needed any more: before the July 2026 rename these shared
+       the `.theme-select` hook with the catalog theme-select component
+       and had to be told apart. Distinct names, no collision. */
+    :where(
+        .theme-picker,
+        .locale-picker,
+        .text-size-picker,
+        .search-picker,
+        .link-picker,
+        .share-picker,
+        .date-time-picker
+    ) {
+        position: relative;
+        display: inline-block;
+    }
+
+    :where(
+        .theme-picker-button,
+        .locale-picker-button,
+        .text-size-picker-button,
+        .search-picker-button,
+        .link-picker-button,
+        .share-picker-button,
+        .date-time-picker-button
+    ) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: var(--lily-space-xs);
+        font: inherit;
+        line-height: 1;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        cursor: pointer;
+    }
+
+    /* The icon is decorative (aria-hidden); the button's aria-label
+       carries the accessible name. Reversed 2026-09-16: five of the
+       six picker icons (theme, locale, text-size, motion, share) are
+       now bundled SVGs, not Unicode glyphs. Each ships its own
+       explicit width="1.05rem" height="1.05rem" on the <svg> element,
+       so unlike a font-dependent character glyph -- where different
+       glyphs ink different fractions of their em box, needing a
+       per-glyph optical correction -- every icon in this family
+       already inks the same visual size by construction (the icon's
+       own author controls its viewBox). This rule only supplies flex
+       centering; override the icon's own width/height if you need a
+       different size. */
+    :where(
+        .theme-picker-icon,
+        .locale-picker-icon,
+        .text-size-picker-icon,
+        .motion-picker-icon,
+        .link-picker-icon,
+        .share-picker-icon,
+        .search-picker-icon
+    ) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* date-time-picker's calendar icon is still a Unicode glyph
+       (U+1F4C5 + U+FE0E) -- out of scope for the 2026-09-16 SVG-icon
+       reversal, since date-time-picker was not part of that change
+       (see AGENTS/helpers.md) -- so it keeps the font-size-based
+       sizing the other five used to share.
+
+       U+1F4C5 calendar inks 1.000 of its em box (max extent) against
+       U+25D1 half-circle's reference 0.850 (the pre-reversal
+       baseline, still valid here since this is the same glyph
+       measurement, unchanged): 0.850/1.000 ≈ 0.85, shipped as 0.845.
+       A colour-emoji font paints every one of its glyphs into one
+       identical em square, so globe, calendar, rocket and heart all
+       measure the same ink box -- any future emoji helper icon can
+       reuse this factor without re-measuring.
+
+       (Measuring also confirms the U+FE0E text-presentation selector is
+       ignored here: the bare and VS-15 forms are metrically identical. It
+       stays in the source as a hint to the platforms that do honour it.) */
+    :where(.date-time-picker-icon) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(1.25em * var(--lily-picker-icon-scale, 1));
+        line-height: 1;
+        --lily-picker-icon-scale: 0.845;
+    }
+
+    /* The share list holds real links and a button rather than options,
+       so its items get the same padding without the option selectors. */
+    :where(.share-picker-list) > :where(.share-picker-list-item) {
+        list-style: none;
+    }
+
+    :where(.share-picker-target, .share-picker-copy) {
+        display: block;
+        width: 100%;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        text-align: start;
+        color: var(--lily-text);
+        background: none;
+        border: 0;
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    :where(.share-picker-target:hover, .share-picker-copy:hover) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    /* link-picker's list holds real page links (a disclosure, not a menu),
+       so its items get the share list's treatment; the current page is
+       marked by aria-current and shown in bold. */
+    :where(.link-picker-list) > :where(.link-picker-list-item) {
+        list-style: none;
+    }
+
+    :where(.link-picker-link) {
+        display: block;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        color: var(--lily-text);
+        text-decoration: none;
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    :where(.link-picker-link:hover) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    :where(.link-picker-link[aria-current="page"]) {
+        font-weight: 600;
+        background-color: var(--lily-surface-sunken);
+    }
+
+    /* Copy feedback. Never display:none this — that silences the live
+       region for screen-reader users. */
+    :where(.share-picker-status) {
+        margin: var(--lily-space-xs) 0 0;
+        font-size: 0.875em;
+        color: var(--lily-text-muted);
+    }
+
+    /* The status paragraph is always rendered so the aria-live region
+       exists before the first announcement (see above); empty, it still
+       generates a line box and carries the margin-top set above, both of
+       which push the button row out of alignment in a flex layout like
+       picker-bar (found independently by two downstream consumers, each
+       patching around it locally). :empty here matches a Svelte-rendered
+       {status} of "" (a zero-length text node doesn't count as a child
+       per the CSS spec), so this only applies while there is nothing to
+       announce, and normal spacing returns the moment status has text. */
+    :where(.share-picker-status:empty) {
+        margin: 0;
+        line-height: 0;
+    }
+
+    /* Components added 2026-10-05: kbd-shortcut, show-more, thinking,
+       empty-state, file-tree, one-time-password-input, multi-select, and
+       the four calendar views. The calendar views reuse the
+       calendar-table-* sub-element hooks, so they only need the table
+       root rule. show-more's clamp is keyed on data-expanded (the
+       component never sets an inline style); file-tree hides a closed
+       folder's group via aria-expanded. */
+    :where(.calendar-year-table, .calendar-month-table, .calendar-week-table, .calendar-day-table) {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    :where(.kbd-shortcut) {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--lily-space-xs);
+    }
+
+    :where(.kbd-shortcut-key) {
+        display: inline-block;
+        padding: 0.125rem 0.4rem;
+        font-family: var(--lily-font-mono);
+        font-size: 0.85em;
+        background-color: var(--lily-surface-alt);
+        border: var(--border) solid var(--lily-border-strong);
+        border-bottom-width: 2px;
+        border-radius: var(--lily-radius-sm);
+    }
+
+    :where(.show-more-content[data-expanded="false"]) {
+        max-height: 6em;
+        overflow: hidden;
+    }
+
+    :where(.show-more-button) {
+        margin-block-start: var(--lily-space-xs);
+        padding: var(--lily-space-xs);
+        font: inherit;
+        color: inherit;
+        text-decoration: underline;
+        background: none;
+        border: 0;
+        cursor: pointer;
+    }
+
+    :where(.thinking) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        color: var(--lily-text-muted);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+    }
+
+    :where(.thinking-summary) {
+        cursor: pointer;
+    }
+
+    :where(.thinking[data-streaming] .thinking-summary) {
+        font-style: italic;
+    }
+
+    :where(.empty-state) {
+        padding: var(--lily-space-lg);
+        text-align: center;
+        color: var(--lily-text-muted);
+    }
+
+    :where(.file-tree, .file-tree [role="group"]) {
+        margin: 0;
+        padding-inline-start: 0;
+        list-style: none;
+    }
+
+    :where(.file-tree [role="group"]) {
+        padding-inline-start: var(--lily-space-md);
+    }
+
+    :where(.file-tree [role="treeitem"]) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        cursor: pointer;
+    }
+
+    :where(.file-tree [role="treeitem"][aria-expanded="false"] > [role="group"]) {
+        display: none;
+    }
+
+    :where(.file-tree [role="treeitem"]:focus-visible) {
+        outline: var(--lily-focus-ring);
+        outline-offset: -2px;
+    }
+
+    :where(.one-time-password-input, .multi-select, .multi-select-with-extras select) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-sm);
+    }
+
+    :where(.one-time-password-input) {
+        font-family: var(--lily-font-mono);
+        letter-spacing: 0.25em;
+    }
+
+    /* Chart containers added 2026-10-05 (gauge, heatmap, radar, sankey, pie,
+       ring, funnel, candlestick, composed, choropleth, sunburst) join the
+       existing five as block figures. Every chart's optional data-table
+       wrapper sits below the graphic; the table itself inherits the
+       catalog's table styling. */
+    :where(
+        .gauge-chart,
+        .heatmap-chart,
+        .radar-chart,
+        .sankey-chart,
+        .pie-chart,
+        .ring-chart,
+        .funnel-chart,
+        .candlestick-chart,
+        .composed-chart,
+        .choropleth-chart,
+        .sunburst-chart
+    ) {
+        display: block;
+        margin: 0;
+    }
+
+    :where(
+        .area-chart-data-table,
+        .bar-chart-data-table,
+        .column-chart-data-table,
+        .line-chart-data-table,
+        .scatter-chart-data-table,
+        .gauge-chart-data-table,
+        .heatmap-chart-data-table,
+        .radar-chart-data-table,
+        .sankey-chart-data-table,
+        .pie-chart-data-table,
+        .ring-chart-data-table,
+        .funnel-chart-data-table,
+        .candlestick-chart-data-table,
+        .composed-chart-data-table,
+        .choropleth-chart-data-table,
+        .sunburst-chart-data-table
+    ) {
+        margin-block-start: var(--lily-space-sm);
+        overflow-x: auto;
+    }
+
+    /* tool-call (2026-10-05): a bordered disclosure; the status word sits next
+       to the name in the summary and is never the only cue. [data-status] is
+       the consumer hook for a spinner or icon. */
+    :where(.tool-call) {
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+    }
+
+    :where(.tool-call-summary) {
+        display: flex;
+        align-items: center;
+        gap: var(--lily-space-sm);
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        cursor: pointer;
+    }
+
+    :where(.tool-call-content) {
+        display: grid;
+        gap: var(--lily-space-xs);
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        border-block-start: var(--border) solid var(--lily-border-strong);
+    }
+
+    :where(.tool-call-name) {
+        font-family: var(--lily-font-mono);
+    }
+
+    :where(.tool-call-status) {
+        color: var(--lily-text-muted);
+    }
+
+    :where(.tool-call-input pre, .tool-call-output pre) {
+        margin: 0;
+        overflow-x: auto;
+        font-family: var(--lily-font-mono);
+    }
+
+    :where(.tool-call-error) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-sm);
+        font-weight: 600;
+    }
+
+    /* mark (2026-10-05): the native <mark> highlight. The UA default is a
+       fixed yellow; this uses the theme's own surface and text tokens so the
+       pair keeps its contrast in every theme (including dark ones). */
+    :where(.mark) {
+        padding-inline: 0.15em;
+        color: var(--lily-text);
+        background-color: var(--lily-surface-alt);
+        border-radius: var(--lily-radius-sm);
+        box-shadow: 0 0 0 1px var(--lily-border-strong);
+    }
+
+    /* chat-composer (2026-10-05): one row, textarea growing, one button. The
+       button's visible word is its accessible name — hide it visually, never
+       with display:none, if you replace it with an icon. */
+    :where(.chat-composer) {
+        display: flex;
+        align-items: flex-end;
+        gap: var(--lily-space-xs);
+    }
+
+    :where(.chat-composer-input) {
+        flex: 1;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        resize: none;
+    }
+
+    :where(.chat-composer-button) {
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        cursor: pointer;
+    }
+
+    :where(.chat-composer-button:disabled) {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    /* Picker tooltips (added 2026-10-04): a visual-only role="tooltip"
+       element beside each picker's icon button, holding the same text as
+       its aria-label. The component toggles [hidden]; position and look
+       are here. It sits just below the button, in the inverse of the
+       page colours so it never disappears into the surface. A ::before
+       strip bridges the gap to the button so the pointer can travel onto
+       the tooltip without it closing (WCAG 1.4.13, hoverable). */
+    :where(.motion-picker) {
+        position: relative;
+        display: inline-block;
+    }
+
+    :where(
+        .theme-picker-tooltip,
+        .locale-picker-tooltip,
+        .text-size-picker-tooltip,
+        .motion-picker-tooltip,
+        .link-picker-tooltip,
+        .share-picker-tooltip,
+        .search-picker-tooltip,
+        .date-time-picker-tooltip
+    ) {
+        position: absolute;
+        z-index: 11;
+        inset-inline-start: 0;
+        inset-block-start: 100%;
+        margin-block-start: var(--lily-space-xs);
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font-size: 0.875em;
+        line-height: 1.3;
+        white-space: nowrap;
+        color: var(--lily-surface);
+        background-color: var(--lily-text);
+        border-radius: var(--lily-radius-sm);
+        box-shadow: var(--lily-shadow-md);
+    }
+
+    :where(
+        .theme-picker-tooltip,
+        .locale-picker-tooltip,
+        .text-size-picker-tooltip,
+        .motion-picker-tooltip,
+        .link-picker-tooltip,
+        .share-picker-tooltip,
+        .search-picker-tooltip,
+        .date-time-picker-tooltip
+    )::before {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        inset-block-end: 100%;
+        height: var(--lily-space-xs);
+    }
+
+    :where(
+        .theme-picker-tooltip,
+        .locale-picker-tooltip,
+        .text-size-picker-tooltip,
+        .motion-picker-tooltip,
+        .link-picker-tooltip,
+        .share-picker-tooltip,
+        .search-picker-tooltip,
+        .date-time-picker-tooltip
+    )[hidden] {
+        display: none;
+    }
+
+    /* search-picker's panel holds a search form rather than a list: the
+       field and the ⏎ submit button sit in one row, the button at the
+       field's inline end (right in LTR, left under dir="rtl"). The ⏎
+       button matches the picker trigger buttons' size and border. */
+    :where(.search-picker-form) {
+        display: flex;
+        align-items: stretch;
+        gap: var(--lily-space-xs);
+        margin: 0;
+    }
+
+    :where(.search-picker-input) {
+        min-width: 14rem;
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-sm);
+    }
+
+    :where(.search-picker-submit) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: var(--lily-space-xs);
+        font: inherit;
+        line-height: 1;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        cursor: pointer;
+    }
+
+    :where(.search-picker-submit:hover) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    :where(
+        .theme-picker-list,
+        .locale-picker-list,
+        .text-size-picker-list,
+        .motion-picker-list,
+        .link-picker-list,
+        .share-picker-list,
+        .search-picker-panel
+    ) {
+        position: absolute;
+        z-index: 10;
+        inset-inline-start: 0;
+        min-width: max-content;
+        max-height: 60vh;
+        margin-block-start: var(--lily-space-xs);
+        padding: var(--lily-space-xs);
+        overflow-y: auto;
+        list-style: none;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        box-shadow: var(--lily-shadow-md);
+    }
+
+    /* Explicit, because the rules above would otherwise beat the UA
+       stylesheet's [hidden] { display: none }. */
+    :where(
+        .theme-picker-list,
+        .locale-picker-list,
+        .text-size-picker-list,
+        .motion-picker-list,
+        .link-picker-list,
+        .share-picker-list,
+        .search-picker-panel
+    )[hidden] {
+        display: none;
+    }
+
+    /* Popups open under their button, aligned to its start edge, and flip to
+       its end edge (or above it) when they would run off the viewport. A header
+       picker near the right edge otherwise overflows, and focusing the popup
+       scrolls the whole page sideways. `position: fixed` makes the viewport the
+       containing block that the flip fallbacks are checked against; browsers
+       without anchor positioning keep the absolute placement above. */
+    @supports (position-area: block-end) {
+        :where(.theme-picker) { anchor-name: --lily-theme-picker; }
+        :where(.locale-picker) { anchor-name: --lily-locale-picker; }
+        :where(.text-size-picker) { anchor-name: --lily-text-size-picker; }
+        :where(.motion-picker) { anchor-name: --lily-motion-picker; }
+        :where(.link-picker) { anchor-name: --lily-link-picker; }
+        :where(.share-picker) { anchor-name: --lily-share-picker; }
+        :where(.search-picker) { anchor-name: --lily-search-picker; }
+        :where(.theme-picker-list) { position-anchor: --lily-theme-picker; }
+        :where(.locale-picker-list) { position-anchor: --lily-locale-picker; }
+        :where(.text-size-picker-list) { position-anchor: --lily-text-size-picker; }
+        :where(.motion-picker-list) { position-anchor: --lily-motion-picker; }
+        :where(.link-picker-list) { position-anchor: --lily-link-picker; }
+        :where(.share-picker-list) { position-anchor: --lily-share-picker; }
+        :where(.search-picker-panel) { position-anchor: --lily-search-picker; }
+        :where(
+            .theme-picker-list,
+            .locale-picker-list,
+            .text-size-picker-list,
+            .motion-picker-list,
+            .link-picker-list,
+            .share-picker-list,
+            .search-picker-panel
+        ) {
+            position: fixed;
+            inset: auto;
+            position-area: block-end span-inline-end;
+            position-try-fallbacks: flip-inline, flip-block, flip-block flip-inline;
+            min-width: 0;
+            width: max-content;
+            max-width: calc(100vw - 1rem);
+        }
+    }
+
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
+        > :where(
+            .theme-picker-option,
+            .locale-picker-option,
+            .text-size-picker-option,
+            .motion-picker-option
+        ) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    /* data-active is the keyboard cursor (aria-activedescendant); focus
+       stays on the listbox, so this is the only visible cue for it. */
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
+        > :where([data-active]) {
+        background-color: var(--lily-surface-alt);
+        outline: var(--lily-focus-ring);
+        outline-offset: -2px;
+    }
+
+    /* aria-selected marks the applied theme/locale, which is not the
+       same thing as the keyboard cursor. Both can be visible at once. */
+    :where(.theme-picker-list, .locale-picker-list, .text-size-picker-list, .motion-picker-list)
+        > :where([aria-selected="true"]) {
+        font-weight: 600;
+        background-color: var(--lily-surface-sunken);
+    }
+
+    /* Locale options inherit the select colours, same as theme options. */
+    :where(.locale-picker-option) {
+        background-color: var(--lily-surface);
+        color: var(--lily-text);
+    }
+
+    /* ----------------------------------------------------------------------
+     * date-time-picker
+     *
+     * The one helper that is a form control rather than a page-header
+     * control, so it is the only one with a text field beside its trigger
+     * and a dialog rather than a listbox. The field itself needs no rules
+     * here: `.date-time-picker-input` already matches the generic
+     * [class$="-input"] baseline further up.
+     * -------------------------------------------------------------------- */
+
+    :where(.date-time-picker-field) {
+        display: flex;
+        align-items: center;
+        gap: var(--lily-space-xs);
+    }
+
+    :where(.date-time-picker-dialog) {
+        position: absolute;
+        z-index: 10;
+        inset-inline-start: 0;
+        margin-block-start: var(--lily-space-xs);
+        padding: var(--lily-space-sm);
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        box-shadow: var(--lily-shadow-md);
+    }
+
+    /* Explicit, because the rule above would otherwise beat the UA
+       stylesheet's [hidden] { display: none } — the same trap the
+       listbox popups have to step around. */
+    :where(.date-time-picker-dialog)[hidden] {
+        display: none;
+    }
+
+    :where(.date-time-picker-header) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--lily-space-xs);
+        margin-block-end: var(--lily-space-xs);
+    }
+
+    /* The month/year heading is a live region, so it must keep its box
+       even while empty — never display:none it. */
+    :where(.date-time-picker-period) {
+        flex: 1;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* The four navigation buttons and the footer/shortcut buttons do not
+       end in `-button`, so the generic button family never reaches them. */
+    :where(
+        .date-time-picker-previous-year,
+        .date-time-picker-previous-month,
+        .date-time-picker-previous-week,
+        .date-time-picker-previous-day,
+        .date-time-picker-next-day,
+        .date-time-picker-next-week,
+        .date-time-picker-next-month,
+        .date-time-picker-next-year,
+        .date-time-picker-shortcut,
+        .date-time-picker-clear,
+        .date-time-picker-cancel,
+        .date-time-picker-confirm
+    ) {
+        padding: var(--lily-space-xs) var(--lily-space-sm);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    :where(
+        .date-time-picker-previous-year:hover,
+        .date-time-picker-previous-month:hover,
+        .date-time-picker-previous-week:hover,
+        .date-time-picker-previous-day:hover,
+        .date-time-picker-next-day:hover,
+        .date-time-picker-next-week:hover,
+        .date-time-picker-next-month:hover,
+        .date-time-picker-next-year:hover,
+        .date-time-picker-shortcut:hover,
+        .date-time-picker-clear:hover,
+        .date-time-picker-cancel:hover,
+        .date-time-picker-confirm:hover
+    ) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    /* The commit action is the primary one on the dialog. */
+    :where(.date-time-picker-confirm) {
+        color: var(--color-primary-content);
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    :where(.date-time-picker-calendar) {
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    :where(.date-time-picker-weekday, .date-time-picker-week-heading) {
+        padding: var(--lily-space-xs);
+        font-size: 0.8125em;
+        font-weight: 600;
+        color: var(--lily-text-muted);
+    }
+
+    /* Week numbers are reference data, not navigation: muted, and set in
+       tabular figures so the column does not shimmer as months change. */
+    :where(.date-time-picker-week) {
+        padding-inline-end: var(--lily-space-xs);
+        font-size: 0.8125em;
+        font-weight: 400;
+        font-variant-numeric: tabular-nums;
+        color: var(--lily-text-muted);
+        text-align: end;
+    }
+
+    :where(.date-time-picker-day) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 2rem is a compromise: WCAG 2.5.8 (AA) wants 24px, 2.5.5 (AAA)
+           wants 44px, and seven 44px columns do not fit a 320px viewport
+           alongside dialog chrome. Consumers targeting AAA should enlarge
+           these and let the dialog go full-width on small screens. */
+        min-width: 2rem;
+        min-height: 2rem;
+        padding: 0;
+        font: inherit;
+        font-variant-numeric: tabular-nums;
+        color: var(--lily-text);
+        background: none;
+        border: var(--border) solid transparent;
+        border-radius: var(--lily-radius-sm);
+        cursor: pointer;
+    }
+
+    :where(.date-time-picker-day:hover:not([data-disabled])) {
+        background-color: var(--lily-surface-alt);
+    }
+
+    /* Adjacent-month days stay legible rather than being hidden: they are
+       real, selectable dates, and blanking them makes the grid harder to
+       scan across a month boundary. */
+    :where(.date-time-picker-day[data-outside]) {
+        color: var(--lily-text-muted);
+    }
+
+    /* Today is marked with a border, the selection with a fill. Two
+       different channels, so a day that is both still reads as both. */
+    :where(.date-time-picker-day[data-today]) {
+        border-color: var(--lily-border-strong);
+        font-weight: 600;
+    }
+
+    :where(.date-time-picker-day[data-selected]) {
+        color: var(--color-primary-content);
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    :where(.date-time-picker-day[data-disabled]) {
+        color: var(--lily-text-muted);
+        cursor: not-allowed;
+        /* Struck through as well as dimmed: "unavailable" must not rest on
+           contrast alone (WCAG 1.4.1). */
+        text-decoration: line-through;
+    }
+
+    :where(.date-time-picker-time) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--lily-space-xs);
+        margin-block-start: var(--lily-space-sm);
+    }
+
+    :where(.date-time-picker-time-label) {
+        font-size: 0.8125em;
+        color: var(--lily-text-muted);
+    }
+
+    :where(.date-time-picker-time-zone) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--lily-space-xs);
+        margin-block-end: var(--lily-space-sm);
+    }
+
+    :where(.date-time-picker-time-zone-label) {
+        font-size: 0.8125em;
+        color: var(--lily-text-muted);
+    }
+
+    :where(
+        .date-time-picker-hour,
+        .date-time-picker-minute,
+        .date-time-picker-meridiem,
+        .date-time-picker-time-zone-select
+    ) {
+        padding: var(--lily-space-xs);
+        font: inherit;
+        color: var(--lily-text);
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-sm);
+    }
+
+    :where(.date-time-picker-shortcuts) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--lily-space-xs);
+        margin-block-start: var(--lily-space-sm);
+    }
+
+    :where(.date-time-picker-footer) {
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--lily-space-xs);
+        margin-block-start: var(--lily-space-sm);
+    }
+
+    /* Combobox / listbox / autosuggest — non-native variant of <select>. */
+    :where(.combobox, .listbox, .autosuggest) {
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+    }
+
+    /* ==========================================================================
+     * Editorial typography
+     * --------------------------------------------------------------------------
+     * Headlines, body text, byline, blockquote, code — the long-form reading
+     * primitives. Headlines use clamp() so they shrink on narrow viewports
+     * without media queries.
+     * ====================================================================== */
+
+    :where(.headline, .hero-headline, .section-heading) {
+        color: var(--lily-text);
+        font-family: var(--lily-font-body);
+        font-weight: 700;
+        line-height: 1.15;
+        margin: 0 0 0.5rem 0;
+    }
+    :where(.headline) {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    :where(.hero-headline) {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+    :where(.section-heading) {
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+    }
+    /* Body text — 1.6 line-height (sweet spot for reading). */
+    :where(.body-text) {
+        line-height: 1.6;
+        color: var(--lily-text);
+    }
+    /* Byline — author / date line under a headline. */
+    :where(.byline) {
+        color: var(--lily-text-muted);
+        font-size: 0.875rem;
+    }
+    /* Blockquote — primary-coloured rail + italic body. */
+    :where(.blockquote) {
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+        border-inline-start: 0.25rem solid var(--color-primary);
+        color: var(--lily-text);
+        font-style: italic;
+    }
+    /* End-notes / related content — top-bordered section at the foot. */
+    :where(.end-notes, .related-content) {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: var(--border) solid var(--lily-border);
+    }
+    /* Caption / footnote / citation — small muted text. */
+    :where(.caption, .footnote, .citation) {
+        font-size: 0.875rem;
+        color: var(--lily-text-muted);
+    }
+    /* KBD — keyboard key glyph; thicker bottom border simulates the keytop. */
+    :where(.kbd) {
+        display: inline-block;
+        padding: 0.125rem 0.4rem;
+        font-family: var(--lily-font-mono);
+        font-size: 0.85em;
+        background-color: var(--lily-surface-alt);
+        border: var(--border) solid var(--lily-border-strong);
+        border-bottom-width: 2px;
+        border-radius: var(--lily-radius-sm);
+    }
+    /* Inline code — slight background tint + monospaced font. */
+    :where(.code) {
+        font-family: var(--lily-font-mono);
+        padding: 0.1em 0.3em;
+        background-color: var(--lily-surface-alt);
+        border-radius: var(--lily-radius-sm);
+        font-size: 0.9em;
+    }
+    /* Code block — full-width block with horizontal scroll. */
+    :where(.code-block) {
+        display: block;
+        padding: 1rem;
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+        font-family: var(--lily-font-mono);
+        border-radius: var(--lily-radius-md);
+        overflow-x: auto;
+        white-space: pre;
+    }
+    /* Inset text — left-railed callout for "Important" content
+       (GOV.UK / NHS pattern). */
+    :where(.inset-text) {
+        padding: 0.75rem 1rem;
+        border-inline-start: 0.25rem solid var(--color-primary);
+        background-color: var(--lily-surface-alt);
+    }
+    /* Generic character — monospaced single-glyph display. */
+    :where(.character) {
+        font-family: var(--lily-font-mono);
+    }
+    /* Clamp-text — truncate to N lines (controlled by --lily-clamp-lines). */
+    :where(.clamp-text) {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--lily-clamp-lines, 3);
+        line-clamp: var(--lily-clamp-lines, 3);
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    /* Screen-reader-only — visually hidden but available to AT. The
+       classic clip-rect pattern (works in every screen reader). */
+    :where(.screen-reader-span) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    /* ==========================================================================
+     * Hero, figure, photo, media
+     * ====================================================================== */
+
+    /* Hero block — primary-filled banner with centred content. clamp() pad
+       scales vertically across viewport sizes. */
+    :where(.hero) {
+        display: block;
+        padding: clamp(2rem, 5vw, 4rem) 1rem;
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+        border-radius: var(--lily-radius-lg);
+        text-align: center;
+    }
+    /* Figure — centred block with vertical margin. */
+    :where(.figure) {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    /* Feature photo — responsive lead image. */
+    :where(.feature-photo) {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: var(--lily-radius-md);
+    }
+    /* Photo pack — responsive grid of thumbnails. */
+    :where(.photo-pack) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        gap: 0.5rem;
+    }
+    /* Generic image — responsive block image. */
+    :where(.image) {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    /* QR / barcode / signature — frame them as a labelled tile. */
+    :where(.qr-code-image, .barcode-image, .signature-pad) {
+        display: inline-block;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 0.5rem;
+    }
+    /* Signature pad — drawable surface; crosshair cursor signals input. */
+    :where(.signature-pad) {
+        min-height: 8rem;
+        cursor: crosshair;
+    }
+    /* Video player — responsive black-letterboxed frame. */
+    :where(.video-player) {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-radius: var(--lily-radius-md);
+        /* Video chrome is black in every theme; pair the text colour with
+           it here rather than inheriting the theme's (possibly dark)
+           content colour onto a black surface. */
+        background-color: black;
+        color: white;
+    }
+
+    /* ==========================================================================
+     * Mockups & pictograms
+     * --------------------------------------------------------------------------
+     * Device frames for screenshots / illustrations — browser, phone, tablet,
+     * laptop, watch, shell window. All share the same rounded-outline frame
+     * baseline; specific frames override the radius / border-width.
+     * ====================================================================== */
+
+    :where(
+        .mockup-browser,
+        .mockup-window,
+        .mockup-shell,
+        .mockup-phone-portrait,
+        .mockup-phone-landscape,
+        .mockup-tablet-portrait,
+        .mockup-tablet-landscape,
+        .mockup-laptop,
+        .mockup-watch
+    ) {
+        display: block;
+        background-color: var(--lily-surface);
+        border: 2px solid var(--color-neutral);
+        border-radius: var(--lily-radius-lg);
+        overflow: hidden;
+        box-shadow: var(--lily-shadow-md);
+    }
+    /* Mockup shell — terminal window; dark neutral fill + mono font. */
+    :where(.mockup-shell) {
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+        font-family: var(--lily-font-mono);
+        padding: 1rem;
+    }
+    /* Phones — heavier bezel (6px) and more rounded corners. */
+    :where(.mockup-phone-portrait, .mockup-phone-landscape) {
+        border-radius: 1.5rem;
+        border-width: 6px;
+    }
+    /* Smartwatch — chunky bezel (4px) and pill radius. */
+    :where(.mockup-watch) {
+        border-radius: 1rem;
+        border-width: 4px;
+    }
+    /* Pictogram — stacked icon + caption, centred. */
+    :where(.pictogram) {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* ==========================================================================
+     * Charts (containers only — content supplied by consumer)
+     * --------------------------------------------------------------------------
+     * Headless: Lily provides the frame + a 6-colour palette as custom
+     * properties. The consumer's chart library (D3, Chart.js, ECharts, etc.)
+     * reads `var(--lily-chart-color-1..6)` for its series colours.
+     * ====================================================================== */
+
+    :where(
+        .area-chart,
+        .bar-chart,
+        .column-chart,
+        .line-chart,
+        .scatter-chart,
+        .sparkline,
+        .tile-map,
+        .graphic-block
+    ) {
+        display: block;
+        background-color: var(--lily-surface);
+        border-radius: var(--lily-radius-md);
+        padding: 1rem;
+        color: var(--lily-text);
+        /* Six-colour palette — the consumer's chart library picks these up. */
+        --lily-chart-color-1: var(--color-primary);
+        --lily-chart-color-2: var(--color-secondary);
+        --lily-chart-color-3: var(--color-accent);
+        --lily-chart-color-4: var(--color-info);
+        --lily-chart-color-5: var(--color-success);
+        --lily-chart-color-6: var(--color-warning);
+    }
+    /* Sparkline — small inline chart; no padding. */
+    :where(.sparkline) {
+        padding: 0;
+        height: 1.5rem;
+        width: 6rem;
+        display: inline-block;
+    }
+    /* Graphic block — bordered chart container. */
+    :where(.graphic-block) {
+        border: var(--border) solid var(--lily-border);
+    }
+
+    /* ==========================================================================
+     * Scrolling, splits, resize
+     * ====================================================================== */
+
+    /* Scroll area — capped at 20rem, auto-overflow. */
+    :where(.scroll-area) {
+        overflow: auto;
+        max-height: 20rem;
+    }
+    /* Horizontal scroller — flex row that overflows on x. */
+    :where(.horizontal-scroller) {
+        overflow-x: auto;
+        display: flex;
+        gap: 0.5rem;
+    }
+    /* Scroller (Reuters-pattern scrollytelling) — positioning anchor. */
+    :where(.scroller, .scroller-base, .scroller-video) {
+        position: relative;
+        display: block;
+    }
+    /* Custom scrollbar track. */
+    :where(.scroll-bar) {
+        background-color: var(--lily-surface-sunken);
+        border-radius: 999px;
+        height: 0.5rem;
+    }
+    /* Affix — stick to the top of the viewport on scroll. */
+    :where(.affix) {
+        position: sticky;
+        inset-block-start: 0;
+    }
+    /* Visible — IntersectionObserver target; baseline is a visible block. */
+    :where(.visible) {
+        display: block;
+    }
+    /* Resizable — native CSS resize handle (corner). */
+    :where(.resizable) {
+        resize: both;
+        overflow: auto;
+    }
+    /* Split-view + splitter — two-pane horizontal layout. */
+    :where(.split-view) {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+    }
+    :where(.splitter) {
+        flex: 0 0 0.375rem;
+        background-color: var(--lily-border);
+        cursor: col-resize;
+    }
+
+    /* ==========================================================================
+     * Misc unique components
+     * ====================================================================== */
+
+    /* Statistic — stacked label + value; value is large and primary-coloured. */
+    :where(.statistic) {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    :where(.statistic > [data-part="value"]) {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+    /* Watermark — diagonal repeating-line pattern at 8% opacity behind content. */
+    :where(.watermark) {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.08;
+        background: repeating-linear-gradient(
+            -45deg,
+            var(--lily-text) 0 1px,
+            transparent 1px 8rem
+        );
+    }
+    /* Beach ball (macOS "waiting" indicator) — six-colour conic wheel. */
+    :where(.beach-ball) {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--color-error),
+            var(--color-warning),
+            var(--color-success),
+            var(--color-info),
+            var(--color-primary),
+            var(--color-error)
+        );
+        animation: lily-spin 2s linear infinite;
+    }
+    /* Diff — side-by-side two-column comparison. */
+    :where(.diff) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    /* Addressograph box — paper-form ID label (NHS / hospital pattern). */
+    :where(.addressograph-box) {
+        display: block;
+        padding: 0.75rem 1rem;
+        background-color: var(--lily-surface-alt);
+        border: 2px solid var(--lily-text);
+        font-family: var(--lily-font-mono);
+        line-height: 1.4;
+    }
+    /* Government identifier — dark chrome bar containing an ID number. */
+    :where(.government-identifier) {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        background-color: var(--color-neutral);
+        color: var(--color-neutral-content);
+    }
+    /* Share / signup / CTA panels — alt-surface promo blocks. */
+    :where(.share-page, .newsletter-signup, .call-to-action) {
+        padding: 1rem;
+        background-color: var(--lily-surface-alt);
+        border-radius: var(--lily-radius-md);
+    }
+    /* CTA — override with primary fill so it reads as the page action. */
+    :where(.call-to-action) {
+        background-color: var(--color-primary);
+        color: var(--color-primary-content);
+    }
+    /* Links inside the call-to-action inherit its content colour —
+       otherwise the UA default link blue lands on the primary fill. */
+    :where(.call-to-action) :where(a) {
+        color: inherit;
+    }
+    /* Expander / collapsible / details — boxed disclosure controls. */
+    :where(.expander, .collapsible, .details) {
+        display: block;
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 0.5rem 1rem;
+    }
+    :where(.details > summary, .expander > summary, .collapsible > summary) {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.25rem 0;
+    }
+    /* Carousel — horizontal scroller with snap-points so each slide locks
+       into view as the user swipes. */
+    :where(.carousel) {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0.5rem;
+    }
+    :where(.carousel > *) {
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+    }
+
+    /* --- Semantic entities — neutral display blocks. ----------------------- */
+    :where(
+        .person,
+        .organization,
+        .place,
+        .event,
+        .comment,
+        .question,
+        .answer
+    ) {
+        display: block;
+        padding: 0.75rem 0;
+    }
+    /* Draft wrapper — dashed border + optional "Draft" pill prefix. */
+    :where(.draft) {
+        border: 1px dashed var(--lily-border-strong);
+        background-color: var(--lily-surface-alt);
+        padding: 1rem;
+        border-radius: var(--lily-radius-md);
+    }
+    :where(.draft[data-status="draft"])::before {
+        content: "Draft";
+        display: inline-block;
+        margin-inline-end: 0.5rem;
+        padding: 0.125rem 0.5rem;
+        background-color: var(--color-warning);
+        color: var(--color-warning-content);
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    /* Dial — circular gauge driven by --dial-value (0–100). */
+    :where(.dial) {
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background: conic-gradient(
+            var(--color-primary) calc(var(--dial-value, 0) * 1%),
+            var(--lily-surface-sunken) 0
+        );
+    }
+
+    /* File upload — drop-zone aesthetic: dashed border, alt surface. */
+    :where(.file-upload) {
+        display: block;
+        padding: 1.5rem;
+        background-color: var(--lily-surface-alt);
+        border: 2px dashed var(--lily-border-strong);
+        border-radius: var(--lily-radius-md);
+        text-align: center;
+        cursor: pointer;
+    }
+    /* File manager — surface-coloured frame holding a file list. */
+    :where(.file-manager) {
+        display: block;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 0.5rem;
+    }
+    /* Transfer list — two columns + central button stack. */
+    :where(.transfer-list) {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    /* Tour — onboarding card with medium elevation. */
+    :where(.tour) {
+        display: block;
+        background-color: var(--lily-surface);
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-lg);
+        padding: 1rem;
+        box-shadow: var(--lily-shadow-md);
+    }
+
+    /* Editable text — dashed underline indicates click-to-edit. */
+    :where(.editable) {
+        display: inline-block;
+        padding: 0.125rem 0.25rem;
+        border-bottom: 1px dashed var(--lily-border-strong);
+        cursor: text;
+    }
+    /* Editing state — alt surface + primary underline. */
+    :where(.editable[aria-expanded="true"]) {
+        background-color: var(--lily-surface-alt);
+        border-bottom-color: var(--color-primary);
+    }
+
+    /* Accordion-checkbox — a checkbox that toggles a panel via sibling
+       combinator (no JS needed). */
+    :where(.accordion-checkbox) {
+        display: block;
+        border: var(--border) solid var(--lily-border);
+        border-radius: var(--lily-radius-md);
+        padding: 0.5rem 0.75rem;
+    }
+    :where(.accordion-checkbox-input) {
+        margin-inline-end: 0.5rem;
+    }
+    :where(.accordion-checkbox-panel) {
+        display: none;
+        padding-block-start: 0.5rem;
+    }
+    /* Reveal the panel when the input is checked. */
+    :where(.accordion-checkbox-input:checked ~ .accordion-checkbox-panel) {
+        display: block;
+    }
+
+    /* Icon — 1em square container; sizes with surrounding text. */
+    :where(.icon) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1em;
+        height: 1em;
+        flex: 0 0 auto;
+    }
+
+    /* Emoji — inline glyph; not italicised. */
+    :where(.emoji) {
+        display: inline-block;
+        font-style: normal;
+    }
+
+    /* Slider — primary-filled track based on --slider-value (0–100). */
+    :where(.slider) {
+        display: block;
+        width: 100%;
+        height: 1.5rem;
+        background: linear-gradient(
+            to right,
+            var(--color-primary) calc(var(--slider-value, 50) * 1%),
+            var(--lily-surface-sunken) 0
+        );
+        border-radius: 999px;
+    }
+
+    /* Timer — fixed-width digits so the display doesn't jiggle as it ticks. */
+    :where(.timer) {
+        display: inline-block;
+        font-family: var(--lily-font-mono);
+        font-variant-numeric: tabular-nums;
+        font-weight: 600;
+    }
+
+    /* Medical banner inner boxes — spacing-only override. */
+    :where(.medical-banner-box-for-advice, .medical-banner-box-for-danger) {
+        padding: 0.75rem 1rem;
+        border-radius: var(--lily-radius-md);
+        margin: 0.25rem 0;
+    }
+
+    /* ==========================================================================
+     * Print
+     * --------------------------------------------------------------------------
+     * On paper, transient/floating chrome (skip-link, FAB, toast, tooltip)
+     * is meaningless — hide it. Card-like surfaces drop their drop-shadow
+     * and shift to a high-contrast outline so they're readable in monochrome.
+     * ====================================================================== */
+    @media print {
+        :where(
+            .skip-link,
+            .float-button,
+            .toast,
+            .sonner,
+            .tooltip,
+            .coachmark
+        ) {
+            display: none !important;
+        }
+        :where(.card, .panel, .dialog, .alert) {
+            box-shadow: none;
+            border-color: var(--lily-text);
+        }
+    }
+}
+
+/* ============================================================================
+ * WCAG 2.2 target-size (minimum) floor — 2.5.8
+ *
+ * Every interactive Lily hook offers a >=24x24 CSS-pixel target. Links
+ * that render as short inline text (a pagination "1", a breadcrumb crumb)
+ * fail the 24px floor under typographic sizing alone, so the link-shaped
+ * hooks become inline-block with a minimum box. :where() keeps specificity
+ * at zero, so any consumer rule still wins. Shared verbatim by all themes.
+ * ========================================================================= */
+
+:where(.action-link,
+       .back-link,
+       .breadcrumb-list-item > a,
+       .pagination-list-item > a,
+       .contents-list-item > a,
+       .section-list-item > a) {
+    display: inline-block;
+    min-inline-size: 24px;
+    min-block-size: 24px;
+}
+
+:where(.pagination-list-item > a) {
+    text-align: center;
+}
+
+:where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+    min-block-size: 24px;
+}
+
+/* ============================================================================
+ * Overflow guards — narrow-viewport safety, shared verbatim by all themes.
+ *
+ * Content that is intrinsically wider than the viewport scrolls or wraps
+ * within its own box instead of pushing the page wider. Deliberately NOT
+ * `display: block` on <table> — that strips implicit table semantics for
+ * assistive technology; capping width and letting cell content wrap keeps
+ * both the layout and the roles. Proven in the example apps' own
+ * stylesheets before the theme layer took over component styling.
+ * ========================================================================= */
+
+:where(pre) {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+:where(table) {
+    max-width: 100%;
+}
+
+:where(th, td) {
+    overflow-wrap: anywhere;
+}
+
+:where(a, code) {
+    overflow-wrap: anywhere;
+}

@@ -1,0 +1,53 @@
+{
+	"name": "architecture-decision-record.github.io",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"description": "Architecture Decision Record (ADR) guide — published website (SvelteKit + Lily Design System)",
+	"scripts": {
+		"dev": "node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite dev",
+		"build": "node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"llms": "node scripts/generate-llms.mjs",
+		"sitemap": "node scripts/generate-sitemap.mjs",
+		"locales": "node scripts/sync-locales.mjs",
+		"search-index": "node scripts/generate-search-index.mjs",
+		"content": "node scripts/sync-locales.mjs && node scripts/generate-search-index.mjs && node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs",
+		"test": "node --test \"tests/*.test.mjs\"",
+		"verify": "node scripts/check-built-site.mjs",
+		"a11y": "node scripts/check-accessibility.mjs"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^4.0.0",
+		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"axe-core": "^4.14.0",
+		"playwright": "^1.63.0",
+		"svelte": "^5.57.1",
+		"svelte-check": "^4.7.6",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.2"
+	},
+	"dependencies": {
+		"@lilydesignsystem/svelte-headless": "^0.4.0",
+		"@lilydesignsystem/svelte-locale-picker": "^0.2.0",
+		"@lilydesignsystem/svelte-picker-bar": "^0.3.0",
+		"@lilydesignsystem/svelte-share-picker": "^0.2.0",
+		"@lilydesignsystem/svelte-text-size-picker": "^0.2.0",
+		"@lilydesignsystem/svelte-theme-picker": "^0.2.0",
+		"marked": "^18.1.0"
+	},
+	"pnpm": {
+		"ignoredBuiltDependencies": [
+			"esbuild"
+		],
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	}
+}

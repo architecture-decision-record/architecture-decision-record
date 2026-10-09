@@ -1,0 +1,9 @@
+# Cyngor gwaith tîm ar gyfer ADRau
+
+Os ydych yn ystyried defnyddio cofnodion penderfyniadau gyda'ch tîm, dyma gyngor rydym wedi'i ddysgu drwy weithio gyda llawer o dimau.
+
+Mae gennych gyfle i arwain eich cydweithwyr drwy drafod y "pam" gyda'ch gilydd, yn hytrach na gorfodi'r "beth". Er enghraifft, mae cofnodion penderfyniadau yn ffordd i dimau feddwl yn gallach a chyfathrebu'n well; nid yw cofnodion penderfyniadau yn werthfawr os ydynt yn ddim ond gofyniad gwaith papur gorfodol a gyflawnir ar ôl y digwydd.
+
+Mae'n well gan rai timau yr enw "penderfyniadau" yn hytrach na'r talfyriad "ADRau". Pan fydd rhai timau yn defnyddio'r enw cyfeiriadur "decisions", mae fel petai bwlb golau yn goleuo, ac mae'r tîm yn dechrau rhoi mwy o wybodaeth yn y cyfeiriadur, fel penderfyniadau ynghylch cyflenwyr, penderfyniadau cynllunio, penderfyniadau amserlennu, ac ati. Gall pob un o'r mathau hyn o wybodaeth ddefnyddio'r un templed. Ein damcaniaeth yw bod pobl yn dysgu'n gyflymach gyda geiriau ("penderfyniadau") nag â thalfyriadau ("ADRau"), bod pobl yn fwy cymhellol i ysgrifennu dogfennau gwaith ar y gweill pan fydd y gair "cofnod" yn cael ei ddileu, a bod rhai datblygwyr a rhai rheolwyr yn casáu'r gair "saernïaeth".
+
+Mewn theori, digyfnewidioldeb yw'r delfryd. Yn ymarferol, mae newidioldeb wedi gweithio'n well i'n timau ni. Rydym yn mewnosod y wybodaeth newydd yn yr ADR presennol, gyda stamp dyddiad a nodyn bod y wybodaeth wedi cyrraedd ar ôl y penderfyniad. Mae'r math hwn o ddull yn arwain at "ddogfen fyw" y gall pob un ohonom ei diweddaru. Fel arfer, byddwn yn diweddaru pan fyddwn yn cael gwybodaeth diolch i aelodau newydd o'r tîm, neu gynigion newydd, neu ganlyniadau gwirioneddol ein defnydd, neu newidiadau gan drydydd parti ar ôl y penderfyniad, fel galluoedd cyflenwyr, cynlluniau prisio, cytundebau trwyddedu, ac ati.
