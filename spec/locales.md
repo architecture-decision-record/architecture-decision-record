@@ -6,7 +6,7 @@ Every directory under `locales/` is named lowercase `<language>-<region>`
 (e.g. `en-001`, `cy-gb`, `zh-tw`). Two-letter, region-less directories such as
 `locales/en/` do not exist and must not be created. `-001` means "world" (UN
 M.49), used for a language-wide translation. Regional variants exist for Welsh
-(`cy-gb`), English (`en-gb`, `en-us`) and Chinese (`zh-cn`, `zh-tw`).
+(`cy-gb`), English (`en-gb`, `en-us`), Portuguese (`pt-br`), and Chinese (`zh-cn`, `zh-tw`).
 
 `en-001` is the English source of truth: edit English there, then translate.
 Links to English content use `locales/en-001/`.

@@ -12,6 +12,7 @@ const cases = [
 	[['en-GB'], '/en-gb/'],
 	[['hi-IN'], '/hi-in/'],
 	[['tr-TR'], '/tr-tr/'],
+	[['pt-BR'], '/pt-br/'],
 	[['zh-TW'], '/zh-tw/'],
 	[['zh-CN'], '/zh-cn/'],
 	// Chinese by script or region
@@ -25,7 +26,7 @@ const cases = [
 	[['en'], '/en-001/'],
 	[['de-DE'], '/de-001/'],
 	[['de-AT'], '/de-001/'],
-	[['pt-BR'], '/pt-br/'],
+	[['pt-PT'], '/pt-001/'],
 	[['fi'], '/fi-001/'],
 	[['es-419'], '/es-001/'],
 	[['tr-CY'], '/tr-001/'],
