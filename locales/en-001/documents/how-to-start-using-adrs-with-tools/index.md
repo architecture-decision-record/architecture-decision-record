@@ -1,6 +1,7 @@
 ## How to start using ADRs with tools
 
 - [MySpec](https://myspec.dev) — Automated specification and architectural decision platform structuring project constitution, technical architecture, and ADRs into clean Markdown served via MCP.
+- [Moxie Docs ADR generator](https://moxiedocs.com/adr-generator) — Free browser-based ADR form with templates, worked examples, live Markdown preview, and .md export.
 
 You can start using ADRs with tools any way you want.
 
