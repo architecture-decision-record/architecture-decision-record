@@ -1,0 +1,57 @@
+name: Publish site
+
+# Pushes architecture-decision-record.github.io/ to the site's own repository
+# (architecture-decision-record/architecture-decision-record.github.io), whose own workflow then builds and
+# deploys GitHub Pages. This is `git subtree push --prefix=architecture-decision-record.github.io` run from CI,
+# so the site folder is the only thing published; all site changes are made here.
+#
+# Fails, rather than forcing, if the site repo has commits this repo's subtree
+# lacks (a non-fast-forward push). Resolve that by hand.
+#
+# One-time setup:
+#   1. ssh-keygen -t ed25519 -N "" -f site-deploy-key
+#   2. Site repo -> Settings -> Deploy keys -> add site-deploy-key.pub,
+#      with "Allow write access" checked.
+#   3. This repo -> Settings -> Secrets and variables -> Actions -> new
+#      secret SITE_DEPLOY_KEY containing the private key file.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'architecture-decision-record.github.io/**'
+      - '.github/workflows/publish-site.yml'
+  workflow_dispatch:
+
+# One publish at a time; let a running one finish rather than cancelling it.
+concurrency:
+  group: publish-site
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # subtree split needs the full history
+
+      - name: Publish site subtree
+        env:
+          SITE_DEPLOY_KEY: ${{ secrets.SITE_DEPLOY_KEY }}
+        run: |
+          test -n "$SITE_DEPLOY_KEY" || { echo "::error::Secret SITE_DEPLOY_KEY is not set (see the comment at the top of this file)"; exit 1; }
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SITE_DEPLOY_KEY" > ~/.ssh/site_deploy_key
+          chmod 600 ~/.ssh/site_deploy_key
+          ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/site_deploy_key -o IdentitiesOnly=yes"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          sha="$(git subtree split --prefix=architecture-decision-record.github.io HEAD 2>/dev/null | tr '\r' '\n' | tail -n 1 | tr -d '[:space:]')"
+          test -n "$sha" && git cat-file -e "${sha}^{commit}" || { echo "::error::subtree split did not produce a commit"; exit 1; }
+          echo "Publishing $sha to git@github.com:architecture-decision-record/architecture-decision-record.github.io.git (main)"
+          git push git@github.com:architecture-decision-record/architecture-decision-record.github.io.git "${sha}:refs/heads/main"
