@@ -482,6 +482,8 @@ Explain any errors, problems, gaps, weaknesses. Be direct. Be decisive.
 
 - [kgai - append-only decision log for AI coding agents, a machine-readable companion to ADR files](https://github.com/kgaidev/kgai)
 
+- [wise-men-flash - مهارة لـ Claude Code تطرح قرارًا صعبًا واحدًا على ثلاثة وكلاء فرعيين، أحدهم يؤدي دور محامي الشيطان، وتُعيد مذكرة قرار مُدقَّقة تحتفظ بأقوى حجة ضد توصيتها](https://github.com/Ali-expandings/wise-men-flash)
+
 إرشادات خاصة بالشركات:
 
 - [Amazon: AWS Prescriptive Guidance: ADR Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
