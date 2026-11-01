@@ -549,6 +549,8 @@ Tools:
 
 - [wise-men-flash - a Claude Code skill that puts one hard decision to three subagents, one of them a Devil's Advocate, and returns a checked decision memo that keeps the strongest case against its own recommendation](https://github.com/Ali-expandings/wise-men-flash)
 
+- [Archcore - git-native context for AI coding agents](https://github.com/archcore-ai/archcore) - Git-native context engineering CLI and MCP server for AI coding agents. Keep specs, ADRs, rules, plans, and project knowledge in Git.
+
 Company-Specific Guidance:
 
 - [Amazon: AWS Prescriptive Guidance: ADR Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
