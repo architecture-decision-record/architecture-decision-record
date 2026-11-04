@@ -44,6 +44,35 @@ const cases = [
 	[['bg-BG'], '/bg-bg/'],
 	[['hr'], '/hr-001/'],
 	[['hr-HR'], '/hr-hr/'],
+	[['sk'], '/sk-001/'],
+	[['sk-SK'], '/sk-sk/'],
+	[['lt'], '/lt-001/'],
+	[['lt-LT'], '/lt-lt/'],
+	[['ga'], '/ga-001/'],
+	[['ga-IE'], '/ga-ie/'],
+	[['mt'], '/mt-001/'],
+	[['mt-MT'], '/mt-mt/'],
+	[['fr-BE'], '/fr-be/'],
+	[['lb'], '/lb-001/'],
+	[['lb-LU'], '/lb-lu/'],
+	[['nb-NO'], '/nb-no/'],
+	[['lo-LA'], '/lo-la/'],
+	[['km-KH'], '/km-kh/'],
+	[['gd-GB'], '/gd-gb/'],
+	[['te'], '/te-001/'],
+	[['ta'], '/ta-001/'],
+	[['mr'], '/mr-001/'],
+	[['ha'], '/ha-001/'],
+	[['gu'], '/gu-001/'],
+	[['eu'], '/eu-001/'],
+	[['bh'], '/bh-001/'],
+	[['jv'], '/jv-001/'],
+	[['fa'], '/fa-001/'],
+	[['pa'], '/pa-001/'],
+	[['lv'], '/lv-001/'],
+	[['lv-LV'], '/lv-lv/'],
+	[['sl'], '/sl-001/'],
+	[['sl-SI'], '/sl-si/'],
 	[['pt-AO'], '/pt-001/'],
 	[['fi'], '/fi-001/'],
 	[['es-419'], '/es-001/'],
@@ -53,7 +82,7 @@ const cases = [
 	[['am', 'am-ET', 'ja'], '/ja-001/'],
 	// nothing matches: English
 	[['am-ET'], '/en-001/'],
-	[['nb-NO'], '/en-001/'],
+	[['zu'], '/en-001/'],
 	[[], '/en-001/'],
 	[[''], '/en-001/']
 ];
@@ -71,5 +100,5 @@ test('picker values map to unique, hyphenated slugs', () => {
 	assert.equal(localeToSlug('cy_GB'), 'cy-gb');
 	assert.equal(localeToSlug('pt_BR'), 'pt-br');
 	assert.equal(new Set(LOCALES.map(localeToSlug)).size, LOCALES.length);
-	for (const slug of LOCALE_SLUGS) assert.match(slug, /^[a-z]{2}-[a-z0-9]{2,3}$/);
+	for (const slug of LOCALE_SLUGS) assert.match(slug, /^[a-z]{2,3}-[a-z0-9]{2,3}$/);
 });

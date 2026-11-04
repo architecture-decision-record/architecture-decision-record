@@ -6,7 +6,7 @@
 	"description": "Architecture Decision Record (ADR) guide — published website (SvelteKit + Lily Design System)",
 	"scripts": {
 		"dev": "node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite dev",
-		"build": "node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite build",
+		"build": "node scripts/generate-llms.mjs && node scripts/generate-sitemap.mjs && vite build && node scripts/build-locale-sitemaps.mjs build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"llms": "node scripts/generate-llms.mjs",

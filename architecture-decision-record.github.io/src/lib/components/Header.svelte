@@ -65,11 +65,26 @@
 	// a dash, e.g. "English (United States)" -> "English - United States".
 	// *_001 (world) locales drop the region: "English (world)" -> "English".
 	// The first letter of each part is capitalised: "español" -> "Español".
-	// The GB locales say "Great Britain" (Welsh: "Prydain Fawr") rather than
-	// "United Kingdom" (Welsh: "Y Deyrnas Unedig").
-	const REGION_OVERRIDES: Record<string, string> = { en_GB: 'Great Britain', cy_GB: 'Prydain Fawr' };
-	// Browsers lack Welsh display-name data and shorten Indonesian to "Indonesia".
-	const LANGUAGE_OVERRIDES: Record<string, string> = { cy: 'Cymraeg', id: 'Bahasa Indonesia' };
+	// The GB locales say "Great Britain" (Welsh: "Prydain Fawr", Scottish Gaelic:
+	// "Breatainn Mhòr", Cornish: "Breten Veur") rather than "United Kingdom".
+	const REGION_OVERRIDES: Record<string, string> = {
+		en_GB: 'Great Britain',
+		cy_GB: 'Prydain Fawr',
+		gd_GB: 'Breatainn Mhòr',
+		kw_GB: 'Breten Veur',
+		sco_GB: 'Great Britain'
+	};
+	// Browsers lack display-name data for Welsh, Scots, Cornish, Nigerian Pidgin and Wu Chinese (they show "Sco", "Kw", "PCM"),
+	// show Scottish Gaelic in English, and shorten Indonesian to "Indonesia".
+	const LANGUAGE_OVERRIDES: Record<string, string> = {
+		cy: 'Cymraeg',
+		gd: 'Gàidhlig',
+		id: 'Bahasa Indonesia',
+		kw: 'Kernewek',
+		pcm: 'Naijá',
+		sco: 'Scots',
+		wuu: '吴语'
+	};
 	const LOCALE_LABELS = Object.fromEntries(
 		LOCALES.map((l) => {
 			const tag = l.replace('_', '-');

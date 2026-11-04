@@ -1,0 +1,9 @@
+# Nasihat kerja berpasukan untuk ADR
+
+Jika anda mempertimbangkan untuk menggunakan rekod keputusan bersama pasukan anda, berikut ialah beberapa nasihat yang kami pelajari daripada bekerja dengan banyak pasukan.
+
+Anda berpeluang memimpin rakan sepasukan anda, dengan berbincang bersama tentang "mengapa", dan bukannya mewajibkan "apa". Contohnya, rekod keputusan ialah cara untuk pasukan berfikir dengan lebih bijak dan berkomunikasi dengan lebih baik; rekod keputusan tidak bernilai jika ia hanya keperluan kerja kertas yang dipaksakan selepas kejadian.
+
+Sesetengah pasukan lebih suka nama "keputusan" berbanding singkatan "ADR". Apabila sesetengah pasukan menggunakan nama direktori "decisions", ia seolah-olah mentol menyala, dan pasukan mula memasukkan lebih banyak maklumat ke dalam direktori itu, seperti keputusan vendor, keputusan perancangan, keputusan penjadualan dan sebagainya. Semua jenis maklumat ini boleh menggunakan templat yang sama. Kami berhipotesis bahawa orang belajar lebih cepat dengan perkataan ("keputusan") berbanding singkatan ("ADR"), dan orang lebih bermotivasi untuk menulis dokumen kerja dalam proses apabila perkataan "rekod" dibuang, dan juga sesetengah pembangun dan sesetengah pengurus tidak menyukai perkataan "seni bina".
+
+Dalam teori, ketidakbolehubahan adalah ideal. Dalam amalan, kebolehubahan lebih berkesan untuk pasukan kami. Kami memasukkan maklumat baharu ke dalam ADR sedia ada, dengan cap tarikh, dan nota bahawa maklumat itu tiba selepas keputusan. Pendekatan sebegini membawa kepada "dokumen hidup" yang boleh kami semua kemas kini. Kemas kini biasa berlaku apabila kami mendapat maklumat berkat rakan sepasukan baharu, atau tawaran baharu, atau hasil dunia sebenar daripada penggunaan kami, atau perubahan pihak ketiga selepas kejadian seperti keupayaan vendor, pelan harga, perjanjian lesen dan sebagainya.

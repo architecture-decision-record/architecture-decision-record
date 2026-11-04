@@ -3,10 +3,12 @@
 ## Codes
 
 Every directory under `locales/` is named lowercase `<language>-<region>`
-(e.g. `en-001`, `cy-gb`, `zh-tw`). Two-letter, region-less directories such as
+(e.g. `en-001`, `cy-gb`, `zh-tw`, `pcm-001`; the language code is two or three
+letters, ISO 639). Two-letter, region-less directories such as
 `locales/en/` do not exist and must not be created. `-001` means "world" (UN
-M.49), used for a language-wide translation. Regional variants include Welsh (`cy-gb`), English (`en-gb`, `en-us`),
-Portuguese (`pt-br`, `pt-pt`), and Chinese (`zh-cn`, `zh-tw`).
+M.49), used for a language-wide translation. Regional variants exist for Welsh
+(`cy-gb`), English (`en-gb`, `en-us`), Portuguese (`pt-br`, `pt-pt`),
+and Chinese (`zh-cn`, `zh-tw`).
 
 `en-001` is the English source of truth: edit English there, then translate.
 Links to English content use `locales/en-001/`.
@@ -19,13 +21,14 @@ website has no separate `/en/` site: English is the `/en-001/` locale route
 `locales/`; stray or duplicate directories (for example a copy of a locale
 under another name) fail the audit and the sync, and are deleted.
 
-## The 70 locales
+## The 116 locales
 
 | Directory and route | Picker value | Endonym (Intl) |
 |---|---|---|
 | `ar-001` | `ar_001` | العربية (العالم) |
 | `bg-001` | `bg_001` | български (свят) |
 | `bg-bg` | `bg_BG` | български (България) |
+| `bh-001` | `bh_001` | भोजपुरी (दुनिया) |
 | `bn-001` | `bn_001` | বাংলা (পৃথিবী) |
 | `cs-001` | `cs_001` | čeština (svět) |
 | `cs-cz` | `cs_CZ` | čeština (Česko) |
@@ -40,18 +43,29 @@ under another name) fail the audit and the sync, and are deleted.
 | `el-cy` | `el_CY` | Ελληνικά (Κύπρος) |
 | `el-gr` | `el_GR` | Ελληνικά (Ελλάδα) |
 | `en-001` | `en` | English |
-| `en-gb` | `en_GB` | English (United Kingdom) |
+| `en-gb` | `en_GB` | English (Great Britain) |
 | `en-ie` | `en_IE` | English (Ireland) |
 | `en-us` | `en_US` | English (United States) |
 | `es-001` | `es_001` | español (Mundo) |
 | `es-es` | `es_ES` | español (España) |
 | `et-001` | `et_001` | eesti (maailm) |
 | `et-ee` | `et_EE` | eesti (Eesti) |
+| `eu-001` | `eu_001` | Euskara (Mundua) |
+| `eu-es` | `eu_ES` | Euskara (Espainia) |
+| `fa-001` | `fa_001` | فارسی (جهان) |
 | `fi-001` | `fi_001` | suomi (maailma) |
 | `fi-fi` | `fi_FI` | suomi (Suomi) |
 | `fr-001` | `fr_001` | français (Monde) |
+| `fr-be` | `fr_BE` | français (Belgique) |
 | `fr-fr` | `fr_FR` | français (France) |
 | `fr-lu` | `fr_LU` | français (Luxembourg) |
+| `ga-001` | `ga_001` | Gaeilge (an domhan) |
+| `ga-ie` | `ga_IE` | Gaeilge (Éire) |
+| `gd-gb` | `gd_GB` | Gàidhlig (An Rìoghachd Aonaichte) |
+| `gd-001` | `gd_001` | Gàidhlig (An Saoghal) |
+| `gu-001` | `gu_001` | ગુજરાતી (વિશ્વ) |
+| `ha-001` | `ha_001` | Hausa (Duniya) |
+| `he-001` | `he_001` | עברית (העולם) |
 | `hi-001` | `hi_001` | हिन्दी (विश्व) |
 | `hi-in` | `hi_IN` | हिन्दी (भारत) |
 | `hr-001` | `hr_001` | hrvatski (Svijet) |
@@ -65,10 +79,31 @@ under another name) fail the audit and the sync, and are deleted.
 | `it-001` | `it_001` | italiano (Mondo) |
 | `it-it` | `it_IT` | italiano (Italia) |
 | `ja-001` | `ja_001` | 日本語 (世界) |
+| `jv-001` | `jv_001` | Basa Jawa (Donya) |
+| `km-kh` | `km_KH` | ខ្មែរ (កម្ពុជា) |
+| `km-001` | `km_001` | ខ្មែរ (ពិភពលោក) |
+| `kn-001` | `kn_001` | ಕನ್ನಡ (ಪ್ರಪಂಚ) |
 | `ko-001` | `ko_001` | 한국어(세계) |
+| `kw-001` | `kw_001` | kernewek (Bys) |
+| `kw-gb` | `kw_GB` | kernewek (Rywvaneth Unys) |
+| `lb-001` | `lb_001` | Lëtzebuergesch (Welt) |
+| `lb-lu` | `lb_LU` | Lëtzebuergesch (Lëtzebuerg) |
+| `lo-la` | `lo_LA` | ລາວ (ລາວ) |
+| `lo-001` | `lo_001` | ລາວ (ໂລກ) |
+| `lt-001` | `lt_001` | lietuvių (pasaulis) |
+| `lt-lt` | `lt_LT` | lietuvių (Lietuva) |
+| `lv-001` | `lv_001` | latviešu (pasaule) |
+| `lv-lv` | `lv_LV` | latviešu (Latvija) |
+| `mr-001` | `mr_001` | मराठी (विश्व) |
+| `ms-001` | `ms_001` | Bahasa Melayu (Dunia) |
+| `mt-001` | `mt_001` | malti (Dinja) |
+| `mt-mt` | `mt_MT` | malti (Malta) |
+| `nb-no` | `nb_NO` | norsk bokmål (Norge) |
+| `nb-001` | `nb_001` | norsk bokmål (verden) |
 | `nl-001` | `nl_001` | Nederlands (wereld) |
 | `nl-be` | `nl_BE` | Nederlands (België) |
 | `nl-nl` | `nl_NL` | Nederlands (Nederland) |
+| `pa-001` | `pa_001` | ਪੰਜਾਬੀ (ਦੁਨੀਆ) |
 | `pl-001` | `pl_001` | polski (świat) |
 | `pl-pl` | `pl_PL` | polski (Polska) |
 | `pt-001` | `pt_001` | português (Mundo) |
@@ -77,24 +112,37 @@ under another name) fail the audit and the sync, and are deleted.
 | `ro-001` | `ro_001` | română (Lume) |
 | `ro-ro` | `ro_RO` | română (România) |
 | `ru-001` | `ru_001` | русский (весь мир) |
+| `sco-001` | `sco_001` | Scots (Warld) |
+| `sco-gb` | `sco_GB` | Scots (Great Britain) |
+| `sk-001` | `sk_001` | slovenčina (svet) |
+| `sk-sk` | `sk_SK` | slovenčina (Slovensko) |
+| `sl-001` | `sl_001` | slovenščina (svet) |
+| `sl-si` | `sl_SI` | slovenščina (Slovenija) |
 | `sv-001` | `sv_001` | svenska (världen) |
 | `sv-se` | `sv_SE` | svenska (Sverige) |
 | `sw-001` | `sw_001` | Kiswahili (Dunia) |
 | `sw-tz` | `sw_TZ` | Kiswahili (Tanzania) |
+| `ta-001` | `ta_001` | தமிழ் (உலகம்) |
+| `te-001` | `te_001` | తెలుగు (ప్రపంచం) |
 | `th-001` | `th_001` | ไทย (โลก) |
 | `th-th` | `th_TH` | ไทย (ประเทศไทย) |
+| `tl-001` | `tl_001` | Filipino (mundo) |
+| `pcm-001` | `pcm_001` | Naijá (Wold) |
 | `tr-001` | `tr_001` | Türkçe (Dünya) |
 | `tr-tr` | `tr_TR` | Türkçe (Türkiye) |
+| `uk-001` | `uk_001` | Українська (світ) |
 | `ur-001` | `ur_001` | اردو (دنیا) |
 | `vi-001` | `vi_001` | Tiếng Việt (Thế giới) |
 | `vi-vn` | `vi_VN` | Tiếng Việt (Việt Nam) |
+| `wuu-001` | `wuu_001` | 吴语（世界） |
+| `yue-001` | `yue_001` | 粵語（世界） |
 | `zh-001` | `zh_001` | 中文（世界） |
 | `zh-cn` | `zh_CN` | 中文（中国） |
 | `zh-tw` | `zh_TW` | 中文（台灣） |
 
-Counts: 70 locales, of which `en-001` is the source and 69 are translations or
+Counts: 116 locales, of which `en-001` is the source and 115 are translations or
 variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`;
-`hi-in` is a copy of `hi-001`; `sv-se` is a copy of `sv-001`; `tr-tr` is a copy of `tr-001`; `nl-nl`, `is-is`, `et-ee`, `id-id`, `fi-fi`, `it-it`, `th-th` and `vi-vn` are copies of their `-001` locales; `da-dk`, `de-de`, `de-at`, `es-es`, `fr-fr`, `fr-lu`, `pt-pt` and `nl-be` are copies of `da-001`, `de-001`, `es-001`, `fr-001`, `pt-001` and `nl-001`; `en-ie` is a copy of `en-gb`; `pl-pl` is a copy of `pl-001`; `ro-ro` is a copy of `ro-001`; `sw-tz` is a copy of `sw-001`; `el-gr` is a copy of `el-001`; `el-cy` is a copy of `el-001`; `hu-hu` is a copy of `hu-001`; `cs-cz` is a copy of `cs-001`; `bg-bg` is a copy of `bg-001`; `hr-hr` is a copy of `hr-001`). Every one is complete: 205 files, 63 pages, and a root index.
+`hi-in` is a copy of `hi-001`; `sv-se` is a copy of `sv-001`; `tr-tr` is a copy of `tr-001`; `nl-nl`, `is-is`, `et-ee`, `id-id`, `fi-fi`, `it-it`, `th-th` and `vi-vn` are copies of their `-001` locales; `da-dk`, `de-de`, `de-at`, `es-es`, `fr-fr`, `fr-lu`, `pt-pt` and `nl-be` are copies of `da-001`, `de-001`, `es-001`, `fr-001`, `pt-001` and `nl-001`; `en-ie` is a copy of `en-gb`; `pl-pl` is a copy of `pl-001`; `ro-ro` is a copy of `ro-001`; `sw-tz` is a copy of `sw-001`; `el-gr` is a copy of `el-001`; `el-cy` is a copy of `el-001`; `hu-hu` is a copy of `hu-001`; `cs-cz` is a copy of `cs-001`; `bg-bg` is a copy of `bg-001`; `hr-hr` is a copy of `hr-001`; `sk-sk` is a copy of `sk-001`; `lt-lt` is a copy of `lt-001`; `sl-si` is a copy of `sl-001`; `lv-lv` is a copy of `lv-001`; `ga-ie` is a copy of `ga-001`; `mt-mt` is a copy of `mt-001`; `fr-be` is a copy of `fr-001`; `lb-lu` is a copy of `lb-001`; `kw-gb` is a copy of `kw-001`; `sco-gb` is a copy of `sco-001`; `eu-es` is a copy of `eu-001`; `gd-gb` is a copy of `gd-001`; `km-kh` is a copy of `km-001`; `lo-la` is a copy of `lo-001`; `nb-no` is a copy of `nb-001`). Every one is complete: 205 files, 63 pages, and a root index.
 
 `locales/index.md` lists each locale as `* [<Endonym> (<World>)](<code>/)`.
 `locales/locales-by-priority.md` records the translation order (all are

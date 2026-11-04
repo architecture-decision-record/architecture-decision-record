@@ -18,6 +18,8 @@ An architecture decision record (ADR) is a document that captures an important a
 
 Website: [architecture-decision-record.github.io](https://architecture-decision-record.github.io/) — this README, plus every template and example, as a browsable site.
 
+Translations: [العربية](locales/ar-001/), [বাংলা](locales/bn-001/), [Cymraeg](locales/cy-001/), [Dansk](locales/da-001/), [Deutsch](locales/de-001/), [English](locales/en-001/), [Lietuvių](locales/lt-001/), [Gaeilge](locales/ga-001/), [Lëtzebuergesch](locales/lb-001/), [Norsk bokmål](locales/nb-001/), [ລາວ](locales/lo-001/), [ខ្មែរ](locales/km-001/), [Gàidhlig](locales/gd-001/), [తెలుగు](locales/te-001/), [தமிழ்](locales/ta-001/), [मराठी](locales/mr-001/), [Hausa](locales/ha-001/), [ગુજરાતી](locales/gu-001/), [Euskara](locales/eu-001/), [भोजपुरी](locales/bh-001/), [Basa Jawa](locales/jv-001/), [فارسی](locales/fa-001/), [ਪੰਜਾਬੀ](locales/pa-001/), [Bahasa Melayu](locales/ms-001/), [ಕನ್ನಡ](locales/kn-001/), [Filipino](locales/tl-001/), [Naijá](locales/pcm-001/), [粵語](locales/yue-001/), [吴语](locales/wuu-001/), [kernewek](locales/kw-001/), [Scots](locales/sco-001/), [Malti](locales/mt-001/), [Latviešu](locales/lv-001/), [Slovenščina](locales/sl-001/), [Slovenčina](locales/sk-001/), [Hrvatski](locales/hr-001/), [Български](locales/bg-001/), [Čeština](locales/cs-001/), [Magyar](locales/hu-001/), [Ελληνικά](locales/el-001/), [Română](locales/ro-001/), [Polski](locales/pl-001/), [Español](locales/es-001/), [Eesti](locales/et-001/), [Suomi](locales/fi-001/), [Français](locales/fr-001/), [עברית](locales/he-001/), [हिन्दी](locales/hi-001/), [Bahasa Indonesia](locales/id-001/), [Íslenska](locales/is-001/), [Italiano](locales/it-001/), [日本語](locales/ja-001/), [한국어](locales/ko-001/), [Nederlands](locales/nl-001/), [Português](locales/pt-001/), [Português (Brasil)](locales/pt-br/), [Русский](locales/ru-001/), [Svenska](locales/sv-001/), [Kiswahili](locales/sw-001/), [ไทย](locales/th-001/), [Türkçe](locales/tr-001/), [Українська](locales/uk-001/), [اردو](locales/ur-001/), [Tiếng Việt](locales/vi-001/), [中文](locales/zh-001/)
+
 Contents:
 
 - [What is an architecture decision record?](#what-is-an-architecture-decision-record)
@@ -544,6 +546,8 @@ Tools:
 - [ADR Guard - GitHub Action that fails a pull request changing watched code without an architecture decision record](https://github.com/chohan-sarmad-ali/delivery-gates)
 
 - [kgai - append-only decision log for AI coding agents, a machine-readable companion to ADR files](https://github.com/kgaidev/kgai)
+
+- [wise-men-flash - a Claude Code skill that puts one hard decision to three subagents, one of them a Devil's Advocate, and returns a checked decision memo that keeps the strongest case against its own recommendation](https://github.com/Ali-expandings/wise-men-flash)
 
 Company-Specific Guidance:
 
