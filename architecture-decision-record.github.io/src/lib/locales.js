@@ -12,7 +12,7 @@ export const LOCALES = [
 	'id_ID', 'is_001', 'is_IS', 'it_001', 'it_IT', 'ja_001', 'ja_JP', 'jv_001', 'km_001', 'km_KH', 'kn_001', 'ko_001',
 	'ko_KR', 'kw_001', 'kw_GB', 'lb_001', 'lb_LU', 'lo_001', 'lo_LA', 'lt_001', 'lt_LT', 'lv_001', 'lv_LV', 'mr_001',
 	'ms_001', 'mt_001', 'mt_MT', 'nb_001', 'nb_NO', 'nl_001', 'nl_BE', 'nl_NL', 'pa_001', 'pcm_001', 'pl_001', 'pl_PL',
-	'pt_001', 'pt_PT', 'ro_001', 'ro_RO', 'ru_001', 'sco_001', 'sco_GB', 'sk_001', 'sk_SK', 'sl_001', 'sl_SI', 'sv_001',
+	'pt_001', 'pt_BR', 'pt_PT', 'ro_001', 'ro_RO', 'ru_001', 'sco_001', 'sco_GB', 'sk_001', 'sk_SK', 'sl_001', 'sl_SI', 'sv_001',
 	'sv_SE', 'sw_001', 'sw_TZ', 'ta_001', 'te_001', 'th_001', 'th_TH', 'tl_001', 'tr_001', 'tr_TR', 'uk_001', 'ur_001',
 	'vi_001', 'vi_VN', 'wuu_001', 'yue_001', 'zh_001', 'zh_CN', 'zh_TW'
 ];
@@ -47,7 +47,7 @@ export function isRtlSlug(slug) {
  * Per preference, the first rule that matches wins:
  *  1. the exact locale ("cy_GB" or "cy-GB" -> "cy-gb", "zh-TW" -> "zh-tw");
  *  2. Chinese by script or region ("zh-Hant", "zh-HK", "zh-MO" -> "zh-tw"; "zh-Hans" -> "zh-cn");
- *  3. the language's international *-001 locale ("en-AU", "de-DE", "pt-BR", "fi" -> "en-001", "de-001", "pt-001", "fi-001").
+ *  3. the language's international *-001 locale ("en-AU", "de-DE", "pt-AO", "fi" -> "en-001", "de-001", "pt-001", "fi-001").
  * Preferences that match nothing are skipped; with no match at all the result
  * is "/en-001/". See spec/website.md.
  * @param {readonly string[]} languages
