@@ -19,7 +19,7 @@
 		"a11y": "node scripts/check-accessibility.mjs"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^4.0.0",
+		"@sveltejs/adapter-static": "^4.0.1",
 		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"axe-core": "^4.14.0",
