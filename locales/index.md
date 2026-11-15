@@ -111,3 +111,5 @@
 * [ខ្មែរ (ពិភពលោក)](km-001/)
 * [ລາວ (ໂລກ)](lo-001/)
 * [Norsk bokmål (Verden)](nb-001/)
+* [Español (México)](es-mx/)
+* [Português (Brasil)](pt-br/)
