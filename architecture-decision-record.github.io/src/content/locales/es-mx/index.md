@@ -165,7 +165,7 @@ Este repositorio incluye dos habilidades (skills) de [Claude Code](https://claud
 
 - [`architecture-decision-record-skill`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-skill/) — de uso general, para cualquiera que escriba un ADR en cualquier proyecto. Ayuda a decidir si una decisión necesita un ADR, crea un directorio `adr/` o `decisions/`, nombra el archivo, elige una plantilla entre los once esqueletos incluidos y redacta secciones sólidas de contexto, decisión y consecuencias.
 
-- [`architecture-decision-record-maintainer-skill`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-maintainer-skill/) — específicamente para quienes mantienen este repositorio. Documenta la estructura del repositorio, la convención de reflejar README y locales, y los pasos exactos para añadir una plantilla, un ejemplo o un enlace de herramienta.
+- [`architecture-decision-record-maintainer-skill`](https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills/architecture-decision-record-maintainer-skill/) — específicamente para quienes mantienen este repositorio. Documenta la estructura del repositorio, la convención de reflejar README y locales, y los pasos exactos para agregar una plantilla, un ejemplo o un enlace de herramienta.
 
 Para usar una habilidad, copia su carpeta en `.claude/skills/` en la raíz del repositorio en el que trabajas (o en `~/.claude/skills/` para tenerla disponible en todos los proyectos) y luego pide a Claude Code que escriba o revise un ADR.
 
@@ -203,7 +203,7 @@ Características de un buen ADR:
 
 * Marcas de tiempo (Timestamps): indique cuándo se escribió cada elemento del ADR. Esto es especialmente importante para los aspectos que pueden cambiar con el tiempo, como costos, calendarios, escalado y similares.
 
-* Inmutable (Immutable): no modifique la información existente en un ADR. En su lugar, enmiende el ADR añadiendo información nueva, o sustitúyalo creando un nuevo ADR.
+* Inmutable (Immutable): no modifique la información existente en un ADR. En su lugar, enmiende el ADR agregando información nueva, o sustitúyalo creando un nuevo ADR.
 
 Características de una buena sección de «Contexto» en un ADR:
 
@@ -235,7 +235,7 @@ Plantillas de ejemplo de ADR que hemos recopilado en la red:
 
 - [Plantilla de ADR para el patrón Alexandrian](plantillas/plantilla-de-registro-de-decisión-para-el-patrón-alejandrino/) (sencilla, con detalles de contexto)
 
-- [Plantilla de ADR para un caso de negocio](plantillas/plantilla-de-registro-de-decisión-para-caso-de-negocio/) (más orientada a MBA, con costes, SWOT y más opiniones)
+- [Plantilla de ADR para un caso de negocio](plantillas/plantilla-de-registro-de-decisión-para-caso-de-negocio/) (más orientada a MBA, con costos, SWOT y más opiniones)
 
 - [Plantilla de ADR del proyecto Markdown Any Decision Records (MADR)](plantillas/plantilla-de-registro-de-decisión-del-proyecto-madr/) (versión sencilla y versión elaborada; esta última destaca las opciones y sus pros y contras)
 
@@ -419,7 +419,7 @@ Funciona con cualquier sistema de CI (GitLab, Jenkins, CircleCI) y como hook de 
 Código abierto. Licencia MIT.
 
 [ADR Guard](https://github.com/chohan-sarmad-ali/delivery-gates) es una GitHub
-Action que hace fallar un pull request cuando cambian rutas de código vigiladas sin que se añada o actualice un
+Action que hace fallar un pull request cuando cambian rutas de código vigiladas sin que se agregue o actualice un
 registro de decisión de arquitectura. Las excepciones son explícitas: una línea
 `ADR-Exempt:` con un motivo supera la puerta y se escribe en el resumen del trabajo. Independiente de la plantilla, sin dependencias. Código abierto. Licencia MIT.
 
@@ -495,7 +495,7 @@ Ejemplos:
 
 - [Repository of Architecture Decision Records made for the Arachne Framework](https://github.com/arachne-framework/architecture)
 
-Vídeos:
+Videos:
 
 - [An introduction to arc42 with Savvas Kleanthous](https://www.youtube.com/watch?v=V5clR8c6D7o)
 
@@ -539,4 +539,4 @@ Véase también:
 
 - IBM’s e-Business Reference Architecture Framework
 
-- [Decision Reasoning Format (DRF)](https://github.com/reasoning-formats/reasoning-formats) - Un formato YAML/JSON neutral respecto a proveedores y legible por máquinas para representar decisiones con razonamiento explícito, supuestos, estado cognitivo y compromisos. Complementa los ADR añadiendo razonamiento estructurado y validable a la documentación de decisiones.
+- [Decision Reasoning Format (DRF)](https://github.com/reasoning-formats/reasoning-formats) - Un formato YAML/JSON neutral respecto a proveedores y legible por máquinas para representar decisiones con razonamiento explícito, supuestos, estado cognitivo y compromisos. Complementa los ADR agregando razonamiento estructurado y validable a la documentación de decisiones.

@@ -29,11 +29,11 @@ Contenido:
 
 ### Asunto
 
-Queremos usar devops para compilar, integrar, desplegar y alojar nuestros proyectos. Estamos considerando Microsoft Azure DevOps.
+Queremos usar devops para compilar, integrar, desplegar y hospedar nuestros proyectos. Estamos considerando Microsoft Azure DevOps.
 
   * Queremos que la experiencia del desarrollador sea rápida y fiable, tanto en la configuración inicial de devops, p. ej., la configuración, como en el uso continuo, p. ej., tiempos de compilación rápidos.
   
-  * Queremos considerar usar Microsoft Azure en su conjunto, para alojar las aplicaciones del proyecto, las bases de datos, etc.
+  * Queremos considerar usar Microsoft Azure en su conjunto, para hospedar las aplicaciones del proyecto, las bases de datos, etc.
 
 
 ### Decisión
@@ -55,7 +55,7 @@ Todos los supuestos habituales de devops, como los del libro Accelerate.
 
   * Las compilaciones rápidas son una gran ayuda. Aceleran los ciclos de retroalimentación.
 
-  * Podemos sustituir o incorporar piezas de otros proveedores, es decir, podemos querer traer nuestros servidores de compilación de mayor velocidad, o usar el sistema de control de versiones que elijamos, o coordinarnos con un servidor de integración continua alojado por nosotros.
+  * Podemos sustituir o incorporar piezas de otros proveedores, es decir, podemos querer traer nuestros servidores de compilación de mayor velocidad, o usar el sistema de control de versiones que elijamos, o coordinarnos con un servidor de integración continua hospedado por nosotros.
   
   * La usabilidad optimizada es una gran ayuda, para la experiencia del desarrollador y, a su vez, para áreas sutiles como la coherencia, la claridad, la seguridad y la facilidad de la curva de aprendizaje.
 
@@ -153,7 +153,7 @@ Publicación de blog.
 
 https://news.ycombinator.com/item?id=18983586
 
-«Usamos Azure DevOps de forma intensiva en mi trabajo y, después de haber usado GitHub, Gitlab, soluciones autoalojadas, Jenkins, TeamCity... Azure DevOps queda en último lugar».
+«Usamos Azure DevOps de forma intensiva en mi trabajo y, después de haber usado GitHub, Gitlab, soluciones autohospedadas, Jenkins, TeamCity... Azure DevOps queda en último lugar».
 
 «La interfaz de usuario es terriblemente torpe en todas partes. Lo peor para mí son las solicitudes de incorporación de cambios (pull requests). Es increíblemente difícil trabajar con otras personas en una pull request. Ni siquiera puedo señalar un problema "concreto": para nosotros está roto en todas partes».
 

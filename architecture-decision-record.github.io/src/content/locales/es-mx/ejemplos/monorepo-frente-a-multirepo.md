@@ -125,4 +125,4 @@ Pensar en grande. Google y Facebook son defensores muy firmes de los monorepos f
 
 ## Notas
 
-Añada aquí cualquier nota.
+Agregue aquí cualquier nota.

@@ -39,7 +39,7 @@ Formato:
 
 - \[Nombre del caso de uso\]\(URL\)
 
-Añada explicaciones si el ADR no atiende todos los requisitos de un caso de uso.
+Agregue explicaciones si el ADR no atiende todos los requisitos de un caso de uso.
 
 
 ## Contexto
@@ -59,7 +59,7 @@ Esquema:
 
 - servicios o módulos que se verán afectados (modificados)
 
-- servicios o módulos nuevos que se añadirán
+- servicios o módulos nuevos que se agregarán
 
 - impacto en el modelo y los DTO (cambios, adiciones, eliminaciones)
 

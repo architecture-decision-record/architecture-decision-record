@@ -32,7 +32,7 @@ Usaremos React como nuestra biblioteca JavaScript de front end.
 
 1. **Curva de aprendizaje:**  React tiene una curva de aprendizaje, y puede llevar algún tiempo que los desarrolladores nuevos en React cojan el ritmo.
   
-2. **Herramientas de compilación:**  React requiere herramientas de compilación adicionales como Babel y Webpack, que pueden añadir complejidad al proceso de desarrollo.
+2. **Herramientas de compilación:**  React requiere herramientas de compilación adicionales como Babel y Webpack, que pueden agregar complejidad al proceso de desarrollo.
   
 3. **Compatibilidad con navegadores:**  React tiene problemas de compatibilidad con navegadores antiguos, ya que usa funciones de ES6 que no son compatibles con los navegadores más antiguos.
   

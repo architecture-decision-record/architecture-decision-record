@@ -130,4 +130,4 @@ Aplazar la optimización prematura. Para el uso típico no nos importa mucho un 
 
 ## Notas
 
-Añada notas aquí.
+Agregue notas aquí.

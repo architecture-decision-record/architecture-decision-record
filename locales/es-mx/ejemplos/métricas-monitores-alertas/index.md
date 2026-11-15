@@ -263,7 +263,7 @@ Mensajes de texto libre: por ejemplo, el tipo de cosas al azar que se encuentran
 
 Mensajes de eventos estructurados: generados por la aplicación, con un conjunto fijo o dinámico de atributos, p. ej., un registro de solicitudes HTTP, un registro contable, un inicio de sesión de usuario.
 
-En términos generales, es bueno registrar los detalles de cada solicitud de una forma que permita profundizar según los atributos. Así que añadir, p. ej., un userid o un sessionid a todo permite hacer trazas. El seguimiento explícito (tracing) también es bueno, por supuesto. Usar ELK para esto es una especie de https://www.honeycomb.io/ para pobres
+En términos generales, es bueno registrar los detalles de cada solicitud de una forma que permita profundizar según los atributos. Así que agregar, p. ej., un userid o un sessionid a todo permite hacer trazas. El seguimiento explícito (tracing) también es bueno, por supuesto. Usar ELK para esto es una especie de https://www.honeycomb.io/ para pobres
 
 
 ### Graylog is easier
@@ -279,7 +279,7 @@ En general estoy contento con Prometheus para las métricas. Las alertas requier
 
 La ventaja de un servicio es que ofrece inteligencia adicional lista para usar. En general me gusta Datadog. Los servicios pueden ser aterradoramente caros si tienes muchos datos, y a veces tienen modelos de precios que no son amigables con la nube, p. ej., cobrar por instancia cuando las instancias son dinámicas. También hay una diferencia entre los servicios en los que cada solicitud proviene de un usuario de pago y los relacionados con publicidad, donde solo un pequeño porcentaje de las solicitudes te da dinero. Puedes acabar con muchos datos y no tanto presupuesto.
 
-Trabajo en algunos servicios que reciben 1000 millones de solicitudes al día, así que tiene sentido alojar nuestra propia monitorización y registro. Si tus volúmenes son menores, los servicios alojados son más fáciles.
+Trabajo en algunos servicios que reciben 1000 millones de solicitudes al día, así que tiene sentido hospedar nuestro propio monitoreo y registro. Si tus volúmenes son menores, los servicios hospedados son más fáciles.
 
 
 ### AWS services are mixed
@@ -343,7 +343,7 @@ El escalado se hace decidiendo la red y haciendo que distintos Prometheus sondee
 
 El almacenamiento a largo plazo no es el punto fuerte de Prom, sino que se delega en algo como influx o timescaledb (que técnicamente también cumple el requisito de HA); artículo que leí al respecto https://blog.timescale.com/prometheus-ha-postgresql-8de68d19b6f5?gi=7df160f10e07
 
-Todavía no he probado lo de largo plazo, ya que solo estoy experimentando y lo uso para gráficos a corto plazo mientras librenms monitoriza mi red a largo plazo.
+Todavía no he probado lo de largo plazo, ya que solo estoy experimentando y lo uso para gráficos a corto plazo mientras librenms monitorea mi red a largo plazo.
 
 
 ###  Datadog + PagerDuty + Threat Stack
@@ -353,7 +353,7 @@ Usamos Datadog (con PagerDuty) y Threat Stack y no podríamos estar más content
 
 ### Zabbix
 
-Zabbix con scripts personalizados para monitorizar casi todo. Funciona de maravilla.
+Zabbix con scripts personalizados para monitorear casi todo. Funciona de maravilla.
 
 
 ### Outlyer
@@ -362,16 +362,16 @@ Uso Outlyer, pero debo avisar de que trabajo aquí, y usar nuestro propio produc
 
 Todavía necesito Graylog, Sentry y Statuscake para complementar.
 
-Suena parcial, pero, después de haber ejecutado felizmente Nagios y otros sistemas de monitorización internamente, contrataría una solución alojada en cualquier trabajo nuevo y me quitaría ese dolor de encima.
+Suena parcial, pero, después de haber ejecutado felizmente Nagios y otros sistemas de monitoreo internamente, contrataría una solución hospedada en cualquier trabajo nuevo y me quitaría ese dolor de encima.
 
 
 ### Nagios + Nagiosgraph
 
-Ejecutamos Nagios para toda la monitorización y las alertas. Las alertas se envían por correo electrónico (advertencias y notificaciones críticas) y por notificaciones audibles de la aplicación (para alertas críticas).
+Ejecutamos Nagios para todo el monitoreo y las alertas. Las alertas se envían por correo electrónico (advertencias y notificaciones críticas) y por notificaciones audibles de la aplicación (para alertas críticas).
 
 Nagiosgraph se usa para las visualizaciones.
 
-Esta configuración ha sido muy eficaz para mantenernos informados de manera exhaustiva sobre lo que ocurre en nuestro entorno. Ejecutamos y monitorizamos unos 110 servidores críticos y unos 760 puntos de datos, y llevamos más de siete años con este sistema matutino.
+Esta configuración ha sido muy eficaz para mantenernos informados de manera exhaustiva sobre lo que ocurre en nuestro entorno. Ejecutamos y monitoreamos unos 110 servidores críticos y unos 760 puntos de datos, y llevamos más de siete años con este sistema matutino.
 
 También me gustaría agregar registros con Graylog o ELK en algún momento.
 
@@ -383,14 +383,14 @@ Prometheus + Grafana + AlertManager mediante el estupendo helm chart de Promethe
 
 ### DataDog + Sentry + PagerDuty.
 
-Antes ejecutaba todas mis propias soluciones de monitorización con todo tipo de software, incluidos Nagios, Icinga, Zabbix, ELK, Greylog2, Influx y muchas otras herramientas, pero la verdad es que ejecutar tu propia infraestructura de monitorización implica demasiado esfuerzo, ¡sobre todo cuando puedes pagar tan poco a otra persona para que lo haga por ti!
+Antes ejecutaba todas mis propias soluciones de monitoreo con todo tipo de software, incluidos Nagios, Icinga, Zabbix, ELK, Greylog2, Influx y muchas otras herramientas, pero la verdad es que ejecutar tu propia infraestructura de monitoreo implica demasiado esfuerzo, ¡sobre todo cuando puedes pagar tan poco a otra persona para que lo haga por ti!
 
-Pagar a otros por ejecutar la infraestructura de monitorización libera a mis clientes para centrarse en operar sus plataformas en lugar de monitorizar la monitorización, lo que significa que el valor que obtienen de la estabilidad de su plataforma supera con creces cualquier costo de la monitorización como servicio.
+Pagar a otros por ejecutar la infraestructura de monitoreo libera a mis clientes para centrarse en operar sus plataformas en lugar de monitorear el monitoreo, lo que significa que el valor que obtienen de la estabilidad de su plataforma supera con creces cualquier costo del monitoreo como servicio.
 
 
 ### Sensu + Graphite + ELK
 
-Mi empresa es muy partidaria de lo autoalojado.
+Mi empresa es muy partidaria de lo autohospedado.
 
 Sensu -> PagerDuty
 
@@ -401,7 +401,7 @@ ELK (Elasticsearch, Logstash, Kibana)
 
 ### Prometheus + Alertmanager
 
-Prometheus + Alertmanager para las alertas; mi equipo cree que una monitorización simple es una buena monitorización.
+Prometheus + Alertmanager para las alertas; mi equipo cree que un monitoreo simple es un buen monitoreo.
 
 Otros sistemas, como el registro y el seguimiento, aportarán un contexto rico para el diagnóstico cuando la persona de guardia reciba una alerta, pero nunca construimos alertas sobre ellos.
 
@@ -420,9 +420,9 @@ Servicios instrumentados con Prometheus => analítica y visualización con Circo
 
 Estamos usando los servicios siguientes:
 
-icinga2 para la monitorización y VictorOps para las alertas
+icinga2 para el monitoreo y VictorOps para las alertas
 
-NewRelic para la monitorización detallada del servicio
+NewRelic para el monitoreo detallada del servicio
 
 Sentry para el seguimiento de errores en el servicio
 
@@ -457,11 +457,11 @@ Lo que tenemos ahora:
 
 DataDog para métricas
 
-New Relic para la monitorización de aplicaciones
+New Relic para el monitoreo de aplicaciones
 
 ELK (Elastic Search + Logstash + Kibana) para los registros
 
-Sentry (autoalojado) para registrar excepciones
+Sentry (autohospedado) para registrar excepciones
 
 Correos electrónicos + Slack + VictorOps para las alertas (según la gravedad)
 
@@ -469,7 +469,7 @@ Lo que queremos tener:
 
 Prometheus para métricas (Grafana para visualización)
 
-New Relic (probablemente Elastic Search APM) para la monitorización de aplicaciones
+New Relic (probablemente Elastic Search APM) para el monitoreo de aplicaciones
 
 EFK (elastic search + fluentd + kibana) para el registro. Probablemente Loki de Grafana ya estará listo para producción para cuando lleguemos a ese punto
 
@@ -485,7 +485,7 @@ Wavefront + Scalyr + PagerDuty + Stackstorm + Slack (Descargo: trabajo en VMware
 
 ### Telegraf + Prometheus + InfluxDB + Grafana
 
-Telegraf para métricas de servidor como CPU, disco, memoria y red. También usamos Telegraf para la monitorización SNMP de nuestros dispositivos de red.
+Telegraf para métricas de servidor como CPU, disco, memoria y red. También usamos Telegraf para el monitoreo SNMP de nuestros dispositivos de red.
 
 Prometheus para métricas de aplicación. Programamos comprobaciones de estado en nuestra aplicación que Prometheus recopila.
 
@@ -498,7 +498,7 @@ Lo que no tengo ahora mismo es una solución de registro centralizado. ELK es po
 
 ### Sematext + Logagent + Experience
 
-Sematext para métricas, para registros, para trazas y pronto también para la monitorización de usuarios reales. Más simple y más barato que usar N herramientas o servicios diferentes, en mi humilde opinión.
+Sematext para métricas, para registros, para trazas y pronto también para el monitoreo de usuarios reales. Más simple y más barato que usar N herramientas o servicios diferentes, en mi humilde opinión.
 
 Para el envío de registros solíamos usar rsyslog y luego cambiamos a Logagent.
 
@@ -521,7 +521,7 @@ Realmente no quieres ejecutar tu propio sistema de notificaciones. Puedes reempl
 
 ### Telegraf + Prometheus + Grafana + Alertmanager
 
-Telegraf como recolector, Prometheus + Alertmanager para la monitorización y las alertas, integrados con canales de slack y con pagerduty para las alertas críticas. Grafana para la visualización de métricas de hosts.
+Telegraf como recolector, Prometheus + Alertmanager para el monitoreo y las alertas, integrados con canales de slack y con pagerduty para las alertas críticas. Grafana para la visualización de métricas de hosts.
 
 
 ### Prometheus + Grafana + Cloudwatch + sentry + kibana + elasticsearch
@@ -530,7 +530,7 @@ Prometheus para métricas + alertas
 
 Grafana para los paneles de Prometheus
 
-Cloudwatch monitorizando las instancias de Prometheus
+Cloudwatch monitoreando las instancias de Prometheus
 
 sentry para el seguimiento de excepciones
 
@@ -564,9 +564,9 @@ Empresa solo Azure: Azure Monitor, Log Analytics, App Insights, Azure Dashboards
 
 ### Grafana + Monitis + OpsGenie + Slack
 
-Grafana para monitorizar servicios en contenedores en Kubernetes mediante Prometheus
+Grafana para monitorear servicios en contenedores en Kubernetes mediante Prometheus
 
-Monitis para la monitorización de servicios de extremo a extremo, principalmente para API web y aplicaciones web
+Monitis para el monitoreo de servicios de extremo a extremo, principalmente para API web y aplicaciones web
 
 OpsGenie para la gestión de alertas
 
@@ -575,11 +575,11 @@ Slack para recibir información de estado de nuestros sistemas
 
 ### Checkly + AppOptics + Cloudwatch + Heroku + Pagerduty + Papertrail
 
-Ingeniero de (dev)ops desde hace mucho tiempo. Crecí con Nagios. Me encantaría recibir opiniones sobre mi SaaS autofinanciado https://checklyhq.com. Hacemos monitorización de API y monitorización de transacciones del sitio con alertas bastante detalladas.
+Ingeniero de (dev)ops desde hace mucho tiempo. Crecí con Nagios. Me encantaría recibir opiniones sobre mi SaaS autofinanciado https://checklyhq.com. Hacemos monitoreo de API y monitoreo de transacciones del sitio con alertas bastante detalladas.
 
-Empecé Checkly porque la monitorización activa/sintética en el espacio de las API era algo limitada (y cara). La monitorización basada en navegador o con guiones es aún más propietaria y cara. Usamos Puppeteer y mantenemos los precios lo más bajos posible.
+Empecé Checkly porque el monitoreo activo/sintético en el espacio de las API era algo limitada (y cara). El monitoreo basado en navegador o con guiones es aún más propietaria y cara. Usamos Puppeteer y mantenemos los precios lo más bajos posible.
 
-Nuestra pila de monitorización:
+Nuestra pila de monitoreo:
 
 Checkly (comiendo nuestra propia comida...)
 
@@ -603,9 +603,9 @@ Instana nos alerta en slack sobre problemas de infraestructura o degradación de
 
 Actualmente usamos: SignalFX, Splunk, PagerDuty y Slack. No soy un gran fan de SignalFX, aunque su equipo de soporte es súper amable y receptivo. Me gustan Splunk (merece la pena si puedes pagarlo), PagerDuty y Slack.
 
-Antes usaba la pila TICK, donde la mayor parte de la C era en realidad una G, es decir, Grafana, aunque sí usé un poco Chronograf. Era genial, pero era un fastidio de gestionar. El clásico dilema de SaaS frente a autoalojamiento.
+Antes usaba la pila TICK, donde la mayor parte de la C era en realidad una G, es decir, Grafana, aunque sí usé un poco Chronograf. Era genial, pero era un fastidio de gestionar. El clásico dilema de SaaS frente a autohospedaje.
 
-He usado DataDog, New Relic, Graylog, ELK y BugSnag. Me gustan mucho DataDog y New Relic, Graylog es bastante bueno. No soy un gran fan de ELK. BugSnag está bien; de hecho creo que hacer seguimiento de errores y excepciones es un sustituto bastante bueno de la monitorización completa de registros, en muchos casos.
+He usado DataDog, New Relic, Graylog, ELK y BugSnag. Me gustan mucho DataDog y New Relic, Graylog es bastante bueno. No soy un gran fan de ELK. BugSnag está bien; de hecho creo que hacer seguimiento de errores y excepciones es un sustituto bastante bueno del monitoreo completo de registros, en muchos casos.
 
 
 ### ELK + Prometheus + Grafana
@@ -617,7 +617,7 @@ Mantener esta configuración es fácil si te das permiso para perder datos de ve
 
 ### Datadog + Prometheus + Grafana
 
-Configuré Datadog mes a mes porque cuando llegué aquí no había ni monitorización ni alertas. Solo un par de nuestros sitios se monitorizaban cada 5 minutos para comprobar su disponibilidad. Datadog es, sin lugar a dudas, el más fácil de configurar. Cuando termine de atender todos los demás problemas, cambiaré a Prometheus+Grafana. Todavía no estoy 100 % decidido sobre la gestión de registros.
+Configuré Datadog mes a mes porque cuando llegué aquí no había ni monitoreo ni alertas. Solo un par de nuestros sitios se monitoreaban cada 5 minutos para comprobar su disponibilidad. Datadog es, sin lugar a dudas, el más fácil de configurar. Cuando termine de atender todos los demás problemas, cambiaré a Prometheus+Grafana. Todavía no estoy 100 % decidido sobre la gestión de registros.
 
 ### Nagios + ELK
 
@@ -630,15 +630,15 @@ Para on-prem, sobre todo Nagios y ELK. Para la nube, estamos migrando de DataDog
 
 Antes usábamos datadog, pero lo encontramos demasiado caro para nuestras necesidades. No me malinterpretes, es increíble, pero tiene un costo enorme. Pudimos configurar site24x7.com con una suscripción anual por aproximadamente 2-3 meses del costo de DD.
 
-Nuestra pila de monitorización:
+Nuestra pila de monitoreo:
 
-Site24x7 - APM, monitorización de URL externas, monitorización del flujo de correo SMTP, vencimientos de ssl y monitorización de procesos.
+Site24x7 - APM, monitoreo de URL externas, monitoreo del flujo de correo SMTP, vencimientos de ssl y monitoreo de procesos.
 
-StatusCake - para la monitorización y confirmación de URL: es nuestro respaldo por si site24x7 se pierde algo (no lo hace), pero SC es más flexible para la monitorización de puertos y servicios externos para nuestras necesidades.
+StatusCake - para el monitoreo y confirmación de URL: es nuestro respaldo por si site24x7 se pierde algo (no lo hace), pero SC es más flexible para el monitoreo de puertos y servicios externos para nuestras necesidades.
 
 Ambas herramientas escalan a PagerDuty, y luego recibimos nuestras escalaciones en slack.
 
-SumoLogic - para la monitorización de registros (es una gran herramienta pero algo complicada para nuestras necesidades)
+SumoLogic - para el monitoreo de registros (es una gran herramienta pero algo complicada para nuestras necesidades)
 
 Desde slack podemos confirmar (ack) o remediar la alerta.
 

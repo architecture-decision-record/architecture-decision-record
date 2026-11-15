@@ -35,7 +35,7 @@ Los factores que influyen en nuestra decisión son los siguientes:
 - **Integración con CI/CD**: ¿qué tan bien se integra el framework con las herramientas y servicios comunes de CI/CD?
 - **Compatibilidad entre navegadores**: ¿qué navegadores son compatibles y qué rendimiento tienen?
 - **Rendimiento y velocidad**: ¿con qué rapidez se ejecutan las pruebas, especialmente en una canalización de CI/CD?
-- **Escalabilidad**: ¿qué tan bien puede escalar el framework si se añaden más pruebas o escenarios más complejos?
+- **Escalabilidad**: ¿qué tan bien puede escalar el framework si se agregan más pruebas o escenarios más complejos?
 - **Comunidad y ecosistema**: ¿qué tan activa es la comunidad del framework? ¿Hay muchas integraciones y extensiones disponibles?
 
 ### 5. **Consideraciones**

@@ -100,7 +100,7 @@ Las interfaces de dominio y las interfaces técnicas con los interlocutores de c
 
 ### Contenido
 
-Especificación de todos los interlocutores de comunicación (usuarios, sistemas de TI, …) con explicaciones de las entradas y salidas o interfaces específicas del dominio. Opcionalmente puede añadir formatos específicos del dominio o protocolos de comunicación.
+Especificación de todos los interlocutores de comunicación (usuarios, sistemas de TI, …) con explicaciones de las entradas y salidas o interfaces específicas del dominio. Opcionalmente puede agregar formatos específicos del dominio o protocolos de comunicación.
 
 ### Motivación
 

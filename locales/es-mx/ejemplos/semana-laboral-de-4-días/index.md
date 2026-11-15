@@ -1,6 +1,6 @@
 # Registro de decisión sobre la semana laboral de 4 días
 
-Título: Implantación de la semana laboral de 4 días
+Título: Implementación de la semana laboral de 4 días
 
 ## Contexto y planteamiento del problema
 
@@ -8,7 +8,7 @@ Nuestra organización ha estado considerando pasar a una semana laboral de 4 dí
 
 ## Decisión
 
-Hemos decidido implantar una semana laboral de 4 días a partir del próximo trimestre para todos los empleados de la organización.
+Hemos decidido implementar una semana laboral de 4 días a partir del próximo trimestre para todos los empleados de la organización.
 
 ## Justificación
 
@@ -16,7 +16,7 @@ La decisión se basó en los siguientes factores:
 
 1. Opinión de los empleados: una encuesta realizada entre los empleados puso de manifiesto el deseo de un horario de trabajo más flexible y de un mejor equilibrio entre la vida laboral y la personal. La mayoría de los encuestados manifestó interés en una semana laboral de 4 días.
 
-2. Resultados de investigaciones: los estudios sobre empresas que han implantado una semana laboral de 4 días han mostrado un aumento de la productividad de los empleados, una reducción del ausentismo y una mejora del equilibrio entre la vida laboral y la personal.
+2. Resultados de investigaciones: los estudios sobre empresas que han implementado una semana laboral de 4 días han mostrado un aumento de la productividad de los empleados, una reducción del ausentismo y una mejora del equilibrio entre la vida laboral y la personal.
 
 3. Ventaja competitiva: ofrecer una semana laboral de 4 días puede ser un beneficio atractivo para posibles empleados y puede ayudar a retener el talento actual.
 
@@ -24,7 +24,7 @@ La decisión se basó en los siguientes factores:
 
 ## Plan de implementación
 
-Se tomarán los siguientes pasos para implantar la semana laboral de 4 días:
+Se tomarán los siguientes pasos para implementar la semana laboral de 4 días:
 
 1. Comunicación: la decisión se comunicará a todos los empleados mediante un correo electrónico a toda la empresa y una reunión con los líderes de equipo.
 
@@ -38,7 +38,7 @@ Se tomarán los siguientes pasos para implantar la semana laboral de 4 días:
 
 ## Resultados previstos
 
-Se espera que la implantación de una semana laboral de 4 días produzca los siguientes resultados:
+Se espera que la implementación de una semana laboral de 4 días produzca los siguientes resultados:
 
 1. Mayor satisfacción, compromiso y retención de los empleados.
 
@@ -50,4 +50,4 @@ Se espera que la implantación de una semana laboral de 4 días produzca los sig
 
 ## Conclusión
 
-Creemos que la implantación de una semana laboral de 4 días beneficiará a nuestra organización y a nuestros empleados. Esperamos ver el impacto positivo de esta decisión en nuestros empleados y en el desempeño general de nuestra organización.
+Creemos que la implementación de una semana laboral de 4 días beneficiará a nuestra organización y a nuestros empleados. Esperamos ver el impacto positivo de esta decisión en nuestros empleados y en el desempeño general de nuestra organización.

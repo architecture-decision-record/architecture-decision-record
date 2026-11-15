@@ -34,9 +34,9 @@ Contenido:
 
 Necesitamos almacenar secretos, como contraseñas, claves privadas, tokens de autenticación, etc.
 
-Algunos de los secretos están orientados al usuario. Por ejemplo, nuestro desarrollador quiere poder usar su teléfono móvil para consultar la contraseña de un servicio.
+Algunos de los secretos están orientados al usuario. Por ejemplo, nuestro desarrollador quiere poder usar su teléfono celular para consultar la contraseña de un servicio.
 
-Algunos de los secretos están orientados al sistema. Por ejemplo, nuestra canalización de entrega continua necesita poder consultar las credenciales de nuestro alojamiento en la nube.
+Algunos de los secretos están orientados al sistema. Por ejemplo, nuestra canalización de entrega continua necesita poder consultar las credenciales de nuestro hospedaje en la nube.
 
 
 ### Decisión
@@ -173,7 +173,7 @@ La configuración inicial exigió trastear con sus helm charts (vault y consul).
 
 Definitivamente familiarízate y acostúmbrate a usar la CLI, porque la GUI es más bien una prueba de concepto o un portal publicitario de su edición empresarial.
 
-El hecho de que no puedas simplemente «rellenarlo» es una lata. Por ejemplo, si tienes 5 campos, tienes que añadir manualmente cada campo para cada elemento. Así que no es que predefinas campos para una categoría específica y rellenes esos campos para todos los elementos de esa categoría, sino más bien «generas todo cada vez», lo que (en mi opinión) es un fastidio.
+El hecho de que no puedas simplemente «rellenarlo» es una lata. Por ejemplo, si tienes 5 campos, tienes que agregar manualmente cada campo para cada elemento. Así que no es que predefinas campos para una categoría específica y rellenes esos campos para todos los elementos de esa categoría, sino más bien «generas todo cada vez», lo que (en mi opinión) es un fastidio.
 
 Quizá también quieras echar un vistazo a goldfish como interfaz de usuario sobre vault. Hace bastante agradable convencer a tu equipo. También tienen una demo. 1. Configura consul. 2. Configura vault apuntando a consul. 3. Configura goldfish apuntando a vault. 3. Configura algún trabajo cron para ejecutar consul snapshot para las copias de seguridad.
 
@@ -183,7 +183,7 @@ Quizá también quieras echar un vistazo a goldfish como interfaz de usuario sob
 
 LastPass Teams. Lo usamos, tiene plantillas personalizadas, ACL, no falta nada en mi opinión.
 
-Implementé LastPass en mi organización y le doy un C+/B-. El mayor problema últimamente es la falta de fiabilidad. En los últimos 90 días ha habido varias horas en las que las cajas fuertes (vaults) se vieron forzadas a pasar al modo sin conexión. Esto no es lo ideal para mi organización porque tenemos, literalmente, más de 4000 contraseñas almacenadas en más de 20 carpetas compartidas. Como puedes imaginar, con tantas contraseñas, al menos algunas se actualizan o se añaden a diario. Tenemos un plan de recuperación ante desastres si los problemas duran más de una o dos horas: un script firma y cifra cada noche un volcado CSV de la caja fuerte que puede importarse a keepass.
+Implementé LastPass en mi organización y le doy un C+/B-. El mayor problema últimamente es la falta de fiabilidad. En los últimos 90 días ha habido varias horas en las que las cajas fuertes (vaults) se vieron forzadas a pasar al modo sin conexión. Esto no es lo ideal para mi organización porque tenemos, literalmente, más de 4000 contraseñas almacenadas en más de 20 carpetas compartidas. Como puedes imaginar, con tantas contraseñas, al menos algunas se actualizan o se agregan a diario. Tenemos un plan de recuperación ante desastres si los problemas duran más de una o dos horas: un script firma y cifra cada noche un volcado CSV de la caja fuerte que puede importarse a keepass.
 
 LastPass ha tenido episodios no reportados de servicio degradado: el inicio de sesión «funciona» pero no trae los sitios, funciones aleatorias rotas en el panel de administración y no se comparten correctamente las claves de las nuevas carpetas compartidas de nivel superior. Tengo un usuario específico de «envío de claves»/copia de seguridad que está en todos los grupos. Normalmente iniciar sesión como ese usuario soluciona cualquier problema de uso compartido de claves, pero no cuando el servicio está degradado, diga lo que diga la página de estado...
 
@@ -196,7 +196,7 @@ Ponte en contacto con su equipo de ventas y pueden ofrecerte una prueba empresar
 
 ### Bitwarden
 
-Bitwarden tiene unas buenas herramientas a su alrededor (interfaz web, CLI, móvil, escritorio). Autoalojable y bastante fácil de configurar. Documentación bastante buena y herramienta recomendada por PrivacyTools.
+Bitwarden tiene unas buenas herramientas a su alrededor (interfaz web, CLI, móvil, escritorio). Autohospedable y bastante fácil de configurar. Documentación bastante buena y herramienta recomendada por PrivacyTools.
 
 
 ### EnvKey
@@ -235,9 +235,9 @@ Ventajas:
 
   * La empresa es esencialmente una empresa típica de Y Combinator, con 1 fundador. Recaudó 120 000 USD en 2018-01.
 
-  * El foco está en llegar a las funciones empresariales, en especial pasar del alojamiento en la nube de EnvKey a la instalación local (on-prem) o a BYOC.
+  * El foco está en llegar a las funciones empresariales, en especial pasar del hospedaje en la nube de EnvKey a la instalación local (on-prem) o a BYOC.
 
-  * Posible camino a seguir: empezar con EnvKey por su facilidad de uso y luego (o en paralelo) añadir Vault. 
+  * Posible camino a seguir: empezar con EnvKey por su facilidad de uso y luego (o en paralelo) agregar Vault. 
 
 
 ### Confidant by Lyft
@@ -248,7 +248,7 @@ Confidant es un servicio de gestión de secretos de código abierto que ofrece u
 
 Autenticación KMS: Confidant resuelve el problema de la autenticación del «huevo y la gallina» usando AWS KMS e IAM para permitir que los roles de IAM generen tokens de autenticación seguros que Confidant puede verificar. Confidant también gestiona las concesiones de KMS para sus roles de IAM, lo que permite que los roles de IAM generen tokens que pueden usarse para la autenticación de servicio a servicio o para pasar mensajes cifrados entre servicios.
 
-Cifrado en reposo de secretos versionados: Confidant almacena los secretos de forma que solo se pueden añadir datos (append-only) en DynamoDB, y genera una clave de datos KMS única para cada revisión de cada secreto, usando criptografía simétrica autenticada Fernet.
+Cifrado en reposo de secretos versionados: Confidant almacena los secretos de forma que solo se pueden agregar datos (append-only) en DynamoDB, y genera una clave de datos KMS única para cada revisión de cada secreto, usando criptografía simétrica autenticada Fernet.
 
 Una interfaz web fácil de usar para gestionar secretos: Confidant ofrece una interfaz web en AngularJS que permite a los usuarios finales gestionar fácilmente los secretos, las asignaciones de secretos a servicios y el historial de cambios.
 

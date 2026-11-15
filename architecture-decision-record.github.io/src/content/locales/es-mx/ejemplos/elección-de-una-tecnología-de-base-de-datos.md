@@ -22,7 +22,7 @@ Tras evaluar cuidadosamente los requisitos y las restricciones de nuestra aplica
 
 Hemos elegido una base de datos de documentos porque:
 
-1. Nuestra aplicación requiere un modelo de datos flexible que pueda evolucionar con el tiempo. Las bases de datos de documentos nos permiten almacenar los datos en un formato sin esquema, lo que significa que podemos añadir campos nuevos o cambiar la estructura de los documentos existentes sin modificar el esquema de la base de datos.
+1. Nuestra aplicación requiere un modelo de datos flexible que pueda evolucionar con el tiempo. Las bases de datos de documentos nos permiten almacenar los datos en un formato sin esquema, lo que significa que podemos agregar campos nuevos o cambiar la estructura de los documentos existentes sin modificar el esquema de la base de datos.
 
 2. Nuestra aplicación necesita escalar horizontalmente para manejar grandes volúmenes de datos y de tráfico. Las bases de datos de documentos ofrecen compatibilidad integrada con la fragmentación (sharding) y la replicación, lo que nos permite distribuir los datos entre varios servidores y manejar un alto rendimiento de lectura y escritura.
 

@@ -149,7 +149,7 @@ Resumen por lenguaje:
 
   * Rust: el mejor lenguaje nuevo; énfasis en cero abstracción; énfasis en la concurrencia; sin embargo, ecosistema relativamente pequeño; y tiene límites deliberados en algunos tipos de aceleraciones del compilador, p. ej., el acceso directo a la memoria debe ser explícitamente inseguro (unsafe).
 
-  * TypeScript: añade tipos a JavaScript; gran transpilador; creciente énfasis de los desarrolladores en migrar de JavaScript a TypeScript; sólido respaldo de Microsoft.
+  * TypeScript: agrega tipos a JavaScript; gran transpilador; creciente énfasis de los desarrolladores en migrar de JavaScript a TypeScript; sólido respaldo de Microsoft.
 
 Decidimos que las máquinas virtuales tienen un conjunto de contrapartidas que no necesitamos ahora, como una complejidad adicional que ofrece capacidades de tiempo de ejecución.
 

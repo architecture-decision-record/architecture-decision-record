@@ -22,7 +22,7 @@ Hemos decidido usar Docker Swarm como nuestra herramienta de orquestación de co
 
 - **Balanceo de carga:**  Docker Swarm proporciona balanceo de carga integrado, lo que garantiza que nuestras aplicaciones estén siempre disponibles y distribuidas de manera uniforme por el clúster.
 
-- **Escalabilidad:**  Docker Swarm facilita escalar horizontalmente nuestras aplicaciones añadiendo o quitando nodos del clúster.
+- **Escalabilidad:**  Docker Swarm facilita escalar horizontalmente nuestras aplicaciones agregando o quitando nodos del clúster.
 
 - **Alta disponibilidad:**  Docker Swarm distribuye automáticamente nuestros servicios entre los nodos, lo que ofrece alta disponibilidad en caso de que falle un nodo.
 

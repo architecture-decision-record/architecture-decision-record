@@ -38,7 +38,7 @@ Tras evaluar las opciones anteriores según nuestras consideraciones de la decis
 
 MySQL es un sistema popular de código abierto con una sólida comunidad de desarrollo y un gran caudal de recursos para resolver problemas y compartir conocimientos. Es muy conocido por su excelente rendimiento y capacidad de escalabilidad, lo que lo hace ideal para manejar enormes cantidades de datos con altos niveles de eficiencia. La plataforma es segura, fiable y tiene una amplia gama de funciones esenciales para nuestro proyecto, entre ellas el cumplimiento de ACID para las transacciones, un modelo de datos flexible y compatibilidad con diversos lenguajes de programación y frameworks.
 
-MySQL también es compatible con la mayor parte de nuestra pila tecnológica, incluidos nuestro framework de desarrollo web, las soluciones de alojamiento y otras herramientas esenciales. Además, sus costos y condiciones de licencia son competitivos en comparación con otros sistemas propietarios como Oracle y Microsoft SQL Server.
+MySQL también es compatible con la mayor parte de nuestra pila tecnológica, incluidos nuestro framework de desarrollo web, las soluciones de hospedaje y otras herramientas esenciales. Además, sus costos y condiciones de licencia son competitivos en comparación con otros sistemas propietarios como Oracle y Microsoft SQL Server.
 
 ## Consecuencias
 

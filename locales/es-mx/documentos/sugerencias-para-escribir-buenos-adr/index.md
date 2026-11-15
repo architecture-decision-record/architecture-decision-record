@@ -8,7 +8,7 @@ Características de un buen ADR:
 
 * Marcas de tiempo (Timestamps): indique cuándo se escribió cada elemento del ADR. Esto es especialmente importante para los aspectos que pueden cambiar con el tiempo, como costos, calendarios, escalado y similares.
 
-* Inmutable (Immutable): no modifique la información existente en un ADR. En su lugar, enmiende el ADR añadiendo información nueva, o sustitúyalo creando un nuevo ADR.
+* Inmutable (Immutable): no modifique la información existente en un ADR. En su lugar, enmiende el ADR agregando información nueva, o sustitúyalo creando un nuevo ADR.
 
 Características de una buena sección de «Contexto» en un ADR:
 

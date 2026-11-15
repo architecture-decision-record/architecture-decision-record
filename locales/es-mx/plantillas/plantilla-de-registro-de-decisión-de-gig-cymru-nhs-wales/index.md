@@ -101,6 +101,6 @@ Incluya tantas afirmaciones de ventaja, desventaja u otras como sea necesario.
 
 {Esta sección es **opcional**.}
 
-{Use esta sección para aportar cualquier información complementaria que respalde la decisión, añada contexto u oriente acciones futuras. También pueden aparecer aquí enlaces a otras decisiones y recursos.
+{Use esta sección para aportar cualquier información complementaria que respalde la decisión, agregue contexto u oriente acciones futuras. También pueden aparecer aquí enlaces a otras decisiones y recursos.
 
 Puede señalar brevemente quiénes participaron en el proceso de toma de decisiones y si se alcanzó consenso y cómo. También puede sugerir un plazo o eventos específicos que podrían motivar una reevaluación de esta decisión en el futuro.}

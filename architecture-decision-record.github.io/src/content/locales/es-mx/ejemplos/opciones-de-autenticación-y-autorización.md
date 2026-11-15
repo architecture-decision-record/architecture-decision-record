@@ -28,7 +28,7 @@ OAuth **no** gestiona la autenticación directamente; trata de conceder acceso. 
 
 ### 2. **OpenID Connect (OIDC)**
 
-**OpenID Connect (OIDC)** es una capa de identidad construida sobre **OAuth 2.0** que añade autenticación a las capacidades de autorización de OAuth. En esencia, OpenID Connect extiende OAuth para gestionar la **autenticación de usuarios** y ofrece una forma estandarizada para que las aplicaciones verifiquen la identidad de un usuario.
+**OpenID Connect (OIDC)** es una capa de identidad construida sobre **OAuth 2.0** que agrega autenticación a las capacidades de autorización de OAuth. En esencia, OpenID Connect extiende OAuth para gestionar la **autenticación de usuarios** y ofrece una forma estandarizada para que las aplicaciones verifiquen la identidad de un usuario.
 
 - **Flujo**: cuando un usuario inicia sesión mediante OpenID Connect, la aplicación de terceros solicita un token de ID (además del token de acceso de OAuth). El token de ID contiene información sobre el usuario (como su nombre de usuario, su correo electrónico y otras declaraciones). Esto permite que la aplicación sepa quién es el usuario y si está autenticado.
 - **Ejemplo**: iniciar sesión en un servicio como Slack con su cuenta de Google (siendo Google el proveedor de OpenID Connect) implica autenticación mediante OpenID Connect, mientras que OAuth gestiona el acceso a sus recursos de Google.
@@ -49,7 +49,7 @@ SAML se usa habitualmente en **soluciones empresariales de SSO** y funciona bien
 **WS-Federation** es otro protocolo usado para el **inicio de sesión único (SSO)**, especialmente en entornos empresariales basados en Microsoft. Forma parte de la familia de especificaciones **WS-* (Web Services)** y permite la federación de identidades entre distintos dominios de seguridad (como entre distintas organizaciones o entre distintos servicios).
 
 - **Flujo**: WS-Federation permite que un **proveedor de identidad (IdP) de confianza** autentique a los usuarios y emita tokens que el proveedor de servicios pueda usar para la autorización. Es similar a SAML, pero suele usarse en escenarios que dependen en gran medida de tecnologías de Microsoft.
-- **Ejemplo**: un usuario inicia sesión en una aplicación empresarial alojada en Microsoft Azure Active Directory (AD), y su identidad puede usarse para acceder a otros servicios federados, incluidas aplicaciones alojadas por proveedores externos.
+- **Ejemplo**: un usuario inicia sesión en una aplicación empresarial hospedada en Microsoft Azure Active Directory (AD), y su identidad puede usarse para acceder a otros servicios federados, incluidas aplicaciones hospedadas por proveedores externos.
 
 Aunque en muchos entornos web modernos WS-Federation ha sido sustituido en gran medida por protocolos más nuevos como OAuth 2.0 y OpenID Connect, todavía se usa en sistemas heredados, especialmente en empresas centradas en Microsoft.
 

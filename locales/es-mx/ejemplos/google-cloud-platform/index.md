@@ -22,11 +22,11 @@ Se han seleccionado los siguientes servicios de GCP para satisfacer nuestros req
 
    - Compute Engine para máquinas virtuales y recursos de cómputo
 
-   - Cloud Storage para almacenamiento de objetos y alojamiento de archivos
+   - Cloud Storage para almacenamiento de objetos y hospedaje de archivos
 
    - Cloud SQL como servicio de base de datos administrado
 
-   - Firebase para el desarrollo y alojamiento de aplicaciones
+   - Firebase para el desarrollo y hospedaje de aplicaciones
 
 ## Justificación
 
@@ -40,7 +40,7 @@ Se han seleccionado los siguientes servicios de GCP para satisfacer nuestros req
 
 ## Consecuencias
 
-Migrar a Google Cloud Platform requerirá capacitar a nuestros equipos en los servicios de GCP, rediseñar la arquitectura de la aplicación para que sea compatible con los servicios seleccionados y actualizar el código de infraestructura para admitir los servicios de GCP. Sin embargo, se espera que, una vez completada la migración, contemos con una infraestructura muy escalable, fiable y rentable para alojar nuestra aplicación. Además, tendremos que gestionar los costos continuos de aprovisionar recursos en GCP.
+Migrar a Google Cloud Platform requerirá capacitar a nuestros equipos en los servicios de GCP, rediseñar la arquitectura de la aplicación para que sea compatible con los servicios seleccionados y actualizar el código de infraestructura para admitir los servicios de GCP. Sin embargo, se espera que, una vez completada la migración, contemos con una infraestructura muy escalable, fiable y rentable para hospedar nuestra aplicación. Además, tendremos que gestionar los costos continuos de aprovisionar recursos en GCP.
 
 ## Conclusión
 

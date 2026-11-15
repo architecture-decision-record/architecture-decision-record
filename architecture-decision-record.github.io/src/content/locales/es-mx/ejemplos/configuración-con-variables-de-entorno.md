@@ -104,7 +104,7 @@ Mantendremos tal cual las aplicaciones que usen un enfoque más capaz, como un s
 
 ### Requisitos relacionados
 
-Añadiremos capacidades de devops para los archivos, incluidos hooks, pruebas e integración continua.
+Agregaremos capacidades de devops para los archivos, incluidos hooks, pruebas e integración continua.
 
 Necesitamos capacitar a todos los compañeros desarrolladores sobre esta decisión.
 

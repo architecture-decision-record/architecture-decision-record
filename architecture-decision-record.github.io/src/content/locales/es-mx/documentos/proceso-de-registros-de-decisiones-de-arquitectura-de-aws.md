@@ -36,13 +36,13 @@ Cualquier miembro del equipo puede crear un ADR, pero el equipo debe establecer 
 
 Una vez que el equipo identifica una decisión de arquitectura y a su propietario, el propietario del ADR presenta el ADR en el estado **Propuesto** (Proposed) al comienzo del proceso. Los ADR en estado Propuesto están listos para su revisión.
 
-A continuación, el propietario del ADR inicia el proceso de revisión del ADR. El objetivo del proceso de revisión es decidir si el equipo acepta el ADR, determina que necesita ajustes o lo rechaza. El equipo del proyecto, incluido el propietario, revisa el ADR. La reunión de revisión debe comenzar con un tiempo dedicado a leer el ADR. En promedio, de 10 a 15 minutos deberían bastar. Durante ese tiempo, cada miembro del equipo lee el documento y añade comentarios y preguntas para señalar los temas poco claros. Tras la fase de revisión, el propietario del ADR lee en voz alta y comenta cada comentario con el equipo.
+A continuación, el propietario del ADR inicia el proceso de revisión del ADR. El objetivo del proceso de revisión es decidir si el equipo acepta el ADR, determina que necesita ajustes o lo rechaza. El equipo del proyecto, incluido el propietario, revisa el ADR. La reunión de revisión debe comenzar con un tiempo dedicado a leer el ADR. En promedio, de 10 a 15 minutos deberían bastar. Durante ese tiempo, cada miembro del equipo lee el documento y agrega comentarios y preguntas para señalar los temas poco claros. Tras la fase de revisión, el propietario del ADR lee en voz alta y comenta cada comentario con el equipo.
 
 Si el equipo encuentra puntos de acción para mejorar el ADR, el estado del ADR sigue siendo **Propuesto**. El propietario del ADR formula las acciones y, en colaboración con el equipo, asigna un responsable a cada una. Cada miembro del equipo puede contribuir y resolver los puntos de acción. Es responsabilidad del propietario del ADR reprogramar el proceso de revisión.
 
-El equipo también puede decidir rechazar el ADR. En ese caso, el propietario del ADR añade el motivo del rechazo para evitar discusiones futuras sobre el mismo tema. El propietario cambia el estado del ADR a **Rechazado** (Rejected).
+El equipo también puede decidir rechazar el ADR. En ese caso, el propietario del ADR agrega el motivo del rechazo para evitar discusiones futuras sobre el mismo tema. El propietario cambia el estado del ADR a **Rechazado** (Rejected).
 
-Si el equipo aprueba el ADR, el propietario añade una marca de tiempo, una versión y una lista de partes interesadas. Luego el propietario actualiza el estado a **Aceptado** (Accepted).
+Si el equipo aprueba el ADR, el propietario agrega una marca de tiempo, una versión y una lista de partes interesadas. Luego el propietario actualiza el estado a **Aceptado** (Accepted).
 
 Los ADR y el registro de decisiones que crean representan las decisiones tomadas por el equipo y ofrecen un historial de todas ellas. El equipo usa los ADR como referencia durante las revisiones de código y de arquitectura siempre que es posible. Además de realizar revisiones de código, tareas de diseño y tareas de implementación, los miembros del equipo deben consultar los ADR para conocer las decisiones estratégicas del producto.
 

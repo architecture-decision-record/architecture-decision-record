@@ -87,7 +87,7 @@ Chart.js es una biblioteca de gráficos simple y fácil de usar para construir t
 - **Tipos de gráficos comunes**: admite gráficos básicos como los de anillos, de áreas, de radar y de líneas, que cubren la mayoría de las necesidades principales.
 
 **Puntos débiles**:
-- **Gráficos avanzados limitados**: Chart.js no admite de forma nativa tipos de gráficos complejos como los gráficos de velas, los mapas geográficos SVG o los gráficos de proceso de agrupamiento. Aunque estas funciones pueden añadirse mediante complementos o personalización, no es tan directo como con otras bibliotecas.
+- **Gráficos avanzados limitados**: Chart.js no admite de forma nativa tipos de gráficos complejos como los gráficos de velas, los mapas geográficos SVG o los gráficos de proceso de agrupamiento. Aunque estas funciones pueden agregarse mediante complementos o personalización, no es tan directo como con otras bibliotecas.
 - **Interactividad**: aunque Chart.js admite una interactividad básica (p. ej., información sobre herramientas y efectos al pasar el cursor), no ofrece funciones tan avanzadas como ECharts o D3.js.
 
 **Veredicto**:  

@@ -131,7 +131,7 @@ Un fondo <span style="background-color:#4bce97; color:black;">verde</span> indic
   </tbody>
 </table>
 
-*Opcional: añada filas o otra tabla para cubrir escenarios futuros conocidos.*
+*Opcional: agregue filas o otra tabla para cubrir escenarios futuros conocidos.*
 
 ### Requisitos no funcionales
 *¿Qué tan bien se ajusta cada posible opción a las características de arquitectura deseadas?
