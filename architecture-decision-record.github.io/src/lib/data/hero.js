@@ -293,6 +293,10 @@ export const HERO = {
   "tagline": "Plantillas, ejemplos y orientación para registrar decisiones de arquitectura.",
   "translations": "Idioma: "
  },
+ "es-mx": {
+  "tagline": "Plantillas, ejemplos y orientación para registrar decisiones de arquitectura.",
+  "translations": "Idioma: "
+ },
  "et-001": {
   "tagline": "Mallid, näited ja juhised arhitektuuriotsuste dokumenteerimiseks.",
   "translations": "Keel: "
@@ -390,6 +394,10 @@ export const HERO = {
   "translations": "Taal: "
  },
  "pt-001": {
+  "tagline": "Modelos, exemplos e orientações para registrar decisões de arquitetura.",
+  "translations": "Idioma: "
+ },
+ "pt-br": {
   "tagline": "Modelos, exemplos e orientações para registrar decisões de arquitetura.",
   "translations": "Idioma: "
  },
@@ -538,6 +546,7 @@ export const ENDONYMS = {
  "en-us": "English (United States)",
  "es-001": "Español",
  "es-es": "Español (España)",
+ "es-mx": "Español (México)",
  "et-001": "Eesti",
  "et-ee": "Eesti (Eesti)",
  "fi-001": "Suomi",
@@ -563,6 +572,7 @@ export const ENDONYMS = {
  "nl-be": "Nederlands (België)",
  "nl-nl": "Nederlands (Nederland)",
  "pt-001": "Português",
+ "pt-br": "Português (Brasil)",
  "pt-pt": "Português (Portugal)",
  "ru-001": "Русский",
  "sv-001": "Svenska",
