@@ -19,15 +19,15 @@
 		"a11y": "node scripts/check-accessibility.mjs"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^4.0.0",
-		"@sveltejs/kit": "^3.1.0",
+		"@sveltejs/adapter-static": "^4.0.1",
+		"@sveltejs/kit": "^3.2.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"axe-core": "^4.14.0",
-		"playwright": "^1.64.1",
-		"svelte": "^5.57.2",
-		"svelte-check": "^4.7.7",
+		"playwright": "^1.65.1",
+		"svelte": "^5.57.3",
+		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
-		"vite": "^8.3.5"
+		"vite": "^8.3.8"
 	},
 	"dependencies": {
 		"@lilydesignsystem/svelte-headless": "^0.4.0",
@@ -36,7 +36,7 @@
 		"@lilydesignsystem/svelte-share-picker": "^0.2.0",
 		"@lilydesignsystem/svelte-text-size-picker": "^0.2.0",
 		"@lilydesignsystem/svelte-theme-picker": "^0.2.0",
-		"marked": "^18.1.1"
+		"marked": "^18.2.0"
 	},
 	"pnpm": {
 		"ignoredBuiltDependencies": [
