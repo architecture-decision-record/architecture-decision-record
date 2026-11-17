@@ -20,15 +20,19 @@ website has no separate `/en/` site: English is the `/en-001/` locale route
 `locales/`; stray or duplicate directories (for example a copy of a locale
 under another name) fail the audit and the sync, and are deleted.
 
-## The 117 locales
+## The 125 locales
 
 | Directory and route | Picker value | Endonym (Intl) |
 |---|---|---|
 | `ar-001` | `ar_001` | العربية (العالم) |
+| `ar-dz` | `ar_DZ` | العربية (الجزائر) |
+| `ar-eg` | `ar_EG` | العربية (مصر) |
 | `bg-001` | `bg_001` | български (свят) |
 | `bg-bg` | `bg_BG` | български (България) |
 | `bh-001` | `bh_001` | भोजपुरी (दुनिया) |
 | `bn-001` | `bn_001` | বাংলা (পৃথিবী) |
+| `bn-bd` | `bn_BD` | বাংলা (বাংলাদেশ) |
+| `bn-in` | `bn_IN` | বাংলা (ভারত) |
 | `cs-001` | `cs_001` | čeština (svět) |
 | `cs-cz` | `cs_CZ` | čeština (Česko) |
 | `cy-001` | `cy_001` | Cymraeg (Y Byd) |
@@ -57,6 +61,7 @@ under another name) fail the audit and the sync, and are deleted.
 | `fi-fi` | `fi_FI` | suomi (Suomi) |
 | `fr-001` | `fr_001` | français (Monde) |
 | `fr-be` | `fr_BE` | français (Belgique) |
+| `fr-ca` | `fr_CA` | français (Canada) |
 | `fr-fr` | `fr_FR` | français (France) |
 | `fr-lu` | `fr_LU` | français (Luxembourg) |
 | `ga-001` | `ga_001` | Gaeilge (an domhan) |
@@ -74,6 +79,7 @@ under another name) fail the audit and the sync, and are deleted.
 | `hu-hu` | `hu_HU` | magyar (Magyarország) |
 | `id-001` | `id_001` | Indonesia (Dunia) |
 | `id-id` | `id_ID` | Indonesia (Indonesia) |
+| `id-my` | `id_MY` | Indonesia (Malaysia) |
 | `is-001` | `is_001` | íslenska (heimurinn) |
 | `is-is` | `is_IS` | íslenska (Ísland) |
 | `it-001` | `it_001` | italiano (Mondo) |
@@ -112,6 +118,8 @@ under another name) fail the audit and the sync, and are deleted.
 | `ro-001` | `ro_001` | română (Lume) |
 | `ro-ro` | `ro_RO` | română (România) |
 | `ru-001` | `ru_001` | русский (весь мир) |
+| `ru-by` | `ru_BY` | русский (Беларусь) |
+| `ru-ru` | `ru_RU` | русский (Россия) |
 | `sco-001` | `sco_001` | Scots (Warld) |
 | `sco-gb` | `sco_GB` | Scots (Great Britain) |
 | `sk-001` | `sk_001` | slovenčina (svet) |
@@ -140,9 +148,9 @@ under another name) fail the audit and the sync, and are deleted.
 | `zh-cn` | `zh_CN` | 中文（中国） |
 | `zh-tw` | `zh_TW` | 中文（台灣） |
 
-Counts: 117 locales, of which `en-001` is the source and 116 are translations or
+Counts: 125 locales, of which `en-001` is the source and 124 are translations or
 variants (`en-gb` and `en-us` follow English; `cy-gb` is a copy of `cy-001`;
-`hi-in` is a copy of `hi-001`; `sv-se` is a copy of `sv-001`; `tr-tr` is a copy of `tr-001`; `nl-nl`, `is-is`, `et-ee`, `id-id`, `fi-fi`, `it-it`, `th-th` and `vi-vn` are copies of their `-001` locales; `da-dk`, `de-de`, `de-at`, `es-es`, `fr-fr`, `fr-lu`, `pt-pt` and `nl-be` are copies of `da-001`, `de-001`, `es-001`, `fr-001`, `pt-001` and `nl-001`; `en-ie` is a copy of `en-gb`; `pl-pl` is a copy of `pl-001`; `ro-ro` is a copy of `ro-001`; `sw-tz` is a copy of `sw-001`; `el-gr` is a copy of `el-001`; `el-cy` is a copy of `el-001`; `hu-hu` is a copy of `hu-001`; `cs-cz` is a copy of `cs-001`; `bg-bg` is a copy of `bg-001`; `hr-hr` is a copy of `hr-001`; `sk-sk` is a copy of `sk-001`; `lt-lt` is a copy of `lt-001`; `sl-si` is a copy of `sl-001`; `lv-lv` is a copy of `lv-001`; `ga-ie` is a copy of `ga-001`; `mt-mt` is a copy of `mt-001`; `fr-be` is a copy of `fr-001`; `lb-lu` is a copy of `lb-001`; `kw-gb` is a copy of `kw-001`; `sco-gb` is a copy of `sco-001`; `eu-es` is a copy of `eu-001`; `gd-gb` is a copy of `gd-001`; `km-kh` is a copy of `km-001`; `lo-la` is a copy of `lo-001`; `nb-no` is a copy of `nb-001`; `es-mx` is `es-001` with Mexican vocabulary (agregar, costos, hospedar, monitoreo, implementar, video, celular); `pt-br` is a copy of `pt-001`, which is already Brazilian Portuguese). Every one is complete: 205 files, 63 pages, and a root index.
+`hi-in` is a copy of `hi-001`; `sv-se` is a copy of `sv-001`; `tr-tr` is a copy of `tr-001`; `nl-nl`, `is-is`, `et-ee`, `id-id`, `fi-fi`, `it-it`, `th-th` and `vi-vn` are copies of their `-001` locales; `da-dk`, `de-de`, `de-at`, `es-es`, `fr-fr`, `fr-lu`, `pt-pt` and `nl-be` are copies of `da-001`, `de-001`, `es-001`, `fr-001`, `pt-001` and `nl-001`; `en-ie` is a copy of `en-gb`; `pl-pl` is a copy of `pl-001`; `ro-ro` is a copy of `ro-001`; `sw-tz` is a copy of `sw-001`; `el-gr` is a copy of `el-001`; `el-cy` is a copy of `el-001`; `hu-hu` is a copy of `hu-001`; `cs-cz` is a copy of `cs-001`; `bg-bg` is a copy of `bg-001`; `hr-hr` is a copy of `hr-001`; `sk-sk` is a copy of `sk-001`; `lt-lt` is a copy of `lt-001`; `sl-si` is a copy of `sl-001`; `lv-lv` is a copy of `lv-001`; `ga-ie` is a copy of `ga-001`; `mt-mt` is a copy of `mt-001`; `fr-be` is a copy of `fr-001`; `lb-lu` is a copy of `lb-001`; `kw-gb` is a copy of `kw-001`; `sco-gb` is a copy of `sco-001`; `eu-es` is a copy of `eu-001`; `gd-gb` is a copy of `gd-001`; `km-kh` is a copy of `km-001`; `lo-la` is a copy of `lo-001`; `nb-no` is a copy of `nb-001`; `es-mx` is `es-001` with Mexican vocabulary (agregar, costos, hospedar, monitoreo, implementar, video, celular); `pt-br` is a copy of `pt-001`, which is already Brazilian Portuguese; `ar-eg`, `ru-ru` and `bn-bd` are copies of their `-001` locales; `ar-dz`, `fr-ca`, `bn-in`, `id-my` and `ru-by` are adapted from their `-001` locales with a vocabulary map, `ru-by` with no differences yet). Every one is complete: 205 files, 63 pages, and a root index.
 
 `locales/index.md` lists each locale as `* [<Endonym> (<World>)](<code>/)`.
 `locales/locales-by-priority.md` records the translation order (all are
