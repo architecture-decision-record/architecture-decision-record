@@ -76,7 +76,7 @@ const cases = [
 	[['es-419'], '/es-001/'],
 	[['tr-CY'], '/tr-001/'],
 	// first usable preference wins; unmatched ones are skipped
-	[['xx', 'fr-CA'], '/fr-001/'],
+	[['xx', 'fr-CA'], '/fr-ca/'],
 	[['am', 'am-ET', 'ja'], '/ja-001/'],
 	// nothing matches: English
 	[['am-ET'], '/en-001/'],

@@ -5,7 +5,23 @@ export const HERO = {
   "tagline": "قوالب وأمثلة وإرشادات لتوثيق قرارات البنية المعمارية.",
   "translations": "اللغة: "
  },
+ "ar-eg": {
+  "tagline": "قوالب وأمثلة وإرشادات لتوثيق قرارات البنية المعمارية.",
+  "translations": "اللغة: "
+ },
+ "ar-dz": {
+  "tagline": "قوالب وأمثلة وإرشادات لتوثيق قرارات البنية المعمارية.",
+  "translations": "اللغة: "
+ },
  "bn-001": {
+  "tagline": "আর্কিটেকচার সিদ্ধান্ত নথিভুক্ত করার জন্য টেমপ্লেট, উদাহরণ ও নির্দেশনা।",
+  "translations": "ভাষা: "
+ },
+ "bn-bd": {
+  "tagline": "আর্কিটেকচার সিদ্ধান্ত নথিভুক্ত করার জন্য টেমপ্লেট, উদাহরণ ও নির্দেশনা।",
+  "translations": "ভাষা: "
+ },
+ "bn-in": {
   "tagline": "আর্কিটেকচার সিদ্ধান্ত নথিভুক্ত করার জন্য টেমপ্লেট, উদাহরণ ও নির্দেশনা।",
   "translations": "ভাষা: "
  },
@@ -329,6 +345,10 @@ export const HERO = {
   "tagline": "Modèles, exemples et conseils pour consigner les décisions d'architecture.",
   "translations": "Langue: "
  },
+ "fr-ca": {
+  "tagline": "Modèles, exemples et conseils pour consigner les décisions d'architecture.",
+  "translations": "Langue: "
+ },
  "he-001": {
   "tagline": "תבניות, דוגמאות והנחיות לתיעוד החלטות ארכיטקטורה.",
   "translations": "שפה: "
@@ -346,6 +366,10 @@ export const HERO = {
   "translations": "Bahasa: "
  },
  "id-id": {
+  "tagline": "Templat, contoh, dan panduan untuk mencatat keputusan arsitektur.",
+  "translations": "Bahasa: "
+ },
+ "id-my": {
   "tagline": "Templat, contoh, dan panduan untuk mencatat keputusan arsitektur.",
   "translations": "Bahasa: "
  },
@@ -406,6 +430,14 @@ export const HERO = {
   "translations": "Idioma: "
  },
  "ru-001": {
+  "tagline": "Шаблоны, примеры и рекомендации по записи архитектурных решений.",
+  "translations": "Язык: "
+ },
+ "ru-ru": {
+  "tagline": "Шаблоны, примеры и рекомендации по записи архитектурных решений.",
+  "translations": "Язык: "
+ },
+ "ru-by": {
   "tagline": "Шаблоны, примеры и рекомендации по записи архитектурных решений.",
   "translations": "Язык: "
  },
@@ -474,7 +506,11 @@ export const HERO = {
 /** @type {Record<string, string>} */
 export const ENDONYMS = {
  "ar-001": "العربية",
+ "ar-eg": "العربية (مصر)",
+ "ar-dz": "العربية (الجزائر)",
  "bn-001": "বাংলা",
+ "bn-bd": "বাংলা (বাংলাদেশ)",
+ "bn-in": "বাংলা (ভারত)",
  "cy-001": "Cymraeg",
  "cy-gb": "Cymraeg (Y Deyrnas Unedig)",
  "da-001": "Dansk",
@@ -555,11 +591,13 @@ export const ENDONYMS = {
  "fr-be": "Français (Belgique)",
  "fr-lu": "Français (Luxembourg)",
  "fr-fr": "Français (France)",
+ "fr-ca": "Français (Canada)",
  "he-001": "עברית",
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
  "id-001": "Bahasa Indonesia",
  "id-id": "Bahasa Indonesia (Indonesia)",
+ "id-my": "Bahasa Indonesia (Malaysia)",
  "is-001": "Íslenska",
  "is-is": "Íslenska (Ísland)",
  "it-001": "Italiano",
@@ -575,6 +613,8 @@ export const ENDONYMS = {
  "pt-br": "Português (Brasil)",
  "pt-pt": "Português (Portugal)",
  "ru-001": "Русский",
+ "ru-ru": "Русский (Россия)",
+ "ru-by": "Русский (Беларусь)",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",
  "sw-001": "Kiswahili",

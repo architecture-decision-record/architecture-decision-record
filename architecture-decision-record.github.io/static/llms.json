@@ -7,7 +7,7 @@
     "documents": 12,
     "templates": 11,
     "examples": 40,
-    "locales": 117
+    "locales": 125
   },
   "sections": {
     "documents": [
@@ -279,10 +279,14 @@
   "skills": "https://github.com/architecture-decision-record/architecture-decision-record/tree/main/skills",
   "locales": [
     "ar_001",
+    "ar_EG",
+    "ar_DZ",
     "bg_001",
     "bg_BG",
     "bh_001",
     "bn_001",
+    "bn_BD",
+    "bn_IN",
     "cs_001",
     "cs_CZ",
     "cy_001",
@@ -312,6 +316,7 @@
     "fr_001",
     "fr_BE",
     "fr_FR",
+    "fr_CA",
     "fr_LU",
     "ga_001",
     "ga_IE",
@@ -328,6 +333,7 @@
     "hu_HU",
     "id_001",
     "id_ID",
+    "id_MY",
     "is_001",
     "is_IS",
     "it_001",
@@ -369,6 +375,8 @@
     "ro_001",
     "ro_RO",
     "ru_001",
+    "ru_RU",
+    "ru_BY",
     "sco_001",
     "sco_GB",
     "sk_001",

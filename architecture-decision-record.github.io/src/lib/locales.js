@@ -5,14 +5,14 @@
 // "en_001" is not listed separately: it would be a duplicate "English").
 // See spec/locale-specific-search-picker/index.md.
 export const LOCALES = [
-	'ar_001', 'bg_001', 'bg_BG', 'bh_001', 'bn_001', 'cs_001', 'cs_CZ', 'cy_001', 'cy_GB', 'da_001', 'da_DK', 'de_001',
+	'ar_001', 'ar_EG', 'ar_DZ', 'bg_001', 'bg_BG', 'bh_001', 'bn_001', 'bn_BD', 'bn_IN', 'cs_001', 'cs_CZ', 'cy_001', 'cy_GB', 'da_001', 'da_DK', 'de_001',
 	'de_AT', 'de_DE', 'el_001', 'el_CY', 'el_GR', 'en', 'en_GB', 'en_IE', 'en_US', 'es_001', 'es_ES', 'es_MX', 'et_001',
-	'et_EE', 'eu_001', 'eu_ES', 'fa_001', 'fi_001', 'fi_FI', 'fr_001', 'fr_BE', 'fr_FR', 'fr_LU', 'ga_001', 'ga_IE',
+	'et_EE', 'eu_001', 'eu_ES', 'fa_001', 'fi_001', 'fi_FI', 'fr_001', 'fr_BE', 'fr_FR', 'fr_CA', 'fr_LU', 'ga_001', 'ga_IE',
 	'gd_001', 'gd_GB', 'gu_001', 'ha_001', 'he_001', 'hi_001', 'hi_IN', 'hr_001', 'hr_HR', 'hu_001', 'hu_HU', 'id_001',
-	'id_ID', 'is_001', 'is_IS', 'it_001', 'it_IT', 'ja_001', 'ja_JP', 'jv_001', 'km_001', 'km_KH', 'kn_001', 'ko_001',
+	'id_ID', 'id_MY', 'is_001', 'is_IS', 'it_001', 'it_IT', 'ja_001', 'ja_JP', 'jv_001', 'km_001', 'km_KH', 'kn_001', 'ko_001',
 	'ko_KR', 'kw_001', 'kw_GB', 'lb_001', 'lb_LU', 'lo_001', 'lo_LA', 'lt_001', 'lt_LT', 'lv_001', 'lv_LV', 'mr_001',
 	'ms_001', 'mt_001', 'mt_MT', 'nb_001', 'nb_NO', 'nl_001', 'nl_BE', 'nl_NL', 'pa_001', 'pcm_001', 'pl_001', 'pl_PL',
-	'pt_001', 'pt_BR', 'pt_PT', 'ro_001', 'ro_RO', 'ru_001', 'sco_001', 'sco_GB', 'sk_001', 'sk_SK', 'sl_001', 'sl_SI', 'sv_001',
+	'pt_001', 'pt_BR', 'pt_PT', 'ro_001', 'ro_RO', 'ru_001', 'ru_RU', 'ru_BY', 'sco_001', 'sco_GB', 'sk_001', 'sk_SK', 'sl_001', 'sl_SI', 'sv_001',
 	'sv_SE', 'sw_001', 'sw_TZ', 'ta_001', 'te_001', 'th_001', 'th_TH', 'tl_001', 'tr_001', 'tr_TR', 'uk_001', 'ur_001',
 	'vi_001', 'vi_VN', 'wuu_001', 'yue_001', 'zh_001', 'zh_CN', 'zh_TW'
 ];
