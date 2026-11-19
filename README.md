@@ -549,6 +549,8 @@ Tools:
 
 - [wise-men-flash - a Claude Code skill that puts one hard decision to three subagents, one of them a Devil's Advocate, and returns a checked decision memo that keeps the strongest case against its own recommendation](https://github.com/Ali-expandings/wise-men-flash)
 
+- [mnema - signed, append-only record of the decisions behind a coding agent's work, handed to each session by an MCP server and a plugin; it reads MADR and Nygard files in and proposes them as decisions](https://github.com/mnema-work/mnema)
+
 Company-Specific Guidance:
 
 - [Amazon: AWS Prescriptive Guidance: ADR Process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
