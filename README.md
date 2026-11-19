@@ -529,6 +529,8 @@ In-depth:
 
 - ["Keep the Why: Code Becomes Legacy When Nobody Remembers Why"](https://blog.technopathy.club/keep-the-why-code-becomes-legacy-when-nobody-remembers-why)
 
+- [Decisions that Outlive the Session: Decision Records for AI Coding Agents (codeminer.io)](https://codeminer.io/blog/decisions-that-outlive-the-session)
+
 Tools:
 
 - [Command-line tools for working with Architecture Decision Records](https://github.com/npryce/adr-tools)
