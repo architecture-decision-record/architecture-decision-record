@@ -20,23 +20,23 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^4.0.1",
-		"@sveltejs/kit": "^3.2.0",
+		"@sveltejs/kit": "^3.4.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
-		"axe-core": "^4.14.0",
+		"axe-core": "^4.14.1",
 		"playwright": "^1.65.1",
-		"svelte": "^5.57.3",
+		"svelte": "^5.58.0",
 		"svelte-check": "^4.7.8",
 		"typescript": "^6.0.3",
 		"vite": "^8.3.8"
 	},
 	"dependencies": {
-		"@lilydesignsystem/svelte-headless": "^0.10.0",
+		"@lilydesignsystem/svelte-headless": "^0.11.0",
 		"@lilydesignsystem/svelte-locale-picker": "^0.3.3",
 		"@lilydesignsystem/svelte-picker-bar": "^0.7.0",
 		"@lilydesignsystem/svelte-share-picker": "^0.3.2",
 		"@lilydesignsystem/svelte-text-size-picker": "^0.3.2",
 		"@lilydesignsystem/svelte-theme-picker": "^0.4.0",
-		"marked": "^18.2.0"
+		"marked": "^18.2.1"
 	},
 	"pnpm": {
 		"ignoredBuiltDependencies": [
