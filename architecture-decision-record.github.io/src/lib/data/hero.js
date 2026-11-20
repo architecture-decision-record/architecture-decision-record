@@ -33,6 +33,10 @@ export const HERO = {
   "tagline": "Templedi, enghreifftiau ac arweiniad ar gyfer cofnodi penderfyniadau saernïaeth.",
   "translations": "Iaith: "
  },
+ "cy-ar": {
+  "tagline": "Templedi, enghreifftiau ac arweiniad ar gyfer cofnodi penderfyniadau saernïaeth.",
+  "translations": "Iaith: "
+ },
  "da-001": {
   "tagline": "Skabeloner, eksempler og vejledning til at registrere arkitekturbeslutninger.",
   "translations": "Sprog: "
@@ -361,6 +365,10 @@ export const HERO = {
   "tagline": "आर्किटेक्चर निर्णयों को दर्ज करने के लिए टेम्पलेट, उदाहरण और मार्गदर्शन।",
   "translations": "भाषा: "
  },
+ "hi-np": {
+  "tagline": "आर्किटेक्चर निर्णयों को दर्ज करने के लिए टेम्पलेट, उदाहरण और मार्गदर्शन।",
+  "translations": "भाषा: "
+ },
  "id-001": {
   "tagline": "Templat, contoh, dan panduan untuk mencatat keputusan arsitektur.",
   "translations": "Bahasa: "
@@ -497,6 +505,10 @@ export const HERO = {
   "tagline": "用于记录架构决策的模板、示例和指南。",
   "translations": "语言: "
  },
+ "zh-th": {
+  "tagline": "用于记录架构决策的模板、示例和指南。",
+  "translations": "语言: "
+ },
  "zh-tw": {
   "tagline": "用於記錄架構決策的範本、範例與指南。",
   "translations": "语言: "
@@ -513,6 +525,7 @@ export const ENDONYMS = {
  "bn-in": "বাংলা (ভারত)",
  "cy-001": "Cymraeg",
  "cy-gb": "Cymraeg (Y Deyrnas Unedig)",
+ "cy-ar": "Cymraeg (Ariannin)",
  "da-001": "Dansk",
  "da-dk": "Dansk (Danmark)",
  "de-001": "Deutsch",
@@ -595,6 +608,7 @@ export const ENDONYMS = {
  "he-001": "עברית",
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
+ "hi-np": "हिन्दी (नेपाल)",
  "id-001": "Bahasa Indonesia",
  "id-id": "Bahasa Indonesia (Indonesia)",
  "id-my": "Bahasa Indonesia (Malaysia)",
@@ -629,5 +643,6 @@ export const ENDONYMS = {
  "vi-vn": "Tiếng Việt (Việt Nam)",
  "zh-001": "中文",
  "zh-cn": "简体中文",
+ "zh-th": "中文 (泰国)",
  "zh-tw": "繁體中文"
 };

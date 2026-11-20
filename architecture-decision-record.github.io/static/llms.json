@@ -7,7 +7,7 @@
     "documents": 12,
     "templates": 11,
     "examples": 40,
-    "locales": 125
+    "locales": 128
   },
   "sections": {
     "documents": [
@@ -291,6 +291,7 @@
     "cs_CZ",
     "cy_001",
     "cy_GB",
+    "cy_AR",
     "da_001",
     "da_DK",
     "de_001",
@@ -327,6 +328,7 @@
     "he_001",
     "hi_001",
     "hi_IN",
+    "hi_NP",
     "hr_001",
     "hr_HR",
     "hu_001",
@@ -402,6 +404,7 @@
     "yue_001",
     "zh_001",
     "zh_CN",
+    "zh_TH",
     "zh_TW"
   ],
   "translations": "https://github.com/architecture-decision-record/architecture-decision-record/tree/main/locales"
