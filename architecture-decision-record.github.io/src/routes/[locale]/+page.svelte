@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>{query ? `${query} · ${slug}` : slug}</title>
+	<title>{query ? `${query} · ${data.landing?.hero.title ?? slug}` : (data.landing?.hero.title ?? slug)}</title>
 	{#if query || slug === 'en-gb' || slug === 'en-us'}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 

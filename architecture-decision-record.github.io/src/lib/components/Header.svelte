@@ -13,6 +13,7 @@
 	import { LOCALES, LOCALE_SLUGS, DEFAULT_LOCALE, localeToSlug } from '#lib/locales.js';
 	import { pathForLocale } from '#lib/locale-nav.js';
 	import localeSections from '#lib/locale-sections.json';
+	import { ui } from '#lib/i18n.js';
 
 	const THEME_STORAGE_KEY = 'adr-theme';
 	const LOCALE_STORAGE_KEY = 'adr-locale';
@@ -98,34 +99,35 @@
 		})
 	);
 
-	const shareTargets: ShareTarget[] = [
+	const t = $derived(ui(localeToSlug(urlLocale)));
+	const shareTargets: ShareTarget[] = $derived([
 		{
 			id: 'email',
-			label: 'Email Link',
+			label: t.shareEmailLabel,
 			href: (url, title) => `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`,
 			newTab: false
 		},
 		{
 			id: 'linkedin',
-			label: 'Share on LinkedIn',
+			label: t.shareLinkedinLabel,
 			href: (url) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
 		},
 		{
 			id: 'reddit',
-			label: 'Share on Reddit',
+			label: t.shareRedditLabel,
 			href: (url, title) => `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
 		},
 		{
 			id: 'bluesky',
-			label: 'Share on Bluesky',
+			label: t.shareBlueskyLabel,
 			href: (url, title) => `https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} ${url}`)}`
 		},
 		{
 			id: 'mastodon',
-			label: 'Share on Mastodon',
+			label: t.shareMastodonLabel,
 			href: (url, title) => `https://mastodonshare.com/?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`
 		}
-	];
+	]);
 
 	// The link picker (a home icon, leftmost in the bar): the locale's landing page,
 	// its templates and examples indexes, and the GitHub repository. Hrefs follow the
@@ -138,13 +140,18 @@
 			return page.url.pathname;
 		}
 	});
+	const brand = $derived(page.data?.landing?.hero?.title ?? 'Architecture Decision Record');
+	const navSlug = $derived(localeToSlug(urlLocale));
+	const navSections = $derived((localeSections as Record<string, Record<string, string>>)[navSlug] ?? {});
+	const cap = (w: string) => w.charAt(0).toLocaleUpperCase(navSlug) + w.slice(1);
 	const links = $derived.by(() => {
 		const slug = localeToSlug(urlLocale);
 		const sections = (localeSections as Record<string, Record<string, string>>)[slug] ?? {};
 		const home = `/${slug}/`;
-		const entries = [{ label: 'Home', href: home, current: currentPath === home }];
-		for (const [label, kind] of [['Templates', 'templates'], ['Examples', 'examples']] as const) {
+		const entries = [{ label: t.navHome, href: home, current: currentPath === home }];
+		for (const kind of ['templates', 'examples'] as const) {
 			if (!sections[kind]) continue;
+			const label = cap(sections[kind]);
 			const href = `${home}${sections[kind]}/`;
 			entries.push({ label, href, current: currentPath === href });
 		}
@@ -157,32 +164,30 @@
 	let activeTheme = $state(DEFAULT_THEME_ID);
 </script>
 
-<Header label="Site header">
+<Header label={brand}>
 	<ContainerWithFixedWidth maxWidth="64rem">
 		<div class="site-header-bar">
-			<a class="brand" href="/en-001/">
+			<a class="brand" href="/{navSlug}/">
 				<img class="brand-icon" src="/icon.png" alt="" width="28" height="28" />
-				<strong>Architecture Decision Record</strong>
+				<strong>{brand}</strong>
 			</a>
-			<nav class="site-nav" aria-label="Primary">
-				<a href="/en-001/">Documents</a>
-				<a href="/en-001/templates/">Templates</a>
-				<a href="/en-001/examples/">Examples</a>
-				<a href="https://github.com/architecture-decision-record/architecture-decision-record">
-					GitHub
-				</a>
+			<nav class="site-nav" aria-label={t.navHome}>
+				<a href="/{navSlug}/">{t.navHome}</a>
+				{#if navSections.templates}<a href="/{navSlug}/{navSections.templates}/">{cap(navSections.templates)}</a>{/if}
+				{#if navSections.examples}<a href="/{navSlug}/{navSections.examples}/">{cap(navSections.examples)}</a>{/if}
+				<a href="https://github.com/architecture-decision-record/architecture-decision-record">GitHub</a>
 			</nav>
 			<div class="site-header-controls">
 				<PickerBar
 					labels={{
-						link: 'Site links',
-						search: 'Search this site',
-						searchInput: 'Search terms',
-						searchSubmit: 'Search',
-						theme: 'Colour theme — all Lily Design System themes',
-						locale: 'Language',
-						textSize: 'Text size',
-						share: 'Share Picker'
+						link: t.pickerLinks,
+						search: t.searchInputLabel,
+						searchInput: t.searchPlaceholder,
+						searchSubmit: t.navSearch,
+						theme: t.pickerTheme,
+						locale: t.pickerLanguage,
+						textSize: t.pickerTextSize,
+						share: t.pickerShare
 					}}
 					{links}
 					linkProps={{ navigate: (href: string) => goto(href) }}
@@ -213,10 +218,10 @@
 					}}
 					{shareTargets}
 					shareProps={{
-						title: 'Architecture Decision Record (ADR)',
-						copyLabel: 'Copy link',
-						copiedLabel: 'Link copied to clipboard',
-						copyFailedLabel: 'Could not copy — copy it from the address bar'
+						title: brand,
+						copyLabel: t.shareCopyLink,
+						copiedLabel: t.shareCopied,
+						copyFailedLabel: t.shareCopyFailed
 					}}
 				/>
 			</div>
@@ -227,5 +232,5 @@
      assistive technology, and aria-live announces only on change, so it
      stays silent at first paint. -->
 <p class="theme-picker-status visually-hidden" aria-live="polite">
-	Active theme: {themeLabels[activeTheme] ?? activeTheme}
+	{t.pickerTheme}: {themeLabels[activeTheme] ?? activeTheme}
 </p>
